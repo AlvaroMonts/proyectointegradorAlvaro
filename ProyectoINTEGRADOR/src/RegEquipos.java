@@ -9,6 +9,7 @@ import java.awt.Font;
 import javax.swing.JTextField;
 import javax.swing.JRadioButton;
 import javax.swing.JButton;
+import java.awt.Color;
 
 public class RegEquipos extends JFrame {
 
@@ -60,6 +61,7 @@ public class RegEquipos extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 790, 519);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(135, 206, 235));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);

@@ -12,6 +12,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JToolBar;
+import java.awt.Color;
 
 public class TbEquipos extends JFrame {
 
@@ -44,6 +45,7 @@ public class TbEquipos extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 896, 466);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(135, 206, 235));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);

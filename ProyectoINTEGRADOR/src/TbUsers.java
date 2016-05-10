@@ -17,6 +17,7 @@ import javax.swing.LayoutStyle.ComponentPlacement;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JToolBar;
+import java.awt.Color;
 
 public class TbUsers extends JFrame {
 
@@ -46,9 +47,11 @@ public class TbUsers extends JFrame {
 	 * Create the frame.
 	 */
 	public TbUsers() {
+		setBackground(new Color(135, 206, 235));
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 901, 467);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(135, 206, 235));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 
@@ -97,16 +100,38 @@ public class TbUsers extends JFrame {
 
 		table = new JTable();
 		table.setModel(new DefaultTableModel(
-				new Object[][] { { null, null, null, null }, { null, null, null, null }, { null, null, null, null },
-						{ null, null, null, null }, { null, null, null, null }, { null, null, null, null },
-						{ null, null, null, null }, { null, null, null, null }, { null, null, null, null },
-						{ null, null, null, null }, { null, null, null, null }, { null, null, null, null },
-						{ null, null, null, null }, { null, null, null, null }, { null, null, null, null },
-						{ null, null, null, null }, { null, null, null, null }, { null, null, null, null },
-						{ null, null, null, null }, { null, null, null, null }, { null, null, null, null },
-						{ null, null, null, null }, { null, null, null, null }, { null, null, null, null },
-						{ null, null, null, null }, { null, null, null, null }, },
-				new String[] { "Nombre", "Apellidos", "Tipo de usuario", "Correo" }));
+			new Object[][] {
+				{"Juan", "Perez", "Administrador", "juan.perez@gmail.com"},
+				{"Pedro", "Martinez", "T\u00E9cnico", ""},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+				{null, null, null, null},
+			},
+			new String[] {
+				"Nombre", "Apellidos", "Tipo de usuario", "Correo"
+			}
+		));
 		table.getColumnModel().getColumn(2).setPreferredWidth(85);
 		for (int i = 0; i < table.getColumnModel().getColumnCount(); i++) {
 			TableColumn t = table.getColumnModel().getColumn(i);

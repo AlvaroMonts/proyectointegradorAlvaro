@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.JToolBar;
+import java.awt.Color;
 
 public class TbHistorial extends JFrame {
 
@@ -47,6 +48,7 @@ public class TbHistorial extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 890, 467);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(135, 206, 235));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);

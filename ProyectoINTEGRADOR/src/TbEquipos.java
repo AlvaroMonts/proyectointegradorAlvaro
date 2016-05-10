@@ -52,40 +52,40 @@ public class TbEquipos extends JFrame {
 		
 		JComboBox comboBox = new JComboBox();
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Equipo", "COD_Equipo", "Marca", "Modelo", "Tipo de uso", "Disponibilidad", "Prestable", "Edificio", "Almacenamiento"}));
-		comboBox.setBounds(40, 101, 75, 20);
+		comboBox.setBounds(61, 125, 75, 20);
 		contentPane.add(comboBox);
 		
 		textField = new JTextField();
 		textField.setColumns(10);
-		textField.setBounds(40, 132, 86, 20);
+		textField.setBounds(61, 156, 86, 20);
 		contentPane.add(textField);
 		
 		JComboBox comboBox_1 = new JComboBox();
 		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"Equipo", "COD_Equipo", "Marca", "Modelo", "Tipo de uso", "Disponibilidad", "Prestable", "Edificio", "Almacenamiento"}));
-		comboBox_1.setBounds(40, 163, 75, 20);
+		comboBox_1.setBounds(61, 187, 75, 20);
 		contentPane.add(comboBox_1);
 		
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
-		textField_1.setBounds(40, 194, 86, 20);
+		textField_1.setBounds(61, 218, 86, 20);
 		contentPane.add(textField_1);
 		
 		JComboBox comboBox_2 = new JComboBox();
 		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"Equipo", "COD_Equipo", "Marca", "Modelo", "Tipo de uso", "Disponibilidad", "Prestable", "Edificio", "Almacenamiento"}));
-		comboBox_2.setBounds(40, 225, 75, 20);
+		comboBox_2.setBounds(61, 249, 75, 20);
 		contentPane.add(comboBox_2);
 		
 		textField_2 = new JTextField();
 		textField_2.setColumns(10);
-		textField_2.setBounds(40, 256, 86, 20);
+		textField_2.setBounds(61, 280, 86, 20);
 		contentPane.add(textField_2);
 		
 		JButton button = new JButton("Buscar");
-		button.setBounds(40, 287, 75, 23);
+		button.setBounds(61, 311, 75, 23);
 		contentPane.add(button);
 		
 		JButton button_1 = new JButton("Restaurar Filtros");
-		button_1.setBounds(20, 321, 138, 23);
+		button_1.setBounds(41, 345, 138, 23);
 		contentPane.add(button_1);
 		
 		JScrollPane scrollPane = new JScrollPane();
@@ -127,6 +127,10 @@ public class TbEquipos extends JFrame {
 		
 		JButton btnUsuarios = new JButton("Usuarios");
 		toolBar.add(btnUsuarios);
+		
+		JComboBox comboBox_3 = new JComboBox();
+		comboBox_3.setBounds(61, 90, 75, 20);
+		contentPane.add(comboBox_3);
 		
 	}
 }

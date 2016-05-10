@@ -13,6 +13,7 @@ import javax.swing.JButton;
 import javax.swing.JRadioButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JTextArea;
 
 public class Caracteristicas_Equipo extends JFrame {
 
@@ -38,7 +39,6 @@ public class Caracteristicas_Equipo extends JFrame {
 	private JTextField textFieldMarcacarac;
 	private JTextField textFieldmodelograficacarac;
 	private JTextField textFieldalmacenamientograficacarac;
-	private JTextField textFieldnotascarac;
 	private JLabel label_1;
 	private JLabel label_2;
 	private JLabel label_3;
@@ -79,6 +79,7 @@ public class Caracteristicas_Equipo extends JFrame {
 	private JLabel label_30;
 	private JTextField textField;
 	private JTextField textField_1;
+	private JTextArea textAreaNotas;
 	
 
 	/**
@@ -105,7 +106,7 @@ public class Caracteristicas_Equipo extends JFrame {
 
 		textFieldTipodeusoCarac = new JTextField();
 		textFieldTipodeusoCarac.setColumns(10);
-		textFieldTipodeusoCarac.setBounds(153, 261, 86, 20);
+		textFieldTipodeusoCarac.setBounds(153, 225, 86, 20);
 		contentPane.add(textFieldTipodeusoCarac);
 
 		textFieldssoocarac = new JTextField();
@@ -150,37 +151,37 @@ public class Caracteristicas_Equipo extends JFrame {
 
 		textFieldresolucioncamaracarac = new JTextField();
 		textFieldresolucioncamaracarac.setColumns(10);
-		textFieldresolucioncamaracarac.setBounds(365, 261, 86, 20);
+		textFieldresolucioncamaracarac.setBounds(365, 225, 86, 20);
 		contentPane.add(textFieldresolucioncamaracarac);
 
 		textFieldtiposdeconexioncarac = new JTextField();
 		textFieldtiposdeconexioncarac.setColumns(10);
-		textFieldtiposdeconexioncarac.setBounds(365, 292, 86, 20);
+		textFieldtiposdeconexioncarac.setBounds(365, 256, 86, 20);
 		contentPane.add(textFieldtiposdeconexioncarac);
 
 		textFieldalmacenamientocarac = new JTextField();
 		textFieldalmacenamientocarac.setColumns(10);
-		textFieldalmacenamientocarac.setBounds(365, 333, 86, 20);
+		textFieldalmacenamientocarac.setBounds(365, 287, 86, 20);
 		contentPane.add(textFieldalmacenamientocarac);
 
 		textFieldestadocarac = new JTextField();
 		textFieldestadocarac.setColumns(10);
-		textFieldestadocarac.setBounds(153, 292, 86, 20);
+		textFieldestadocarac.setBounds(153, 256, 86, 20);
 		contentPane.add(textFieldestadocarac);
 
 		textFieldedificiocarac = new JTextField();
 		textFieldedificiocarac.setColumns(10);
-		textFieldedificiocarac.setBounds(153, 324, 86, 20);
+		textFieldedificiocarac.setBounds(153, 287, 86, 20);
 		contentPane.add(textFieldedificiocarac);
 
 		textFieldsalacarac = new JTextField();
 		textFieldsalacarac.setColumns(10);
-		textFieldsalacarac.setBounds(153, 355, 86, 20);
+		textFieldsalacarac.setBounds(153, 318, 86, 20);
 		contentPane.add(textFieldsalacarac);
 
 		textFieldalmacenamiento2carac = new JTextField();
 		textFieldalmacenamiento2carac.setColumns(10);
-		textFieldalmacenamiento2carac.setBounds(365, 355, 86, 20);
+		textFieldalmacenamiento2carac.setBounds(365, 314, 86, 20);
 		contentPane.add(textFieldalmacenamiento2carac);
 
 		textFieldMarcacarac = new JTextField();
@@ -210,37 +211,37 @@ public class Caracteristicas_Equipo extends JFrame {
 
 		label_3 = new JLabel("Tipo de uso");
 		label_3.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		label_3.setBounds(75, 263, 65, 14);
+		label_3.setBounds(75, 227, 65, 14);
 		contentPane.add(label_3);
 
 		label_4 = new JLabel("Estado");
 		label_4.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		label_4.setBounds(107, 295, 46, 14);
+		label_4.setBounds(107, 258, 46, 14);
 		contentPane.add(label_4);
 
 		label_5 = new JLabel("Edificio");
 		label_5.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		label_5.setBounds(107, 327, 46, 14);
+		label_5.setBounds(107, 287, 46, 14);
 		contentPane.add(label_5);
 
 		label_6 = new JLabel("Sala");
 		label_6.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		label_6.setBounds(114, 358, 29, 14);
+		label_6.setBounds(114, 320, 29, 14);
 		contentPane.add(label_6);
 
 		JLabel label_7 = new JLabel("Resoluci\u00F3n c\u00E1mara");
 		label_7.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		label_7.setBounds(255, 264, 110, 14);
+		label_7.setBounds(254, 227, 110, 14);
 		contentPane.add(label_7);
 
 		JLabel label_8 = new JLabel("Tipos de conexi\u00F3n");
 		label_8.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		label_8.setBounds(249, 294, 106, 14);
+		label_8.setBounds(254, 258, 106, 14);
 		contentPane.add(label_8);
 
 		label_9 = new JLabel("Almacenamiento");
 		label_9.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		label_9.setBounds(255, 327, 100, 30);
+		label_9.setBounds(264, 292, 100, 30);
 		contentPane.add(label_9);
 
 		label_10 = new JLabel("Almacenamiento");
@@ -320,47 +321,50 @@ public class Caracteristicas_Equipo extends JFrame {
 
 		btnDarDeBajacarac = new JButton("Dar de baja equipo");
 		btnDarDeBajacarac.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		btnDarDeBajacarac.setBounds(268, 416, 137, 32);
+		btnDarDeBajacarac.setBounds(289, 416, 130, 32);
 		contentPane.add(btnDarDeBajacarac);
 
-		textFieldnotascarac = new JTextField();
-		textFieldnotascarac.setColumns(10);
-		textFieldnotascarac.setBounds(59, 418, 192, 28);
-		contentPane.add(textFieldnotascarac);
-
 		label_25 = new JLabel("Notas");
-		label_25.setBounds(10, 420, 29, 25);
+		label_25.setBounds(125, 375, 29, 25);
 		contentPane.add(label_25);
 
 		radioButtondisponibilidadsicarac = new JRadioButton("Si");
+		radioButtondisponibilidadsicarac.setBackground(new Color(135, 206, 235));
 		radioButtondisponibilidadsicarac.setBounds(143, 154, 46, 20);
 		contentPane.add(radioButtondisponibilidadsicarac);
 
 		radioButtonprestablesicarac = new JRadioButton("Si");
+		radioButtonprestablesicarac.setBackground(new Color(135, 206, 235));
 		radioButtonprestablesicarac.setBounds(143, 186, 46, 20);
 		contentPane.add(radioButtonprestablesicarac);
 
 		radioButtongiroscopiosicarac = new JRadioButton("Si");
+		radioButtongiroscopiosicarac.setBackground(new Color(135, 206, 235));
 		radioButtongiroscopiosicarac.setBounds(333, 157, 46, 20);
 		contentPane.add(radioButtongiroscopiosicarac);
 
 		radioButtonnfcsicarac = new JRadioButton("Si");
+		radioButtonnfcsicarac.setBackground(new Color(135, 206, 235));
 		radioButtonnfcsicarac.setBounds(333, 186, 46, 20);
 		contentPane.add(radioButtonnfcsicarac);
 
 		radioButtonDisponibilidadnocarac = new JRadioButton("No");
+		radioButtonDisponibilidadnocarac.setBackground(new Color(135, 206, 235));
 		radioButtonDisponibilidadnocarac.setBounds(200, 154, 51, 20);
 		contentPane.add(radioButtonDisponibilidadnocarac);
 
 		radioButtonprestablenocarac = new JRadioButton("No");
+		radioButtonprestablenocarac.setBackground(new Color(135, 206, 235));
 		radioButtonprestablenocarac.setBounds(200, 186, 51, 20);
 		contentPane.add(radioButtonprestablenocarac);
 
 		radioButtongiroscopionocarac = new JRadioButton("No");
+		radioButtongiroscopionocarac.setBackground(new Color(135, 206, 235));
 		radioButtongiroscopionocarac.setBounds(385, 157, 52, 20);
 		contentPane.add(radioButtongiroscopionocarac);
 
 		radioButtonnfcnocarac = new JRadioButton("No");
+		radioButtonnfcnocarac.setBackground(new Color(135, 206, 235));
 		radioButtonnfcnocarac.setBounds(385, 186, 52, 20);
 		contentPane.add(radioButtonnfcnocarac);
 
@@ -388,13 +392,22 @@ public class Caracteristicas_Equipo extends JFrame {
 			}
 		});
 		btnDescartarCambioscarac.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		btnDescartarCambioscarac.setBounds(415, 416, 130, 32);
+		btnDescartarCambioscarac.setBounds(429, 416, 135, 32);
 		contentPane.add(btnDescartarCambioscarac);
 
 		btnGuardarCambioscarac = new JButton("Guardar cambios");
 		btnGuardarCambioscarac.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		btnGuardarCambioscarac.setBounds(560, 416, 144, 32);
+		btnGuardarCambioscarac.setBounds(572, 416, 121, 32);
 		contentPane.add(btnGuardarCambioscarac);
+		
+		JButton btnRealizarPrestamo = new JButton("Realizar Pr\u00E9stamo");
+		btnRealizarPrestamo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnRealizarPrestamo.setFont(new Font("Times New Roman", Font.BOLD, 11));
+		btnRealizarPrestamo.setBounds(149, 416, 130, 32);
+		contentPane.add(btnRealizarPrestamo);
 		
 		label_29 = new JLabel("ID");
 		label_29.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -415,6 +428,10 @@ public class Caracteristicas_Equipo extends JFrame {
 		textField_1.setColumns(10);
 		textField_1.setBounds(153, 18, 86, 20);
 		contentPane.add(textField_1);
+		
+		textAreaNotas = new JTextArea();
+		textAreaNotas.setLineWrap(true);
+		textAreaNotas.setBounds(164, 367, 253, 38);
+		contentPane.add(textAreaNotas);
 	}
-
 }

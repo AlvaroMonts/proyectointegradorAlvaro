@@ -5,11 +5,15 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
 import java.awt.Color;
+
+import javax.swing.ButtonGroup;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JRadioButton;
 import javax.swing.JButton;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -64,12 +68,24 @@ public class Caracteristicas_usuario extends JFrame {
 		contentPane.add(textEmail_Cusuario);
 		
 		JRadioButton radioButtonAdministrador_Cusuario = new JRadioButton("Administrador");
+		radioButtonAdministrador_Cusuario.setBackground(new Color(135, 206, 235));
 		radioButtonAdministrador_Cusuario.setBounds(404, 57, 116, 23);
 		contentPane.add(radioButtonAdministrador_Cusuario);
 		
 		JRadioButton radioButtonTecnico_Cusuario = new JRadioButton("T\u00E9cnico");
+		radioButtonTecnico_Cusuario.setBackground(new Color(135, 206, 235));
 		radioButtonTecnico_Cusuario.setBounds(404, 98, 86, 23);
 		contentPane.add(radioButtonTecnico_Cusuario);
+		
+		ButtonGroup group1 = new ButtonGroup();
+		group1.add(radioButtonAdministrador_Cusuario);
+		group1.add(radioButtonTecnico_Cusuario);
+		
+		if(radioButtonAdministrador_Cusuario.isSelected()) {
+			radioButtonTecnico_Cusuario.setEnabled(false);
+		} else if(radioButtonAdministrador_Cusuario.isSelected()) {
+			radioButtonTecnico_Cusuario.setEnabled(true);
+		}
 		
 		JLabel label_3 = new JLabel("Tipo de Usuario:");
 		label_3.setBounds(297, 80, 91, 14);

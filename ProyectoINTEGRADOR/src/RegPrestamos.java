@@ -8,6 +8,8 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.Color;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class RegPrestamos extends JFrame {
 
@@ -102,7 +104,11 @@ public class RegPrestamos extends JFrame {
 		contentPane.add(textField_5);
 		
 		JButton btnRegistrarPrestamo = new JButton("Registrar prestamo");
-		btnRegistrarPrestamo.setBounds(707, 397, 125, 23);
+		btnRegistrarPrestamo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnRegistrarPrestamo.setBounds(704, 385, 125, 23);
 		contentPane.add(btnRegistrarPrestamo);
 		
 		JButton btnCancelar = new JButton("Cancelar");

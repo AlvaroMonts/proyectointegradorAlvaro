@@ -2,17 +2,24 @@
 
 import java.awt.EventQueue;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
 import java.awt.Color;
+
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+
 import java.awt.Font;
+
 import javax.swing.JButton;
 import javax.swing.JRadioButton;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JTextArea;
 
 public class Caracteristicas_Equipo extends JFrame {
@@ -286,7 +293,7 @@ public class Caracteristicas_Equipo extends JFrame {
 
 		label_18 = new JLabel("Pulgadas");
 		label_18.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		label_18.setBounds(298, 82, 52, 14);
+		label_18.setBounds(303, 82, 52, 14);
 		contentPane.add(label_18);
 
 		label_19 = new JLabel("Roseta");
@@ -311,17 +318,17 @@ public class Caracteristicas_Equipo extends JFrame {
 
 		JLabel label_23 = new JLabel("Giroscopio");
 		label_23.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		label_23.setBounds(268, 157, 69, 14);
+		label_23.setBounds(292, 157, 69, 14);
 		contentPane.add(label_23);
 
 		JLabel label_24 = new JLabel("NFC");
 		label_24.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		label_24.setBounds(298, 189, 29, 14);
+		label_24.setBounds(322, 189, 29, 14);
 		contentPane.add(label_24);
 
 		btnDarDeBajacarac = new JButton("Dar de baja equipo");
 		btnDarDeBajacarac.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		btnDarDeBajacarac.setBounds(289, 416, 130, 32);
+		btnDarDeBajacarac.setBounds(228, 416, 130, 32);
 		contentPane.add(btnDarDeBajacarac);
 
 		label_25 = new JLabel("Notas");
@@ -340,12 +347,12 @@ public class Caracteristicas_Equipo extends JFrame {
 
 		radioButtongiroscopiosicarac = new JRadioButton("Si");
 		radioButtongiroscopiosicarac.setBackground(new Color(135, 206, 235));
-		radioButtongiroscopiosicarac.setBounds(333, 157, 46, 20);
+		radioButtongiroscopiosicarac.setBounds(357, 157, 46, 20);
 		contentPane.add(radioButtongiroscopiosicarac);
 
 		radioButtonnfcsicarac = new JRadioButton("Si");
 		radioButtonnfcsicarac.setBackground(new Color(135, 206, 235));
-		radioButtonnfcsicarac.setBounds(333, 186, 46, 20);
+		radioButtonnfcsicarac.setBounds(357, 186, 46, 20);
 		contentPane.add(radioButtonnfcsicarac);
 
 		radioButtonDisponibilidadnocarac = new JRadioButton("No");
@@ -360,13 +367,53 @@ public class Caracteristicas_Equipo extends JFrame {
 
 		radioButtongiroscopionocarac = new JRadioButton("No");
 		radioButtongiroscopionocarac.setBackground(new Color(135, 206, 235));
-		radioButtongiroscopionocarac.setBounds(385, 157, 52, 20);
+		radioButtongiroscopionocarac.setBounds(409, 157, 52, 20);
 		contentPane.add(radioButtongiroscopionocarac);
 
 		radioButtonnfcnocarac = new JRadioButton("No");
 		radioButtonnfcnocarac.setBackground(new Color(135, 206, 235));
-		radioButtonnfcnocarac.setBounds(385, 186, 52, 20);
+		radioButtonnfcnocarac.setBounds(409, 186, 52, 20);
 		contentPane.add(radioButtonnfcnocarac);
+		
+		ButtonGroup group1 = new ButtonGroup();
+		group1.add(radioButtondisponibilidadsicarac);
+		group1.add(radioButtonDisponibilidadnocarac);
+		
+		if(radioButtondisponibilidadsicarac.isSelected()) {
+			radioButtonDisponibilidadnocarac.setEnabled(false);
+		} else if(radioButtonDisponibilidadnocarac.isSelected()) {
+			radioButtondisponibilidadsicarac.setEnabled(true);
+		}
+		
+		ButtonGroup group2 = new ButtonGroup();
+		group2.add(radioButtonprestablesicarac);
+		group2.add(radioButtonprestablenocarac);
+		
+		if(radioButtonprestablesicarac.isSelected()) {
+			radioButtonprestablenocarac.setEnabled(false);
+		} else if(radioButtonprestablenocarac.isSelected()) {
+			radioButtonprestablesicarac.setEnabled(true);
+		}
+		
+		ButtonGroup group3 = new ButtonGroup();
+		group3.add(radioButtongiroscopiosicarac);
+		group3.add(radioButtongiroscopionocarac);
+		
+		if(radioButtongiroscopiosicarac.isSelected()) {
+			radioButtongiroscopionocarac.setEnabled(false);
+		} else if(radioButtongiroscopionocarac.isSelected()) {
+			radioButtongiroscopiosicarac.setEnabled(true);
+		}
+		
+		ButtonGroup group4 = new ButtonGroup();
+		group4.add(radioButtonnfcsicarac);
+		group4.add(radioButtonnfcnocarac);
+		
+		if(radioButtonnfcsicarac.isSelected()) {
+			radioButtonnfcnocarac.setEnabled(false);
+		} else if(radioButtonnfcnocarac.isSelected()) {
+			radioButtonnfcsicarac.setEnabled(true);
+		}
 
 		label_26 = new JLabel("PROCESADOR");
 		label_26.setFont(new Font("Tahoma", Font.BOLD, 13));
@@ -392,12 +439,12 @@ public class Caracteristicas_Equipo extends JFrame {
 			}
 		});
 		btnDescartarCambioscarac.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		btnDescartarCambioscarac.setBounds(429, 416, 135, 32);
+		btnDescartarCambioscarac.setBounds(368, 416, 135, 32);
 		contentPane.add(btnDescartarCambioscarac);
 
 		btnGuardarCambioscarac = new JButton("Guardar cambios");
 		btnGuardarCambioscarac.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		btnGuardarCambioscarac.setBounds(572, 416, 121, 32);
+		btnGuardarCambioscarac.setBounds(511, 416, 121, 32);
 		contentPane.add(btnGuardarCambioscarac);
 		
 		JButton btnRealizarPrestamo = new JButton("Realizar Pr\u00E9stamo");
@@ -406,7 +453,7 @@ public class Caracteristicas_Equipo extends JFrame {
 			}
 		});
 		btnRealizarPrestamo.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		btnRealizarPrestamo.setBounds(149, 416, 130, 32);
+		btnRealizarPrestamo.setBounds(88, 416, 130, 32);
 		contentPane.add(btnRealizarPrestamo);
 		
 		label_29 = new JLabel("ID");

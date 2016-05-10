@@ -129,6 +129,7 @@ public class TbEquipos extends JFrame {
 		toolBar.add(btnUsuarios);
 		
 		JComboBox comboBox_3 = new JComboBox();
+		comboBox_3.setBackground(new Color(135, 206, 235));
 		comboBox_3.setBounds(61, 90, 75, 20);
 		contentPane.add(comboBox_3);
 		

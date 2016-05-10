@@ -5,6 +5,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+import javax.swing.ButtonGroup;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JRadioButton;
@@ -14,9 +15,12 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 import javax.swing.LayoutStyle.ComponentPlacement;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JToolBar;
+
 import java.awt.Color;
 
 public class TbUsers extends JFrame {
@@ -80,11 +84,22 @@ public class TbUsers extends JFrame {
 		label_3.setBounds(45, 263, 98, 14);
 
 		JRadioButton radioButton = new JRadioButton("Administrador");
+		radioButton.setBackground(new Color(135, 206, 235));
 		radioButton.setBounds(141, 242, 116, 23);
-		radioButton.setToolTipText("");
 
 		JRadioButton radioButton_1 = new JRadioButton("Tecnico");
+		radioButton_1.setBackground(new Color(135, 206, 235));
 		radioButton_1.setBounds(141, 272, 77, 23);
+		
+		ButtonGroup group1 = new ButtonGroup();
+		group1.add(radioButton);
+		group1.add(radioButton_1);
+		
+		if(radioButton.isSelected()) {
+			radioButton_1.setEnabled(false);
+		} else if(radioButton_1.isSelected()) {
+			radioButton.setEnabled(true);
+		}
 
 		JButton button = new JButton("Buscar");
 		button.setBounds(165, 315, 92, 23);
@@ -102,9 +117,9 @@ public class TbUsers extends JFrame {
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
 				{"Juan", "Perez", "Administrador", "juan.perez@gmail.com"},
-				{"Pedro", "Martinez", "T\u00E9cnico", ""},
-				{null, null, null, null},
-				{null, null, null, null},
+				{"Pedro", "Martinez", "T\u00E9cnico", "pedro.martinez@gmail.com"},
+				{"Isabel", "Hernandez", "Administrador", "isabel.hernandez@gmail.com"},
+				{"Miguel", "Figueroa", "T\u00E9cnico", "miguel.figueroa@gmail.com"},
 				{null, null, null, null},
 				{null, null, null, null},
 				{null, null, null, null},
@@ -141,18 +156,23 @@ public class TbUsers extends JFrame {
 		scrollPane.setViewportView(table);
 		
 		JToolBar toolBar = new JToolBar();
+		toolBar.setBackground(new Color(135, 206, 235));
 		toolBar.setBounds(31, 11, 273, 30);
 		
 		JButton btnEquipos = new JButton("Equipos");
+		btnEquipos.setBackground(new Color(135, 206, 235));
 		toolBar.add(btnEquipos);
 		
 		JButton btnPrestamos = new JButton("Prestamos");
+		btnPrestamos.setBackground(new Color(135, 206, 235));
 		toolBar.add(btnPrestamos);
 		
 		JButton btnHistorial = new JButton("Historial");
+		btnHistorial.setBackground(new Color(135, 206, 235));
 		toolBar.add(btnHistorial);
 		
 		JButton btnAlmacen = new JButton("Almacen");
+		btnAlmacen.setBackground(new Color(135, 206, 235));
 		toolBar.add(btnAlmacen);
 		contentPane.setLayout(null);
 		contentPane.add(label);

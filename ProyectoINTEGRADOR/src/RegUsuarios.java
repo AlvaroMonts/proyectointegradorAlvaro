@@ -4,10 +4,12 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.ButtonGroup;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 import javax.swing.JRadioButton;
 import javax.swing.JButton;
+
 import java.awt.Color;
 
 public class RegUsuarios extends JFrame {
@@ -77,12 +79,24 @@ public class RegUsuarios extends JFrame {
 		contentPane.add(label_2);
 		
 		JRadioButton radioButton = new JRadioButton("Administrador");
+		radioButton.setBackground(new Color(135, 206, 235));
 		radioButton.setBounds(465, 113, 115, 23);
 		contentPane.add(radioButton);
 		
 		JRadioButton radioButton_1 = new JRadioButton("T\u00E9cnico");
+		radioButton_1.setBackground(new Color(135, 206, 235));
 		radioButton_1.setBounds(465, 149, 77, 23);
 		contentPane.add(radioButton_1);
+		
+		ButtonGroup group1 = new ButtonGroup();
+		group1.add(radioButton);
+		group1.add(radioButton_1);
+		
+		if(radioButton.isSelected()) {
+			radioButton_1.setEnabled(false);
+		} else if(radioButton_1.isSelected()) {
+			radioButton.setEnabled(true);
+		}
 		
 		JLabel label_3 = new JLabel("Tipo de Usuario:");
 		label_3.setBounds(349, 136, 95, 14);

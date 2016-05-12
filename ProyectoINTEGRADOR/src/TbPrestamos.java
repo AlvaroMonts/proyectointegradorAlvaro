@@ -34,8 +34,8 @@ public class TbPrestamos extends JFrame {
 	private JLabel lblFechainicioprestamo;
 	private JLabel lblFechafinalprestamo;
 	private JLabel lblDestinoprestamo;
-	private JButton btnAceptar;
-	private JButton btnCancelar;
+	private JButton btnBuscar;
+	private JButton btnQuitarFiltros;
 	private TbEquipos Equipos;
 	private TbHistorial Historial;
 	private TbAlmacen Almacen;
@@ -69,13 +69,13 @@ public class TbPrestamos extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		btnAceptar = new JButton("Buscar");
-		btnAceptar.setBounds(10, 375, 89, 23);
-		contentPane.add(btnAceptar);
+		btnBuscar = new JButton("Buscar");
+		btnBuscar.setBounds(10, 375, 89, 23);
+		contentPane.add(btnBuscar);
 
-		btnCancelar = new JButton("Quitar filtro\r\n");
-		btnCancelar.setBounds(109, 375, 89, 23);
-		contentPane.add(btnCancelar);
+		btnQuitarFiltros = new JButton("Quitar filtro\r\n");
+		btnQuitarFiltros.setBounds(109, 375, 89, 23);
+		contentPane.add(btnQuitarFiltros);
 
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(233, 53, 631, 358);

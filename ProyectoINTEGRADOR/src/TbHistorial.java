@@ -1,5 +1,7 @@
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -24,22 +26,11 @@ public class TbHistorial extends JFrame {
 	private JTextField textField_5;
 	private JTextField textField_6;
 	private JTable table;
+	private TbAlmacen pantalla1;
+	private TbEquipos pantalla2;
+	private TbPrestamos pantalla3;
+	private TbUsers pantalla4;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					TbHistorial frame = new TbHistorial();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.
@@ -152,17 +143,63 @@ public class TbHistorial extends JFrame {
 		toolBar.setBounds(24, 11, 273, 30);
 		contentPane.add(toolBar);
 		
-		JButton button_2 = new JButton("Equipos");
+		JButton button_2 = new JButton("Almacen");
+		button_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				pantalla1 = new TbAlmacen();
+				pantalla1.setVisible(true);
+			}
+		});
 		toolBar.add(button_2);
 		
-		JButton button_3 = new JButton("Prestamos");
+		JButton button_3 = new JButton("Equipos");
+		button_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				pantalla2 = new TbEquipos();
+				pantalla2.setVisible(true);
+			}
+		});
 		toolBar.add(button_3);
 		
-		JButton btnUsuarios = new JButton("Usuarios");
+		JButton btnUsuarios = new JButton("Prestamos");
+		btnUsuarios.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				pantalla3 = new TbPrestamos();
+				pantalla3.setVisible(true);
+			}
+		});
 		toolBar.add(btnUsuarios);
 		
-		JButton button_5 = new JButton("Almacen");
+		JButton button_5 = new JButton("Usuarios");
+		button_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				pantalla4 = new TbUsers();
+				pantalla4.setVisible(true);
+			}
+		});
 		toolBar.add(button_5);
 	}
+	
+	
+	public void setPantalla1(TbAlmacen Pantalla1) {
+		this.pantalla1 = Pantalla1;
+
+	}
+
+	public void setPantalla2(TbEquipos Pantalla2) {
+		this.pantalla2 = Pantalla2;
+	}
+
+	public void setPantalla3(TbPrestamos Pantalla3) {
+		this.pantalla3 = Pantalla3;
+	}
+	public void setPantalla4(TbUsers Pantalla4) {
+		this.pantalla4 = Pantalla4;
+	}
+	
 
 }

@@ -85,6 +85,7 @@ public class Caracteristicas_Equipo extends JFrame {
 	private JButton btnDescartarCambioscarac;
 	private JButton btnGuardarCambioscarac;
 	private TbEquipos pantalla;
+	private RegPrestamos pantalla1;
 
 	/**
 	 * Create the frame.
@@ -357,11 +358,6 @@ public class Caracteristicas_Equipo extends JFrame {
 		panel.add(label_16);
 		label_16.setFont(new Font("Tahoma", Font.PLAIN, 12));
 
-		JButton button_25 = new JButton("Realizar Pr\u00E9stamo");
-		button_25.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		button_25.setBounds(10, 173, 130, 32);
-		panel.add(button_25);
-
 		JButton button_26 = new JButton("Dar de baja equipo");
 		button_26.setFont(new Font("Times New Roman", Font.BOLD, 11));
 		button_26.setBounds(195, 173, 130, 32);
@@ -497,11 +493,6 @@ public class Caracteristicas_Equipo extends JFrame {
 		label_42.setBounds(270, 39, 52, 14);
 		panel_1.add(label_42);
 
-		JButton button_21 = new JButton("Realizar Pr\u00E9stamo");
-		button_21.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		button_21.setBounds(10, 173, 130, 32);
-		panel_1.add(button_21);
-
 		JButton button_22 = new JButton("Dar de baja equipo");
 		button_22.setFont(new Font("Times New Roman", Font.BOLD, 11));
 		button_22.setBounds(195, 173, 130, 32);
@@ -611,11 +602,6 @@ public class Caracteristicas_Equipo extends JFrame {
 		group3.add(rdbtnTablet);
 		group3.add(rdbtnSmartphone);
 
-		JButton button_17 = new JButton("Realizar Pr\u00E9stamo");
-		button_17.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		button_17.setBounds(10, 173, 130, 32);
-		panel_2.add(button_17);
-
 		JButton button_18 = new JButton("Dar de baja equipo");
 		button_18.setFont(new Font("Times New Roman", Font.BOLD, 11));
 		button_18.setBounds(195, 173, 130, 32);
@@ -651,11 +637,6 @@ public class Caracteristicas_Equipo extends JFrame {
 		textField_35.setColumns(10);
 		textField_35.setBounds(306, 90, 86, 20);
 		panel_3.add(textField_35);
-
-		JButton button_13 = new JButton("Realizar Pr\u00E9stamo");
-		button_13.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		button_13.setBounds(10, 173, 130, 32);
-		panel_3.add(button_13);
 
 		JButton button_14 = new JButton("Dar de baja equipo");
 		button_14.setFont(new Font("Times New Roman", Font.BOLD, 11));
@@ -782,11 +763,6 @@ public class Caracteristicas_Equipo extends JFrame {
 		lblEquipoEnlazado.setBounds(489, 37, 91, 14);
 		panel_4.add(lblEquipoEnlazado);
 
-		JButton button_9 = new JButton("Realizar Pr\u00E9stamo");
-		button_9.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		button_9.setBounds(10, 173, 130, 32);
-		panel_4.add(button_9);
-
 		JButton button_10 = new JButton("Dar de baja equipo");
 		button_10.setFont(new Font("Times New Roman", Font.BOLD, 11));
 		button_10.setBounds(195, 173, 130, 32);
@@ -876,11 +852,6 @@ public class Caracteristicas_Equipo extends JFrame {
 		group4.add(rdbtnTv);
 		group4.add(rdbtnMonitor);
 
-		JButton button_5 = new JButton("Realizar Pr\u00E9stamo");
-		button_5.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		button_5.setBounds(10, 173, 130, 32);
-		panel_5.add(button_5);
-
 		JButton button_6 = new JButton("Dar de baja equipo");
 		button_6.setFont(new Font("Times New Roman", Font.BOLD, 11));
 		button_6.setBounds(195, 173, 130, 32);
@@ -942,11 +913,6 @@ public class Caracteristicas_Equipo extends JFrame {
 		lblHdmi.setBounds(363, 100, 46, 14);
 		panel_6.add(lblHdmi);
 
-		JButton button_1 = new JButton("Realizar Pr\u00E9stamo");
-		button_1.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		button_1.setBounds(10, 173, 130, 32);
-		panel_6.add(button_1);
-
 		JButton button_2 = new JButton("Dar de baja equipo");
 		button_2.setFont(new Font("Times New Roman", Font.BOLD, 11));
 		button_2.setBounds(195, 173, 130, 32);
@@ -976,15 +942,6 @@ public class Caracteristicas_Equipo extends JFrame {
 		textField_48.setColumns(10);
 		textField_48.setBounds(297, 82, 86, 20);
 		panel_7.add(textField_48);
-
-		JButton btnRealizarPrestamo = new JButton("Realizar Pr\u00E9stamo");
-		btnRealizarPrestamo.setBounds(10, 173, 130, 32);
-		panel_7.add(btnRealizarPrestamo);
-		btnRealizarPrestamo.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnRealizarPrestamo.setFont(new Font("Times New Roman", Font.BOLD, 11));
 
 		btnDescartarCambioscarac = new JButton("Descartar cambios");
 		btnDescartarCambioscarac.setBounds(384, 173, 135, 32);
@@ -1017,5 +974,30 @@ public class Caracteristicas_Equipo extends JFrame {
 		JButton button = new JButton("Cancelar");
 		button.setBounds(45, 455, 89, 23);
 		contentPane.add(button);
+		
+				JButton button_25 = new JButton("Realizar Pr\u00E9stamo");
+				button_25.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+						setVisible(false);
+						pantalla1 = new RegPrestamos();
+						pantalla1.setVisible(true);
+					}
+				});
+				button_25.setBounds(171, 450, 130, 32);
+				contentPane.add(button_25);
+				button_25.setFont(new Font("Times New Roman", Font.BOLD, 11));
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				setVisible(false);
+				pantalla = new TbEquipos();
+				pantalla.setVisible(true);
+			}
+		});
+	}
+	public void  setPantalla(TbEquipos Pantalla){
+		this.pantalla = Pantalla;
+	}
+	public void setPantalla1(RegPrestamos Pantalla1){
+		this.pantalla1 = Pantalla1;
 	}
 }

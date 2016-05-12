@@ -91,10 +91,6 @@ public class RegEquipos extends JFrame {
 	private JTextField textField_48;
 	private TbEquipos pantalla;
 
-	/**
-	 * Launch the application.
-	 */
-
 
 	/**
 	 * Create the frame.

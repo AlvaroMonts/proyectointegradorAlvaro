@@ -41,21 +41,6 @@ public class TbPrestamos extends JFrame {
 	private TbAlmacen Almacen;
 	private TbUsers Users;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					TbPrestamos frame = new TbPrestamos();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.

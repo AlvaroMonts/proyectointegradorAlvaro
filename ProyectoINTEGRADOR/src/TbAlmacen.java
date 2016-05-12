@@ -44,22 +44,6 @@ public class TbAlmacen extends JFrame {
 	private TbUsers Users;
 
 	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					TbAlmacen frame = new TbAlmacen();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-
-	/**
 	 * Create the frame.
 	 */
 	public TbAlmacen() {
@@ -105,232 +89,118 @@ public class TbAlmacen extends JFrame {
 		textField_4.setColumns(10);
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane
-				.setHorizontalGroup(gl_contentPane
-						.createParallelGroup(Alignment.TRAILING)
-						.addGroup(
-								gl_contentPane
-										.createSequentialGroup()
-										.addContainerGap()
-										.addGroup(
-												gl_contentPane
-														.createParallelGroup(
-																Alignment.TRAILING)
+				.setHorizontalGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+								.addContainerGap().addGroup(gl_contentPane
+										.createParallelGroup(
+												Alignment.TRAILING)
+										.addGroup(Alignment.LEADING,
+												gl_contentPane.createSequentialGroup()
 														.addGroup(
-																Alignment.LEADING,
-																gl_contentPane
-																		.createSequentialGroup()
-																		.addGroup(
-																				gl_contentPane
-																						.createParallelGroup(
-																								Alignment.LEADING)
-																						.addGroup(
-																								gl_contentPane
-																										.createSequentialGroup()
-																										.addComponent(
-																												button_2)
-																										.addPreferredGap(
-																												ComponentPlacement.UNRELATED)
-																										.addComponent(
-																												button_4))
-																						.addComponent(
-																								textField,
-																								GroupLayout.PREFERRED_SIZE,
-																								110,
-																								GroupLayout.PREFERRED_SIZE)
-																						.addComponent(
-																								textField_1,
-																								GroupLayout.PREFERRED_SIZE,
-																								110,
-																								GroupLayout.PREFERRED_SIZE)
-																						.addComponent(
-																								textField_2,
-																								GroupLayout.PREFERRED_SIZE,
-																								110,
-																								GroupLayout.PREFERRED_SIZE)
-																						.addGroup(
-																								gl_contentPane
-																										.createSequentialGroup()
-																										.addGap(19)
-																										.addComponent(
-																												lblNotas,
-																												GroupLayout.PREFERRED_SIZE,
-																												110,
-																												GroupLayout.PREFERRED_SIZE))
-																						.addGroup(
-																								gl_contentPane
-																										.createSequentialGroup()
-																										.addGap(10)
-																										.addComponent(
-																												lblTipodeequipo,
-																												GroupLayout.PREFERRED_SIZE,
-																												110,
-																												GroupLayout.PREFERRED_SIZE))
-																						.addGroup(
-																								gl_contentPane
-																										.createSequentialGroup()
-																										.addGap(10)
-																										.addComponent(
-																												lblCodequipo,
-																												GroupLayout.PREFERRED_SIZE,
-																												110,
-																												GroupLayout.PREFERRED_SIZE))
-																						.addGroup(
-																								gl_contentPane
-																										.createSequentialGroup()
-																										.addGap(10)
-																										.addComponent(
-																												lblPiezareutilizable,
-																												GroupLayout.PREFERRED_SIZE,
-																												110,
-																												GroupLayout.PREFERRED_SIZE))
-																						.addComponent(
-																								textField_4,
-																								GroupLayout.PREFERRED_SIZE,
-																								110,
-																								GroupLayout.PREFERRED_SIZE)
-																						.addGroup(
-																								gl_contentPane
-																										.createParallelGroup(
-																												Alignment.LEADING,
-																												false)
-																										.addGroup(
-																												gl_contentPane
-																														.createSequentialGroup()
-																														.addGap(10)
-																														.addComponent(
-																																lblCausa,
-																																GroupLayout.DEFAULT_SIZE,
-																																GroupLayout.DEFAULT_SIZE,
-																																Short.MAX_VALUE))
-																										.addComponent(
-																												textField_3,
-																												GroupLayout.PREFERRED_SIZE,
-																												110,
-																												GroupLayout.PREFERRED_SIZE)))
-																		.addPreferredGap(
-																				ComponentPlacement.RELATED,
-																				28,
-																				Short.MAX_VALUE)
-																		.addComponent(
-																				scrollPane,
-																				GroupLayout.PREFERRED_SIZE,
-																				593,
-																				GroupLayout.PREFERRED_SIZE))
-														.addGroup(
-																gl_contentPane
-																		.createSequentialGroup()
-																		.addComponent(
-																				toolBar,
-																				GroupLayout.PREFERRED_SIZE,
-																				288,
+																gl_contentPane.createParallelGroup(Alignment.LEADING)
+																		.addGroup(gl_contentPane.createSequentialGroup()
+																				.addComponent(button_2)
+																				.addPreferredGap(
+																						ComponentPlacement.UNRELATED)
+																				.addComponent(button_4))
+																		.addComponent(textField,
+																				GroupLayout.PREFERRED_SIZE, 110,
 																				GroupLayout.PREFERRED_SIZE)
-																		.addContainerGap(
-																				495,
-																				Short.MAX_VALUE)))));
+																		.addComponent(
+																				textField_1, GroupLayout.PREFERRED_SIZE,
+																				110, GroupLayout.PREFERRED_SIZE)
+																		.addComponent(
+																				textField_2, GroupLayout.PREFERRED_SIZE,
+																				110, GroupLayout.PREFERRED_SIZE)
+																		.addGroup(gl_contentPane.createSequentialGroup()
+																				.addGap(19).addComponent(lblNotas,
+																						GroupLayout.PREFERRED_SIZE, 110,
+																						GroupLayout.PREFERRED_SIZE))
+																		.addGroup(gl_contentPane.createSequentialGroup()
+																				.addGap(10)
+																				.addComponent(lblTipodeequipo,
+																						GroupLayout.PREFERRED_SIZE, 110,
+																						GroupLayout.PREFERRED_SIZE))
+																		.addGroup(gl_contentPane.createSequentialGroup()
+																				.addGap(10).addComponent(lblCodequipo,
+																						GroupLayout.PREFERRED_SIZE, 110,
+																						GroupLayout.PREFERRED_SIZE))
+																		.addGroup(gl_contentPane.createSequentialGroup()
+																				.addGap(10)
+																				.addComponent(lblPiezareutilizable,
+																						GroupLayout.PREFERRED_SIZE, 110,
+																						GroupLayout.PREFERRED_SIZE))
+																		.addComponent(
+																				textField_4, GroupLayout.PREFERRED_SIZE,
+																				110, GroupLayout.PREFERRED_SIZE)
+																		.addGroup(gl_contentPane
+																				.createParallelGroup(Alignment.LEADING,
+																						false)
+																				.addGroup(gl_contentPane
+																						.createSequentialGroup().addGap(
+																								10)
+																						.addComponent(lblCausa,
+																								GroupLayout.DEFAULT_SIZE,
+																								GroupLayout.DEFAULT_SIZE,
+																								Short.MAX_VALUE))
+																				.addComponent(textField_3,
+																						GroupLayout.PREFERRED_SIZE, 110,
+																						GroupLayout.PREFERRED_SIZE)))
+														.addPreferredGap(ComponentPlacement.RELATED, 28,
+																Short.MAX_VALUE)
+														.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 593,
+																GroupLayout.PREFERRED_SIZE))
+										.addGroup(gl_contentPane.createSequentialGroup()
+												.addComponent(toolBar, GroupLayout.PREFERRED_SIZE, 288,
+														GroupLayout.PREFERRED_SIZE)
+												.addContainerGap(495, Short.MAX_VALUE)))));
 		gl_contentPane
-				.setVerticalGroup(gl_contentPane
-						.createParallelGroup(Alignment.TRAILING)
-						.addGroup(
-								gl_contentPane
-										.createSequentialGroup()
-										.addComponent(toolBar,
-												GroupLayout.PREFERRED_SIZE, 30,
-												GroupLayout.PREFERRED_SIZE)
-										.addPreferredGap(
-												ComponentPlacement.RELATED, 27,
-												Short.MAX_VALUE)
-										.addGroup(
-												gl_contentPane
-														.createParallelGroup(
-																Alignment.BASELINE)
-														.addComponent(
-																scrollPane,
-																GroupLayout.PREFERRED_SIZE,
-																367,
-																GroupLayout.PREFERRED_SIZE)
-														.addGroup(
-																gl_contentPane
-																		.createSequentialGroup()
-																		.addGroup(
-																				gl_contentPane
-																						.createParallelGroup(
-																								Alignment.LEADING)
-																						.addGroup(
-																								gl_contentPane
-																										.createSequentialGroup()
-																										.addGap(27)
-																										.addComponent(
-																												textField,
-																												GroupLayout.PREFERRED_SIZE,
-																												GroupLayout.DEFAULT_SIZE,
-																												GroupLayout.PREFERRED_SIZE)
-																										.addGap(12)
-																										.addComponent(
-																												lblNotas,
-																												GroupLayout.PREFERRED_SIZE,
-																												23,
-																												GroupLayout.PREFERRED_SIZE)
-																										.addGap(5)
-																										.addComponent(
-																												textField_1,
-																												GroupLayout.PREFERRED_SIZE,
-																												GroupLayout.DEFAULT_SIZE,
-																												GroupLayout.PREFERRED_SIZE))
-																						.addComponent(
-																								lblTipodeequipo,
-																								GroupLayout.PREFERRED_SIZE,
-																								23,
-																								GroupLayout.PREFERRED_SIZE))
-																		.addGap(8)
-																		.addComponent(
-																				lblCodequipo,
-																				GroupLayout.PREFERRED_SIZE,
-																				23,
-																				GroupLayout.PREFERRED_SIZE)
-																		.addGap(3)
-																		.addComponent(
-																				textField_2,
-																				GroupLayout.PREFERRED_SIZE,
-																				GroupLayout.DEFAULT_SIZE,
-																				GroupLayout.PREFERRED_SIZE)
-																		.addGap(14)
-																		.addComponent(
-																				lblCausa,
-																				GroupLayout.PREFERRED_SIZE,
-																				23,
-																				GroupLayout.PREFERRED_SIZE)
-																		.addGap(1)
-																		.addComponent(
-																				textField_3,
-																				GroupLayout.PREFERRED_SIZE,
-																				GroupLayout.DEFAULT_SIZE,
-																				GroupLayout.PREFERRED_SIZE)
-																		.addGap(4)
-																		.addComponent(
-																				lblPiezareutilizable,
-																				GroupLayout.PREFERRED_SIZE,
-																				23,
-																				GroupLayout.PREFERRED_SIZE)
-																		.addPreferredGap(
-																				ComponentPlacement.RELATED)
-																		.addComponent(
-																				textField_4,
-																				GroupLayout.PREFERRED_SIZE,
-																				GroupLayout.DEFAULT_SIZE,
-																				GroupLayout.PREFERRED_SIZE)
-																		.addPreferredGap(
-																				ComponentPlacement.RELATED,
-																				66,
-																				Short.MAX_VALUE)
-																		.addGroup(
-																				gl_contentPane
-																						.createParallelGroup(
-																								Alignment.BASELINE)
-																						.addComponent(
-																								button_2)
-																						.addComponent(
-																								button_4))))
-										.addContainerGap()));
+				.setVerticalGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+								.addComponent(toolBar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+								.addPreferredGap(ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
+								.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE).addComponent(
+										scrollPane, GroupLayout.PREFERRED_SIZE, 367,
+										GroupLayout.PREFERRED_SIZE)
+										.addGroup(gl_contentPane.createSequentialGroup()
+												.addGroup(gl_contentPane
+														.createParallelGroup(Alignment.LEADING).addGroup(gl_contentPane
+																.createSequentialGroup()
+																.addGap(27)
+																.addComponent(textField, GroupLayout.PREFERRED_SIZE,
+																		GroupLayout.DEFAULT_SIZE,
+																		GroupLayout.PREFERRED_SIZE)
+																.addGap(12)
+																.addComponent(lblNotas, GroupLayout.PREFERRED_SIZE, 23,
+																		GroupLayout.PREFERRED_SIZE)
+																.addGap(5).addComponent(textField_1,
+																		GroupLayout.PREFERRED_SIZE,
+																		GroupLayout.DEFAULT_SIZE,
+																		GroupLayout.PREFERRED_SIZE))
+														.addComponent(lblTipodeequipo, GroupLayout.PREFERRED_SIZE, 23,
+																GroupLayout.PREFERRED_SIZE))
+												.addGap(8)
+												.addComponent(lblCodequipo, GroupLayout.PREFERRED_SIZE, 23,
+														GroupLayout.PREFERRED_SIZE)
+												.addGap(3)
+												.addComponent(textField_2, GroupLayout.PREFERRED_SIZE,
+														GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+												.addGap(14)
+												.addComponent(lblCausa, GroupLayout.PREFERRED_SIZE, 23,
+														GroupLayout.PREFERRED_SIZE)
+												.addGap(1)
+												.addComponent(textField_3, GroupLayout.PREFERRED_SIZE,
+														GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+												.addGap(4)
+												.addComponent(lblPiezareutilizable, GroupLayout.PREFERRED_SIZE, 23,
+														GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.RELATED)
+												.addComponent(textField_4, GroupLayout.PREFERRED_SIZE,
+														GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+												.addPreferredGap(ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
+												.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+														.addComponent(button_2).addComponent(button_4))))
+								.addContainerGap()));
 
 		btnonEquipo = new JButton("Equipos");
 		toolBar.add(btnonEquipo);
@@ -380,30 +250,15 @@ public class TbAlmacen extends JFrame {
 		toolBar.add(btnUsuario);
 
 		table = new JTable();
-		table.setModel(new DefaultTableModel(new Object[][] {
-				{ null, null, null, null, null },
-				{ null, null, null, null, null },
-				{ null, null, null, null, null },
-				{ null, null, null, null, null },
-				{ null, null, null, null, null },
-				{ null, null, null, null, null },
-				{ null, null, null, null, null },
-				{ null, null, null, null, null },
-				{ null, null, null, null, null },
-				{ null, null, null, null, null },
-				{ null, null, null, null, null },
-				{ null, null, null, null, null },
-				{ null, null, null, null, null },
-				{ null, null, null, null, null },
-				{ null, null, null, null, null },
-				{ null, null, null, null, null },
-				{ null, null, null, null, null },
-				{ null, null, null, null, null },
-				{ null, null, null, null, null },
-				{ null, null, null, null, null },
-				{ null, null, null, null, null }, }, new String[] {
-				"TipoDeEquipo", "Notas", "Cod_Equipo", "Causa",
-				"PiezaReutilizable" }));
+		table.setModel(new DefaultTableModel(new Object[][] { { null, null, null, null, null },
+				{ null, null, null, null, null }, { null, null, null, null, null }, { null, null, null, null, null },
+				{ null, null, null, null, null }, { null, null, null, null, null }, { null, null, null, null, null },
+				{ null, null, null, null, null }, { null, null, null, null, null }, { null, null, null, null, null },
+				{ null, null, null, null, null }, { null, null, null, null, null }, { null, null, null, null, null },
+				{ null, null, null, null, null }, { null, null, null, null, null }, { null, null, null, null, null },
+				{ null, null, null, null, null }, { null, null, null, null, null }, { null, null, null, null, null },
+				{ null, null, null, null, null }, { null, null, null, null, null }, },
+				new String[] { "TipoDeEquipo", "Notas", "Cod_Equipo", "Causa", "PiezaReutilizable" }));
 		scrollPane.setViewportView(table);
 		contentPane.setLayout(gl_contentPane);
 	}

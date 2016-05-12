@@ -136,4 +136,9 @@ public class Caracteristicas_usuario extends JFrame {
 		});
 		contentPane.add(btnCancelar_Cusuario);
 	}
+	
+	public void setPantalla(TbUsers Pantalla){
+		this.pantalla = Pantalla;
+	}
+	
 }

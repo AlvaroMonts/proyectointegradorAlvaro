@@ -21,21 +21,6 @@ public class RegPrestamos extends JFrame {
 	private JTextField textField_4;
 	private JTextField textField_5;
 
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					RegPrestamos frame = new RegPrestamos();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
 	/**
 	 * Create the frame.

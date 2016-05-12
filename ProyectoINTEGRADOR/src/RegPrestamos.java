@@ -20,6 +20,15 @@ public class RegPrestamos extends JFrame {
 	private JTextField textField_3;
 	private JTextField textField_4;
 	private JTextField textField_5;
+	private JButton btnCancelar;
+	private JButton btnRegistrarPrestamo;
+	private JLabel lblFechaDePrestamo;
+	private JLabel lblNewLabel;
+	private JLabel label;
+	private JLabel label_1;
+	private JLabel label_2;
+	private JLabel label_3;
+	private TbEquipos TEquipo;
 
 
 	/**
@@ -34,27 +43,27 @@ public class RegPrestamos extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblFechaDePrestamo = new JLabel("Fecha inicio");
+		lblFechaDePrestamo = new JLabel("Fecha inicio");
 		lblFechaDePrestamo.setBounds(123, 110, 101, 14);
 		contentPane.add(lblFechaDePrestamo);
 		
-		JLabel lblNewLabel = new JLabel("Fecha devolucion");
+		lblNewLabel = new JLabel("Fecha devolucion");
 		lblNewLabel.setBounds(123, 156, 84, 14);
 		contentPane.add(lblNewLabel);
 		
-		JLabel label = new JLabel("Equipo Prestado");
+		label = new JLabel("Equipo Prestado");
 		label.setBounds(123, 203, 114, 14);
 		contentPane.add(label);
 		
-		JLabel label_1 = new JLabel("C\u00F3digo del Equipo");
+		label_1 = new JLabel("C\u00F3digo del Equipo");
 		label_1.setBounds(445, 110, 122, 14);
 		contentPane.add(label_1);
 		
-		JLabel label_2 = new JLabel("Destino del pr\u00E9stamo");
+		label_2 = new JLabel("Destino del pr\u00E9stamo");
 		label_2.setBounds(445, 156, 122, 14);
 		contentPane.add(label_2);
 		
-		JLabel label_3 = new JLabel("Responsable");
+		label_3 = new JLabel("Responsable");
 		label_3.setBounds(445, 203, 86, 14);
 		contentPane.add(label_3);
 		
@@ -88,7 +97,7 @@ public class RegPrestamos extends JFrame {
 		textField_5.setBounds(580, 200, 86, 20);
 		contentPane.add(textField_5);
 		
-		JButton btnRegistrarPrestamo = new JButton("Registrar prestamo");
+		btnRegistrarPrestamo = new JButton("Registrar prestamo");
 		btnRegistrarPrestamo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}
@@ -96,7 +105,14 @@ public class RegPrestamos extends JFrame {
 		btnRegistrarPrestamo.setBounds(704, 385, 125, 23);
 		contentPane.add(btnRegistrarPrestamo);
 		
-		JButton btnCancelar = new JButton("Cancelar");
+		btnCancelar = new JButton("Cancelar");
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				TEquipo = new TbEquipos();
+				TEquipo.setVisible(true);
+			}
+		});
 		btnCancelar.setBounds(542, 385, 89, 23);
 		contentPane.add(btnCancelar);
 	}

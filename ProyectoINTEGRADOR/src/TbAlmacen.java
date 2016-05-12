@@ -10,6 +10,7 @@ import javax.swing.GroupLayout.Alignment;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
 import javax.swing.JToolBar;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JButton;
@@ -42,6 +43,7 @@ public class TbAlmacen extends JFrame {
 	private TbHistorial Historial;
 	private TbPrestamos Prestamos;
 	private TbUsers Users;
+	private JButton button;
 
 	/**
 	 * Create the frame.
@@ -55,152 +57,55 @@ public class TbAlmacen extends JFrame {
 		setContentPane(contentPane);
 
 		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(162, 56, 636, 367);
 		scrollPane.setToolTipText("");
 
 		toolBar = new JToolBar();
+		toolBar.setBounds(15, 5, 288, 30);
 
 		button_2 = new JButton("Buscar");
+		button_2.setBounds(25, 343, 85, 23);
 
 		button_4 = new JButton("Quitar filtro\r\n");
+		button_4.setBounds(15, 390, 106, 23);
 
 		lblTipodeequipo = new JLabel("Tipo de Equipo");
+		lblTipodeequipo.setBounds(15, 49, 110, 23);
 
 		textField = new JTextField();
+		textField.setBounds(15, 83, 110, 20);
 		textField.setColumns(10);
 
 		lblNotas = new JLabel("Notas\r\n");
+		lblNotas.setBounds(15, 114, 110, 23);
 
 		textField_1 = new JTextField();
+		textField_1.setBounds(15, 143, 110, 20);
 		textField_1.setColumns(10);
 
 		JLabel lblCodequipo = new JLabel("Codigo del equipo\r\n");
+		lblCodequipo.setBounds(15, 169, 110, 23);
 
 		textField_2 = new JTextField();
+		textField_2.setBounds(15, 197, 110, 20);
 		textField_2.setColumns(10);
 
 		lblCausa = new JLabel("Causa");
+		lblCausa.setBounds(15, 228, 100, 23);
 
 		textField_3 = new JTextField();
+		textField_3.setBounds(15, 255, 110, 20);
 		textField_3.setColumns(10);
 
 		lblPiezareutilizable = new JLabel("Piezas Reutilizables");
+		lblPiezareutilizable.setBounds(15, 279, 137, 23);
 
 		textField_4 = new JTextField();
+		textField_4.setBounds(15, 308, 110, 20);
 		textField_4.setColumns(10);
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane
-				.setHorizontalGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-								.addContainerGap().addGroup(gl_contentPane
-										.createParallelGroup(
-												Alignment.TRAILING)
-										.addGroup(Alignment.LEADING,
-												gl_contentPane.createSequentialGroup()
-														.addGroup(
-																gl_contentPane.createParallelGroup(Alignment.LEADING)
-																		.addGroup(gl_contentPane.createSequentialGroup()
-																				.addComponent(button_2)
-																				.addPreferredGap(
-																						ComponentPlacement.UNRELATED)
-																				.addComponent(button_4))
-																		.addComponent(textField,
-																				GroupLayout.PREFERRED_SIZE, 110,
-																				GroupLayout.PREFERRED_SIZE)
-																		.addComponent(
-																				textField_1, GroupLayout.PREFERRED_SIZE,
-																				110, GroupLayout.PREFERRED_SIZE)
-																		.addComponent(
-																				textField_2, GroupLayout.PREFERRED_SIZE,
-																				110, GroupLayout.PREFERRED_SIZE)
-																		.addGroup(gl_contentPane.createSequentialGroup()
-																				.addGap(19).addComponent(lblNotas,
-																						GroupLayout.PREFERRED_SIZE, 110,
-																						GroupLayout.PREFERRED_SIZE))
-																		.addGroup(gl_contentPane.createSequentialGroup()
-																				.addGap(10)
-																				.addComponent(lblTipodeequipo,
-																						GroupLayout.PREFERRED_SIZE, 110,
-																						GroupLayout.PREFERRED_SIZE))
-																		.addGroup(gl_contentPane.createSequentialGroup()
-																				.addGap(10).addComponent(lblCodequipo,
-																						GroupLayout.PREFERRED_SIZE, 110,
-																						GroupLayout.PREFERRED_SIZE))
-																		.addGroup(gl_contentPane.createSequentialGroup()
-																				.addGap(10)
-																				.addComponent(lblPiezareutilizable,
-																						GroupLayout.PREFERRED_SIZE, 110,
-																						GroupLayout.PREFERRED_SIZE))
-																		.addComponent(
-																				textField_4, GroupLayout.PREFERRED_SIZE,
-																				110, GroupLayout.PREFERRED_SIZE)
-																		.addGroup(gl_contentPane
-																				.createParallelGroup(Alignment.LEADING,
-																						false)
-																				.addGroup(gl_contentPane
-																						.createSequentialGroup().addGap(
-																								10)
-																						.addComponent(lblCausa,
-																								GroupLayout.DEFAULT_SIZE,
-																								GroupLayout.DEFAULT_SIZE,
-																								Short.MAX_VALUE))
-																				.addComponent(textField_3,
-																						GroupLayout.PREFERRED_SIZE, 110,
-																						GroupLayout.PREFERRED_SIZE)))
-														.addPreferredGap(ComponentPlacement.RELATED, 28,
-																Short.MAX_VALUE)
-														.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 593,
-																GroupLayout.PREFERRED_SIZE))
-										.addGroup(gl_contentPane.createSequentialGroup()
-												.addComponent(toolBar, GroupLayout.PREFERRED_SIZE, 288,
-														GroupLayout.PREFERRED_SIZE)
-												.addContainerGap(495, Short.MAX_VALUE)))));
-		gl_contentPane
-				.setVerticalGroup(gl_contentPane.createParallelGroup(Alignment.TRAILING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-								.addComponent(toolBar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-								.addPreferredGap(ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-								.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE).addComponent(
-										scrollPane, GroupLayout.PREFERRED_SIZE, 367,
-										GroupLayout.PREFERRED_SIZE)
-										.addGroup(gl_contentPane.createSequentialGroup()
-												.addGroup(gl_contentPane
-														.createParallelGroup(Alignment.LEADING).addGroup(gl_contentPane
-																.createSequentialGroup()
-																.addGap(27)
-																.addComponent(textField, GroupLayout.PREFERRED_SIZE,
-																		GroupLayout.DEFAULT_SIZE,
-																		GroupLayout.PREFERRED_SIZE)
-																.addGap(12)
-																.addComponent(lblNotas, GroupLayout.PREFERRED_SIZE, 23,
-																		GroupLayout.PREFERRED_SIZE)
-																.addGap(5).addComponent(textField_1,
-																		GroupLayout.PREFERRED_SIZE,
-																		GroupLayout.DEFAULT_SIZE,
-																		GroupLayout.PREFERRED_SIZE))
-														.addComponent(lblTipodeequipo, GroupLayout.PREFERRED_SIZE, 23,
-																GroupLayout.PREFERRED_SIZE))
-												.addGap(8)
-												.addComponent(lblCodequipo, GroupLayout.PREFERRED_SIZE, 23,
-														GroupLayout.PREFERRED_SIZE)
-												.addGap(3)
-												.addComponent(textField_2, GroupLayout.PREFERRED_SIZE,
-														GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-												.addGap(14)
-												.addComponent(lblCausa, GroupLayout.PREFERRED_SIZE, 23,
-														GroupLayout.PREFERRED_SIZE)
-												.addGap(1)
-												.addComponent(textField_3, GroupLayout.PREFERRED_SIZE,
-														GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-												.addGap(4)
-												.addComponent(lblPiezareutilizable, GroupLayout.PREFERRED_SIZE, 23,
-														GroupLayout.PREFERRED_SIZE)
-												.addPreferredGap(ComponentPlacement.RELATED)
-												.addComponent(textField_4, GroupLayout.PREFERRED_SIZE,
-														GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-												.addPreferredGap(ComponentPlacement.RELATED, 66, Short.MAX_VALUE)
-												.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-														.addComponent(button_2).addComponent(button_4))))
-								.addContainerGap()));
+		
+		button = new JButton("Cerrar sesi\u00F3n");
+		button.setBounds(670, 5, 118, 23);
 
 		btnonEquipo = new JButton("Equipos");
 		toolBar.add(btnonEquipo);
@@ -236,31 +141,67 @@ public class TbAlmacen extends JFrame {
 		btnUsuario = new JButton("Usuarios");
 		btnUsuario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				btnUsuario.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent arg3) {
 						setVisible(false);
 						Users = new TbUsers();
 						Users.setVisible(true);
-
-					}
-				});
-
 			}
 		});
 		toolBar.add(btnUsuario);
 
 		table = new JTable();
-		table.setModel(new DefaultTableModel(new Object[][] { { null, null, null, null, null },
-				{ null, null, null, null, null }, { null, null, null, null, null }, { null, null, null, null, null },
-				{ null, null, null, null, null }, { null, null, null, null, null }, { null, null, null, null, null },
-				{ null, null, null, null, null }, { null, null, null, null, null }, { null, null, null, null, null },
-				{ null, null, null, null, null }, { null, null, null, null, null }, { null, null, null, null, null },
-				{ null, null, null, null, null }, { null, null, null, null, null }, { null, null, null, null, null },
-				{ null, null, null, null, null }, { null, null, null, null, null }, { null, null, null, null, null },
-				{ null, null, null, null, null }, { null, null, null, null, null }, },
-				new String[] { "TipoDeEquipo", "Notas", "Cod_Equipo", "Causa", "PiezaReutilizable" }));
+		table.setModel(new DefaultTableModel(
+			new Object[][] {
+				{"Tablet", "001", "Pantalla Rota", "La pantalla se puede arreglar", "RAM, Procesador, HDD"},
+				{"Portatil", "002", "Placa base rota", "Se le puede cambiar por otra", "RAM, Tarjeta grafica, procesador, HDD y pantalla"},
+				{"Sobremesa", "002", "Fuente de alimentacion y procesador roto", "Se le puede cambiar las dos piezas", "RAM, Placa base, Tarjeta grafica"},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+				{null, null, null, null, null},
+			},
+			new String[] {
+				"Tipo De Equipo", "Codigo equipo", "Causa", "Notas", "Piezas Reutilizables"
+			}
+		));
+		table.getColumnModel().getColumn(1).setPreferredWidth(92);
+		table.getColumnModel().getColumn(3).setPreferredWidth(85);
+		table.getColumnModel().getColumn(4).setPreferredWidth(113);
+		for (int i = 0; i < table.getColumnModel().getColumnCount(); i++) {
+			TableColumn t = table.getColumnModel().getColumn(i);
+			EditorDeTablas cellEditor = new EditorDeTablas();
+			t.setCellEditor(cellEditor);
+		}
 		scrollPane.setViewportView(table);
-		contentPane.setLayout(gl_contentPane);
+		contentPane.setLayout(null);
+		contentPane.add(textField);
+		contentPane.add(textField_1);
+		contentPane.add(textField_2);
+		contentPane.add(lblNotas);
+		contentPane.add(lblTipodeequipo);
+		contentPane.add(lblCodequipo);
+		contentPane.add(lblPiezareutilizable);
+		contentPane.add(textField_4);
+		contentPane.add(lblCausa);
+		contentPane.add(textField_3);
+		contentPane.add(button_2);
+		contentPane.add(button_4);
+		contentPane.add(scrollPane);
+		contentPane.add(toolBar);
+		contentPane.add(button);
 	}
 
 	public void setEquipo(TbEquipos Equipos) {

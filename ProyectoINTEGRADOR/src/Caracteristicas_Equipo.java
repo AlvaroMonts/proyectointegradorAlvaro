@@ -23,7 +23,6 @@ import javax.swing.JTextArea;
 import javax.swing.JTabbedPane;
 
 public class Caracteristicas_Equipo extends JFrame {
-
 	private JPanel contentPane;
 	private JTextField textField;
 	private JTextField textField_2;

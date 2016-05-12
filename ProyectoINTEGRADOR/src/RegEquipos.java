@@ -90,6 +90,29 @@ public class RegEquipos extends JFrame {
 	private JTextField textField_51;
 	private JTextField textField_48;
 	private TbEquipos pantalla;
+	private JLabel label;
+	private JLabel label_1;
+	private JLabel label_2;
+	private JLabel label_3;
+	private JLabel label_4;
+	private JLabel label_5;
+	private JLabel label_6;
+	private JLabel label_7;
+	private JLabel label_13;
+	private JLabel label_27;
+	private JLabel label_28;
+	private JLabel label_20;
+	private JLabel label_19;
+	private JLabel label_18;
+	private JLabel label_17;
+	private JLabel label_15;
+	private JLabel label_26;
+	private JLabel label_22;
+	private JLabel label_21;
+	private JLabel label_16;
+	private JLabel label_25;
+	private JLabel label_24;
+	private JLabel label_23;
 
 
 	/**
@@ -104,10 +127,10 @@ public class RegEquipos extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel label_1 = new JLabel("ID");
-		label_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		label_1.setBounds(133, 48, 29, 14);
-		contentPane.add(label_1);
+		label = new JLabel("ID");
+		label.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		label.setBounds(133, 48, 29, 14);
+		contentPane.add(label);
 		
 		textField = new JTextField();
 		textField.setColumns(10);
@@ -119,15 +142,15 @@ public class RegEquipos extends JFrame {
 		textField_2.setBounds(178, 74, 86, 20);
 		contentPane.add(textField_2);
 		
-		JLabel label_2 = new JLabel("Marca");
-		label_2.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		label_2.setBounds(122, 75, 46, 14);
-		contentPane.add(label_2);
+		label_1 = new JLabel("Marca");
+		label_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		label_1.setBounds(122, 75, 46, 14);
+		contentPane.add(label_1);
 		
-		JLabel label_3 = new JLabel("Modelo");
-		label_3.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		label_3.setBounds(118, 106, 46, 14);
-		contentPane.add(label_3);
+		label_2 = new JLabel("Modelo");
+		label_2.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		label_2.setBounds(118, 106, 46, 14);
+		contentPane.add(label_2);
 		
 		textField_3 = new JTextField();
 		textField_3.setColumns(10);
@@ -154,10 +177,10 @@ public class RegEquipos extends JFrame {
 			radioButton.setEnabled(true);
 		}
 		
-		JLabel label_4 = new JLabel("Disponibilidad");
-		label_4.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		label_4.setBounds(85, 134, 79, 14);
-		contentPane.add(label_4);
+		label_3 = new JLabel("Disponibilidad");
+		label_3.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		label_3.setBounds(85, 134, 79, 14);
+		contentPane.add(label_3);
 		
 		radioButton_2 = new JRadioButton("No");
 		radioButton_2.setBackground(new Color(135, 206, 235));
@@ -179,24 +202,24 @@ public class RegEquipos extends JFrame {
 			radioButton_2.setEnabled(true);
 		}
 		
-		JLabel label_5 = new JLabel("Prestable");
-		label_5.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		label_5.setBounds(114, 166, 55, 14);
-		contentPane.add(label_5);
+		label_4 = new JLabel("Prestable");
+		label_4.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		label_4.setBounds(114, 166, 55, 14);
+		contentPane.add(label_4);
 
 		textAreaNotas = new JTextArea();
 		textAreaNotas.setLineWrap(true);
 		textAreaNotas.setBounds(532, 129, 214, 53);
 		contentPane.add(textAreaNotas);
 		
-		JLabel label_28 = new JLabel("Notas");
+		label_28 = new JLabel("Notas");
 		label_28.setBounds(611, 107, 29, 25);
 		contentPane.add(label_28);
 		
-		JLabel label_27 = new JLabel("Tipo de uso");
-		label_27.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		label_27.setBounds(532, 60, 65, 14);
-		contentPane.add(label_27);
+		label_13 = new JLabel("Tipo de uso");
+		label_13.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		label_13.setBounds(532, 60, 65, 14);
+		contentPane.add(label_13);
 		
 		textField_23 = new JTextField();
 		textField_23.setColumns(10);
@@ -208,15 +231,15 @@ public class RegEquipos extends JFrame {
 		textField_24.setBounds(631, 86, 86, 20);
 		contentPane.add(textField_24);
 		
-		JLabel label_29 = new JLabel("Estado");
-		label_29.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		label_29.setBounds(551, 88, 46, 14);
-		contentPane.add(label_29);
+		label_27 = new JLabel("Estado");
+		label_27.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		label_27.setBounds(551, 88, 46, 14);
+		contentPane.add(label_27);
 		
-		JLabel label_30 = new JLabel("Edificio");
-		label_30.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		label_30.setBounds(345, 60, 46, 14);
-		contentPane.add(label_30);
+		label_5 = new JLabel("Edificio");
+		label_5.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		label_5.setBounds(345, 60, 46, 14);
+		contentPane.add(label_5);
 		
 		textField_25 = new JTextField();
 		textField_25.setColumns(10);
@@ -228,10 +251,10 @@ public class RegEquipos extends JFrame {
 		textField_26.setBounds(404, 95, 86, 20);
 		contentPane.add(textField_26);
 		
-		JLabel label_31 = new JLabel("Sala");
-		label_31.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		label_31.setBounds(355, 98, 29, 14);
-		contentPane.add(label_31);
+		label_6 = new JLabel("Sala");
+		label_6.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		label_6.setBounds(355, 98, 29, 14);
+		contentPane.add(label_6);
 		
 		textField_29 = new JTextField();
 		textField_29.setColumns(10);
@@ -243,10 +266,10 @@ public class RegEquipos extends JFrame {
 		textField_30.setBounds(404, 160, 86, 20);
 		contentPane.add(textField_30);
 		
-		JLabel label_34 = new JLabel("Almacenamiento");
-		label_34.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		label_34.setBounds(304, 139, 100, 30);
-		contentPane.add(label_34);
+		label_7 = new JLabel("Almacenamiento");
+		label_7.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		label_7.setBounds(304, 139, 100, 30);
+		contentPane.add(label_7);
 		
 		tPSobremesa = new JTabbedPane(JTabbedPane.TOP);
 		tPSobremesa.setBackground(new Color(135, 206, 235));
@@ -261,11 +284,11 @@ public class RegEquipos extends JFrame {
 		btnAltaSobremesa.setBounds(565, 180, 129, 25);
 		btnAltaSobremesa.setFont(new Font("Times New Roman", Font.BOLD, 13));
 		
-		JLabel label_20 = new JLabel("TARJETA GR\u00C1FICA");
+		label_20 = new JLabel("TARJETA GR\u00C1FICA");
 		label_20.setBounds(59, 36, 122, 14);
 		label_20.setFont(new Font("Tahoma", Font.BOLD, 13));
 		
-		JLabel label_19 = new JLabel("Marca");
+		label_19 = new JLabel("Marca");
 		label_19.setBounds(55, 66, 43, 14);
 		label_19.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		
@@ -273,7 +296,7 @@ public class RegEquipos extends JFrame {
 		textField_18.setBounds(111, 64, 86, 20);
 		textField_18.setColumns(10);
 		
-		JLabel label_18 = new JLabel("Modelo");
+		label_18 = new JLabel("Modelo");
 		label_18.setBounds(55, 107, 46, 14);
 		label_18.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		
@@ -285,7 +308,7 @@ public class RegEquipos extends JFrame {
 		textField_16.setBounds(111, 142, 86, 20);
 		textField_16.setColumns(10);
 		
-		JLabel label_17 = new JLabel("Almacenamiento");
+		label_17 = new JLabel("Almacenamiento");
 		label_17.setBounds(10, 145, 91, 14);
 		label_17.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		
@@ -293,7 +316,7 @@ public class RegEquipos extends JFrame {
 		textField_13.setBounds(331, 45, 86, 20);
 		textField_13.setColumns(10);
 		
-		JLabel label_15 = new JLabel("Roseta");
+		label_15 = new JLabel("Roseta");
 		label_15.setBounds(275, 47, 46, 14);
 		label_15.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		panel.setLayout(null);
@@ -308,12 +331,12 @@ public class RegEquipos extends JFrame {
 		panel.add(textField_13);
 		panel.add(label_15);
 		
-		JLabel label_25 = new JLabel("PROCESADOR");
+		label_25 = new JLabel("PROCESADOR");
 		label_25.setBounds(552, 72, 94, 14);
 		panel.add(label_25);
 		label_25.setFont(new Font("Tahoma", Font.BOLD, 13));
 		
-		JLabel label_24 = new JLabel("Modelo");
+		label_24 = new JLabel("Modelo");
 		label_24.setBounds(520, 102, 60, 14);
 		panel.add(label_24);
 		label_24.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -328,17 +351,17 @@ public class RegEquipos extends JFrame {
 		panel.add(textField_21);
 		textField_21.setColumns(10);
 		
-		JLabel label_23 = new JLabel("Velocidad");
+		label_23 = new JLabel("Velocidad");
 		label_23.setBounds(505, 133, 65, 14);
 		panel.add(label_23);
 		label_23.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		
-		JLabel label_26 = new JLabel("MEMORIA RAM ");
+		label_26 = new JLabel("MEMORIA RAM ");
 		label_26.setBounds(307, 81, 110, 14);
 		panel.add(label_26);
 		label_26.setFont(new Font("Tahoma", Font.BOLD, 13));
 		
-		JLabel label_22 = new JLabel("Capacidad");
+		label_22 = new JLabel("Capacidad");
 		label_22.setBounds(260, 108, 60, 14);
 		panel.add(label_22);
 		label_22.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -353,7 +376,7 @@ public class RegEquipos extends JFrame {
 		panel.add(textField_19);
 		textField_19.setColumns(10);
 		
-		JLabel label_21 = new JLabel("Velocidad");
+		label_21 = new JLabel("Velocidad");
 		label_21.setBounds(260, 141, 60, 14);
 		panel.add(label_21);
 		label_21.setFont(new Font("Tahoma", Font.PLAIN, 12));
@@ -363,7 +386,7 @@ public class RegEquipos extends JFrame {
 		panel.add(textField_12);
 		textField_12.setColumns(10);
 		
-		JLabel label_16 = new JLabel("SSOO");
+		label_16 = new JLabel("SSOO");
 		label_16.setBounds(527, 38, 39, 14);
 		panel.add(label_16);
 		label_16.setFont(new Font("Tahoma", Font.PLAIN, 12));

@@ -1,5 +1,7 @@
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -22,6 +24,7 @@ public class RegUsuarios extends JFrame {
 	private JTextField textField_4;
 	private JButton btnCancelar;
 	private JButton button;
+	private TbUsers pantalla;
 
 
 	/**
@@ -112,6 +115,15 @@ public class RegUsuarios extends JFrame {
 		btnCancelar = new JButton("Cancelar");
 		btnCancelar.setBounds(507, 356, 89, 23);
 		contentPane.add(btnCancelar);
+		btnCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				setVisible(false);
+				pantalla=new TbUsers();
+				pantalla.setVisible(true);
+			}
+		});
 	}
-
+	public void setPantalla(TbUsers user){
+		this.pantalla = user;
+	}
 }

@@ -15,6 +15,12 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JLabel;
+import java.awt.Font;
+import javax.swing.UIManager;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class TbEquipos extends JFrame {
 
@@ -39,6 +45,8 @@ public class TbEquipos extends JFrame {
 	private JComboBox comboBox;
 	private JComboBox comboBox_1;
 	private JButton btnCerrarSesin;
+	private JLabel lblTipoDeEquipo;
+	private JLabel lblCaracteristicas;
 	
 
 	/**
@@ -51,56 +59,50 @@ public class TbEquipos extends JFrame {
 		contentPane.setBackground(new Color(135, 206, 235));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
 		
 		comboBox = new JComboBox();
+		comboBox.setBounds(62, 133, 75, 20);
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Equipo", "COD_Equipo", "Marca", "Modelo", "Tipo de uso", "Disponibilidad", "Prestable", "Edificio", "Almacenamiento"}));
-		comboBox.setBounds(61, 125, 75, 20);
-		contentPane.add(comboBox);
 		
 		textField = new JTextField();
+		textField.setBounds(62, 172, 86, 20);
 		textField.setColumns(10);
-		textField.setBounds(61, 156, 86, 20);
-		contentPane.add(textField);
 		
 		comboBox_1 = new JComboBox();
+		comboBox_1.setBounds(62, 203, 75, 20);
 		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"Equipo", "COD_Equipo", "Marca", "Modelo", "Tipo de uso", "Disponibilidad", "Prestable", "Edificio", "Almacenamiento"}));
-		comboBox_1.setBounds(61, 187, 75, 20);
-		contentPane.add(comboBox_1);
 		
 		textField_1 = new JTextField();
+		textField_1.setBounds(62, 234, 86, 20);
 		textField_1.setColumns(10);
-		textField_1.setBounds(61, 218, 86, 20);
-		contentPane.add(textField_1);
 		
 		comboBox_2 = new JComboBox();
+		comboBox_2.setBounds(62, 265, 75, 20);
 		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"Equipo", "COD_Equipo", "Marca", "Modelo", "Tipo de uso", "Disponibilidad", "Prestable", "Edificio", "Almacenamiento"}));
-		comboBox_2.setBounds(61, 249, 75, 20);
-		contentPane.add(comboBox_2);
 		
 		textField_2 = new JTextField();
+		textField_2.setBounds(62, 296, 86, 20);
 		textField_2.setColumns(10);
-		textField_2.setBounds(61, 280, 86, 20);
-		contentPane.add(textField_2);
 		
 		button = new JButton("Buscar");
-		button.setBounds(61, 311, 75, 23);
-		contentPane.add(button);
+		button.setBounds(62, 327, 75, 23);
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
 		
 		button_1 = new JButton("Restaurar Filtros");
-		button_1.setBounds(41, 345, 138, 23);
-		contentPane.add(button_1);
+		button_1.setBounds(26, 361, 138, 23);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(186, 90, 684, 326);
-		contentPane.add(scrollPane);
+		scrollPane.setBounds(187, 90, 684, 326);
 		
 		table = new JTable();
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
-				{null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
+				{"Sobremesa", "001", "Asus", "15K7V", "Docencia", "Si", "No", "Madrid", "1Tb"},
+				{"Portatil", "002", "MSI", "12LK89Z", "Docencia", "Si", "No", "Berlin", "500Gb SDD"},
+				{"Movil", "003", "Samsung", "Galaxy 6", "Ocio", "No", "Si", "Berlin", "32Gb"},
 				{null, null, null, null, null, null, null, null, null},
 				{null, null, null, null, null, null, null, null, null},
 				{null, null, null, null, null, null, null, null, null},
@@ -172,19 +174,6 @@ public class TbEquipos extends JFrame {
 		
 		JToolBar toolBar = new JToolBar();
 		toolBar.setBounds(41, 14, 288, 30);
-		contentPane.add(toolBar);
-		
-		
-		
-		JButton button_3 = new JButton("Historial");
-		button_3.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
-				Pantalla1 = new TbHistorial();
-				Pantalla1.setVisible(true);
-			}
-		});
-		toolBar.add(button_3);
 		
 		JButton button_2 = new JButton("Prestamos");
 		button_2.addActionListener(new ActionListener() {
@@ -194,8 +183,6 @@ public class TbEquipos extends JFrame {
 				Pantalla2.setVisible(true);
 			}
 		});
-		
-		toolBar.add(button_2);
 		
 		
 		
@@ -209,6 +196,8 @@ public class TbEquipos extends JFrame {
 		});
 		toolBar.add(btnUsuarios);
 		
+		toolBar.add(button_2);
+		
 		JButton button_4 = new JButton("Almacen");
 		button_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -217,14 +206,27 @@ public class TbEquipos extends JFrame {
 				Pantalla4.setVisible(true);
 			}
 		});
+		
+		
+		
+		JButton button_3 = new JButton("Historial");
+		button_3.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				Pantalla1 = new TbHistorial();
+				Pantalla1.setVisible(true);
+			}
+		});
+		toolBar.add(button_3);
 		toolBar.add(button_4);
 		
 		comboBox_3 = new JComboBox();
-		comboBox_3.setBackground(new Color(135, 206, 235));
-		comboBox_3.setBounds(61, 90, 75, 20);
-		contentPane.add(comboBox_3);
+		comboBox_3.setBounds(62, 82, 102, 20);
+		comboBox_3.setModel(new DefaultComboBoxModel(new String[] {"Todos", "Sobremesa", "Portatil", "Tablet/Movil", "Cintiq", "Proyector", "Tableta gr\u00E1fica", "Monitor", "Consola"}));
+		comboBox_3.setBackground(UIManager.getColor("Button.background"));
 		
 		btnDarDeAlta = new JButton("Dar de alta equipo");
+		btnDarDeAlta.setBounds(692, 52, 146, 23);
 		btnDarDeAlta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 					setVisible(false);
@@ -233,10 +235,9 @@ public class TbEquipos extends JFrame {
 
 			}
 		});
-		btnDarDeAlta.setBounds(692, 52, 146, 23);
-		contentPane.add(btnDarDeAlta);
 		
 		btnDarDeAlta_1 = new JButton("Dar de alta prestamo");
+		btnDarDeAlta_1.setBounds(510, 52, 157, 23);
 		btnDarDeAlta_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
@@ -244,12 +245,37 @@ public class TbEquipos extends JFrame {
 				RPrestamo.setVisible(true);
 			}
 		});
-		btnDarDeAlta_1.setBounds(510, 52, 157, 23);
-		contentPane.add(btnDarDeAlta_1);
 		
 		btnCerrarSesin = new JButton("Cerrar sesi\u00F3n");
 		btnCerrarSesin.setBounds(753, 11, 117, 23);
+		
+		JLabel lblEquipos = new JLabel("Equipos");
+		lblEquipos.setBounds(350, 26, 69, 14);
+		lblEquipos.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		contentPane.setLayout(null);
+		
+		lblTipoDeEquipo = new JLabel("Tipo de equipo");
+		lblTipoDeEquipo.setBounds(62, 62, 89, 14);
+		contentPane.add(lblTipoDeEquipo);
+		contentPane.add(toolBar);
+		contentPane.add(lblEquipos);
 		contentPane.add(btnCerrarSesin);
+		contentPane.add(btnDarDeAlta_1);
+		contentPane.add(btnDarDeAlta);
+		contentPane.add(comboBox_3);
+		contentPane.add(comboBox);
+		contentPane.add(textField);
+		contentPane.add(comboBox_1);
+		contentPane.add(textField_1);
+		contentPane.add(comboBox_2);
+		contentPane.add(textField_2);
+		contentPane.add(button);
+		contentPane.add(button_1);
+		contentPane.add(scrollPane);
+		
+		lblCaracteristicas = new JLabel("Caracteristicas");
+		lblCaracteristicas.setBounds(62, 108, 89, 14);
+		contentPane.add(lblCaracteristicas);
 		
 	}
 	public void setPantalla1(TbHistorial Historial) {

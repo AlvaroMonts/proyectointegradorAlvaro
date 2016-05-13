@@ -19,6 +19,9 @@ import javax.swing.JToolBar;
 
 import java.awt.Color;
 import javax.swing.UIManager;
+import java.awt.Font;
+import javax.swing.GroupLayout;
+import javax.swing.GroupLayout.Alignment;
 
 public class TbUsers extends JFrame {
 
@@ -48,35 +51,26 @@ public class TbUsers extends JFrame {
 		setContentPane(contentPane);
 
 		textField = new JTextField();
-		textField.setBounds(8, 120, 103, 20);
 		textField.setColumns(10);
 
 		JLabel label = new JLabel("Nombre");
-		label.setBounds(13, 102, 50, 14);
 
 		JLabel label_1 = new JLabel("Apellidos");
-		label_1.setBounds(13, 151, 55, 14);
 
 		textField_1 = new JTextField();
-		textField_1.setBounds(13, 176, 106, 20);
 		textField_1.setColumns(10);
 
 		textField_2 = new JTextField();
-		textField_2.setBounds(13, 226, 102, 20);
 		textField_2.setColumns(10);
 
 		JLabel label_2 = new JLabel("Correo");
-		label_2.setBounds(13, 201, 50, 14);
 
 		JLabel label_3 = new JLabel("Tipo de usuario");
-		label_3.setBounds(13, 286, 98, 14);
 
 		JRadioButton radioButton = new JRadioButton("Administrador");
-		radioButton.setBounds(97, 257, 116, 23);
 		radioButton.setBackground(new Color(135, 206, 235));
 
 		JRadioButton radioButton_1 = new JRadioButton("Tecnico");
-		radioButton_1.setBounds(97, 303, 77, 23);
 		radioButton_1.setBackground(new Color(135, 206, 235));
 
 		ButtonGroup group1 = new ButtonGroup();
@@ -94,16 +88,12 @@ public class TbUsers extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		button.setBounds(48, 352, 92, 23);
 
 		JButton button_1 = new JButton("Quitar Filtros");
-		button_1.setBounds(31, 394, 116, 23);
 
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(221, 62, 654, 355);
 
 		JButton btnDarDeAlta = new JButton("Dar de alta usuario");
-		btnDarDeAlta.setBounds(598, 35, 151, 23);
 		btnDarDeAlta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
@@ -172,7 +162,6 @@ public class TbUsers extends JFrame {
 		});
 
 		JToolBar toolBar = new JToolBar();
-		toolBar.setBounds(31, 11, 273, 30);
 		toolBar.setBackground(UIManager.getColor("Button.background"));
 
 		JButton btnEquipos = new JButton("Equipos");
@@ -218,25 +207,101 @@ public class TbUsers extends JFrame {
 		});
 		btnAlmacen.setBackground(UIManager.getColor("Button.background"));
 		toolBar.add(btnAlmacen);
-		contentPane.setLayout(null);
-		contentPane.add(label);
-		contentPane.add(textField);
-		contentPane.add(label_3);
-		contentPane.add(radioButton_1);
-		contentPane.add(radioButton);
-		contentPane.add(label_2);
-		contentPane.add(label_1);
-		contentPane.add(textField_1);
-		contentPane.add(textField_2);
-		contentPane.add(btnDarDeAlta);
-		contentPane.add(button_1);
-		contentPane.add(button);
-		contentPane.add(scrollPane);
-		contentPane.add(toolBar);
 		
 		JButton button_2 = new JButton("Cerrar sesi\u00F3n");
-		button_2.setBounds(769, 11, 106, 23);
-		contentPane.add(button_2);
+		
+		JLabel lblUsuaios = new JLabel("Usuaios");
+		lblUsuaios.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		GroupLayout gl_contentPane = new GroupLayout(contentPane);
+		gl_contentPane.setHorizontalGroup(
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(26)
+					.addComponent(toolBar, GroupLayout.PREFERRED_SIZE, 273, GroupLayout.PREFERRED_SIZE)
+					.addGap(14)
+					.addComponent(lblUsuaios, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
+					.addGap(225)
+					.addComponent(btnDarDeAlta, GroupLayout.PREFERRED_SIZE, 151, GroupLayout.PREFERRED_SIZE)
+					.addGap(20)
+					.addComponent(button_2, GroupLayout.PREFERRED_SIZE, 106, GroupLayout.PREFERRED_SIZE))
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(3)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(5)
+							.addComponent(label, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
+						.addComponent(textField, GroupLayout.PREFERRED_SIZE, 103, GroupLayout.PREFERRED_SIZE)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(5)
+							.addComponent(label_1, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(5)
+							.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, 106, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(5)
+							.addComponent(label_2, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(5)
+							.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(89)
+							.addComponent(radioButton, GroupLayout.PREFERRED_SIZE, 116, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(5)
+							.addComponent(label_3, GroupLayout.PREFERRED_SIZE, 98, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(89)
+							.addComponent(radioButton_1, GroupLayout.PREFERRED_SIZE, 77, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(40)
+							.addComponent(button, GroupLayout.PREFERRED_SIZE, 92, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(23)
+							.addComponent(button_1, GroupLayout.PREFERRED_SIZE, 116, GroupLayout.PREFERRED_SIZE)))
+					.addGap(8)
+					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 654, GroupLayout.PREFERRED_SIZE))
+		);
+		gl_contentPane.setVerticalGroup(
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(6)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addComponent(toolBar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(4)
+							.addComponent(lblUsuaios, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(24)
+							.addComponent(btnDarDeAlta))
+						.addComponent(button_2))
+					.addGap(4)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(40)
+							.addComponent(label)
+							.addGap(4)
+							.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addGap(11)
+							.addComponent(label_1)
+							.addGap(11)
+							.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addGap(5)
+							.addComponent(label_2)
+							.addGap(11)
+							.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addGap(11)
+							.addComponent(radioButton)
+							.addGap(6)
+							.addComponent(label_3)
+							.addGap(3)
+							.addComponent(radioButton_1)
+							.addGap(26)
+							.addComponent(button)
+							.addGap(19)
+							.addComponent(button_1))
+						.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 355, GroupLayout.PREFERRED_SIZE)))
+		);
+		contentPane.setLayout(gl_contentPane);
 		btnAlmacen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 			}

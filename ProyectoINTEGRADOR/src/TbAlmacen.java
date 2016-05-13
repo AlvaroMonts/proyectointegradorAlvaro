@@ -18,6 +18,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
 
 public class TbAlmacen extends JFrame {
 
@@ -44,6 +45,7 @@ public class TbAlmacen extends JFrame {
 	private TbPrestamos Prestamos;
 	private TbUsers Users;
 	private JButton button;
+	private JLabel lblAlmace;
 
 	/**
 	 * Create the frame.
@@ -57,55 +59,40 @@ public class TbAlmacen extends JFrame {
 		setContentPane(contentPane);
 
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(162, 56, 636, 367);
 		scrollPane.setToolTipText("");
 
 		toolBar = new JToolBar();
-		toolBar.setBounds(15, 5, 288, 30);
 
 		button_2 = new JButton("Buscar");
-		button_2.setBounds(25, 343, 85, 23);
 
 		button_4 = new JButton("Quitar filtro\r\n");
-		button_4.setBounds(15, 390, 106, 23);
 
 		lblTipodeequipo = new JLabel("Tipo de Equipo");
-		lblTipodeequipo.setBounds(15, 49, 110, 23);
 
 		textField = new JTextField();
-		textField.setBounds(15, 83, 110, 20);
 		textField.setColumns(10);
 
 		lblNotas = new JLabel("Notas\r\n");
-		lblNotas.setBounds(15, 114, 110, 23);
 
 		textField_1 = new JTextField();
-		textField_1.setBounds(15, 143, 110, 20);
 		textField_1.setColumns(10);
 
 		JLabel lblCodequipo = new JLabel("Codigo del equipo\r\n");
-		lblCodequipo.setBounds(15, 169, 110, 23);
 
 		textField_2 = new JTextField();
-		textField_2.setBounds(15, 197, 110, 20);
 		textField_2.setColumns(10);
 
 		lblCausa = new JLabel("Causa");
-		lblCausa.setBounds(15, 228, 100, 23);
 
 		textField_3 = new JTextField();
-		textField_3.setBounds(15, 255, 110, 20);
 		textField_3.setColumns(10);
 
 		lblPiezareutilizable = new JLabel("Piezas Reutilizables");
-		lblPiezareutilizable.setBounds(15, 279, 137, 23);
 
 		textField_4 = new JTextField();
-		textField_4.setBounds(15, 308, 110, 20);
 		textField_4.setColumns(10);
 		
 		button = new JButton("Cerrar sesi\u00F3n");
-		button.setBounds(670, 5, 118, 23);
 
 		btnonEquipo = new JButton("Equipos");
 		toolBar.add(btnonEquipo);
@@ -116,6 +103,27 @@ public class TbAlmacen extends JFrame {
 				Equipos.setVisible(true);
 			}
 		});
+		
+				btnUsuario = new JButton("Usuarios");
+				btnUsuario.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent arg0) {
+								setVisible(false);
+								Users = new TbUsers();
+								Users.setVisible(true);
+					}
+				});
+				
+						btnPrestamos = new JButton("Prestamos");
+						toolBar.add(btnPrestamos);
+						btnPrestamos.addActionListener(new ActionListener() {
+							public void actionPerformed(ActionEvent arg2) {
+								setVisible(false);
+								Prestamos = new TbPrestamos();
+								Prestamos.setVisible(true);
+
+							}
+						});
+				toolBar.add(btnUsuario);
 
 		btnHistorial = new JButton("Historial");
 		toolBar.add(btnHistorial);
@@ -126,27 +134,6 @@ public class TbAlmacen extends JFrame {
 				Historial.setVisible(true);
 			}
 		});
-
-		btnPrestamos = new JButton("Prestamos");
-		toolBar.add(btnPrestamos);
-		btnPrestamos.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg2) {
-				setVisible(false);
-				Prestamos = new TbPrestamos();
-				Prestamos.setVisible(true);
-
-			}
-		});
-
-		btnUsuario = new JButton("Usuarios");
-		btnUsuario.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-						setVisible(false);
-						Users = new TbUsers();
-						Users.setVisible(true);
-			}
-		});
-		toolBar.add(btnUsuario);
 
 		table = new JTable();
 		table.setModel(new DefaultTableModel(
@@ -186,22 +173,80 @@ public class TbAlmacen extends JFrame {
 			t.setCellEditor(cellEditor);
 		}
 		scrollPane.setViewportView(table);
-		contentPane.setLayout(null);
-		contentPane.add(textField);
-		contentPane.add(textField_1);
-		contentPane.add(textField_2);
-		contentPane.add(lblNotas);
-		contentPane.add(lblTipodeequipo);
-		contentPane.add(lblCodequipo);
-		contentPane.add(lblPiezareutilizable);
-		contentPane.add(textField_4);
-		contentPane.add(lblCausa);
-		contentPane.add(textField_3);
-		contentPane.add(button_2);
-		contentPane.add(button_4);
-		contentPane.add(scrollPane);
-		contentPane.add(toolBar);
-		contentPane.add(button);
+		
+		lblAlmace = new JLabel("Almacen");
+		lblAlmace.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		GroupLayout gl_contentPane = new GroupLayout(contentPane);
+		gl_contentPane.setHorizontalGroup(
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGap(10)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addComponent(toolBar, GroupLayout.PREFERRED_SIZE, 288, GroupLayout.PREFERRED_SIZE)
+							.addGap(20)
+							.addComponent(lblAlmace, GroupLayout.PREFERRED_SIZE, 56, GroupLayout.PREFERRED_SIZE)
+							.addGap(291)
+							.addComponent(button, GroupLayout.PREFERRED_SIZE, 118, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addComponent(lblTipodeequipo, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE)
+								.addComponent(textField, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblNotas, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE)
+								.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblCodequipo, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE)
+								.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblCausa, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+								.addComponent(textField_3, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE)
+								.addComponent(lblPiezareutilizable, GroupLayout.PREFERRED_SIZE, 137, GroupLayout.PREFERRED_SIZE)
+								.addComponent(textField_4, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE)
+								.addGroup(gl_contentPane.createSequentialGroup()
+									.addGap(10)
+									.addComponent(button_2, GroupLayout.PREFERRED_SIZE, 85, GroupLayout.PREFERRED_SIZE))
+								.addComponent(button_4, GroupLayout.PREFERRED_SIZE, 106, GroupLayout.PREFERRED_SIZE))
+							.addGap(10)
+							.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 636, GroupLayout.PREFERRED_SIZE))))
+		);
+		gl_contentPane.setVerticalGroup(
+			gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane.createSequentialGroup()
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addComponent(toolBar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(2)
+							.addComponent(lblAlmace, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
+						.addComponent(button))
+					.addGap(14)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addComponent(lblTipodeequipo, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+							.addGap(11)
+							.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addGap(11)
+							.addComponent(lblNotas, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+							.addGap(6)
+							.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addGap(6)
+							.addComponent(lblCodequipo, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+							.addGap(5)
+							.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addGap(11)
+							.addComponent(lblCausa, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+							.addGap(4)
+							.addComponent(textField_3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addGap(4)
+							.addComponent(lblPiezareutilizable, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
+							.addGap(6)
+							.addComponent(textField_4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addGap(15)
+							.addComponent(button_2)
+							.addGap(24)
+							.addComponent(button_4))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(7)
+							.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 367, GroupLayout.PREFERRED_SIZE))))
+		);
+		contentPane.setLayout(gl_contentPane);
 	}
 
 	public void setEquipo(TbEquipos Equipos) {

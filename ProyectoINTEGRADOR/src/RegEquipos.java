@@ -125,47 +125,38 @@ public class RegEquipos extends JFrame {
 		contentPane.setBackground(new Color(135, 206, 235));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
-		contentPane.setLayout(null);
 		
 		label = new JLabel("ID");
-		label.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label.setBounds(133, 48, 29, 14);
-		contentPane.add(label);
+		label.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		
 		textField = new JTextField();
-		textField.setColumns(10);
 		textField.setBounds(178, 46, 86, 20);
-		contentPane.add(textField);
+		textField.setColumns(10);
 		
 		textField_2 = new JTextField();
-		textField_2.setColumns(10);
 		textField_2.setBounds(178, 74, 86, 20);
-		contentPane.add(textField_2);
+		textField_2.setColumns(10);
 		
 		label_1 = new JLabel("Marca");
-		label_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_1.setBounds(122, 75, 46, 14);
-		contentPane.add(label_1);
+		label_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		
 		label_2 = new JLabel("Modelo");
-		label_2.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_2.setBounds(118, 106, 46, 14);
-		contentPane.add(label_2);
+		label_2.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		
 		textField_3 = new JTextField();
-		textField_3.setColumns(10);
 		textField_3.setBounds(178, 104, 86, 20);
-		contentPane.add(textField_3);
+		textField_3.setColumns(10);
 		
 		radioButton = new JRadioButton("Si");
-		radioButton.setBackground(new Color(135, 206, 235));
 		radioButton.setBounds(169, 131, 46, 20);
-		contentPane.add(radioButton);
+		radioButton.setBackground(new Color(135, 206, 235));
 		
 		radioButton_1 = new JRadioButton("No");
-		radioButton_1.setBackground(new Color(135, 206, 235));
 		radioButton_1.setBounds(226, 131, 55, 20);
-		contentPane.add(radioButton_1);
+		radioButton_1.setBackground(new Color(135, 206, 235));
 		
 		ButtonGroup group1 = new ButtonGroup();
 		group1.add(radioButton);
@@ -178,19 +169,16 @@ public class RegEquipos extends JFrame {
 		}
 		
 		label_3 = new JLabel("Disponibilidad");
-		label_3.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_3.setBounds(85, 134, 79, 14);
-		contentPane.add(label_3);
+		label_3.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		
 		radioButton_2 = new JRadioButton("No");
-		radioButton_2.setBackground(new Color(135, 206, 235));
 		radioButton_2.setBounds(226, 163, 55, 20);
-		contentPane.add(radioButton_2);
+		radioButton_2.setBackground(new Color(135, 206, 235));
 		
 		radioButton_3 = new JRadioButton("Si");
-		radioButton_3.setBackground(new Color(135, 206, 235));
 		radioButton_3.setBounds(169, 163, 46, 20);
-		contentPane.add(radioButton_3);
+		radioButton_3.setBackground(new Color(135, 206, 235));
 		
 		ButtonGroup group2 = new ButtonGroup();
 		group2.add(radioButton_2);
@@ -203,78 +191,63 @@ public class RegEquipos extends JFrame {
 		}
 		
 		label_4 = new JLabel("Prestable");
-		label_4.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_4.setBounds(114, 166, 55, 14);
-		contentPane.add(label_4);
+		label_4.setFont(new Font("Tahoma", Font.PLAIN, 12));
 
 		textAreaNotas = new JTextArea();
+		textAreaNotas.setBounds(613, 143, 104, 53);
 		textAreaNotas.setLineWrap(true);
-		textAreaNotas.setBounds(532, 129, 214, 53);
-		contentPane.add(textAreaNotas);
 		
 		label_28 = new JLabel("Notas");
-		label_28.setBounds(611, 107, 29, 25);
-		contentPane.add(label_28);
+		label_28.setBounds(568, 130, 29, 25);
 		
 		label_13 = new JLabel("Tipo de uso");
-		label_13.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_13.setBounds(532, 60, 65, 14);
-		contentPane.add(label_13);
+		label_13.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		
 		textField_23 = new JTextField();
-		textField_23.setColumns(10);
 		textField_23.setBounds(631, 58, 86, 20);
-		contentPane.add(textField_23);
+		textField_23.setColumns(10);
 		
 		textField_24 = new JTextField();
-		textField_24.setColumns(10);
 		textField_24.setBounds(631, 86, 86, 20);
-		contentPane.add(textField_24);
+		textField_24.setColumns(10);
 		
 		label_27 = new JLabel("Estado");
-		label_27.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_27.setBounds(551, 88, 46, 14);
-		contentPane.add(label_27);
+		label_27.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		
 		label_5 = new JLabel("Edificio");
-		label_5.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_5.setBounds(345, 60, 46, 14);
-		contentPane.add(label_5);
+		label_5.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		
 		textField_25 = new JTextField();
-		textField_25.setColumns(10);
 		textField_25.setBounds(401, 58, 86, 20);
-		contentPane.add(textField_25);
+		textField_25.setColumns(10);
 		
 		textField_26 = new JTextField();
-		textField_26.setColumns(10);
 		textField_26.setBounds(404, 95, 86, 20);
-		contentPane.add(textField_26);
+		textField_26.setColumns(10);
 		
 		label_6 = new JLabel("Sala");
-		label_6.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_6.setBounds(355, 98, 29, 14);
-		contentPane.add(label_6);
+		label_6.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		
 		textField_29 = new JTextField();
-		textField_29.setColumns(10);
 		textField_29.setBounds(404, 133, 86, 20);
-		contentPane.add(textField_29);
+		textField_29.setColumns(10);
 		
 		textField_30 = new JTextField();
-		textField_30.setColumns(10);
 		textField_30.setBounds(404, 160, 86, 20);
-		contentPane.add(textField_30);
+		textField_30.setColumns(10);
 		
 		label_7 = new JLabel("Almacenamiento");
-		label_7.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_7.setBounds(304, 139, 100, 30);
-		contentPane.add(label_7);
+		label_7.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		
 		tPSobremesa = new JTabbedPane(JTabbedPane.TOP);
-		tPSobremesa.setBackground(new Color(135, 206, 235));
 		tPSobremesa.setBounds(45, 200, 709, 244);
-		contentPane.add(tPSobremesa);
+		tPSobremesa.setBackground(new Color(135, 206, 235));
 		
 		panel = new JPanel();
 		panel.setBackground(new Color(135, 206, 235));
@@ -909,6 +882,33 @@ public class RegEquipos extends JFrame {
 		
 		JButton btnCancelar = new JButton("Cancelar");
 		btnCancelar.setBounds(45, 446, 89, 23);
+		contentPane.setLayout(null);
+		contentPane.add(label);
+		contentPane.add(label_1);
+		contentPane.add(label_2);
+		contentPane.add(label_3);
+		contentPane.add(label_4);
+		contentPane.add(textField);
+		contentPane.add(textField_2);
+		contentPane.add(textField_3);
+		contentPane.add(radioButton);
+		contentPane.add(radioButton_1);
+		contentPane.add(radioButton_3);
+		contentPane.add(radioButton_2);
+		contentPane.add(label_5);
+		contentPane.add(textField_25);
+		contentPane.add(label_6);
+		contentPane.add(textField_26);
+		contentPane.add(label_7);
+		contentPane.add(textField_29);
+		contentPane.add(textField_30);
+		contentPane.add(label_13);
+		contentPane.add(textField_23);
+		contentPane.add(label_27);
+		contentPane.add(textField_24);
+		contentPane.add(label_28);
+		contentPane.add(textAreaNotas);
+		contentPane.add(tPSobremesa);
 		contentPane.add(btnCancelar);
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {

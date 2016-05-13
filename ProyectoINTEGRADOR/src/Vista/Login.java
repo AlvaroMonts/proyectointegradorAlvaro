@@ -1,5 +1,6 @@
-import java.awt.EventQueue;
+package Vista;
 
+import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -12,6 +13,7 @@ import java.awt.event.ActionEvent;
 import java.awt.Font;
 import javax.swing.JPasswordField;
 import java.awt.Color;
+import Controlador.Login_Controlador;
 
 public class Login extends JFrame {
 
@@ -23,8 +25,7 @@ public class Login extends JFrame {
 	private JLabel lblEmail;
 	private JLabel lblContraseña;
 	private TbEquipos pantalla;
-
-	
+	private Login_Controlador logCont;
 
 	/**
 	 * Create the frame.
@@ -43,9 +44,13 @@ public class Login extends JFrame {
 		btnLogin = new JButton("Log-in");
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				setVisible(false);
-				pantalla=new TbEquipos();
-				pantalla.setVisible(true);
+				logCont = new Login_Controlador();
+				if (logCont.realizarRegistro(txtEmail.getText(),
+						passwordField.getText())) {
+					setVisible(false);
+					pantalla = new TbEquipos();
+					pantalla.setVisible(true);
+				} 
 			}
 		});
 
@@ -72,7 +77,8 @@ public class Login extends JFrame {
 		contentPane.add(lblEmail);
 
 		Imagen = new JLabel("");
-		Imagen.setIcon(new ImageIcon("C:\\Users\\konox\\git\\uf8-tarea-2-aplicacion-swing-proyectointegradorewooks\\ProyectoIntEwooks\\src\\PI\\utad.png"));
+		Imagen.setIcon(new ImageIcon(
+				"C:\\Users\\konox\\git\\uf8-tarea-2-aplicacion-swing-proyectointegradorewooks\\ProyectoIntEwooks\\src\\PI\\utad.png"));
 		Imagen.setBounds(42, 11, 703, 256);
 		contentPane.add(Imagen);
 	}

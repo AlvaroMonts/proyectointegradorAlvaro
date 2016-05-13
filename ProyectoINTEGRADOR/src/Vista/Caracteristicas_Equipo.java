@@ -1,4 +1,4 @@
-
+package Vista;
 import java.awt.EventQueue;
 
 import javax.swing.ButtonGroup;
@@ -973,18 +973,18 @@ public class Caracteristicas_Equipo extends JFrame {
 		JButton button = new JButton("Cancelar");
 		button.setBounds(45, 455, 89, 23);
 		contentPane.add(button);
-		
-				JButton button_25 = new JButton("Realizar Pr\u00E9stamo");
-				button_25.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent arg0) {
-						setVisible(false);
-						pantalla1 = new RegPrestamos();
-						pantalla1.setVisible(true);
-					}
-				});
-				button_25.setBounds(171, 450, 130, 32);
-				contentPane.add(button_25);
-				button_25.setFont(new Font("Times New Roman", Font.BOLD, 11));
+
+		JButton button_25 = new JButton("Realizar Pr\u00E9stamo");
+		button_25.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				setVisible(false);
+				pantalla1 = new RegPrestamos();
+				pantalla1.setVisible(true);
+			}
+		});
+		button_25.setBounds(171, 450, 130, 32);
+		contentPane.add(button_25);
+		button_25.setFont(new Font("Times New Roman", Font.BOLD, 11));
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);
@@ -993,10 +993,12 @@ public class Caracteristicas_Equipo extends JFrame {
 			}
 		});
 	}
-	public void  setPantalla(TbEquipos Pantalla){
+
+	public void setPantalla(TbEquipos Pantalla) {
 		this.pantalla = Pantalla;
 	}
-	public void setPantalla1(RegPrestamos Pantalla1){
+
+	public void setPantalla1(RegPrestamos Pantalla1) {
 		this.pantalla1 = Pantalla1;
 	}
 }

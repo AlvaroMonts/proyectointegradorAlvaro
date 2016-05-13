@@ -1,3 +1,4 @@
+package Vista;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import java.awt.event.ActionEvent;
@@ -14,10 +15,13 @@ import javax.swing.JLabel;
 import javax.swing.JButton;
 import javax.swing.JTable;
 import javax.swing.JToolBar;
+
 import java.awt.Color;
 import java.awt.Font;
+
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+
 
 public class TbHistorial extends JFrame {
 

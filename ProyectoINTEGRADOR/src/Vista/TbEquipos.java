@@ -1,3 +1,4 @@
+package Vista;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -10,17 +11,22 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JToolBar;
+
 import java.awt.Color;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JLabel;
+
 import java.awt.Font;
+
 import javax.swing.UIManager;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 import javax.swing.LayoutStyle.ComponentPlacement;
+
 
 public class TbEquipos extends JFrame {
 
@@ -88,6 +94,7 @@ public class TbEquipos extends JFrame {
 		button.setBounds(62, 327, 75, 23);
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				
 			}
 		});
 		
@@ -132,9 +139,7 @@ public class TbEquipos extends JFrame {
 			EditorDeTablas cellEditor = new EditorDeTablas();
 			t.setCellEditor(cellEditor);
 		}
-		scrollPane.setViewportView(table);
-		
-		scrollPane.setViewportView(table);
+		scrollPane.setViewportView(table);	
 
 		table.addMouseListener(new MouseListener() {
 
@@ -280,7 +285,6 @@ public class TbEquipos extends JFrame {
 	}
 	public void setPantalla1(TbHistorial Historial) {
 		this.Pantalla1 = Historial;
-
 	}
 
 	public void setPantalla2(TbPrestamos Prestamos) {

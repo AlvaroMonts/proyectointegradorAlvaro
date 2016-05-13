@@ -1,3 +1,4 @@
+package Vista;
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
@@ -5,19 +6,26 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JButton;
+
 import java.awt.Color;
+
 import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 import javax.swing.JScrollPane;
 import javax.swing.JToolBar;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+
 import javax.swing.JTextField;
+
 import java.awt.Font;
+
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
+
 
 public class TbPrestamos extends JFrame {
 

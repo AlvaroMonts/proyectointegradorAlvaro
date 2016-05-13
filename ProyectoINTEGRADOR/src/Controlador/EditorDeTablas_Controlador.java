@@ -1,3 +1,4 @@
+package Controlador;
 import java.awt.Component;
 import java.util.EventObject;
 
@@ -5,7 +6,7 @@ import javax.swing.JTable;
 import javax.swing.event.CellEditorListener;
 import javax.swing.table.TableCellEditor;
 
-public class EditorDeTablas implements TableCellEditor {
+public class EditorDeTablas_Controlador implements TableCellEditor {
 
 	@Override
 	public void addCellEditorListener(CellEditorListener l) {

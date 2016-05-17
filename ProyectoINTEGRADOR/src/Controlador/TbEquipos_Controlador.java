@@ -8,7 +8,6 @@ public class TbEquipos_Controlador {
 	public TbEquipos_Controlador() {
 		tbEqMod = new TbEquipos_Modelo();
 		tbEqMod.Consulta_Array();
-		tbEqMod.Mostrar_Array();
 		array = tbEqMod.getArray();
 	}
 	

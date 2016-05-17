@@ -85,7 +85,7 @@ public class TbPrestamos extends JFrame {
 		table = new JTable();
 		scrollPane.setViewportView(table);
 		table.setModel(new DefaultTableModel(tbPreCont.array, new String[] { "Responsable Prestamo", "Codigo Equipo",
-				"Fecha Inicio Prestamo", "Fecha Final Prestamo", "Destino Prestamo" }));
+				"Fecha Inicio Prestamo", "Fecha Final Prestamo", "Equipo Prestado", "Destino Prestamo" }));
 		table.getColumnModel().getColumn(0).setPreferredWidth(125);
 		table.getColumnModel().getColumn(1).setPreferredWidth(87);
 		table.getColumnModel().getColumn(2).setPreferredWidth(122);

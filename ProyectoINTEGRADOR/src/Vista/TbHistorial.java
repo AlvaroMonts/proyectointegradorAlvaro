@@ -58,8 +58,7 @@ public class TbHistorial extends JFrame {
 
 		table = new JTable();
 		table.setModel(new DefaultTableModel(tbHiCont.array,
-				new String[] { "Usuario", "Fecha y hora de entrada", "Fecha y hora de salida", "Acci\u00F3n",
-						"Fecha y hora de modificacion", "Equipo modificado", "Codigo del Equipo" }));
+				new String[] { "Usuario_Email", "Equipo_COD", "Tipo de Accion", "Fecha", "ID_Accion" }));
 		table.getColumnModel().getColumn(2).setPreferredWidth(85);
 		for (int i = 0; i < table.getColumnModel().getColumnCount(); i++) {
 			TableColumn t = table.getColumnModel().getColumn(i);

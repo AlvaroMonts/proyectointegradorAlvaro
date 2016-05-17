@@ -41,7 +41,7 @@ public class TbAlmacen_Modelo {
 			rset.beforeFirst();
 
 			Array = new String[b][a];
-			for (int i = 0; i < 10; i++) {
+			for (int i = 0; i < b; i++) {
 				if (rset.next()) {
 					for (int j = 0; j < a; j++) {
 						Array[i][j] = rset.getString((j + 1));
@@ -52,15 +52,6 @@ public class TbAlmacen_Modelo {
 			stmt.close();
 		} catch (SQLException s) {
 			s.printStackTrace();
-		}
-	}
-
-	public void Mostrar_Array() {
-		System.out.print("ID\tNombre\t\tCiudad\tWeb\tPuntos");
-		for (int i = 0; i < Array.length; i++) {
-			System.out.print(
-					Array[i][0] + "\t" + Array[i][1] + "\t" + Array[i][2] + "\t" + Array[i][3] + "\t" + Array[i][4]);
-			System.out.println();
 		}
 	}
 

@@ -145,7 +145,7 @@ public class TbAlmacen extends JFrame {
 
 		table = new JTable();
 		table.setModel(new DefaultTableModel(tbAlCont.array,
-				new String[] { "Tipo De Equipo", "Codigo equipo", "Causa", "Notas", "Piezas Reutilizables" }));
+				new String[] { "Tipo De Equipo", "Notas", "Codigo equipo", "Causa", "Piezas Reutilizables" }));
 		table.getColumnModel().getColumn(1).setPreferredWidth(92);
 		table.getColumnModel().getColumn(3).setPreferredWidth(85);
 		table.getColumnModel().getColumn(4).setPreferredWidth(113);

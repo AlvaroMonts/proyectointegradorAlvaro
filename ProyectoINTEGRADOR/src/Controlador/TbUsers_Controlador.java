@@ -8,7 +8,6 @@ public class TbUsers_Controlador {
 	public TbUsers_Controlador() {
 		tbUsMod = new TbUsers_Modelo();
 		tbUsMod.Consulta_Array();
-		tbUsMod.Mostrar_Array();
 		array = tbUsMod.getArray();
 	}
 }

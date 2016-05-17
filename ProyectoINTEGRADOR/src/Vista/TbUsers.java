@@ -112,7 +112,7 @@ public class TbUsers extends JFrame {
 
 		table = new JTable();
 		table.setModel(new DefaultTableModel(tbUsCont.array,
-				new String[] { "Nombre", "Apellidos", "Tipo de usuario", "Correo" }));
+				new String[] { "Correo", "Tipo de usuario", "Nombre", "Apellidos" }));
 		table.getColumnModel().getColumn(2).setPreferredWidth(85);
 		for (int i = 0; i < table.getColumnModel().getColumnCount(); i++) {
 			TableColumn t = table.getColumnModel().getColumn(i);

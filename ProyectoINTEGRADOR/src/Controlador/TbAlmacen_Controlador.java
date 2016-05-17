@@ -8,7 +8,6 @@ public class TbAlmacen_Controlador {
 	public TbAlmacen_Controlador() {
 		tbAlMod = new TbAlmacen_Modelo();
 		tbAlMod.Consulta_Array();
-		tbAlMod.Mostrar_Array();
 		array = tbAlMod.getArray();
 	}
 }

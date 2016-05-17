@@ -109,8 +109,11 @@ public class TbEquipos extends JFrame {
 		scrollPane.setBounds(187, 90, 684, 326);
 
 		table = new JTable();
-		table.setModel(new DefaultTableModel(tbEqCont.array, new String[] { "Equipo", "COD_Equipo", "Marca", "Modelo",
-				"Tipo de uso", "Disponibilidad", "Prestable", "Edificio", "Almacenamiento" }));
+		table.setModel(
+				new DefaultTableModel(tbEqCont.array,
+						new String[] { "Código", "Tipo de Equipo", "Almacenamiento1", "Almacenamiento2", "estado",
+								"marca", "disponibilidad", "TipoUso", "modelo", "prestable", "Sala", "Edificio",
+								"TipoSala" }));
 		table.getColumnModel().getColumn(2).setPreferredWidth(85);
 
 		for (int i = 0; i < table.getColumnModel().getColumnCount(); i++) {

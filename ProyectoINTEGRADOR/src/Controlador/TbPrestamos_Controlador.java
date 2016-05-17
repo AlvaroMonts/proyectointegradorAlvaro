@@ -8,7 +8,6 @@ public class TbPrestamos_Controlador {
 	public TbPrestamos_Controlador() {
 		tbPreMod = new TbPrestamos_Modelo();
 		tbPreMod.Consulta_Array();
-		tbPreMod.Mostrar_Array();
 		array = tbPreMod.getArray();
 	}
 }

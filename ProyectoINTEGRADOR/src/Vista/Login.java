@@ -77,8 +77,7 @@ public class Login extends JFrame {
 		contentPane.add(lblEmail);
 
 		Imagen = new JLabel("");
-		Imagen.setIcon(new ImageIcon(
-				"C:\\Users\\konox\\git\\uf8-tarea-2-aplicacion-swing-proyectointegradorewooks\\ProyectoIntEwooks\\src\\PI\\utad.png"));
+		Imagen.setIcon(new ImageIcon("utad.png"));
 		Imagen.setBounds(42, 11, 703, 256);
 		contentPane.add(Imagen);
 	}

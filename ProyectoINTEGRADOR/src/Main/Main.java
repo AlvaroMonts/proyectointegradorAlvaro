@@ -1,4 +1,16 @@
-package Vista;
+package Main;
+
+import Vista.Caracteristicas_Equipo;
+import Vista.Caracteristicas_usuario;
+import Vista.Login;
+import Vista.RegEquipos;
+import Vista.RegPrestamos;
+import Vista.RegUsuarios;
+import Vista.TbAlmacen;
+import Vista.TbEquipos;
+import Vista.TbHistorial;
+import Vista.TbPrestamos;
+import Vista.TbUsers;
 
 public class Main {
 	public static void main(String[] args) {

@@ -98,7 +98,7 @@ public class TbEquipos extends JFrame {
 		button.setBounds(62, 327, 75, 23);
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				
+
 			}
 		});
 

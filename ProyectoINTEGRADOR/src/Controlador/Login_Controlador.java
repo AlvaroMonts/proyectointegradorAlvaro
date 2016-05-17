@@ -9,7 +9,6 @@ public class Login_Controlador {
 	}	
 	
 	public boolean realizarRegistro(String email, String password){
-		logMod = new Login_Modelo();
 		if (logMod.comprobarRegistro(email, password)) {
 			return true;
 		} else {

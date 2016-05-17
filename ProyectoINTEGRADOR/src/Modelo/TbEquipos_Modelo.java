@@ -1,7 +1,6 @@
 package Modelo;
 
 import java.sql.*;
-import java.util.ArrayList;
 
 public class TbEquipos_Modelo {
 	private String bd, login, pwd, url;

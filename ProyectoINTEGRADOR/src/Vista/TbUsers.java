@@ -12,6 +12,8 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 
+import Controlador.TbUsers_Controlador;
+
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
@@ -42,7 +44,7 @@ public class TbUsers extends JFrame {
 	private TbPrestamos pantalla4;
 	private RegUsuarios pantalla5;
 	private Caracteristicas_usuario caracUsuario;
-	private int contador = 0;
+	private TbUsers_Controlador tbUsCont = new TbUsers_Controlador();
 
 	/**
 	 * Create the frame.
@@ -110,18 +112,8 @@ public class TbUsers extends JFrame {
 
 		table = new JTable();
 		table.setModel(new DefaultTableModel(
-				new Object[][] { { "Juan", "Perez", "Administrador", "juan.perez@gmail.com" },
-						{ "Pedro", "Martinez", "T\u00E9cnico", "pedro.martinez@gmail.com" },
-						{ "Isabel", "Hernandez", "Administrador", "isabel.hernandez@gmail.com" },
-						{ "Miguel", "Figueroa", "T\u00E9cnico", "miguel.figueroa@gmail.com" },
-						{ null, null, null, null }, { null, null, null, null }, { null, null, null, null },
-						{ null, null, null, null }, { null, null, null, null }, { null, null, null, null },
-						{ null, null, null, null }, { null, null, null, null }, { null, null, null, null },
-						{ null, null, null, null }, { null, null, null, null }, { null, null, null, null },
-						{ null, null, null, null }, { null, null, null, null }, { null, null, null, null },
-						{ null, null, null, null }, { null, null, null, null }, { null, null, null, null },
-						{ null, null, null, null }, { null, null, null, null }, { null, null, null, null },
-						{ null, null, null, null }, },
+				 tbUsCont.array
+				,
 				new String[] { "Nombre", "Apellidos", "Tipo de usuario", "Correo" }));
 		table.getColumnModel().getColumn(2).setPreferredWidth(85);
 		for (int i = 0; i < table.getColumnModel().getColumnCount(); i++) {

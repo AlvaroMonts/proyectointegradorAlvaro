@@ -9,6 +9,9 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
+
+import Controlador.TbHistorial_Controlador;
+
 import javax.swing.JScrollPane;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
@@ -38,6 +41,7 @@ public class TbHistorial extends JFrame {
 	private TbEquipos pantalla2;
 	private TbPrestamos pantalla3;
 	private TbUsers pantalla4;
+	private TbHistorial_Controlador tbHiCont = new TbHistorial_Controlador();
 
 
 	/**
@@ -55,29 +59,8 @@ public class TbHistorial extends JFrame {
 		
 		table = new JTable();
 		table.setModel(new DefaultTableModel(
-			new Object[][] {
-				{"Juan", "5-04-2016, 10:00:00", "05-04-2016, 10:30:00", "Login", "-", "-", "-"},
-				{"Pedro", "4-04-2016, 22:00:00", "4-04-2016, 23:00:00", "Login", "-", "-", "-"},
-				{"Nacho", "-", "-", "Alta de equipo", "-", "-", "K4233"},
-				{"Kylo", "3-04-2016, 20:00:00", "03-04-2016, 20:30:00", "Login", "-", "-", "-"},
-				{"Gale", "2-04-2016, 7:00:00", "04-04-2016, 8:30:00", "Login", "-", "-", "-"},
-				{"Javier", "-", "-", "Equipo Modificado", "1-04-2016", "Monitor", "M43423"},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null},
-			},
+				tbHiCont.array
+			,
 			new String[] {
 				"Usuario", "Fecha y hora de entrada", "Fecha y hora de salida", "Acci\u00F3n", "Fecha y hora de modificacion", "Equipo modificado", "Codigo del Equipo"
 			}

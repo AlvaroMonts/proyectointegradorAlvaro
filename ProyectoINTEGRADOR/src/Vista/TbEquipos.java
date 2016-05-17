@@ -98,7 +98,7 @@ public class TbEquipos extends JFrame {
 		button.setBounds(62, 327, 75, 23);
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
+				
 			}
 		});
 
@@ -125,25 +125,21 @@ public class TbEquipos extends JFrame {
 			@Override
 			public void mouseReleased(MouseEvent e) {
 				// TODO Auto-generated method stub
-
 			}
 
 			@Override
 			public void mousePressed(MouseEvent e) {
 				// TODO Auto-generated method stub
-
 			}
 
 			@Override
 			public void mouseExited(MouseEvent e) {
 				// TODO Auto-generated method stub
-
 			}
 
 			@Override
 			public void mouseEntered(MouseEvent e) {
 				// TODO Auto-generated method stub
-
 			}
 
 			@Override

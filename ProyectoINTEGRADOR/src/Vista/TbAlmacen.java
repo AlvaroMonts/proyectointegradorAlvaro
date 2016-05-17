@@ -14,6 +14,9 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
+
+import Controlador.TbAlmacen_Controlador;
+
 import javax.swing.JToolBar;
 import javax.swing.LayoutStyle.ComponentPlacement;
 import javax.swing.JButton;
@@ -49,6 +52,7 @@ public class TbAlmacen extends JFrame {
 	private TbUsers Users;
 	private JButton button;
 	private JLabel lblAlmace;
+	private TbAlmacen_Controlador tbAlCont = new TbAlmacen_Controlador();
 
 	/**
 	 * Create the frame.
@@ -140,29 +144,8 @@ public class TbAlmacen extends JFrame {
 
 		table = new JTable();
 		table.setModel(new DefaultTableModel(
-			new Object[][] {
-				{"Tablet", "001", "Pantalla Rota", "La pantalla se puede arreglar", "RAM, Procesador, HDD"},
-				{"Portatil", "002", "Placa base rota", "Se le puede cambiar por otra", "RAM, Tarjeta grafica, procesador, HDD y pantalla"},
-				{"Sobremesa", "002", "Fuente de alimentacion y procesador roto", "Se le puede cambiar las dos piezas", "RAM, Placa base, Tarjeta grafica"},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-			},
+				tbAlCont.array
+			,
 			new String[] {
 				"Tipo De Equipo", "Codigo equipo", "Causa", "Notas", "Piezas Reutilizables"
 			}

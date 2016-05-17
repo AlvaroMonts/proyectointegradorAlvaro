@@ -13,6 +13,9 @@ import javax.swing.JLabel;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
+
+import Controlador.TbPrestamos_Controlador;
+
 import javax.swing.JScrollPane;
 import javax.swing.JToolBar;
 
@@ -55,6 +58,7 @@ public class TbPrestamos extends JFrame {
 	private JScrollPane scrollPane;
 	private JButton button;
 	private JLabel lblPrestamos;
+	private TbPrestamos_Controlador tbPreCont = new TbPrestamos_Controlador();
 
 
 	/**
@@ -82,30 +86,8 @@ public class TbPrestamos extends JFrame {
 		table = new JTable();
 		scrollPane.setViewportView(table);
 		table.setModel(new DefaultTableModel(
-			new Object[][] {
-				{"Jose Garcia", "004", "15-04-2016", "25-06-2016", "Ocio"},
-				{"Jose Garcia", "005", "15-04-2016", "15-04-2016", "Ocio"},
-				{"Gonzalo Pe\u00F1a", "006", "15-04-2016", "-", "Docencia"},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-				{null, null, null, null, null},
-			},
+				tbPreCont.array
+			,
 			new String[] {
 				"Responsable Prestamo", "Codigo Equipo", "Fecha Inicio Prestamo", "Fecha Final Prestamo", "Destino Prestamo"
 			}

@@ -10,8 +10,7 @@ public class TbUsers_Modelo {
 
 	public TbUsers_Modelo() {
 		try {
-			bd = "liga";
-			// cambiar bd
+			bd = "proyectointegrador";
 			login = "root";
 			pwd = "root";
 			url = "jdbc:mysql://localhost/" + bd;
@@ -30,7 +29,7 @@ public class TbUsers_Modelo {
 
 	public void Consulta_Array() {
 		try {
-			String query = "Select * from liga.equipos";
+			String query = "Select * from proyectointegrador.usuarios";
 			// cambiar query. solo liga por proyectointegrador
 			Statement stmt = conection.createStatement();
 			ResultSet rset = stmt.executeQuery(query);

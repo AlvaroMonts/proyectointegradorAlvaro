@@ -10,8 +10,7 @@ public class TbAlmacen_Modelo {
 
 	public TbAlmacen_Modelo() {
 		try {
-			bd = "liga";
-			// cambiar bd
+			bd = "proyectointegrador";
 			login = "root";
 			pwd = "root";
 			url = "jdbc:mysql://localhost/" + bd;
@@ -30,7 +29,7 @@ public class TbAlmacen_Modelo {
 
 	public void Consulta_Array() {
 		try {
-			String query = "Select * from liga.equipos";
+			String query = "Select * from proyectointegrador.almacen";
 			// cambiar query. solo liga por proyectointegrador
 			Statement stmt = conection.createStatement();
 			ResultSet rset = stmt.executeQuery(query);

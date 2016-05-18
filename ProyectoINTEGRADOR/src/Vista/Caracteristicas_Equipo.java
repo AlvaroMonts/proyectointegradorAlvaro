@@ -80,16 +80,20 @@ public class Caracteristicas_Equipo extends JFrame {
 	private JTextField textField_50;
 	private JTextField textField_51;
 	private JTextField textField_48;
-	private JButton btnDarDeBajacarac;
-	private JButton btnDescartarCambioscarac;
-	private JButton btnGuardarCambioscarac;
 	private TbEquipos pantalla;
 	private RegPrestamos pantalla1;
+	private JButton btnCancelar;
+	private JButton btnRealizarPrestamo;
+	private JButton btnBajaEquipo;
+	private JButton btnGuardarCambios;
+	private JButton btnDescartarCambios;
 
 	/**
 	 * Create the frame.
 	 */
 	public Caracteristicas_Equipo() {
+		setTitle("Caracteristicas Equipo");
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 790, 531);
 		contentPane = new JPanel();
@@ -99,43 +103,43 @@ public class Caracteristicas_Equipo extends JFrame {
 		contentPane.setLayout(null);
 
 		JLabel label_1 = new JLabel("ID");
-		label_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_1.setBounds(133, 48, 29, 14);
+		label_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		contentPane.add(label_1);
 
 		textField = new JTextField();
-		textField.setColumns(10);
 		textField.setBounds(178, 46, 86, 20);
+		textField.setColumns(10);
 		contentPane.add(textField);
 
 		textField_2 = new JTextField();
-		textField_2.setColumns(10);
 		textField_2.setBounds(178, 74, 86, 20);
+		textField_2.setColumns(10);
 		contentPane.add(textField_2);
 
 		JLabel label_2 = new JLabel("Marca");
-		label_2.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_2.setBounds(122, 75, 46, 14);
+		label_2.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		contentPane.add(label_2);
 
 		JLabel label_3 = new JLabel("Modelo");
-		label_3.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_3.setBounds(118, 106, 46, 14);
+		label_3.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		contentPane.add(label_3);
 
 		textField_3 = new JTextField();
-		textField_3.setColumns(10);
 		textField_3.setBounds(178, 104, 86, 20);
+		textField_3.setColumns(10);
 		contentPane.add(textField_3);
 
 		radioButton = new JRadioButton("Si");
-		radioButton.setBackground(new Color(135, 206, 235));
 		radioButton.setBounds(169, 131, 46, 20);
+		radioButton.setBackground(new Color(135, 206, 235));
 		contentPane.add(radioButton);
 
 		radioButton_1 = new JRadioButton("No");
-		radioButton_1.setBackground(new Color(135, 206, 235));
 		radioButton_1.setBounds(226, 131, 55, 20);
+		radioButton_1.setBackground(new Color(135, 206, 235));
 		contentPane.add(radioButton_1);
 
 		ButtonGroup group1 = new ButtonGroup();
@@ -149,18 +153,18 @@ public class Caracteristicas_Equipo extends JFrame {
 		}
 
 		JLabel label_4 = new JLabel("Disponibilidad");
-		label_4.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_4.setBounds(85, 134, 79, 14);
+		label_4.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		contentPane.add(label_4);
 
 		radioButton_2 = new JRadioButton("No");
-		radioButton_2.setBackground(new Color(135, 206, 235));
 		radioButton_2.setBounds(226, 163, 55, 20);
+		radioButton_2.setBackground(new Color(135, 206, 235));
 		contentPane.add(radioButton_2);
 
 		radioButton_3 = new JRadioButton("Si");
-		radioButton_3.setBackground(new Color(135, 206, 235));
 		radioButton_3.setBounds(169, 163, 46, 20);
+		radioButton_3.setBackground(new Color(135, 206, 235));
 		contentPane.add(radioButton_3);
 
 		ButtonGroup group2 = new ButtonGroup();
@@ -174,13 +178,13 @@ public class Caracteristicas_Equipo extends JFrame {
 		}
 
 		JLabel label_5 = new JLabel("Prestable");
-		label_5.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_5.setBounds(114, 166, 55, 14);
+		label_5.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		contentPane.add(label_5);
 
 		textAreaNotas = new JTextArea();
-		textAreaNotas.setLineWrap(true);
 		textAreaNotas.setBounds(532, 129, 214, 53);
+		textAreaNotas.setLineWrap(true);
 		contentPane.add(textAreaNotas);
 
 		JLabel label_28 = new JLabel("Notas");
@@ -188,63 +192,63 @@ public class Caracteristicas_Equipo extends JFrame {
 		contentPane.add(label_28);
 
 		JLabel label_27 = new JLabel("Tipo de uso");
-		label_27.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_27.setBounds(532, 60, 65, 14);
+		label_27.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		contentPane.add(label_27);
 
 		textField_23 = new JTextField();
-		textField_23.setColumns(10);
 		textField_23.setBounds(631, 58, 86, 20);
+		textField_23.setColumns(10);
 		contentPane.add(textField_23);
 
 		textField_24 = new JTextField();
-		textField_24.setColumns(10);
 		textField_24.setBounds(631, 86, 86, 20);
+		textField_24.setColumns(10);
 		contentPane.add(textField_24);
 
 		JLabel label_29 = new JLabel("Estado");
-		label_29.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_29.setBounds(551, 88, 46, 14);
+		label_29.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		contentPane.add(label_29);
 
 		JLabel label_30 = new JLabel("Edificio");
-		label_30.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_30.setBounds(345, 60, 46, 14);
+		label_30.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		contentPane.add(label_30);
 
 		textField_25 = new JTextField();
-		textField_25.setColumns(10);
 		textField_25.setBounds(401, 58, 86, 20);
+		textField_25.setColumns(10);
 		contentPane.add(textField_25);
 
 		textField_26 = new JTextField();
-		textField_26.setColumns(10);
 		textField_26.setBounds(404, 95, 86, 20);
+		textField_26.setColumns(10);
 		contentPane.add(textField_26);
 
 		JLabel label_31 = new JLabel("Sala");
-		label_31.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_31.setBounds(355, 98, 29, 14);
+		label_31.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		contentPane.add(label_31);
 
 		textField_29 = new JTextField();
-		textField_29.setColumns(10);
 		textField_29.setBounds(404, 133, 86, 20);
+		textField_29.setColumns(10);
 		contentPane.add(textField_29);
 
 		textField_30 = new JTextField();
-		textField_30.setColumns(10);
 		textField_30.setBounds(404, 160, 86, 20);
+		textField_30.setColumns(10);
 		contentPane.add(textField_30);
 
 		JLabel label_34 = new JLabel("Almacenamiento");
-		label_34.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_34.setBounds(304, 139, 100, 30);
+		label_34.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		contentPane.add(label_34);
 
 		tPSobremesa = new JTabbedPane(JTabbedPane.TOP);
-		tPSobremesa.setBackground(new Color(135, 206, 235));
 		tPSobremesa.setBounds(45, 200, 709, 244);
+		tPSobremesa.setBackground(new Color(135, 206, 235));
 		contentPane.add(tPSobremesa);
 
 		panel = new JPanel();
@@ -356,21 +360,6 @@ public class Caracteristicas_Equipo extends JFrame {
 		label_16.setBounds(527, 38, 39, 14);
 		panel.add(label_16);
 		label_16.setFont(new Font("Tahoma", Font.PLAIN, 12));
-
-		JButton button_26 = new JButton("Dar de baja equipo");
-		button_26.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		button_26.setBounds(195, 173, 130, 32);
-		panel.add(button_26);
-
-		JButton button_27 = new JButton("Descartar cambios");
-		button_27.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		button_27.setBounds(384, 173, 135, 32);
-		panel.add(button_27);
-
-		JButton button_28 = new JButton("Guardar cambios");
-		button_28.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		button_28.setBounds(573, 173, 121, 32);
-		panel.add(button_28);
 
 		panel_1 = new JPanel();
 		panel_1.setBackground(new Color(135, 206, 235));
@@ -492,21 +481,6 @@ public class Caracteristicas_Equipo extends JFrame {
 		label_42.setBounds(270, 39, 52, 14);
 		panel_1.add(label_42);
 
-		JButton button_22 = new JButton("Dar de baja equipo");
-		button_22.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		button_22.setBounds(195, 173, 130, 32);
-		panel_1.add(button_22);
-
-		JButton button_23 = new JButton("Descartar cambios");
-		button_23.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		button_23.setBounds(384, 173, 135, 32);
-		panel_1.add(button_23);
-
-		JButton button_24 = new JButton("Guardar cambios");
-		button_24.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		button_24.setBounds(573, 173, 121, 32);
-		panel_1.add(button_24);
-
 		panel_2 = new JPanel();
 		panel_2.setBackground(new Color(135, 206, 235));
 		tPSobremesa.addTab("Smartphone / Tablet", null, panel_2, null);
@@ -601,21 +575,6 @@ public class Caracteristicas_Equipo extends JFrame {
 		group3.add(rdbtnTablet);
 		group3.add(rdbtnSmartphone);
 
-		JButton button_18 = new JButton("Dar de baja equipo");
-		button_18.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		button_18.setBounds(195, 173, 130, 32);
-		panel_2.add(button_18);
-
-		JButton button_19 = new JButton("Descartar cambios");
-		button_19.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		button_19.setBounds(384, 173, 135, 32);
-		panel_2.add(button_19);
-
-		JButton button_20 = new JButton("Guardar cambios");
-		button_20.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		button_20.setBounds(573, 173, 121, 32);
-		panel_2.add(button_20);
-
 		if (rdbtnTablet.isSelected()) {
 			rdbtnSmartphone.setEnabled(false);
 		} else if (rdbtnSmartphone.isSelected()) {
@@ -636,21 +595,6 @@ public class Caracteristicas_Equipo extends JFrame {
 		textField_35.setColumns(10);
 		textField_35.setBounds(306, 90, 86, 20);
 		panel_3.add(textField_35);
-
-		JButton button_14 = new JButton("Dar de baja equipo");
-		button_14.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		button_14.setBounds(195, 173, 130, 32);
-		panel_3.add(button_14);
-
-		JButton button_15 = new JButton("Descartar cambios");
-		button_15.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		button_15.setBounds(384, 173, 135, 32);
-		panel_3.add(button_15);
-
-		JButton button_16 = new JButton("Guardar cambios");
-		button_16.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		button_16.setBounds(573, 173, 121, 32);
-		panel_3.add(button_16);
 
 		JPanel panel_4 = new JPanel();
 		panel_4.setBackground(new Color(135, 206, 235));
@@ -762,21 +706,6 @@ public class Caracteristicas_Equipo extends JFrame {
 		lblEquipoEnlazado.setBounds(489, 37, 91, 14);
 		panel_4.add(lblEquipoEnlazado);
 
-		JButton button_10 = new JButton("Dar de baja equipo");
-		button_10.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		button_10.setBounds(195, 173, 130, 32);
-		panel_4.add(button_10);
-
-		JButton button_11 = new JButton("Descartar cambios");
-		button_11.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		button_11.setBounds(384, 173, 135, 32);
-		panel_4.add(button_11);
-
-		JButton button_12 = new JButton("Guardar cambios");
-		button_12.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		button_12.setBounds(573, 173, 121, 32);
-		panel_4.add(button_12);
-
 		JPanel panel_5 = new JPanel();
 		panel_5.setBackground(new Color(135, 206, 235));
 		tPSobremesa.addTab("Monitor / TV", null, panel_5, null);
@@ -851,21 +780,6 @@ public class Caracteristicas_Equipo extends JFrame {
 		group4.add(rdbtnTv);
 		group4.add(rdbtnMonitor);
 
-		JButton button_6 = new JButton("Dar de baja equipo");
-		button_6.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		button_6.setBounds(195, 173, 130, 32);
-		panel_5.add(button_6);
-
-		JButton button_7 = new JButton("Descartar cambios");
-		button_7.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		button_7.setBounds(384, 173, 135, 32);
-		panel_5.add(button_7);
-
-		JButton button_8 = new JButton("Guardar cambios");
-		button_8.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		button_8.setBounds(573, 173, 121, 32);
-		panel_5.add(button_8);
-
 		if (rdbtnTv.isSelected()) {
 			rdbtnMonitor.setEnabled(false);
 		} else if (rdbtnMonitor.isSelected()) {
@@ -912,21 +826,6 @@ public class Caracteristicas_Equipo extends JFrame {
 		lblHdmi.setBounds(363, 100, 46, 14);
 		panel_6.add(lblHdmi);
 
-		JButton button_2 = new JButton("Dar de baja equipo");
-		button_2.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		button_2.setBounds(195, 173, 130, 32);
-		panel_6.add(button_2);
-
-		JButton button_3 = new JButton("Descartar cambios");
-		button_3.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		button_3.setBounds(384, 173, 135, 32);
-		panel_6.add(button_3);
-
-		JButton button_4 = new JButton("Guardar cambios");
-		button_4.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		button_4.setBounds(573, 173, 121, 32);
-		panel_6.add(button_4);
-
 		JPanel panel_7 = new JPanel();
 		panel_7.setBackground(new Color(135, 206, 235));
 		tPSobremesa.addTab("Consola", null, panel_7, null);
@@ -942,50 +841,42 @@ public class Caracteristicas_Equipo extends JFrame {
 		textField_48.setBounds(297, 82, 86, 20);
 		panel_7.add(textField_48);
 
-		btnDescartarCambioscarac = new JButton("Descartar cambios");
-		btnDescartarCambioscarac.setBounds(384, 173, 135, 32);
-		panel_7.add(btnDescartarCambioscarac);
-		btnDescartarCambioscarac.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				setVisible(false);
-				pantalla = new TbEquipos();
-				pantalla.setVisible(true);
-			}
-		});
-		btnDescartarCambioscarac.setFont(new Font("Times New Roman", Font.BOLD,
-				11));
+		btnCancelar = new JButton("Cancelar");
+		btnCancelar.setFont(new Font("Times New Roman", Font.BOLD, 11));
+		btnCancelar.setBounds(45, 455, 130, 32);
+		contentPane.add(btnCancelar);
 
-		btnGuardarCambioscarac = new JButton("Guardar cambios");
-		btnGuardarCambioscarac.setBounds(573, 173, 121, 32);
-		panel_7.add(btnGuardarCambioscarac);
-		btnGuardarCambioscarac.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-			}
-		});
-		btnGuardarCambioscarac.setFont(new Font("Times New Roman", Font.BOLD,
-				11));
-
-		btnDarDeBajacarac = new JButton("Dar de baja equipo");
-		btnDarDeBajacarac.setBounds(195, 173, 130, 32);
-		panel_7.add(btnDarDeBajacarac);
-		btnDarDeBajacarac.setFont(new Font("Times New Roman", Font.BOLD, 11));
-
-		JButton button = new JButton("Cancelar");
-		button.setBounds(45, 455, 89, 23);
-		contentPane.add(button);
-
-		JButton button_25 = new JButton("Realizar Pr\u00E9stamo");
-		button_25.addActionListener(new ActionListener() {
+		btnRealizarPrestamo = new JButton("Realizar Pr\u00E9stamo");
+		btnRealizarPrestamo.setBounds(195, 455, 130, 32);
+		btnRealizarPrestamo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);
 				pantalla1 = new RegPrestamos();
 				pantalla1.setVisible(true);
 			}
 		});
-		button_25.setBounds(171, 450, 130, 32);
-		contentPane.add(button_25);
-		button_25.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		button.addActionListener(new ActionListener() {
+		contentPane.add(btnRealizarPrestamo);
+		btnRealizarPrestamo.setFont(new Font("Times New Roman", Font.BOLD, 11));
+		
+				btnBajaEquipo = new JButton("Dar de baja equipo");
+				btnBajaEquipo.setBounds(341, 455, 130, 32);
+				contentPane.add(btnBajaEquipo);
+				btnBajaEquipo.setFont(new Font("Times New Roman", Font.BOLD, 11));
+				
+						btnDescartarCambios = new JButton("Descartar cambios");
+						btnDescartarCambios.setBounds(481, 455, 130, 32);
+						contentPane.add(btnDescartarCambios);
+						btnDescartarCambios.addActionListener(new ActionListener() {
+							public void actionPerformed(ActionEvent e) {
+							}
+						});
+						btnDescartarCambios.setFont(new Font("Times New Roman", Font.BOLD, 11));
+						
+								btnGuardarCambios = new JButton("Guardar cambios");
+								btnGuardarCambios.setBounds(621, 456, 130, 32);
+								contentPane.add(btnGuardarCambios);
+								btnGuardarCambios.setFont(new Font("Times New Roman", Font.BOLD, 11));
+		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);
 				pantalla = new TbEquipos();

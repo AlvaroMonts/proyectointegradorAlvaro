@@ -60,6 +60,8 @@ public class TbEquipos extends JFrame {
 	 * Create the frame.
 	 */
 	public TbEquipos() {
+		setTitle("Equipos");
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 896, 466);
 		contentPane = new JPanel();
@@ -110,10 +112,13 @@ public class TbEquipos extends JFrame {
 
 		table = new JTable();
 		table.setModel(
-				new DefaultTableModel(tbEqCont.array,
-						new String[] { "Código", "Tipo de Equipo", "Almacenamiento1", "Almacenamiento2", "estado",
-								"marca", "disponibilidad", "TipoUso", "modelo", "prestable", "Sala", "Edificio",
-								"TipoSala" }));
+				new DefaultTableModel(
+					tbEqCont.array
+			,
+			new String[] {
+				"C\u00F3digo", "Tipo de Equipo", "Almacenamiento1", "Almacenamiento2", "Notas", "estado", "marca", "disponibilidad", "TipoUso", "modelo", "prestable", "Sala", "Edificio", "TipoSala"
+			}
+		));
 		table.getColumnModel().getColumn(2).setPreferredWidth(85);
 
 		for (int i = 0; i < table.getColumnModel().getColumnCount(); i++) {
@@ -166,16 +171,20 @@ public class TbEquipos extends JFrame {
 				Pantalla2.setVisible(true);
 			}
 		});
-
-		JButton btnUsuarios = new JButton("Usuarios");
-		btnUsuarios.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				setVisible(false);
-				Pantalla3 = new TbUsers();
-				Pantalla3.setVisible(true);
-			}
-		});
-		toolBar.add(btnUsuarios);
+		
+		JButton btnEquipos = new JButton("Equipos");
+		btnEquipos.setEnabled(false);
+		toolBar.add(btnEquipos);
+		
+				JButton btnUsuarios = new JButton("Usuarios");
+				btnUsuarios.addActionListener(new ActionListener() {
+					public void actionPerformed(ActionEvent e) {
+						setVisible(false);
+						Pantalla3 = new TbUsers();
+						Pantalla3.setVisible(true);
+					}
+				});
+				toolBar.add(btnUsuarios);
 
 		toolBar.add(button_2);
 
@@ -228,17 +237,12 @@ public class TbEquipos extends JFrame {
 
 		btnCerrarSesin = new JButton("Cerrar sesi\u00F3n");
 		btnCerrarSesin.setBounds(753, 11, 117, 23);
-
-		JLabel lblEquipos = new JLabel("Equipos");
-		lblEquipos.setBounds(350, 26, 69, 14);
-		lblEquipos.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		contentPane.setLayout(null);
 
 		lblTipoDeEquipo = new JLabel("Tipo de equipo");
 		lblTipoDeEquipo.setBounds(62, 62, 89, 14);
 		contentPane.add(lblTipoDeEquipo);
 		contentPane.add(toolBar);
-		contentPane.add(lblEquipos);
 		contentPane.add(btnCerrarSesin);
 		contentPane.add(btnDarDeAlta_1);
 		contentPane.add(btnDarDeAlta);

@@ -29,7 +29,6 @@ public class TbEquipos_Modelo {
 	public void Consulta_Array() {
 		try {
 			String query = "Select * from proyectointegrador.equipo";
-			// cambiar query. solo liga por proyectointegrador
 			Statement stmt = conection.createStatement();
 			ResultSet rset = stmt.executeQuery(query);
 			ResultSetMetaData rmsd = rset.getMetaData();

@@ -17,23 +17,29 @@ import java.awt.Color;
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 
+import Controlador.RegUsuarios_Controlador;
+
 public class RegUsuarios extends JFrame {
 
 	private JPanel contentPane;
-	private JTextField textField;
-	private JTextField textField_1;
-	private JTextField textField_2;
-	private JTextField textField_3;
-	private JTextField textField_4;
+	private JTextField tFNombre;
+	private JTextField tFApellidos;
+	private JTextField tFEmail;
+	private JTextField tFPassword;
+	private JTextField tFPassword2;
 	private JButton btnCancelar;
-	private JButton button;
+	private JButton btnRegistrar;
 	private TbUsers pantalla;
+	private JRadioButton rBAdmin;
+	private JRadioButton rBTecnico;
+	private RegUsuarios_Controlador registro;
 
 
 	/**
 	 * Create the frame.
 	 */
 	public RegUsuarios() {
+		setTitle("Registro de Usuarios");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 788, 436);
 		contentPane = new JPanel();
@@ -43,88 +49,92 @@ public class RegUsuarios extends JFrame {
 		
 		JLabel label = new JLabel("Nombre:");
 		
-		textField = new JTextField();
-		textField.setColumns(10);
+		tFNombre = new JTextField();
+		tFNombre.setColumns(10);
 		
 		JLabel label_1 = new JLabel("Apellidos:");
 		
-		textField_1 = new JTextField();
-		textField_1.setColumns(10);
+		tFApellidos = new JTextField();
+		tFApellidos.setColumns(10);
 		
-		textField_2 = new JTextField();
-		textField_2.setColumns(10);
+		tFEmail = new JTextField();
+		tFEmail.setColumns(10);
 		
 		JLabel label_2 = new JLabel("Email:");
 		
-		JRadioButton radioButton = new JRadioButton("Administrador");
-		radioButton.setBackground(new Color(135, 206, 235));
+		rBAdmin = new JRadioButton("Administrador");
+		rBAdmin.setBackground(new Color(135, 206, 235));
 		
-		JRadioButton radioButton_1 = new JRadioButton("T\u00E9cnico");
-		radioButton_1.setBackground(new Color(135, 206, 235));
+		rBTecnico = new JRadioButton("T\u00E9cnico");
+		rBTecnico.setBackground(new Color(135, 206, 235));
 		
 		ButtonGroup group1 = new ButtonGroup();
-		group1.add(radioButton);
-		group1.add(radioButton_1);
+		group1.add(rBAdmin);
+		group1.add(rBTecnico);
 		
-		if(radioButton.isSelected()) {
-			radioButton_1.setEnabled(false);
-		} else if(radioButton_1.isSelected()) {
-			radioButton.setEnabled(true);
+		if(rBAdmin.isSelected()) {
+			rBTecnico.setEnabled(false);
+		} else if(rBTecnico.isSelected()) {
+			rBAdmin.setEnabled(true);
 		}
 		
 		JLabel label_3 = new JLabel("Tipo de Usuario:");
 		
 		JLabel label_4 = new JLabel("Contrase\u00F1a:");
 		
-		textField_3 = new JTextField();
-		textField_3.setColumns(10);
+		tFPassword = new JTextField();
+		tFPassword.setColumns(10);
 		
 		JLabel label_5 = new JLabel("Repetir Contrase\u00F1a:");
 		
-		textField_4 = new JTextField();
-		textField_4.setColumns(10);
+		tFPassword2 = new JTextField();
+		tFPassword2.setColumns(10);
 		
-		button = new JButton("Registrar");
+		btnRegistrar = new JButton("Registrar");
 		
 		btnCancelar = new JButton("Cancelar");
+		
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane.setHorizontalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
 				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(108)
-					.addComponent(label, GroupLayout.PREFERRED_SIZE, 61, GroupLayout.PREFERRED_SIZE)
-					.addGap(10)
-					.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addGap(195)
-					.addComponent(radioButton, GroupLayout.PREFERRED_SIZE, 115, GroupLayout.PREFERRED_SIZE))
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(108)
-					.addComponent(label_1, GroupLayout.PREFERRED_SIZE, 66, GroupLayout.PREFERRED_SIZE)
-					.addGap(5)
-					.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addGap(79)
-					.addComponent(label_3, GroupLayout.PREFERRED_SIZE, 95, GroupLayout.PREFERRED_SIZE)
-					.addGap(21)
-					.addComponent(radioButton_1, GroupLayout.PREFERRED_SIZE, 77, GroupLayout.PREFERRED_SIZE))
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(344)
-					.addComponent(label_4, GroupLayout.PREFERRED_SIZE, 77, GroupLayout.PREFERRED_SIZE)
-					.addGap(14)
-					.addComponent(textField_3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(108)
-					.addComponent(label_2, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
-					.addGap(9)
-					.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-					.addGap(93)
-					.addComponent(label_5, GroupLayout.PREFERRED_SIZE, 115, GroupLayout.PREFERRED_SIZE)
-					.addGap(12)
-					.addComponent(textField_4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(502)
-					.addComponent(btnCancelar, GroupLayout.PREFERRED_SIZE, 89, GroupLayout.PREFERRED_SIZE)
-					.addGap(77)
-					.addComponent(button, GroupLayout.PREFERRED_SIZE, 89, GroupLayout.PREFERRED_SIZE))
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(108)
+							.addComponent(label, GroupLayout.PREFERRED_SIZE, 61, GroupLayout.PREFERRED_SIZE)
+							.addGap(10)
+							.addComponent(tFNombre, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addGap(195)
+							.addComponent(rBAdmin, GroupLayout.PREFERRED_SIZE, 115, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(108)
+							.addComponent(label_1, GroupLayout.PREFERRED_SIZE, 66, GroupLayout.PREFERRED_SIZE)
+							.addGap(5)
+							.addComponent(tFApellidos, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addGap(79)
+							.addComponent(label_3, GroupLayout.PREFERRED_SIZE, 95, GroupLayout.PREFERRED_SIZE)
+							.addGap(21)
+							.addComponent(rBTecnico, GroupLayout.PREFERRED_SIZE, 77, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(344)
+							.addComponent(label_4, GroupLayout.PREFERRED_SIZE, 77, GroupLayout.PREFERRED_SIZE)
+							.addGap(14)
+							.addComponent(tFPassword, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(108)
+							.addComponent(label_2, GroupLayout.PREFERRED_SIZE, 48, GroupLayout.PREFERRED_SIZE)
+							.addGap(9)
+							.addComponent(tFEmail, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+							.addGap(93)
+							.addComponent(label_5, GroupLayout.PREFERRED_SIZE, 115, GroupLayout.PREFERRED_SIZE)
+							.addGap(12)
+							.addComponent(tFPassword2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addGroup(gl_contentPane.createSequentialGroup()
+							.addGap(525)
+							.addComponent(btnCancelar, GroupLayout.PREFERRED_SIZE, 89, GroupLayout.PREFERRED_SIZE)
+							.addGap(6)
+							.addComponent(btnRegistrar, GroupLayout.PREFERRED_SIZE, 89, GroupLayout.PREFERRED_SIZE)))
+					.addGap(67))
 		);
 		gl_contentPane.setVerticalGroup(
 			gl_contentPane.createParallelGroup(Alignment.LEADING)
@@ -136,41 +146,41 @@ public class RegUsuarios extends JFrame {
 							.addComponent(label))
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(1)
-							.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addComponent(radioButton))
+							.addComponent(tFNombre, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(rBAdmin))
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(35)
 							.addComponent(label_1))
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(32)
-							.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+							.addComponent(tFApellidos, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 						.addComponent(label_3)
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(13)
-							.addComponent(radioButton_1)))
+							.addComponent(rBTecnico)))
 					.addGap(6)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(3)
 							.addComponent(label_4))
-						.addComponent(textField_3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+						.addComponent(tFPassword, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
 					.addGap(9)
 					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(3)
 							.addComponent(label_2))
-						.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+						.addComponent(tFEmail, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(16)
 							.addComponent(label_5))
 						.addGroup(gl_contentPane.createSequentialGroup()
 							.addGap(13)
-							.addComponent(textField_4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+							.addComponent(tFPassword2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
 					.addGap(100)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
 						.addComponent(btnCancelar)
-						.addComponent(button)))
+						.addComponent(btnRegistrar)))
 		);
 		contentPane.setLayout(gl_contentPane);
 		btnCancelar.addActionListener(new ActionListener() {
@@ -178,6 +188,11 @@ public class RegUsuarios extends JFrame {
 				setVisible(false);
 				pantalla=new TbUsers();
 				pantalla.setVisible(true);
+			}
+		});
+		btnRegistrar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				registro = new RegUsuarios_Controlador();
 			}
 		});
 	}

@@ -30,7 +30,6 @@ public class TbUsers_Modelo {
 	public void Consulta_Array() {
 		try {
 			String query = "Select Email,TipoUsuario,Nombre,Apellidos from proyectointegrador.usuario";
-			// cambiar query. solo liga por proyectointegrador
 			Statement stmt = conection.createStatement();
 			ResultSet rset = stmt.executeQuery(query);
 			ResultSetMetaData rmsd = rset.getMetaData();

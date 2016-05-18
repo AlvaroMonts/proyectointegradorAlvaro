@@ -33,6 +33,8 @@ public class Caracteristicas_usuario extends JFrame {
 	 * Create the frame.
 	 */
 	public Caracteristicas_usuario() {
+		setTitle("Caracteristicas Usuario");
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 674, 433);
 		contentPane = new JPanel();

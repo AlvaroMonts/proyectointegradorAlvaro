@@ -120,6 +120,8 @@ public class RegEquipos extends JFrame {
 	 * Create the frame.
 	 */
 	public RegEquipos() {
+		setTitle("Registro de Equipos");
+		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 790, 519);
 		contentPane = new JPanel();

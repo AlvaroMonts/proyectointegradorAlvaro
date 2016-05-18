@@ -2,13 +2,13 @@ package Modelo;
 
 import java.sql.*;
 
-public class TbAlmacen_Modelo {
+public class RegUsuarios_Modelo {
 
 	private String bd, login, pwd, url;
 	private Connection conection;
 	private String[][] Array;
 
-	public TbAlmacen_Modelo() {
+	public RegUsuarios_Modelo() {
 		try {
 			bd = "proyectointegrador";
 			login = "root";
@@ -29,7 +29,7 @@ public class TbAlmacen_Modelo {
 
 	public void Consulta_Array() {
 		try {
-			String query = "Select * from proyectointegrador.almacen";
+			String query = "Insert ";
 			Statement stmt = conection.createStatement();
 			ResultSet rset = stmt.executeQuery(query);
 			ResultSetMetaData rmsd = rset.getMetaData();

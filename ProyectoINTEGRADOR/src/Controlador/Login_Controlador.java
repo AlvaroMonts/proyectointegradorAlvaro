@@ -9,10 +9,10 @@ public class Login_Controlador {
 	}	
 	
 	public boolean realizarRegistro(String email, String password){
-		if (logMod.comprobarRegistro(email, password)) {
+		logMod.ConsultaLogin(email, password);
+		if (logMod.comprobarLogin()) {
 			return true;
 		} else {
-			System.out.println("El email + contraseña no es 'admin@gmail.com' + 'admin'");
 			return false;
 		}
 	}

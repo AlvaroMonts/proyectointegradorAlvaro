@@ -27,34 +27,32 @@ public class RegUsuarios_Modelo {
 		}
 	}
 
-	public void Consulta_Array() {
+	public void RealizarAlta(String email, String nombre, String apellidos, String contraseña, String admin) {
 		try {
-			String query = "Insert ";
-			Statement stmt = conection.createStatement();
-			ResultSet rset = stmt.executeQuery(query);
-			ResultSetMetaData rmsd = rset.getMetaData();
+			String sql = "Insert into proyectointegrador.usuario (`Email`, `nombre`, `apellidos`, `contraseña`, `TipoUsuario`) values (?, ?, ?, ?, ?);";
+			PreparedStatement stmt = conection.prepareStatement(sql);
+			stmt.setString(1, email);
+			stmt.setString(2, nombre);
+			stmt.setString(3, apellidos);
+			stmt.setString(4, contraseña);
+			stmt.setString(5, admin);
 
-			rset.last();
-			int a = rmsd.getColumnCount();
-			int b = rset.getRow();
-			rset.beforeFirst();
+			stmt.executeUpdate();
 
-			Array = new String[b][a];
-			for (int i = 0; i < b; i++) {
-				if (rset.next()) {
-					for (int j = 0; j < a; j++) {
-						Array[i][j] = rset.getString((j + 1));
-					}
-				}
-			}
-			rset.close();
+			/*
+			 * /* Statement stmt = conection.prepareStatement(
+			 * "Insert into usuario (Email, nombre, apellidos, contraseña, tipo) values (?,?,?,?,?);"
+			 * );
+			 * 
+			 * ((PreparedStatement) stmt).setString(1, email);
+			 * ((PreparedStatement) stmt).setString(2, nombre);
+			 * ((PreparedStatement) stmt).setString(3, apellidos);
+			 * ((PreparedStatement) stmt).setString(4, contraseña);
+			 * ((PreparedStatement) stmt).setString(5, admin);
+			 */
 			stmt.close();
 		} catch (SQLException s) {
 			s.printStackTrace();
 		}
-	}
-
-	public String[][] getArray() {
-		return Array;
 	}
 }

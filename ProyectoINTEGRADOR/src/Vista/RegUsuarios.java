@@ -139,7 +139,7 @@ public class RegUsuarios extends JFrame {
 							tFPassword.getText(), rBAdmin.getText());
 				} else if (tFPassword.getText().equals(tFPassword2.getText()) && rBTecnico.isSelected()) {
 					registro = new RegUsuarios_Controlador(tFEmail.getText(), tFNombre.getText(), tFApellidos.getText(),
-							tFPassword.getText(), rBAdmin.getText());
+							tFPassword.getText(), rBTecnico.getText());
 				} else {
 					System.out.println("Las contraseñas no coinciden");
 				}

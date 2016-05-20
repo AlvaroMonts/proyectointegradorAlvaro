@@ -1,12 +1,9 @@
 package Controlador;
 
-import Modelo.Login_Modelo;
+import Modelo.adminBBDD;
 
 public class Login_Controlador {
-	private Login_Modelo logMod;
-	public Login_Controlador(){
-		logMod = new Login_Modelo();
-	}	
+	private adminBBDD logMod = new adminBBDD();
 	
 	public boolean realizarRegistro(String email, String password){
 		logMod.ConsultaLogin(email, password);

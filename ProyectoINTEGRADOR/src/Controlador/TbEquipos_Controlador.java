@@ -1,14 +1,13 @@
 package Controlador;
 
-import Modelo.TbEquipos_Modelo;
+import Modelo.adminBBDD;
 
 public class TbEquipos_Controlador {
-	TbEquipos_Modelo tbEqMod;
+	adminBBDD tbEqMod = new adminBBDD();
 	public String[][] array;
 	public TbEquipos_Controlador() {
-		tbEqMod = new TbEquipos_Modelo();
-		tbEqMod.Consulta_Array();
-		array = tbEqMod.getArray();
+		tbEqMod.Consulta_ArrayEquipos();
+		array = tbEqMod.getArrayEquipos();
 	}
 	
 }

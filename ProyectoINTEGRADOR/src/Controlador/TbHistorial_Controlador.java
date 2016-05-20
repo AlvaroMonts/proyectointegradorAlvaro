@@ -1,13 +1,12 @@
 package Controlador;
 
-import Modelo.TbHistorial_Modelo;
+import Modelo.adminBBDD;
 
 public class TbHistorial_Controlador {
-	TbHistorial_Modelo tbHiMod;
+	adminBBDD tbHiMod = new adminBBDD();
 	public String[][] array;
 	public TbHistorial_Controlador() {
-		tbHiMod = new TbHistorial_Modelo();
-		tbHiMod.Consulta_Array();
-		array = tbHiMod.getArray();
+		tbHiMod.Consulta_ArrayHistorial();
+		array = tbHiMod.getArrayHistorial();
 	}
 }

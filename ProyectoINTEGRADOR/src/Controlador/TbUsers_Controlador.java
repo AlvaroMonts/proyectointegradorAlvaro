@@ -1,13 +1,12 @@
 package Controlador;
 
-import Modelo.TbUsers_Modelo;
+import Modelo.adminBBDD;
 
 public class TbUsers_Controlador {
-	TbUsers_Modelo tbUsMod;
+	adminBBDD tbUsMod = new adminBBDD();
 	public String[][] array;
 	public TbUsers_Controlador() {
-		tbUsMod = new TbUsers_Modelo();
-		tbUsMod.Consulta_Array();
-		array = tbUsMod.getArray();
+		tbUsMod.Consulta_ArrayUsers();
+		array = tbUsMod.getArrayUsers();
 	}
 }

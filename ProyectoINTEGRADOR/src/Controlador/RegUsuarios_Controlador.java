@@ -1,9 +1,8 @@
 package Controlador;
-import Modelo.RegUsuarios_Modelo;
+import Modelo.adminBBDD;
 public class RegUsuarios_Controlador  {
-	RegUsuarios_Modelo registro;
+	adminBBDD registro = new adminBBDD();
 	public RegUsuarios_Controlador(String email, String nombre, String apellidos, String contraseña, String admin) {
-		registro = new RegUsuarios_Modelo();
 		registro.RealizarAlta(email,nombre,apellidos,contraseña,admin);
 	}
 }

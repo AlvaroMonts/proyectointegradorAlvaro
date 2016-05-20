@@ -1,13 +1,12 @@
 package Controlador;
 
-import Modelo.TbAlmacen_Modelo;
+import Modelo.adminBBDD;
 
 public class TbAlmacen_Controlador {
-	TbAlmacen_Modelo tbAlMod;
+	adminBBDD tbAlMod = new adminBBDD();
 	public String[][] array;
 	public TbAlmacen_Controlador() {
-		tbAlMod = new TbAlmacen_Modelo();
-		tbAlMod.Consulta_Array();
-		array = tbAlMod.getArray();
+		tbAlMod.Consulta_ArrayAlmacen();
+		array = tbAlMod.getArrayAlmacen();
 	}
 }

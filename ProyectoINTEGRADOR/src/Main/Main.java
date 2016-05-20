@@ -1,5 +1,6 @@
 package Main;
 
+import Modelo.adminBBDD;
 import Vista.Caracteristicas_Equipo;
 import Vista.Caracteristicas_usuario;
 import Vista.Login;
@@ -14,6 +15,7 @@ import Vista.TbUsers;
 
 public class Main {
 	public static void main(String[] args) {
+		adminBBDD con = new adminBBDD();
 		Caracteristicas_Equipo CEquipo =  new Caracteristicas_Equipo();
 		Caracteristicas_usuario CUsuario = new Caracteristicas_usuario();
 		RegEquipos REquipos = new RegEquipos();
@@ -26,8 +28,6 @@ public class Main {
 		TbUsers TUsers = new TbUsers();
 		Login Log = new Login();
 		
-		
-		
 		Log.setVisible(true);
 		Log.setPantalla(TEquipo);
 		
@@ -35,6 +35,7 @@ public class Main {
 		TEquipo.setPantalla2(TPrestamos);
 		TEquipo.setPantalla3(TUsers);
 		TEquipo.setPantalla4(TAlmacen);
+		
 		
 		THistorial.setPantalla1(TAlmacen);
 		THistorial.setPantalla2(TEquipo);

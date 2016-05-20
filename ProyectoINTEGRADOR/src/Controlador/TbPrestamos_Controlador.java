@@ -1,13 +1,12 @@
 package Controlador;
 
-import Modelo.TbPrestamos_Modelo;
+import Modelo.adminBBDD;
 
 public class TbPrestamos_Controlador {
-	TbPrestamos_Modelo tbPreMod;
+	adminBBDD tbPreMod = new adminBBDD();
 	public String[][] array;
 	public TbPrestamos_Controlador() {
-		tbPreMod = new TbPrestamos_Modelo();
-		tbPreMod.Consulta_Array();
-		array = tbPreMod.getArray();
+		tbPreMod.Consulta_ArrayPrestamos();
+		array = tbPreMod.getArrayPrestamos();
 	}
 }

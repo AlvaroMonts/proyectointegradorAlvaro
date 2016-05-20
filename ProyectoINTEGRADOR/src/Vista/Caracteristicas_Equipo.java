@@ -21,6 +21,8 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.JTextArea;
 import javax.swing.JTabbedPane;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 public class Caracteristicas_Equipo extends JFrame {
 	private JPanel contentPane;
@@ -37,9 +39,7 @@ public class Caracteristicas_Equipo extends JFrame {
 	private JTextField textField_20;
 	private JTextField textField_21;
 	private JTextField textField_22;
-	private JTextField textField_23;
 	private JTextField textField_24;
-	private JTextField textField_25;
 	private JTextField textField_26;
 	private JTextField textField_27;
 	private JTextField textField_29;
@@ -192,14 +192,9 @@ public class Caracteristicas_Equipo extends JFrame {
 		contentPane.add(label_28);
 
 		JLabel label_27 = new JLabel("Tipo de uso");
-		label_27.setBounds(532, 60, 65, 14);
+		label_27.setBounds(532, 48, 65, 14);
 		label_27.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		contentPane.add(label_27);
-
-		textField_23 = new JTextField();
-		textField_23.setBounds(631, 58, 86, 20);
-		textField_23.setColumns(10);
-		contentPane.add(textField_23);
 
 		textField_24 = new JTextField();
 		textField_24.setBounds(631, 86, 86, 20);
@@ -215,11 +210,6 @@ public class Caracteristicas_Equipo extends JFrame {
 		label_30.setBounds(345, 60, 46, 14);
 		label_30.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		contentPane.add(label_30);
-
-		textField_25 = new JTextField();
-		textField_25.setBounds(401, 58, 86, 20);
-		textField_25.setColumns(10);
-		contentPane.add(textField_25);
 
 		textField_26 = new JTextField();
 		textField_26.setBounds(404, 95, 86, 20);
@@ -241,10 +231,10 @@ public class Caracteristicas_Equipo extends JFrame {
 		textField_30.setColumns(10);
 		contentPane.add(textField_30);
 
-		JLabel label_34 = new JLabel("Almacenamiento");
-		label_34.setBounds(304, 139, 100, 30);
-		label_34.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		contentPane.add(label_34);
+		JLabel lblAlmacenamiento = new JLabel("Almacenamiento1");
+		lblAlmacenamiento.setBounds(304, 125, 100, 30);
+		lblAlmacenamiento.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		contentPane.add(lblAlmacenamiento);
 
 		tPSobremesa = new JTabbedPane(JTabbedPane.TOP);
 		tPSobremesa.setBounds(45, 200, 709, 244);
@@ -876,6 +866,21 @@ public class Caracteristicas_Equipo extends JFrame {
 								btnGuardarCambios.setBounds(621, 456, 130, 32);
 								contentPane.add(btnGuardarCambios);
 								btnGuardarCambios.setFont(new Font("Times New Roman", Font.BOLD, 11));
+								
+								JLabel lblAlmacenamiento_1 = new JLabel("Almacenamiento2");
+								lblAlmacenamiento_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
+								lblAlmacenamiento_1.setBounds(304, 157, 100, 30);
+								contentPane.add(lblAlmacenamiento_1);
+								
+								JComboBox comboBox = new JComboBox();
+								comboBox.setModel(new DefaultComboBoxModel(new String[] {"Paris", "Madrid", "Berlin"}));
+								comboBox.setBounds(401, 58, 89, 20);
+								contentPane.add(comboBox);
+								
+								JComboBox comboBox_1 = new JComboBox();
+								comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"Docencia", "Investigacion", "Taller", "Secretaria"}));
+								comboBox_1.setBounds(631, 46, 69, 20);
+								contentPane.add(comboBox_1);
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);

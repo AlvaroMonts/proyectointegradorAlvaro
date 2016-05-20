@@ -67,7 +67,7 @@ public class Caracteristicas_usuario extends JFrame {
 		
 		textEmail_Cusuario = new JTextField();
 		textEmail_Cusuario.setColumns(10);
-		textEmail_Cusuario.setBounds(101, 211, 86, 20);
+		textEmail_Cusuario.setBounds(112, 211, 127, 20);
 		contentPane.add(textEmail_Cusuario);
 		
 		JRadioButton radioButtonAdministrador_Cusuario = new JRadioButton("Administrador");
@@ -95,12 +95,12 @@ public class Caracteristicas_usuario extends JFrame {
 		contentPane.add(label_3);
 		
 		JLabel label_4 = new JLabel("Contrase\u00F1a:");
-		label_4.setBounds(297, 159, 73, 14);
+		label_4.setBounds(315, 159, 73, 14);
 		contentPane.add(label_4);
 		
 		textContraseña_Cusuario = new JTextField();
 		textContraseña_Cusuario.setColumns(10);
-		textContraseña_Cusuario.setBounds(380, 156, 86, 20);
+		textContraseña_Cusuario.setBounds(434, 156, 86, 20);
 		contentPane.add(textContraseña_Cusuario);
 		
 		textReContraseña_Cusuario = new JTextField();

@@ -19,6 +19,7 @@ import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 
 import Controlador.RegUsuarios_Controlador;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class RegUsuarios extends JFrame {
 
@@ -48,24 +49,32 @@ public class RegUsuarios extends JFrame {
 		setContentPane(contentPane);
 
 		JLabel label = new JLabel("Nombre:");
+		label.setBounds(113, 117, 61, 14);
 
 		tFNombre = new JTextField();
+		tFNombre.setBounds(184, 114, 86, 20);
 		tFNombre.setColumns(10);
 
 		JLabel label_1 = new JLabel("Apellidos:");
+		label_1.setBounds(113, 171, 66, 14);
 
 		tFApellidos = new JTextField();
+		tFApellidos.setBounds(184, 168, 86, 20);
 		tFApellidos.setColumns(10);
 
 		tFEmail = new JTextField();
+		tFEmail.setBounds(178, 235, 115, 20);
 		tFEmail.setColumns(10);
 
 		JLabel label_2 = new JLabel("Email:");
+		label_2.setBounds(113, 238, 48, 14);
 
 		rBAdmin = new JRadioButton("Administrador");
+		rBAdmin.setBounds(465, 113, 115, 23);
 		rBAdmin.setBackground(new Color(135, 206, 235));
 
 		rBTecnico = new JRadioButton("T\u00E9cnico");
+		rBTecnico.setBounds(465, 149, 77, 23);
 		rBTecnico.setBackground(new Color(135, 206, 235));
 
 		ButtonGroup group1 = new ButtonGroup();
@@ -79,99 +88,43 @@ public class RegUsuarios extends JFrame {
 		}
 
 		JLabel label_3 = new JLabel("Tipo de Usuario:");
+		label_3.setBounds(349, 136, 95, 14);
 
 		JLabel label_4 = new JLabel("Contrase\u00F1a:");
+		label_4.setBounds(367, 200, 77, 14);
 
 		tFPassword = new JTextField();
+		tFPassword.setBounds(476, 197, 86, 20);
 		tFPassword.setColumns(10);
 
 		JLabel label_5 = new JLabel("Repetir Contrase\u00F1a:");
+		label_5.setBounds(349, 251, 115, 14);
 
 		tFPassword2 = new JTextField();
+		tFPassword2.setBounds(476, 248, 86, 20);
 		tFPassword2.setColumns(10);
 
 		btnRegistrar = new JButton("Registrar");
+		btnRegistrar.setBounds(625, 368, 89, 23);
 
 		btnCancelar = new JButton("Cancelar");
-
-		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane
-				.setHorizontalGroup(
-						gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addGroup(gl_contentPane.createSequentialGroup()
-										.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-												.addGroup(gl_contentPane.createSequentialGroup().addGap(108)
-														.addComponent(label, GroupLayout.PREFERRED_SIZE, 61,
-																GroupLayout.PREFERRED_SIZE)
-														.addGap(10)
-														.addComponent(tFNombre, GroupLayout.PREFERRED_SIZE,
-																GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-														.addGap(195).addComponent(rBAdmin, GroupLayout.PREFERRED_SIZE,
-																115, GroupLayout.PREFERRED_SIZE))
-												.addGroup(gl_contentPane.createSequentialGroup().addGap(108)
-														.addComponent(label_1, GroupLayout.PREFERRED_SIZE, 66,
-																GroupLayout.PREFERRED_SIZE)
-														.addGap(5)
-														.addComponent(tFApellidos, GroupLayout.PREFERRED_SIZE,
-																GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-														.addGap(79)
-														.addComponent(label_3, GroupLayout.PREFERRED_SIZE, 95,
-																GroupLayout.PREFERRED_SIZE)
-														.addGap(21).addComponent(rBTecnico, GroupLayout.PREFERRED_SIZE,
-																77, GroupLayout.PREFERRED_SIZE))
-												.addGroup(gl_contentPane.createSequentialGroup().addGap(344)
-														.addComponent(label_4, GroupLayout.PREFERRED_SIZE, 77,
-																GroupLayout.PREFERRED_SIZE)
-														.addGap(14).addComponent(tFPassword, GroupLayout.PREFERRED_SIZE,
-																GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-												.addGroup(gl_contentPane.createSequentialGroup().addGap(108)
-														.addComponent(label_2, GroupLayout.PREFERRED_SIZE, 48,
-																GroupLayout.PREFERRED_SIZE)
-														.addGap(9)
-														.addComponent(tFEmail, GroupLayout.PREFERRED_SIZE,
-																GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-														.addGap(93)
-														.addComponent(label_5, GroupLayout.PREFERRED_SIZE, 115,
-																GroupLayout.PREFERRED_SIZE)
-														.addGap(12)
-														.addComponent(tFPassword2, GroupLayout.PREFERRED_SIZE,
-																GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-												.addGroup(gl_contentPane.createSequentialGroup().addGap(525)
-														.addComponent(btnCancelar, GroupLayout.PREFERRED_SIZE, 89,
-																GroupLayout.PREFERRED_SIZE)
-														.addGap(6).addComponent(btnRegistrar,
-																GroupLayout.PREFERRED_SIZE, 89,
-																GroupLayout.PREFERRED_SIZE)))
-										.addGap(67)));
-		gl_contentPane.setVerticalGroup(gl_contentPane.createParallelGroup(Alignment.LEADING).addGroup(gl_contentPane
-				.createSequentialGroup().addGap(108)
-				.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup().addGap(4).addComponent(label))
-						.addGroup(gl_contentPane.createSequentialGroup().addGap(1).addComponent(tFNombre,
-								GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addComponent(rBAdmin))
-				.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup().addGap(35).addComponent(label_1))
-						.addGroup(gl_contentPane.createSequentialGroup().addGap(32).addComponent(tFApellidos,
-								GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addComponent(label_3)
-						.addGroup(gl_contentPane.createSequentialGroup().addGap(13).addComponent(rBTecnico)))
-				.addGap(6)
-				.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup().addGap(3).addComponent(label_4))
-						.addComponent(tFPassword, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-								GroupLayout.PREFERRED_SIZE))
-				.addGap(9)
-				.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup().addGap(3).addComponent(label_2))
-						.addComponent(tFEmail, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-								GroupLayout.PREFERRED_SIZE)
-						.addGroup(gl_contentPane.createSequentialGroup().addGap(16).addComponent(label_5))
-						.addGroup(gl_contentPane.createSequentialGroup().addGap(13).addComponent(tFPassword2,
-								GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-				.addGap(100).addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE).addComponent(btnCancelar)
-						.addComponent(btnRegistrar))));
-		contentPane.setLayout(gl_contentPane);
+		btnCancelar.setBounds(530, 368, 89, 23);
+		contentPane.setLayout(null);
+		contentPane.add(label);
+		contentPane.add(tFNombre);
+		contentPane.add(rBAdmin);
+		contentPane.add(label_1);
+		contentPane.add(tFApellidos);
+		contentPane.add(label_3);
+		contentPane.add(rBTecnico);
+		contentPane.add(btnCancelar);
+		contentPane.add(btnRegistrar);
+		contentPane.add(label_4);
+		contentPane.add(tFPassword);
+		contentPane.add(label_2);
+		contentPane.add(tFEmail);
+		contentPane.add(label_5);
+		contentPane.add(tFPassword2);
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);

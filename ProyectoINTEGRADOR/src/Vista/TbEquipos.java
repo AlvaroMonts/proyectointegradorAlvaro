@@ -161,7 +161,7 @@ public class TbEquipos extends JFrame {
 		});
 
 		JToolBar toolBar = new JToolBar();
-		toolBar.setBounds(41, 14, 288, 30);
+		toolBar.setBounds(41, 14, 346, 30);
 
 		JButton button_2 = new JButton("Prestamos");
 		button_2.addActionListener(new ActionListener() {

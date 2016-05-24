@@ -2,17 +2,34 @@ package Modelo;
 
 import java.sql.*;
 
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+
+import Controlador.Login_Controlador;
+import Controlador.RegUsuarios_Controlador;
+import Controlador.TbAlmacen_Controlador;
+import Controlador.TbEquipos_Controlador;
+import Controlador.TbHistorial_Controlador;
+import Controlador.TbPrestamos_Controlador;
+import Controlador.TbUsers_Controlador;
+
 public class adminBBDD {
 	private String bd, login, pwd, url;
 	private Connection conection;
 	private String[] ArrayContraseñas;
 	private String[] ArrayEmails;
-	private boolean loginCorrecto = false;
 	private String[][] ArrayAlmacen;
 	private String[][] ArrayEquipos;
 	private String[][] ArrayHistorial;
 	private String[][] ArrayPrestamos;
-	private String[][] ArrayUsers;	
+	private String[][] ArrayUsers;
+	private Login_Controlador logCont;
+	private RegUsuarios_Controlador regUsuCont;
+	private TbAlmacen_Controlador TbAlmacenCont;
+	private TbEquipos_Controlador TbEqCont;
+	private TbHistorial_Controlador TbHistCont;
+	private TbPrestamos_Controlador TbPresCont;
+	private TbUsers_Controlador TbUsersCont;
 
 	public adminBBDD() {
 		try {
@@ -32,8 +49,8 @@ public class adminBBDD {
 			e.printStackTrace();
 		}
 	}
-	
-	public void ConsultaLogin(String email, String password) {
+
+	public boolean ConsultaLogin(String email, String password) {
 		try {
 			String query1 = "Select Email from proyectointegrador.usuario";
 			String query2 = "Select contraseña from proyectointegrador.usuario";
@@ -45,26 +62,13 @@ public class adminBBDD {
 			rsetEmails.beforeFirst();
 
 			// Parte de Email
-			// int a;
 			ArrayEmails = new String[b];
 			for (int i = 0; i <= b; i++) {
 				if (rsetEmails.next()) {
 					System.out.println(rsetEmails.getString((1)));
 					ArrayEmails[i] = rsetEmails.getString((1));
-					// a = i;
 				}
 			}
-
-			int contador = 0;
-
-			for (String string : ArrayEmails) {
-				if (email.equals(string)) {
-					contador++;
-					break;
-				}
-			}
-
-			rsetEmails.close();
 
 			// Parte de Contraseñas
 			ResultSet rsetContraseñas = stmt.executeQuery(query2);
@@ -76,32 +80,41 @@ public class adminBBDD {
 				}
 			}
 
-			for (String string : ArrayContraseñas) {
-				if (password.equals(string)) {
+			int contador = 0;
+
+			for (String string : ArrayEmails) {
+				if (email.equals(string)) {
 					contador++;
-					break;
+					for (String strings : ArrayContraseñas) {
+						if (password.equals(strings)) {
+							contador++;
+							break;
+						}
+					}
 				}
 			}
 
+			rsetEmails.close();
+			stmt.close();
 			rsetContraseñas.close();
 
+			JFrame pop_up = new JFrame();
 			// Comprobacion
 			if (contador == 2) {
-				loginCorrecto = true;
+				return true;
 			} else if (contador == 1) {
-				System.out.println("El Email y la contraseña no son compatibles");
+				JOptionPane.showMessageDialog(pop_up, "El Email y la contraseña no son compatibles", "Atencion",
+						JOptionPane.WARNING_MESSAGE);
+				return false;
 			} else {
-				System.out.println("El Email y la contraseña no son correctos");
+				JOptionPane.showMessageDialog(pop_up, "El Email y la contraseña no son correctos", "Atencion",
+						JOptionPane.WARNING_MESSAGE);
+				return false;
 			}
-
-			stmt.close();
 		} catch (SQLException s) {
 			s.printStackTrace();
+			return false;
 		}
-	}
-
-	public boolean comprobarLogin() {
-		return loginCorrecto;
 	}
 
 	public void RealizarAlta(String email, String nombre, String apellidos, String contraseña, String admin) {
@@ -148,10 +161,6 @@ public class adminBBDD {
 		}
 	}
 
-	public String[][] getArrayAlmacen() {
-		return ArrayAlmacen;
-	}
-
 	public void Consulta_ArrayEquipos() {
 		try {
 			String query = "Select * from proyectointegrador.equipo";
@@ -177,10 +186,6 @@ public class adminBBDD {
 		} catch (SQLException s) {
 			s.printStackTrace();
 		}
-	}
-
-	public String[][] getArrayEquipos() {
-		return ArrayEquipos;
 	}
 
 	public void Consulta_ArrayHistorial() {
@@ -210,10 +215,6 @@ public class adminBBDD {
 		}
 	}
 
-	public String[][] getArrayHistorial() {
-		return ArrayHistorial;
-	}
-
 	public void Consulta_ArrayPrestamos() {
 		try {
 			String query = "Select * from proyectointegrador.prestamos";
@@ -239,10 +240,6 @@ public class adminBBDD {
 		} catch (SQLException s) {
 			s.printStackTrace();
 		}
-	}
-
-	public String[][] getArrayPrestamos() {
-		return ArrayPrestamos;
 	}
 
 	public void Consulta_ArrayUsers() {
@@ -272,8 +269,59 @@ public class adminBBDD {
 		}
 	}
 
+	public String[][] getArrayAlmacen() {
+		return ArrayAlmacen;
+	}
+
+	public String[][] getArrayEquipos() {
+		return ArrayEquipos;
+	}
+
+	public String[][] getArrayHistorial() {
+		return ArrayHistorial;
+	}
+
+	public String[][] getArrayPrestamos() {
+		return ArrayPrestamos;
+	}
+
 	public String[][] getArrayUsers() {
 		return ArrayUsers;
 	}
 
+	public void setLogin(Login_Controlador login_Controlador) {
+		this.logCont = login_Controlador;
+	}
+
+	public void setRegUsuarios(RegUsuarios_Controlador regUsuarios_Controlador) {
+		this.regUsuCont = regUsuarios_Controlador;
+	}
+
+	public void setTbAlmacen(TbAlmacen_Controlador almacen_Controlador) {
+		this.TbAlmacenCont = almacen_Controlador;
+	}
+
+	public void setTbEquipos(TbEquipos_Controlador equipos_Controlador) {
+		this.TbEqCont = equipos_Controlador;
+	}
+
+	public void setTbHistorial(TbHistorial_Controlador historial_Controlador) {
+		this.TbHistCont = historial_Controlador;
+	}
+
+	public void setTbPrestamos(TbPrestamos_Controlador prestamos_Controlador) {
+		this.TbPresCont = prestamos_Controlador;
+	}
+
+	public void setTbUsers(TbUsers_Controlador users_Controlador) {
+		this.TbUsersCont = users_Controlador;
+	}
+
+	public void cargarTodoInicio() {
+		this.Consulta_ArrayAlmacen();
+		this.Consulta_ArrayEquipos();
+		this.Consulta_ArrayHistorial();
+		this.Consulta_ArrayPrestamos();
+		this.Consulta_ArrayUsers();
+	}
 }

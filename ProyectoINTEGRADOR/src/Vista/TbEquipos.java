@@ -54,7 +54,8 @@ public class TbEquipos extends JFrame {
 	private JButton btnCerrarSesin;
 	private JLabel lblTipoDeEquipo;
 	private JLabel lblCaracteristicas;
-	private TbEquipos_Controlador tbEqCont = new TbEquipos_Controlador();
+	private TbEquipos_Controlador tbEqCont;
+	private Login login;
 
 	/**
 	 * Create the frame.
@@ -111,21 +112,6 @@ public class TbEquipos extends JFrame {
 		scrollPane.setBounds(187, 90, 684, 326);
 
 		table = new JTable();
-		table.setModel(
-				new DefaultTableModel(
-					tbEqCont.array
-			,
-			new String[] {
-				"C\u00F3digo", "Tipo de Equipo", "Almacenamiento1", "Almacenamiento2", "Notas", "estado", "marca", "disponibilidad", "TipoUso", "modelo", "prestable", "Sala", "Edificio", "TipoSala"
-			}
-		));
-		table.getColumnModel().getColumn(2).setPreferredWidth(85);
-
-		for (int i = 0; i < table.getColumnModel().getColumnCount(); i++) {
-			TableColumn t = table.getColumnModel().getColumn(i);
-			EditorDeTablas cellEditor = new EditorDeTablas();
-			t.setCellEditor(cellEditor);
-		}
 
 		scrollPane.setViewportView(table);
 
@@ -238,6 +224,13 @@ public class TbEquipos extends JFrame {
 		btnCerrarSesin = new JButton("Cerrar sesi\u00F3n");
 		btnCerrarSesin.setBounds(753, 11, 117, 23);
 		contentPane.setLayout(null);
+		btnCerrarSesin.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				login = new Login();
+				login.setVisible(true);
+			}
+		});
 
 		lblTipoDeEquipo = new JLabel("Tipo de equipo");
 		lblTipoDeEquipo.setBounds(62, 62, 89, 14);
@@ -278,4 +271,26 @@ public class TbEquipos extends JFrame {
 	public void setPantalla4(TbAlmacen almacen) {
 		this.Pantalla4 = almacen;
 	}
+	public void setEquiposCont(TbEquipos_Controlador equipos_Controlador) {
+		this.tbEqCont = equipos_Controlador;
+	}
+	
+	public void setTbEquipos(){
+		table.setModel(
+				new DefaultTableModel(
+					tbEqCont.array
+			,
+			new String[] {
+				"C\u00F3digo", "Tipo de Equipo", "Almacenamiento1", "Almacenamiento2", "Notas", "estado", "marca", "disponibilidad", "TipoUso", "modelo", "prestable", "Sala", "Edificio", "TipoSala"
+			}
+		));
+		table.getColumnModel().getColumn(2).setPreferredWidth(85);
+
+		for (int i = 0; i < table.getColumnModel().getColumnCount(); i++) {
+			TableColumn t = table.getColumnModel().getColumn(i);
+			EditorDeTablas cellEditor = new EditorDeTablas();
+			t.setCellEditor(cellEditor);
+		}
+	}
+	
 }

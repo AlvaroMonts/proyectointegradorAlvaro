@@ -6,6 +6,7 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -16,7 +17,6 @@ import java.awt.Color;
 import Controlador.Login_Controlador;
 
 public class Login extends JFrame {
-
 	private JPanel contentPane;
 	private JTextField txtEmail;
 	private JButton btnLogin;
@@ -26,6 +26,7 @@ public class Login extends JFrame {
 	private JLabel lblContraseña;
 	private TbEquipos pantalla;
 	private Login_Controlador logCont;
+	private int intentos = 0;
 
 	/**
 	 * Create the frame.
@@ -43,16 +44,20 @@ public class Login extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
+		// int intentos;
 		btnLogin = new JButton("Log-in");
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				logCont = new Login_Controlador();
-				if (logCont.realizarRegistro(txtEmail.getText(),
-						passwordField.getText())) {
+				int intentos = 0;
+				if (logCont.realizarRegistro(txtEmail.getText(), passwordField.getText())) {
 					setVisible(false);
 					pantalla = new TbEquipos();
 					pantalla.setVisible(true);
-				} 
+				} else {
+					intentos++;
+				}
+				if(intentos==3)
+					System.exit(0);
 			}
 		});
 
@@ -86,5 +91,8 @@ public class Login extends JFrame {
 
 	public void setPantalla(TbEquipos pantalla) {
 		this.pantalla = pantalla;
+	}
+	public void setLogin_Cont(Login_Controlador pantalla) {
+		this.logCont = pantalla;
 	}
 }

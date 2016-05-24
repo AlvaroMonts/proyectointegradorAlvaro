@@ -9,6 +9,8 @@ import javax.swing.border.EmptyBorder;
 import java.awt.Color;
 
 import javax.swing.JTextField;
+import javax.swing.JToggleButton;
+import javax.swing.JToggleButton.ToggleButtonModel;
 import javax.swing.JLabel;
 
 import java.awt.Font;
@@ -133,11 +135,13 @@ public class Caracteristicas_Equipo extends JFrame {
 		contentPane.add(textField_3);
 
 		radioButton = new JRadioButton("Si");
+		radioButton.setActionCommand(radioButton.getText());
 		radioButton.setBounds(169, 131, 46, 20);
 		radioButton.setBackground(new Color(135, 206, 235));
 		contentPane.add(radioButton);
 
 		radioButton_1 = new JRadioButton("No");
+		radioButton_1.setActionCommand(radioButton_1.getText());
 		radioButton_1.setBounds(226, 131, 55, 20);
 		radioButton_1.setBackground(new Color(135, 206, 235));
 		contentPane.add(radioButton_1);
@@ -145,13 +149,16 @@ public class Caracteristicas_Equipo extends JFrame {
 		ButtonGroup group1 = new ButtonGroup();
 		group1.add(radioButton);
 		group1.add(radioButton_1);
-
+		radioButton_1.setSelected(true);
+		
 		if (radioButton.isSelected()) {
 			radioButton_1.setEnabled(false);
 		} else if (radioButton_1.isSelected()) {
 			radioButton.setEnabled(true);
 		}
 
+		System.out.println(group1.getSelection().getActionCommand());
+		
 		JLabel label_4 = new JLabel("Disponibilidad");
 		label_4.setBounds(85, 134, 79, 14);
 		label_4.setFont(new Font("Tahoma", Font.PLAIN, 12));

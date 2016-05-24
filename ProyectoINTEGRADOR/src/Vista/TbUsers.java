@@ -44,7 +44,8 @@ public class TbUsers extends JFrame {
 	private TbPrestamos pantalla4;
 	private RegUsuarios pantalla5;
 	private Caracteristicas_usuario caracUsuario;
-	private TbUsers_Controlador tbUsCont = new TbUsers_Controlador();
+	private TbUsers_Controlador tbUsCont;
+	private Login login;
 
 	/**
 	 * Create the frame.
@@ -113,14 +114,7 @@ public class TbUsers extends JFrame {
 		});
 
 		table = new JTable();
-		table.setModel(new DefaultTableModel(tbUsCont.array,
-				new String[] { "Correo", "Tipo de usuario", "Nombre", "Apellidos" }));
-		table.getColumnModel().getColumn(2).setPreferredWidth(85);
-		for (int i = 0; i < table.getColumnModel().getColumnCount(); i++) {
-			TableColumn t = table.getColumnModel().getColumn(i);
-			EditorDeTablas cellEditor = new EditorDeTablas();
-			t.setCellEditor(cellEditor);
-		}
+
 		scrollPane.setViewportView(table);
 
 		table.addMouseListener(new MouseListener() {
@@ -181,7 +175,7 @@ public class TbUsers extends JFrame {
 				pantalla4.setVisible(true);
 			}
 		});
-		
+
 		JButton btnUsuarios = new JButton("Usuarios");
 		btnUsuarios.setEnabled(false);
 		toolBar.add(btnUsuarios);
@@ -211,90 +205,73 @@ public class TbUsers extends JFrame {
 		toolBar.add(btnAlmacen);
 
 		JButton button_2 = new JButton("Cerrar sesi\u00F3n");
+		button_2.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				setVisible(false);
+				login = new Login();
+				login.setVisible(true);
+			}
+		});
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(26)
-					.addComponent(toolBar, GroupLayout.PREFERRED_SIZE, 345, GroupLayout.PREFERRED_SIZE)
-					.addGap(222)
-					.addComponent(btnDarDeAlta, GroupLayout.PREFERRED_SIZE, 151, GroupLayout.PREFERRED_SIZE)
-					.addGap(20)
-					.addComponent(button_2, GroupLayout.PREFERRED_SIZE, 106, GroupLayout.PREFERRED_SIZE))
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(3)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(5)
-							.addComponent(label, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
-						.addComponent(textField, GroupLayout.PREFERRED_SIZE, 103, GroupLayout.PREFERRED_SIZE)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(5)
-							.addComponent(label_1, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(5)
-							.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, 106, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(5)
-							.addComponent(label_2, GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(5)
-							.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(89)
-							.addComponent(radioButton, GroupLayout.PREFERRED_SIZE, 116, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(5)
-							.addComponent(label_3, GroupLayout.PREFERRED_SIZE, 98, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(89)
-							.addComponent(radioButton_1, GroupLayout.PREFERRED_SIZE, 77, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(40)
-							.addComponent(button, GroupLayout.PREFERRED_SIZE, 92, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(23)
-							.addComponent(button_1, GroupLayout.PREFERRED_SIZE, 116, GroupLayout.PREFERRED_SIZE)))
-					.addGap(8)
-					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 654, GroupLayout.PREFERRED_SIZE))
-		);
-		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(6)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(24)
-							.addComponent(btnDarDeAlta))
-						.addComponent(button_2)
-						.addComponent(toolBar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
-					.addGap(4)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(40)
-							.addComponent(label)
-							.addGap(4)
-							.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addGap(11)
-							.addComponent(label_1)
-							.addGap(11)
-							.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addGap(5)
-							.addComponent(label_2)
-							.addGap(11)
-							.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addGap(11)
-							.addComponent(radioButton)
-							.addGap(6)
-							.addComponent(label_3)
-							.addGap(3)
-							.addComponent(radioButton_1)
-							.addGap(26)
-							.addComponent(button)
-							.addGap(19)
-							.addComponent(button_1))
-						.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 355, GroupLayout.PREFERRED_SIZE)))
-		);
+		gl_contentPane.setHorizontalGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane.createSequentialGroup().addGap(26)
+						.addComponent(toolBar, GroupLayout.PREFERRED_SIZE, 345, GroupLayout.PREFERRED_SIZE)
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_contentPane.createSequentialGroup().addGap(222)
+										.addComponent(btnDarDeAlta, GroupLayout.PREFERRED_SIZE, 151,
+												GroupLayout.PREFERRED_SIZE)
+										.addGap(126))
+								.addGroup(gl_contentPane.createSequentialGroup().addGap(393)
+										.addComponent(button_2, GroupLayout.DEFAULT_SIZE, 111, Short.MAX_VALUE)
+										.addContainerGap())))
+				.addGroup(gl_contentPane.createSequentialGroup().addGap(3)
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_contentPane.createSequentialGroup().addGap(5).addComponent(label,
+										GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
+								.addComponent(textField, GroupLayout.PREFERRED_SIZE, 103, GroupLayout.PREFERRED_SIZE)
+								.addGroup(gl_contentPane.createSequentialGroup().addGap(5).addComponent(label_1,
+										GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_contentPane.createSequentialGroup().addGap(5).addComponent(textField_1,
+										GroupLayout.PREFERRED_SIZE, 106, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_contentPane.createSequentialGroup().addGap(5).addComponent(label_2,
+										GroupLayout.PREFERRED_SIZE, 50, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_contentPane.createSequentialGroup().addGap(5).addComponent(textField_2,
+										GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_contentPane.createSequentialGroup().addGap(89).addComponent(radioButton,
+										GroupLayout.PREFERRED_SIZE, 116, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_contentPane.createSequentialGroup().addGap(5).addComponent(label_3,
+										GroupLayout.PREFERRED_SIZE, 98, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_contentPane.createSequentialGroup().addGap(89).addComponent(radioButton_1,
+										GroupLayout.PREFERRED_SIZE, 77, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_contentPane.createSequentialGroup().addGap(40).addComponent(button,
+										GroupLayout.PREFERRED_SIZE, 92, GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_contentPane.createSequentialGroup().addGap(23).addComponent(button_1,
+										GroupLayout.PREFERRED_SIZE, 116, GroupLayout.PREFERRED_SIZE)))
+						.addGap(8)
+						.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 654, GroupLayout.PREFERRED_SIZE)));
+		gl_contentPane.setVerticalGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane.createSequentialGroup().addGap(6)
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_contentPane.createSequentialGroup().addGap(24).addComponent(btnDarDeAlta))
+								.addComponent(toolBar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+								.addComponent(button_2))
+						.addGap(4)
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_contentPane.createSequentialGroup().addGap(40).addComponent(label)
+										.addGap(4)
+										.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+												GroupLayout.PREFERRED_SIZE)
+										.addGap(11).addComponent(label_1).addGap(11)
+										.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+												GroupLayout.PREFERRED_SIZE)
+										.addGap(5).addComponent(label_2).addGap(11)
+										.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+												GroupLayout.PREFERRED_SIZE)
+										.addGap(11).addComponent(radioButton).addGap(6).addComponent(label_3).addGap(3)
+										.addComponent(radioButton_1).addGap(26).addComponent(button).addGap(19)
+										.addComponent(button_1))
+								.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 355,
+										GroupLayout.PREFERRED_SIZE))));
 		contentPane.setLayout(gl_contentPane);
 		btnAlmacen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -320,5 +297,20 @@ public class TbUsers extends JFrame {
 
 	public void setPantalla5(RegUsuarios pantalla5) {
 		this.pantalla5 = pantalla5;
+	}
+
+	public void setUsControlador(TbUsers_Controlador users_Controlador) {
+		this.tbUsCont = users_Controlador;
+	}
+
+	public void setTbUsers() {
+		table.setModel(new DefaultTableModel(tbUsCont.array,
+				new String[] { "Correo", "Tipo de usuario", "Nombre", "Apellidos" }));
+		table.getColumnModel().getColumn(2).setPreferredWidth(85);
+		for (int i = 0; i < table.getColumnModel().getColumnCount(); i++) {
+			TableColumn t = table.getColumnModel().getColumn(i);
+			EditorDeTablas cellEditor = new EditorDeTablas();
+			t.setCellEditor(cellEditor);
+		}
 	}
 }

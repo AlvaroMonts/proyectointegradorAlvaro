@@ -41,7 +41,8 @@ public class TbHistorial extends JFrame {
 	private TbEquipos pantalla2;
 	private TbPrestamos pantalla3;
 	private TbUsers pantalla4;
-	private TbHistorial_Controlador tbHiCont = new TbHistorial_Controlador();
+	private TbHistorial_Controlador tbHiCont;
+	private Login login;
 
 	/**
 	 * Create the frame.
@@ -59,14 +60,7 @@ public class TbHistorial extends JFrame {
 		JScrollPane scrollPane = new JScrollPane();
 
 		table = new JTable();
-		table.setModel(new DefaultTableModel(tbHiCont.array,
-				new String[] { "Usuario_Email", "Equipo_COD", "Tipo de Accion", "Fecha", "ID_Accion" }));
-		table.getColumnModel().getColumn(2).setPreferredWidth(85);
-		for (int i = 0; i < table.getColumnModel().getColumnCount(); i++) {
-			TableColumn t = table.getColumnModel().getColumn(i);
-			EditorDeTablas cellEditor = new EditorDeTablas();
-			t.setCellEditor(cellEditor);
-		}
+
 		scrollPane.setViewportView(table);
 
 		textField = new JTextField();
@@ -137,127 +131,117 @@ public class TbHistorial extends JFrame {
 				pantalla3.setVisible(true);
 			}
 		});
-		
-				JButton button_5 = new JButton("Usuarios");
-				button_5.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						setVisible(false);
-						pantalla4 = new TbUsers();
-						pantalla4.setVisible(true);
-					}
-				});
-				toolBar.add(button_5);
+
+		JButton button_5 = new JButton("Usuarios");
+		button_5.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				pantalla4 = new TbUsers();
+				pantalla4.setVisible(true);
+			}
+		});
+		toolBar.add(button_5);
 		toolBar.add(btnUsuarios);
-		
+
 		JButton btnHistorial = new JButton("Historial");
 		btnHistorial.setEnabled(false);
 		toolBar.add(btnHistorial);
 		toolBar.add(button_2);
 
 		JButton button_4 = new JButton("Cerrar sesi\u00F3n");
+		button_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				login = new Login();
+				login.setVisible(true);
+			}
+		});
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(19)
-					.addComponent(toolBar, GroupLayout.PREFERRED_SIZE, 341, GroupLayout.PREFERRED_SIZE)
-					.addGap(386)
-					.addComponent(button_4, GroupLayout.PREFERRED_SIZE, 113, GroupLayout.PREFERRED_SIZE))
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(10)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(11)
-							.addComponent(label, GroupLayout.PREFERRED_SIZE, 54, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(11)
-							.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(11)
-							.addComponent(label_1, GroupLayout.PREFERRED_SIZE, 158, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(11)
-							.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(10)
-							.addComponent(label_2, GroupLayout.PREFERRED_SIZE, 146, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(11)
-							.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(10)
-							.addComponent(label_3, GroupLayout.PREFERRED_SIZE, 168, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(11)
-							.addComponent(textField_3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(11)
-							.addComponent(label_4, GroupLayout.PREFERRED_SIZE, 54, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(11)
-							.addComponent(textField_4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(11)
-							.addComponent(label_5, GroupLayout.PREFERRED_SIZE, 108, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(11)
-							.addComponent(textField_5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(11)
-							.addComponent(label_6, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(11)
-							.addComponent(textField_6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(button, GroupLayout.PREFERRED_SIZE, 113, GroupLayout.PREFERRED_SIZE)
-							.addGap(9)
-							.addComponent(button_1, GroupLayout.PREFERRED_SIZE, 89, GroupLayout.PREFERRED_SIZE)))
-					.addGap(10)
-					.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 628, GroupLayout.PREFERRED_SIZE))
-		);
-		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(6)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addComponent(button_4)
-						.addComponent(toolBar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
-					.addGap(15)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addComponent(label)
-							.addGap(3)
-							.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addGap(9)
-							.addComponent(label_1)
-							.addGap(4)
-							.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addGap(7)
-							.addComponent(label_2)
-							.addGap(3)
-							.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addGap(1)
-							.addComponent(label_3)
-							.addGap(7)
-							.addComponent(textField_3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addGap(5)
-							.addComponent(label_4)
-							.addGap(7)
-							.addComponent(textField_4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addGap(5)
-							.addComponent(label_5)
-							.addGap(8)
-							.addComponent(textField_5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addGap(6)
-							.addComponent(label_6)
-							.addGap(7)
-							.addComponent(textField_6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addGap(16)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addComponent(button)
-								.addComponent(button_1)))
-						.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 361, GroupLayout.PREFERRED_SIZE)))
-		);
+		gl_contentPane
+				.setHorizontalGroup(
+						gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_contentPane.createSequentialGroup().addGap(19)
+										.addComponent(toolBar, GroupLayout.PREFERRED_SIZE,
+												341, GroupLayout.PREFERRED_SIZE)
+										.addGap(386).addComponent(button_4, GroupLayout.PREFERRED_SIZE, 113,
+												GroupLayout.PREFERRED_SIZE))
+								.addGroup(gl_contentPane.createSequentialGroup().addGap(10).addGroup(gl_contentPane
+										.createParallelGroup(Alignment.LEADING)
+										.addGroup(gl_contentPane.createSequentialGroup().addGap(11).addComponent(label,
+												GroupLayout.PREFERRED_SIZE, 54, GroupLayout.PREFERRED_SIZE))
+										.addGroup(gl_contentPane.createSequentialGroup().addGap(11).addComponent(
+												textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+												GroupLayout.PREFERRED_SIZE))
+										.addGroup(gl_contentPane.createSequentialGroup().addGap(11).addComponent(
+												label_1, GroupLayout.PREFERRED_SIZE, 158, GroupLayout.PREFERRED_SIZE))
+										.addGroup(gl_contentPane.createSequentialGroup().addGap(11).addComponent(
+												textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+												GroupLayout.PREFERRED_SIZE))
+										.addGroup(gl_contentPane.createSequentialGroup().addGap(10).addComponent(
+												label_2, GroupLayout.PREFERRED_SIZE, 146, GroupLayout.PREFERRED_SIZE))
+										.addGroup(gl_contentPane.createSequentialGroup().addGap(11).addComponent(
+												textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+												GroupLayout.PREFERRED_SIZE))
+										.addGroup(gl_contentPane.createSequentialGroup().addGap(10).addComponent(
+												label_3, GroupLayout.PREFERRED_SIZE, 168, GroupLayout.PREFERRED_SIZE))
+										.addGroup(gl_contentPane.createSequentialGroup().addGap(11).addComponent(
+												textField_3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+												GroupLayout.PREFERRED_SIZE))
+										.addGroup(gl_contentPane.createSequentialGroup().addGap(11).addComponent(
+												label_4, GroupLayout.PREFERRED_SIZE, 54, GroupLayout.PREFERRED_SIZE))
+										.addGroup(gl_contentPane.createSequentialGroup().addGap(11).addComponent(
+												textField_4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+												GroupLayout.PREFERRED_SIZE))
+										.addGroup(gl_contentPane.createSequentialGroup().addGap(11).addComponent(
+												label_5, GroupLayout.PREFERRED_SIZE, 108, GroupLayout.PREFERRED_SIZE))
+										.addGroup(gl_contentPane.createSequentialGroup().addGap(11).addComponent(
+												textField_5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+												GroupLayout.PREFERRED_SIZE))
+										.addGroup(gl_contentPane.createSequentialGroup().addGap(11).addComponent(
+												label_6, GroupLayout.PREFERRED_SIZE, 102, GroupLayout.PREFERRED_SIZE))
+										.addGroup(gl_contentPane.createSequentialGroup().addGap(11).addComponent(
+												textField_6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+												GroupLayout.PREFERRED_SIZE))
+										.addGroup(gl_contentPane.createSequentialGroup()
+												.addComponent(button, GroupLayout.PREFERRED_SIZE, 113,
+														GroupLayout.PREFERRED_SIZE)
+												.addGap(9).addComponent(button_1, GroupLayout.PREFERRED_SIZE, 89,
+														GroupLayout.PREFERRED_SIZE)))
+										.addGap(10).addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 628,
+												GroupLayout.PREFERRED_SIZE)));
+		gl_contentPane.setVerticalGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane.createSequentialGroup().addGap(6)
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING).addComponent(button_4)
+								.addComponent(toolBar, GroupLayout.PREFERRED_SIZE, 30,
+										GroupLayout.PREFERRED_SIZE))
+						.addGap(15)
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_contentPane.createSequentialGroup().addComponent(label).addGap(3)
+										.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+												GroupLayout.PREFERRED_SIZE)
+										.addGap(9).addComponent(label_1).addGap(4)
+										.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+												GroupLayout.PREFERRED_SIZE)
+										.addGap(7).addComponent(label_2).addGap(3)
+										.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+												GroupLayout.PREFERRED_SIZE)
+										.addGap(1).addComponent(label_3).addGap(7)
+										.addComponent(textField_3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+												GroupLayout.PREFERRED_SIZE)
+										.addGap(5).addComponent(label_4).addGap(7)
+										.addComponent(textField_4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+												GroupLayout.PREFERRED_SIZE)
+										.addGap(5).addComponent(label_5).addGap(8)
+										.addComponent(textField_5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+												GroupLayout.PREFERRED_SIZE)
+										.addGap(6).addComponent(label_6).addGap(7)
+										.addComponent(textField_6, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+												GroupLayout.PREFERRED_SIZE)
+										.addGap(16)
+										.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+												.addComponent(button).addComponent(button_1)))
+								.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 361,
+										GroupLayout.PREFERRED_SIZE))));
 		contentPane.setLayout(gl_contentPane);
 	}
 
@@ -278,4 +262,18 @@ public class TbHistorial extends JFrame {
 		this.pantalla4 = Pantalla4;
 	}
 
+	public void setHistCont(TbHistorial_Controlador historial_Controlador) {
+		this.tbHiCont = historial_Controlador;
+	}
+
+	public void setTbHistorial() {
+		table.setModel(new DefaultTableModel(tbHiCont.array,
+				new String[] { "Usuario_Email", "Equipo_COD", "Tipo de Accion", "Fecha", "ID_Accion" }));
+		table.getColumnModel().getColumn(2).setPreferredWidth(85);
+		for (int i = 0; i < table.getColumnModel().getColumnCount(); i++) {
+			TableColumn t = table.getColumnModel().getColumn(i);
+			EditorDeTablas cellEditor = new EditorDeTablas();
+			t.setCellEditor(cellEditor);
+		}
+	}
 }

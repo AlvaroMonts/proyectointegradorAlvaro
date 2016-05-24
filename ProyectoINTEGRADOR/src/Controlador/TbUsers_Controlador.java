@@ -1,12 +1,22 @@
 package Controlador;
 
 import Modelo.adminBBDD;
+import Vista.TbUsers;
 
 public class TbUsers_Controlador {
-	adminBBDD tbUsMod = new adminBBDD();
+	adminBBDD tbUsMod;
+	TbUsers tbUs;
 	public String[][] array;
+
 	public TbUsers_Controlador() {
-		tbUsMod.Consulta_ArrayUsers();
 		array = tbUsMod.getArrayUsers();
+	}
+
+	public void UsAModelo(adminBBDD bbdd) {
+		this.tbUsMod = bbdd;
+	}
+
+	public void UsAVista(TbUsers users) {
+		this.tbUs = users;
 	}
 }

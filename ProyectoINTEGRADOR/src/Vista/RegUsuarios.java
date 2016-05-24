@@ -135,10 +135,10 @@ public class RegUsuarios extends JFrame {
 		btnRegistrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (tFPassword.getText().equals(tFPassword2.getText()) && rBAdmin.isSelected()) {
-					registro = new RegUsuarios_Controlador(tFEmail.getText(), tFNombre.getText(), tFApellidos.getText(),
+					registro.ComprobarAlta(tFEmail.getText(), tFNombre.getText(), tFApellidos.getText(),
 							tFPassword.getText(), rBAdmin.getText());
 				} else if (tFPassword.getText().equals(tFPassword2.getText()) && rBTecnico.isSelected()) {
-					registro = new RegUsuarios_Controlador(tFEmail.getText(), tFNombre.getText(), tFApellidos.getText(),
+					registro.ComprobarAlta(tFEmail.getText(), tFNombre.getText(), tFApellidos.getText(),
 							tFPassword.getText(), rBTecnico.getText());
 				} else {
 					System.out.println("Las contraseñas no coinciden");
@@ -149,5 +149,9 @@ public class RegUsuarios extends JFrame {
 
 	public void setPantalla(TbUsers user) {
 		this.pantalla = user;
+	}
+	
+	public void setRegUs(RegUsuarios_Controlador regUsuarios_Controlador){
+		this.registro = regUsuarios_Controlador;
 	}
 }

@@ -4,14 +4,12 @@ import Modelo.adminBBDD;
 import Vista.TbEquipos;
 
 public class TbEquipos_Controlador {
-	adminBBDD tbEqMod = new adminBBDD();
-	TbEquipos tbEq;
-	public String[][] arrayEquipos;
-
-	public TbEquipos_Controlador() {
-	}
+	private adminBBDD tbEqMod;
+	private TbEquipos tbEq;
+	//public String[][] arrayEquipos;
 
 	public void EqAVista(TbEquipos equipos) {
+		//arrayEquipos=tbEqMod.getArrayEquipos();
 		this.tbEq = equipos;
 	}
 

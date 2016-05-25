@@ -169,92 +169,234 @@ public class TbPrestamos extends JFrame {
 				setVisible(false);
 				login = new Login();
 				login.setVisible(true);
-
 			}
 		});
 
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
 		gl_contentPane
-				.setHorizontalGroup(
-						gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addGroup(gl_contentPane.createSequentialGroup().addGap(5)
-										.addComponent(toolBar, GroupLayout.PREFERRED_SIZE,
+				.setHorizontalGroup(gl_contentPane
+						.createParallelGroup(Alignment.LEADING)
+						.addGroup(
+								gl_contentPane
+										.createSequentialGroup()
+										.addGap(5)
+										.addComponent(toolBar,
+												GroupLayout.PREFERRED_SIZE,
 												338, GroupLayout.PREFERRED_SIZE)
-										.addGap(400).addComponent(button, GroupLayout.PREFERRED_SIZE, 116,
-												GroupLayout.PREFERRED_SIZE))
-								.addGroup(gl_contentPane.createSequentialGroup().addGap(4).addGroup(gl_contentPane
-										.createParallelGroup(Alignment.LEADING)
-										.addGroup(gl_contentPane.createSequentialGroup().addGap(1).addComponent(
-												lblResponsableprestamo, GroupLayout.PREFERRED_SIZE, 170,
-												GroupLayout.PREFERRED_SIZE))
-										.addGroup(gl_contentPane.createSequentialGroup().addGap(1).addComponent(
-												textField_2, GroupLayout.PREFERRED_SIZE, 110,
-												GroupLayout.PREFERRED_SIZE))
-										.addGroup(gl_contentPane.createSequentialGroup().addGap(1).addComponent(
-												lblCodequipo, GroupLayout.PREFERRED_SIZE, 146,
-												GroupLayout.PREFERRED_SIZE))
-										.addGroup(gl_contentPane.createSequentialGroup().addGap(1).addComponent(
-												textField_3, GroupLayout.PREFERRED_SIZE, 110,
-												GroupLayout.PREFERRED_SIZE))
-										.addGroup(gl_contentPane.createSequentialGroup().addGap(1).addComponent(
-												lblFechainicioprestamo, GroupLayout.PREFERRED_SIZE, 170,
-												GroupLayout.PREFERRED_SIZE))
-										.addGroup(gl_contentPane.createSequentialGroup().addGap(1).addComponent(
-												textField, GroupLayout.PREFERRED_SIZE, 110, GroupLayout.PREFERRED_SIZE))
-										.addGroup(gl_contentPane.createSequentialGroup().addGap(1).addComponent(
-												lblFechafinalprestamo, GroupLayout.PREFERRED_SIZE, 146,
-												GroupLayout.PREFERRED_SIZE))
-										.addGroup(gl_contentPane.createSequentialGroup().addGap(1).addComponent(
-												textField_1, GroupLayout.PREFERRED_SIZE, 110,
-												GroupLayout.PREFERRED_SIZE))
-										.addGroup(gl_contentPane.createSequentialGroup().addGap(1).addComponent(
-												lblDestinoprestamo, GroupLayout.PREFERRED_SIZE, 146,
-												GroupLayout.PREFERRED_SIZE))
-										.addGroup(gl_contentPane.createSequentialGroup().addGap(1).addComponent(
-												textField_4, GroupLayout.PREFERRED_SIZE, 110,
-												GroupLayout.PREFERRED_SIZE))
-										.addGroup(gl_contentPane.createSequentialGroup().addGap(11).addComponent(
-												btnBuscar, GroupLayout.PREFERRED_SIZE, 89, GroupLayout.PREFERRED_SIZE))
-										.addComponent(btnQuitarFiltros, GroupLayout.PREFERRED_SIZE, 111,
-												GroupLayout.PREFERRED_SIZE))
-										.addGap(10).addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 674,
-												GroupLayout.PREFERRED_SIZE)));
-		gl_contentPane.setVerticalGroup(gl_contentPane.createParallelGroup(Alignment.LEADING).addGroup(gl_contentPane
-				.createSequentialGroup().addGap(6)
-				.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING).addComponent(button)
-						.addComponent(toolBar, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE))
-				.addGap(12)
-				.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-								.addComponent(lblResponsableprestamo, GroupLayout.PREFERRED_SIZE, 23,
-										GroupLayout.PREFERRED_SIZE)
-								.addGap(5)
-								.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-										GroupLayout.PREFERRED_SIZE)
-								.addGap(6)
-								.addComponent(lblCodequipo, GroupLayout.PREFERRED_SIZE, 23, GroupLayout.PREFERRED_SIZE)
-								.addComponent(textField_3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-										GroupLayout.PREFERRED_SIZE)
-								.addGap(11)
-								.addComponent(lblFechainicioprestamo, GroupLayout.PREFERRED_SIZE, 23,
-										GroupLayout.PREFERRED_SIZE)
-								.addGap(2)
-								.addComponent(textField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-										GroupLayout.PREFERRED_SIZE)
-								.addGap(17)
-								.addComponent(lblFechafinalprestamo, GroupLayout.PREFERRED_SIZE, 23,
-										GroupLayout.PREFERRED_SIZE)
-								.addGap(11)
-								.addComponent(textField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-										GroupLayout.PREFERRED_SIZE)
-								.addGap(11)
-								.addComponent(lblDestinoprestamo, GroupLayout.PREFERRED_SIZE, 23,
-										GroupLayout.PREFERRED_SIZE)
-								.addGap(3)
-								.addComponent(textField_4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
-										GroupLayout.PREFERRED_SIZE)
-								.addGap(11).addComponent(btnBuscar).addGap(11).addComponent(btnQuitarFiltros))
-						.addComponent(scrollPane, GroupLayout.PREFERRED_SIZE, 358, GroupLayout.PREFERRED_SIZE))));
+										.addGap(400)
+										.addComponent(button,
+												GroupLayout.PREFERRED_SIZE,
+												116, GroupLayout.PREFERRED_SIZE))
+						.addGroup(
+								gl_contentPane
+										.createSequentialGroup()
+										.addGap(4)
+										.addGroup(
+												gl_contentPane
+														.createParallelGroup(
+																Alignment.LEADING)
+														.addGroup(
+																gl_contentPane
+																		.createSequentialGroup()
+																		.addGap(1)
+																		.addComponent(
+																				lblResponsableprestamo,
+																				GroupLayout.PREFERRED_SIZE,
+																				170,
+																				GroupLayout.PREFERRED_SIZE))
+														.addGroup(
+																gl_contentPane
+																		.createSequentialGroup()
+																		.addGap(1)
+																		.addComponent(
+																				textField_2,
+																				GroupLayout.PREFERRED_SIZE,
+																				110,
+																				GroupLayout.PREFERRED_SIZE))
+														.addGroup(
+																gl_contentPane
+																		.createSequentialGroup()
+																		.addGap(1)
+																		.addComponent(
+																				lblCodequipo,
+																				GroupLayout.PREFERRED_SIZE,
+																				146,
+																				GroupLayout.PREFERRED_SIZE))
+														.addGroup(
+																gl_contentPane
+																		.createSequentialGroup()
+																		.addGap(1)
+																		.addComponent(
+																				textField_3,
+																				GroupLayout.PREFERRED_SIZE,
+																				110,
+																				GroupLayout.PREFERRED_SIZE))
+														.addGroup(
+																gl_contentPane
+																		.createSequentialGroup()
+																		.addGap(1)
+																		.addComponent(
+																				lblFechainicioprestamo,
+																				GroupLayout.PREFERRED_SIZE,
+																				170,
+																				GroupLayout.PREFERRED_SIZE))
+														.addGroup(
+																gl_contentPane
+																		.createSequentialGroup()
+																		.addGap(1)
+																		.addComponent(
+																				textField,
+																				GroupLayout.PREFERRED_SIZE,
+																				110,
+																				GroupLayout.PREFERRED_SIZE))
+														.addGroup(
+																gl_contentPane
+																		.createSequentialGroup()
+																		.addGap(1)
+																		.addComponent(
+																				lblFechafinalprestamo,
+																				GroupLayout.PREFERRED_SIZE,
+																				146,
+																				GroupLayout.PREFERRED_SIZE))
+														.addGroup(
+																gl_contentPane
+																		.createSequentialGroup()
+																		.addGap(1)
+																		.addComponent(
+																				textField_1,
+																				GroupLayout.PREFERRED_SIZE,
+																				110,
+																				GroupLayout.PREFERRED_SIZE))
+														.addGroup(
+																gl_contentPane
+																		.createSequentialGroup()
+																		.addGap(1)
+																		.addComponent(
+																				lblDestinoprestamo,
+																				GroupLayout.PREFERRED_SIZE,
+																				146,
+																				GroupLayout.PREFERRED_SIZE))
+														.addGroup(
+																gl_contentPane
+																		.createSequentialGroup()
+																		.addGap(1)
+																		.addComponent(
+																				textField_4,
+																				GroupLayout.PREFERRED_SIZE,
+																				110,
+																				GroupLayout.PREFERRED_SIZE))
+														.addGroup(
+																gl_contentPane
+																		.createSequentialGroup()
+																		.addGap(11)
+																		.addComponent(
+																				btnBuscar,
+																				GroupLayout.PREFERRED_SIZE,
+																				89,
+																				GroupLayout.PREFERRED_SIZE))
+														.addComponent(
+																btnQuitarFiltros,
+																GroupLayout.PREFERRED_SIZE,
+																111,
+																GroupLayout.PREFERRED_SIZE))
+										.addGap(10)
+										.addComponent(scrollPane,
+												GroupLayout.PREFERRED_SIZE,
+												674, GroupLayout.PREFERRED_SIZE)));
+		gl_contentPane
+				.setVerticalGroup(gl_contentPane
+						.createParallelGroup(Alignment.LEADING)
+						.addGroup(
+								gl_contentPane
+										.createSequentialGroup()
+										.addGap(6)
+										.addGroup(
+												gl_contentPane
+														.createParallelGroup(
+																Alignment.LEADING)
+														.addComponent(button)
+														.addComponent(
+																toolBar,
+																GroupLayout.PREFERRED_SIZE,
+																30,
+																GroupLayout.PREFERRED_SIZE))
+										.addGap(12)
+										.addGroup(
+												gl_contentPane
+														.createParallelGroup(
+																Alignment.LEADING)
+														.addGroup(
+																gl_contentPane
+																		.createSequentialGroup()
+																		.addComponent(
+																				lblResponsableprestamo,
+																				GroupLayout.PREFERRED_SIZE,
+																				23,
+																				GroupLayout.PREFERRED_SIZE)
+																		.addGap(5)
+																		.addComponent(
+																				textField_2,
+																				GroupLayout.PREFERRED_SIZE,
+																				GroupLayout.DEFAULT_SIZE,
+																				GroupLayout.PREFERRED_SIZE)
+																		.addGap(6)
+																		.addComponent(
+																				lblCodequipo,
+																				GroupLayout.PREFERRED_SIZE,
+																				23,
+																				GroupLayout.PREFERRED_SIZE)
+																		.addComponent(
+																				textField_3,
+																				GroupLayout.PREFERRED_SIZE,
+																				GroupLayout.DEFAULT_SIZE,
+																				GroupLayout.PREFERRED_SIZE)
+																		.addGap(11)
+																		.addComponent(
+																				lblFechainicioprestamo,
+																				GroupLayout.PREFERRED_SIZE,
+																				23,
+																				GroupLayout.PREFERRED_SIZE)
+																		.addGap(2)
+																		.addComponent(
+																				textField,
+																				GroupLayout.PREFERRED_SIZE,
+																				GroupLayout.DEFAULT_SIZE,
+																				GroupLayout.PREFERRED_SIZE)
+																		.addGap(17)
+																		.addComponent(
+																				lblFechafinalprestamo,
+																				GroupLayout.PREFERRED_SIZE,
+																				23,
+																				GroupLayout.PREFERRED_SIZE)
+																		.addGap(11)
+																		.addComponent(
+																				textField_1,
+																				GroupLayout.PREFERRED_SIZE,
+																				GroupLayout.DEFAULT_SIZE,
+																				GroupLayout.PREFERRED_SIZE)
+																		.addGap(11)
+																		.addComponent(
+																				lblDestinoprestamo,
+																				GroupLayout.PREFERRED_SIZE,
+																				23,
+																				GroupLayout.PREFERRED_SIZE)
+																		.addGap(3)
+																		.addComponent(
+																				textField_4,
+																				GroupLayout.PREFERRED_SIZE,
+																				GroupLayout.DEFAULT_SIZE,
+																				GroupLayout.PREFERRED_SIZE)
+																		.addGap(11)
+																		.addComponent(
+																				btnBuscar)
+																		.addGap(11)
+																		.addComponent(
+																				btnQuitarFiltros))
+														.addComponent(
+																scrollPane,
+																GroupLayout.PREFERRED_SIZE,
+																358,
+																GroupLayout.PREFERRED_SIZE))));
 		contentPane.setLayout(gl_contentPane);
 	}
 
@@ -278,9 +420,11 @@ public class TbPrestamos extends JFrame {
 		this.tbPreCont = prestamos;
 	}
 
-	public void setTbPrestamos() {
-		table.setModel(new DefaultTableModel(tbPreCont.array, new String[] { "Responsable Prestamo", "Codigo Equipo",
-				"Fecha Inicio Prestamo", "Fecha Final Prestamo", "Equipo Prestado", "Destino Prestamo" }));
+	public void setTbPrestamos(Object[][] tabla) {
+		table.setModel(new DefaultTableModel(tabla, new String[] {
+				"Responsable Prestamo", "Codigo Equipo",
+				"Fecha Inicio Prestamo", "Fecha Final Prestamo",
+				"Equipo Prestado", "Destino Prestamo" }));
 
 		table.getColumnModel().getColumn(0).setPreferredWidth(125);
 		table.getColumnModel().getColumn(1).setPreferredWidth(87);

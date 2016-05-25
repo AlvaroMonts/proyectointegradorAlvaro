@@ -280,12 +280,12 @@ public class TbEquipos extends JFrame {
 		this.tbEqCont = equipos_Controlador;
 	}
 
-	public void setTbEquipos() {
-		table.setModel(new DefaultTableModel(tbEqCont.arrayEquipos,
+	public void setTbEquipos(Object [][] tabla) {
+		table.setModel(new DefaultTableModel(tabla,
 				new String[] { "C\u00F3digo", "Tipo de Equipo",
-						"Almacenamiento1", "Almacenamiento2", "Notas",
-						"estado", "marca", "disponibilidad", "TipoUso",
-						"modelo", "prestable", "Sala", "Edificio", "TipoSala" }));
+						"Almacenamiento 1", "Almacenamiento 2", "Notas",
+						"Marca", "Disponibilidad", "Tipo Uso",
+						"Modelo", "prestable", "Sala", "Edificio", "Tipo Sala" }));
 		table.getColumnModel().getColumn(2).setPreferredWidth(85);
 		for (int i = 0; i < table.getColumnModel().getColumnCount(); i++) {
 			TableColumn t = table.getColumnModel().getColumn(i);
@@ -293,5 +293,4 @@ public class TbEquipos extends JFrame {
 			t.setCellEditor(cellEditor);
 		}
 	}
-
 }

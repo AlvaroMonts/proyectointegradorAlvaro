@@ -46,6 +46,7 @@ public class Main {
 
 	public static void main(String[] args) {
 		// inicializar vista
+		Login = new Login();
 		CEquipo = new Caracteristicas_Equipo();
 		CUsuario = new Caracteristicas_usuario();
 		REquipos = new RegEquipos();
@@ -56,8 +57,10 @@ public class Main {
 		THistorial = new TbHistorial();
 		TPrestamos = new TbPrestamos();
 		TUsers = new TbUsers();
-		Login = new Login();
-
+		
+		// inicializar modelo
+		modelo = new adminBBDD();
+		
 		// inicializar controlador
 		logCont = new Login_Controlador();
 		regUsuCont = new RegUsuarios_Controlador();
@@ -67,11 +70,8 @@ public class Main {
 		TbPresCont = new TbPrestamos_Controlador();
 		TbUsersCont	= new TbUsers_Controlador();
 		
-		// inicializar modelo
-		modelo = new adminBBDD();
-		
-		// setters vista
 		Login.setVisible(true);
+		// setters vista
 		Login.setPantalla(TEquipo);
 		TEquipo.setPantalla1(THistorial);
 		TEquipo.setPantalla2(TPrestamos);
@@ -109,21 +109,15 @@ public class Main {
 		TPrestamos.setPresCont(TbPresCont);
 		TUsers.setUsControlador(TbUsersCont);
 		
-		// setters desde controlador
+		// setters desde controlador a modelo
 		logCont.loginAModelo(modelo);
-		logCont.loginAVista(Login);
 		regUsuCont.RegUsAModelo(modelo);
-		regUsuCont.RegUsAVista(RUsr);
 		TbAlmacenCont.AlmContAModelo(modelo);
-		TbAlmacenCont.AlmContAVista(TAlmacen);
 		TbEqCont.EqAModelo(modelo);
-		TbEqCont.EqAVista(TEquipo);
 		TbHistCont.HistAModelo(modelo);
-		TbHistCont.HistAVista(THistorial);
 		TbPresCont.PresAModelo(modelo);
-		TbPresCont.PresAVista(TPrestamos);	
 		TbUsersCont.UsAModelo(modelo);
-		TbUsersCont.UsAVista(TUsers);
+		
 		
 		// setters controladores
 		modelo.setLogin(logCont);
@@ -134,13 +128,22 @@ public class Main {
 		modelo.setTbPrestamos(TbPresCont);
 		modelo.setTbUsers(TbUsersCont);
 		
+		// setters desde controlador a vista
+		logCont.loginAVista(Login);
+		regUsuCont.RegUsAVista(RUsr);
+		TbAlmacenCont.AlmContAVista(TAlmacen);
+		TbEqCont.EqAVista(TEquipo);
+		TbHistCont.HistAVista(THistorial);
+		TbPresCont.PresAVista(TPrestamos);
+		TbUsersCont.UsAVista(TUsers);
+		
+		
 		// cargar tablas
 		modelo.cargarTodoInicio();
-		TAlmacen.setTbAlmacen();
-		TbEqCont.arrayEquipos = modelo.getArrayEquipos();
-		TEquipo.setTbEquipos();
-		THistorial.setTbHistorial();
-		TPrestamos.setTbPrestamos();
-		TUsers.setTbUsers();
+		TAlmacen.setTbAlmacen(modelo.getArrayAlmacen());
+		TEquipo.setTbEquipos(modelo.getArrayEquipos());
+		THistorial.setTbHistorial(modelo.getArrayHistorial());
+		TPrestamos.setTbPrestamos(modelo.getArrayPrestamos());
+		TUsers.setTbUsers(modelo.getArrayUsers());
 	}
 }

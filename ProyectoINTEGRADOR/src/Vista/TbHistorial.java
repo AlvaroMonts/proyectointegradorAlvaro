@@ -266,8 +266,8 @@ public class TbHistorial extends JFrame {
 		this.tbHiCont = historial_Controlador;
 	}
 
-	public void setTbHistorial() {
-		table.setModel(new DefaultTableModel(tbHiCont.array,
+	public void setTbHistorial(Object [][] tabla) {
+		table.setModel(new DefaultTableModel(tabla,
 				new String[] { "Usuario_Email", "Equipo_COD", "Tipo de Accion", "Fecha", "ID_Accion" }));
 		table.getColumnModel().getColumn(2).setPreferredWidth(85);
 		for (int i = 0; i < table.getColumnModel().getColumnCount(); i++) {

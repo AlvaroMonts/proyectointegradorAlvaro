@@ -45,18 +45,23 @@ public class Login extends JFrame {
 		contentPane.setLayout(null);
 
 		// int intentos;
+		JFrame pop_up = new JFrame();
 		btnLogin = new JButton("Log-in");
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				int intentos = 0;
-				if (logCont.realizarRegistro(txtEmail.getText(), passwordField.getText())) {
+				
+				if (logCont.realizarRegistro(txtEmail.getText(),
+						passwordField.getText())) {
 					setVisible(false);
 					pantalla = new TbEquipos();
 					pantalla.setVisible(true);
 				} else {
 					intentos++;
+					JOptionPane.showMessageDialog(pop_up,
+							"El Email y la contraseña no son correctos, te quedan " + (3 - intentos)+ " intentos", "Atencion",
+							JOptionPane.WARNING_MESSAGE);
 				}
-				if(intentos==3)
+				if (intentos == 3)
 					System.exit(0);
 			}
 		});
@@ -92,6 +97,7 @@ public class Login extends JFrame {
 	public void setPantalla(TbEquipos pantalla) {
 		this.pantalla = pantalla;
 	}
+
 	public void setLogin_Cont(Login_Controlador pantalla) {
 		this.logCont = pantalla;
 	}

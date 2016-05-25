@@ -33,10 +33,10 @@ public class adminBBDD {
 
 	public adminBBDD() {
 		try {
-			bd = "liga";
+			bd = "proyectointegrador";
 			login = "root";
 			pwd = "root";
-			url = "jdbc:mysql://localhost/" + bd;
+			url = "jdbc:mysql://10.4.105.32/" + bd;
 			Class.forName("com.mysql.jdbc.Driver");
 			conection = DriverManager.getConnection(url, login, pwd);
 			System.out.println("todo ok");
@@ -87,19 +87,9 @@ public class adminBBDD {
 			
 			rset.close();
 			stmt.close();
-			JFrame pop_up = new JFrame();
-			// Comprobacion
 			if (contador == 2) {
 				return true;
-			} else if (contador == 1) {
-				JOptionPane.showMessageDialog(pop_up,
-						"El Email y la contraseña no son compatibles",
-						"Atencion", JOptionPane.WARNING_MESSAGE);
-				return false;
 			} else {
-				JOptionPane.showMessageDialog(pop_up,
-						"El Email y la contraseña no son correctos",
-						"Atencion", JOptionPane.WARNING_MESSAGE);
 				return false;
 			}
 		} catch (SQLException s) {

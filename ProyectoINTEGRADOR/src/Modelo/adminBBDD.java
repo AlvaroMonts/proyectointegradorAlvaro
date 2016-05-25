@@ -52,63 +52,54 @@ public class adminBBDD {
 
 	public boolean ConsultaLogin(String email, String password) {
 		try {
-			String query1 = "Select Email from proyectointegrador.usuario";
-			String query2 = "Select contraseña from proyectointegrador.usuario";
-			Statement stmt = conection.createStatement();
-			ResultSet rsetEmails = stmt.executeQuery(query1);
-
-			rsetEmails.last();
-			int b = rsetEmails.getRow();
-			rsetEmails.beforeFirst();
-
-			// Parte de Email
-			ArrayEmails = new String[b];
-			for (int i = 0; i <= b; i++) {
-				if (rsetEmails.next()) {
-					System.out.println(rsetEmails.getString((1)));
-					ArrayEmails[i] = rsetEmails.getString((1));
-				}
-			}
-
-			// Parte de Contraseñas
-			ResultSet rsetContraseñas = stmt.executeQuery(query2);
+			String query = "Select Email, contraseña from proyectointegrador.usuario";
+			PreparedStatement stmt = conection.prepareStatement(query);
+			ResultSet rset = stmt.executeQuery(query);
+			
+			rset.last();
+			int b = rset.getRow();
+			rset.beforeFirst();
+			
 			ArrayContraseñas = new String[b];
-
+			ArrayEmails = new String[b];
+			// Parte de Email
 			for (int i = 0; i <= b; i++) {
-				if (rsetContraseñas.next()) {
-					ArrayContraseñas[i] = rsetContraseñas.getString((1));
+				if (rset.next()) {
+					ArrayEmails[i] = rset.getString((1));				
 				}
 			}
-
+			rset.beforeFirst();
+			// Parte de Contraseñas
+			for (int i = 0; i <= b; i++) {
+				if (rset.next()) {
+					ArrayContraseñas[i] = rset.getString((2));
+				}
+			}
 			int contador = 0;
-
-			for (String string : ArrayEmails) {
-				if (email.equals(string)) {
+			for (int i = 0; i < ArrayEmails.length; i++) {
+				if (ArrayEmails[i].equals(email)) {
 					contador++;
-					for (String strings : ArrayContraseñas) {
-						if (password.equals(strings)) {
-							contador++;
-							break;
-						}
+					if (ArrayContraseñas[i].equals(password)) {
+						contador++;
 					}
 				}
 			}
-
-			rsetEmails.close();
+			
+			rset.close();
 			stmt.close();
-			rsetContraseñas.close();
-
 			JFrame pop_up = new JFrame();
 			// Comprobacion
 			if (contador == 2) {
 				return true;
 			} else if (contador == 1) {
-				JOptionPane.showMessageDialog(pop_up, "El Email y la contraseña no son compatibles", "Atencion",
-						JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(pop_up,
+						"El Email y la contraseña no son compatibles",
+						"Atencion", JOptionPane.WARNING_MESSAGE);
 				return false;
 			} else {
-				JOptionPane.showMessageDialog(pop_up, "El Email y la contraseña no son correctos", "Atencion",
-						JOptionPane.WARNING_MESSAGE);
+				JOptionPane.showMessageDialog(pop_up,
+						"El Email y la contraseña no son correctos",
+						"Atencion", JOptionPane.WARNING_MESSAGE);
 				return false;
 			}
 		} catch (SQLException s) {
@@ -117,7 +108,8 @@ public class adminBBDD {
 		}
 	}
 
-	public void RealizarAlta(String email, String nombre, String apellidos, String contraseña, String admin) {
+	public void RealizarAlta(String email, String nombre, String apellidos,
+			String contraseña, String admin) {
 		try {
 			String sql = "Insert into proyectointegrador.usuario (`Email`, `nombre`, `apellidos`, `contraseña`, `TipoUsuario`) values (?, ?, ?, ?, ?);";
 			PreparedStatement stmt = conection.prepareStatement(sql);

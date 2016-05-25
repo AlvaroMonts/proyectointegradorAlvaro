@@ -6,10 +6,9 @@ import Vista.TbEquipos;
 public class TbEquipos_Controlador {
 	adminBBDD tbEqMod = new adminBBDD();
 	TbEquipos tbEq;
-	public String[][] array;
+	public String[][] arrayEquipos;
 
 	public TbEquipos_Controlador() {
-		array = tbEqMod.getArrayEquipos();
 	}
 
 	public void EqAVista(TbEquipos equipos) {

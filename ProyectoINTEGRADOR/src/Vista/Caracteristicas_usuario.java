@@ -2,6 +2,7 @@ package Vista;
 
 
 import java.awt.EventQueue;
+import java.awt.Font;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -45,6 +46,7 @@ public class Caracteristicas_usuario extends JFrame {
 		
 		JLabel label = new JLabel("Nombre:");
 		label.setBounds(50, 80, 54, 14);
+		label.setFont(new Font("SansSerif", Font.BOLD, 12));
 		contentPane.add(label);
 		
 		textNombre_Cusuario = new JTextField();
@@ -54,6 +56,7 @@ public class Caracteristicas_usuario extends JFrame {
 		
 		JLabel label_1 = new JLabel("Apellidos:");
 		label_1.setBounds(50, 148, 59, 14);
+		label_1.setFont(new Font("SansSerif", Font.BOLD, 12));
 		contentPane.add(label_1);
 		
 		textApellidos_Cusuario = new JTextField();
@@ -63,6 +66,7 @@ public class Caracteristicas_usuario extends JFrame {
 		
 		JLabel label_2 = new JLabel("Email:");
 		label_2.setBounds(50, 214, 41, 14);
+		label_2.setFont(new Font("SansSerif", Font.BOLD, 12));
 		contentPane.add(label_2);
 		
 		textEmail_Cusuario = new JTextField();
@@ -73,11 +77,13 @@ public class Caracteristicas_usuario extends JFrame {
 		JRadioButton radioButtonAdministrador_Cusuario = new JRadioButton("Administrador");
 		radioButtonAdministrador_Cusuario.setBackground(new Color(135, 206, 235));
 		radioButtonAdministrador_Cusuario.setBounds(404, 57, 116, 23);
+		radioButtonAdministrador_Cusuario.setFont(new Font("SansSerif", Font.BOLD, 12));
 		contentPane.add(radioButtonAdministrador_Cusuario);
 		
 		JRadioButton radioButtonTecnico_Cusuario = new JRadioButton("T\u00E9cnico");
 		radioButtonTecnico_Cusuario.setBackground(new Color(135, 206, 235));
 		radioButtonTecnico_Cusuario.setBounds(404, 98, 86, 23);
+		radioButtonTecnico_Cusuario.setFont(new Font("SansSerif", Font.BOLD, 12));
 		contentPane.add(radioButtonTecnico_Cusuario);
 		
 		ButtonGroup group1 = new ButtonGroup();
@@ -92,10 +98,12 @@ public class Caracteristicas_usuario extends JFrame {
 		
 		JLabel label_3 = new JLabel("Tipo de Usuario:");
 		label_3.setBounds(297, 80, 91, 14);
+		label_3.setFont(new Font("SansSerif", Font.BOLD, 12));
 		contentPane.add(label_3);
 		
 		JLabel label_4 = new JLabel("Contrase\u00F1a:");
 		label_4.setBounds(315, 159, 73, 14);
+		label_4.setFont(new Font("SansSerif", Font.BOLD, 12));
 		contentPane.add(label_4);
 		
 		textContraseña_Cusuario = new JTextField();
@@ -110,6 +118,7 @@ public class Caracteristicas_usuario extends JFrame {
 		
 		JLabel label_5 = new JLabel("Repetir Contrase\u00F1a:");
 		label_5.setBounds(297, 214, 127, 14);
+		label_5.setFont(new Font("SansSerif", Font.BOLD, 12));
 		contentPane.add(label_5);
 		
 		JButton btnModificar_Cusuario = new JButton("Modificar");

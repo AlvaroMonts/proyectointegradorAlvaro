@@ -9,7 +9,6 @@ public class TbUsers_Controlador {
 	public String[][] array;
 
 	public TbUsers_Controlador() {
-		array = tbUsMod.getArrayUsers();
 	}
 
 	public void UsAModelo(adminBBDD bbdd) {
@@ -17,6 +16,7 @@ public class TbUsers_Controlador {
 	}
 
 	public void UsAVista(TbUsers users) {
+		array=tbUsMod.getArrayUsers();
 		this.tbUs = users;
 	}
 }

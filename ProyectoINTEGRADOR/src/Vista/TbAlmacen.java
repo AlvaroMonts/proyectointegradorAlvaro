@@ -75,32 +75,40 @@ public class TbAlmacen extends JFrame {
 		toolBar = new JToolBar();
 
 		button_2 = new JButton("Buscar");
+		button_2.setFont(new Font("SansSerif", Font.BOLD, 12));
 
 		button_4 = new JButton("Quitar filtro\r\n");
+		button_4.setFont(new Font("SansSerif", Font.BOLD, 12));
 
 		lblTipodeequipo = new JLabel("Tipo de Equipo");
+		lblTipodeequipo.setFont(new Font("SansSerif", Font.PLAIN, 12));
 
 		lblNotas = new JLabel("Notas\r\n");
+		lblNotas.setFont(new Font("SansSerif", Font.PLAIN, 12));
 
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
 
 		JLabel lblCodequipo = new JLabel("Codigo del equipo\r\n");
+		lblCodequipo.setFont(new Font("SansSerif", Font.PLAIN, 12));
 
 		textField_2 = new JTextField();
 		textField_2.setColumns(10);
 
 		lblCausa = new JLabel("Causa");
+		lblCausa.setFont(new Font("SansSerif", Font.PLAIN, 12));
 
 		textField_3 = new JTextField();
 		textField_3.setColumns(10);
 
 		lblPiezareutilizable = new JLabel("Piezas Reutilizables");
+		lblPiezareutilizable.setFont(new Font("SansSerif", Font.PLAIN, 12));
 
 		textField_4 = new JTextField();
 		textField_4.setColumns(10);
 
 		button = new JButton("Cerrar sesi\u00F3n");
+		button.setFont(new Font("SansSerif", Font.BOLD, 12));
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);
@@ -111,6 +119,7 @@ public class TbAlmacen extends JFrame {
 		
 
 		btnonEquipo = new JButton("Equipos");
+		btnonEquipo.setFont(new Font("SansSerif", Font.BOLD, 12));
 		toolBar.add(btnonEquipo);
 		btnonEquipo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {

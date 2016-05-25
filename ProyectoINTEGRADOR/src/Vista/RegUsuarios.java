@@ -2,6 +2,7 @@ package Vista;
 
 import java.awt.BorderLayout;
 import java.awt.EventQueue;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -10,15 +11,18 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.ButtonGroup;
 import javax.swing.JLabel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 import javax.swing.JRadioButton;
 import javax.swing.JButton;
 
 import java.awt.Color;
+
 import javax.swing.GroupLayout;
 import javax.swing.GroupLayout.Alignment;
 
 import Controlador.RegUsuarios_Controlador;
+
 import javax.swing.LayoutStyle.ComponentPlacement;
 
 public class RegUsuarios extends JFrame {
@@ -50,6 +54,7 @@ public class RegUsuarios extends JFrame {
 
 		JLabel label = new JLabel("Nombre:");
 		label.setBounds(113, 117, 61, 14);
+		label.setFont(new Font("SansSerif", Font.BOLD, 12));
 
 		tFNombre = new JTextField();
 		tFNombre.setBounds(184, 114, 86, 20);
@@ -57,6 +62,7 @@ public class RegUsuarios extends JFrame {
 
 		JLabel label_1 = new JLabel("Apellidos:");
 		label_1.setBounds(113, 171, 66, 14);
+		label_1.setFont(new Font("SansSerif", Font.BOLD, 12));
 
 		tFApellidos = new JTextField();
 		tFApellidos.setBounds(184, 168, 86, 20);
@@ -67,14 +73,14 @@ public class RegUsuarios extends JFrame {
 		tFEmail.setColumns(10);
 
 		JLabel label_2 = new JLabel("Email:");
-		label_2.setBounds(113, 238, 48, 14);
+		label_2.setFont(new Font("SansSerif", Font.BOLD, 12));
 
 		rBAdmin = new JRadioButton("Administrador");
-		rBAdmin.setBounds(465, 113, 115, 23);
+		rBAdmin.setFont(new Font("SansSerif", Font.BOLD, 12));
 		rBAdmin.setBackground(new Color(135, 206, 235));
 
 		rBTecnico = new JRadioButton("T\u00E9cnico");
-		rBTecnico.setBounds(465, 149, 77, 23);
+		rBTecnico.setFont(new Font("SansSerif", Font.BOLD, 12));
 		rBTecnico.setBackground(new Color(135, 206, 235));
 
 		ButtonGroup group1 = new ButtonGroup();
@@ -89,26 +95,31 @@ public class RegUsuarios extends JFrame {
 
 		JLabel label_3 = new JLabel("Tipo de Usuario:");
 		label_3.setBounds(349, 136, 95, 14);
+		label_3.setFont(new Font("SansSerif", Font.BOLD, 12));
 
 		JLabel label_4 = new JLabel("Contrase\u00F1a:");
 		label_4.setBounds(367, 200, 77, 14);
+		label_4.setFont(new Font("SansSerif", Font.BOLD, 12));
 
-		tFPassword = new JTextField();
+		tFPassword = new JPasswordField();
 		tFPassword.setBounds(476, 197, 86, 20);
 		tFPassword.setColumns(10);
 
 		JLabel label_5 = new JLabel("Repetir Contrase\u00F1a:");
 		label_5.setBounds(349, 251, 115, 14);
+		label_5.setFont(new Font("SansSerif", Font.BOLD, 12));
 
-		tFPassword2 = new JTextField();
+		tFPassword2 = new JPasswordField();
 		tFPassword2.setBounds(476, 248, 86, 20);
 		tFPassword2.setColumns(10);
 
 		btnRegistrar = new JButton("Registrar");
 		btnRegistrar.setBounds(625, 368, 89, 23);
+		btnRegistrar.setFont(new Font("SansSerif", Font.BOLD, 12));
 
 		btnCancelar = new JButton("Cancelar");
 		btnCancelar.setBounds(530, 368, 89, 23);
+		btnCancelar.setFont(new Font("SansSerif", Font.BOLD, 12));
 		contentPane.setLayout(null);
 		contentPane.add(label);
 		contentPane.add(tFNombre);
@@ -134,11 +145,15 @@ public class RegUsuarios extends JFrame {
 		});
 		btnRegistrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if (tFPassword.getText().equals(tFPassword2.getText()) && rBAdmin.isSelected()) {
-					registro.ComprobarAlta(tFEmail.getText(), tFNombre.getText(), tFApellidos.getText(),
+				if (tFPassword.getText().equals(tFPassword2.getText())
+						&& rBAdmin.isSelected()) {
+					registro.ComprobarAlta(tFEmail.getText(),
+							tFNombre.getText(), tFApellidos.getText(),
 							tFPassword.getText(), rBAdmin.getText());
-				} else if (tFPassword.getText().equals(tFPassword2.getText()) && rBTecnico.isSelected()) {
-					registro.ComprobarAlta(tFEmail.getText(), tFNombre.getText(), tFApellidos.getText(),
+				} else if (tFPassword.getText().equals(tFPassword2.getText())
+						&& rBTecnico.isSelected()) {
+					registro.ComprobarAlta(tFEmail.getText(),
+							tFNombre.getText(), tFApellidos.getText(),
 							tFPassword.getText(), rBTecnico.getText());
 				} else {
 					System.out.println("Las contraseñas no coinciden");
@@ -150,8 +165,8 @@ public class RegUsuarios extends JFrame {
 	public void setPantalla(TbUsers user) {
 		this.pantalla = user;
 	}
-	
-	public void setRegUs(RegUsuarios_Controlador regUsuarios_Controlador){
+
+	public void setRegUs(RegUsuarios_Controlador regUsuarios_Controlador) {
 		this.registro = regUsuarios_Controlador;
 	}
 }

@@ -137,6 +137,7 @@ public class Main {
 		// cargar tablas
 		modelo.cargarTodoInicio();
 		TAlmacen.setTbAlmacen();
+		TbEqCont.arrayEquipos = modelo.getArrayEquipos();
 		TEquipo.setTbEquipos();
 		THistorial.setTbHistorial();
 		TPrestamos.setTbPrestamos();

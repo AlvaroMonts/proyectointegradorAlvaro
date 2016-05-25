@@ -72,8 +72,9 @@ public class TbEquipos extends JFrame {
 
 		comboBox = new JComboBox();
 		comboBox.setBounds(62, 133, 75, 20);
-		comboBox.setModel(new DefaultComboBoxModel(new String[] { "Equipo", "COD_Equipo", "Marca", "Modelo",
-				"Tipo de uso", "Disponibilidad", "Prestable", "Edificio", "Almacenamiento" }));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] { "Equipo",
+				"COD_Equipo", "Marca", "Modelo", "Tipo de uso",
+				"Disponibilidad", "Prestable", "Edificio", "Almacenamiento" }));
 
 		textField = new JTextField();
 		textField.setBounds(62, 172, 86, 20);
@@ -81,8 +82,9 @@ public class TbEquipos extends JFrame {
 
 		comboBox_1 = new JComboBox();
 		comboBox_1.setBounds(62, 203, 75, 20);
-		comboBox_1.setModel(new DefaultComboBoxModel(new String[] { "Equipo", "COD_Equipo", "Marca", "Modelo",
-				"Tipo de uso", "Disponibilidad", "Prestable", "Edificio", "Almacenamiento" }));
+		comboBox_1.setModel(new DefaultComboBoxModel(new String[] { "Equipo",
+				"COD_Equipo", "Marca", "Modelo", "Tipo de uso",
+				"Disponibilidad", "Prestable", "Edificio", "Almacenamiento" }));
 
 		textField_1 = new JTextField();
 		textField_1.setBounds(62, 234, 86, 20);
@@ -90,8 +92,9 @@ public class TbEquipos extends JFrame {
 
 		comboBox_2 = new JComboBox();
 		comboBox_2.setBounds(62, 265, 75, 20);
-		comboBox_2.setModel(new DefaultComboBoxModel(new String[] { "Equipo", "COD_Equipo", "Marca", "Modelo",
-				"Tipo de uso", "Disponibilidad", "Prestable", "Edificio", "Almacenamiento" }));
+		comboBox_2.setModel(new DefaultComboBoxModel(new String[] { "Equipo",
+				"COD_Equipo", "Marca", "Modelo", "Tipo de uso",
+				"Disponibilidad", "Prestable", "Edificio", "Almacenamiento" }));
 
 		textField_2 = new JTextField();
 		textField_2.setBounds(62, 296, 86, 20);
@@ -157,20 +160,20 @@ public class TbEquipos extends JFrame {
 				Pantalla2.setVisible(true);
 			}
 		});
-		
+
 		JButton btnEquipos = new JButton("Equipos");
 		btnEquipos.setEnabled(false);
 		toolBar.add(btnEquipos);
-		
-				JButton btnUsuarios = new JButton("Usuarios");
-				btnUsuarios.addActionListener(new ActionListener() {
-					public void actionPerformed(ActionEvent e) {
-						setVisible(false);
-						Pantalla3 = new TbUsers();
-						Pantalla3.setVisible(true);
-					}
-				});
-				toolBar.add(btnUsuarios);
+
+		JButton btnUsuarios = new JButton("Usuarios");
+		btnUsuarios.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				Pantalla3 = new TbUsers();
+				Pantalla3.setVisible(true);
+			}
+		});
+		toolBar.add(btnUsuarios);
 
 		toolBar.add(button_2);
 
@@ -196,8 +199,9 @@ public class TbEquipos extends JFrame {
 
 		comboBox_3 = new JComboBox();
 		comboBox_3.setBounds(62, 82, 102, 20);
-		comboBox_3.setModel(new DefaultComboBoxModel(new String[] { "Todos", "Sobremesa", "Portatil", "Tablet/Movil",
-				"Cintiq", "Proyector", "Tableta gr\u00E1fica", "Monitor", "Consola" }));
+		comboBox_3.setModel(new DefaultComboBoxModel(new String[] { "Todos",
+				"Sobremesa", "Portatil", "Tablet/Movil", "Cintiq", "Proyector",
+				"Tableta gr\u00E1fica", "Monitor", "Consola" }));
 		comboBox_3.setBackground(UIManager.getColor("Button.background"));
 
 		btnDarDeAlta = new JButton("Dar de alta equipo");
@@ -271,26 +275,23 @@ public class TbEquipos extends JFrame {
 	public void setPantalla4(TbAlmacen almacen) {
 		this.Pantalla4 = almacen;
 	}
+
 	public void setEquiposCont(TbEquipos_Controlador equipos_Controlador) {
 		this.tbEqCont = equipos_Controlador;
 	}
-	
-	public void setTbEquipos(){
-		table.setModel(
-				new DefaultTableModel(
-					tbEqCont.array
-			,
-			new String[] {
-				"C\u00F3digo", "Tipo de Equipo", "Almacenamiento1", "Almacenamiento2", "Notas", "estado", "marca", "disponibilidad", "TipoUso", "modelo", "prestable", "Sala", "Edificio", "TipoSala"
-			}
-		));
-		table.getColumnModel().getColumn(2).setPreferredWidth(85);
 
+	public void setTbEquipos() {
+		table.setModel(new DefaultTableModel(tbEqCont.arrayEquipos,
+				new String[] { "C\u00F3digo", "Tipo de Equipo",
+						"Almacenamiento1", "Almacenamiento2", "Notas",
+						"estado", "marca", "disponibilidad", "TipoUso",
+						"modelo", "prestable", "Sala", "Edificio", "TipoSala" }));
+		table.getColumnModel().getColumn(2).setPreferredWidth(85);
 		for (int i = 0; i < table.getColumnModel().getColumnCount(); i++) {
 			TableColumn t = table.getColumnModel().getColumn(i);
 			EditorDeTablas cellEditor = new EditorDeTablas();
 			t.setCellEditor(cellEditor);
 		}
 	}
-	
+
 }

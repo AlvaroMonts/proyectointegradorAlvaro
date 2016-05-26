@@ -52,7 +52,6 @@ public class TbEquipos extends JFrame {
 	private JComboBox comboBox_1;
 	private JButton btnCerrarSesin;
 	private JLabel lblTipoDeEquipo;
-	private JLabel lblCaracteristicas;
 	private TbEquipos_Controlador tbEqCont;
 	private Login login;
 	private JScrollPane scrollPane;
@@ -205,7 +204,6 @@ public class TbEquipos extends JFrame {
 		btnDarDeAlta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				REquipo = new RegEquipos();
 				REquipo.setVisible(true);
 
 			}
@@ -237,10 +235,6 @@ public class TbEquipos extends JFrame {
 		contentPane.add(button);
 		contentPane.add(button_1);
 		contentPane.add(scrollPane);
-
-		lblCaracteristicas = new JLabel("Caracteristicas");
-		lblCaracteristicas.setBounds(62, 108, 89, 14);
-		contentPane.add(lblCaracteristicas);
 
 	}
 

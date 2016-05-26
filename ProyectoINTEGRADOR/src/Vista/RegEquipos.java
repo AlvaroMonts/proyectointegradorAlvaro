@@ -28,6 +28,8 @@ import javax.swing.JList;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 
+import Controlador.RegEquipos_Controlador;
+
 public class RegEquipos extends JFrame {
 
 	private JPanel contentPane;
@@ -115,6 +117,8 @@ public class RegEquipos extends JFrame {
 	private JLabel label_24;
 	private JLabel label_23;
 	private JTextField textField_1;
+	private RegEquipos_Controlador registro;
+	private JTextField textField_15;
 
 	/**
 	 * Create the frame.
@@ -241,12 +245,6 @@ public class RegEquipos extends JFrame {
 		tPSobremesa.addTab("Sobremesa", null, panel, null);
 
 		btnAltaSobremesa = new JButton("Dar de alta equipo");
-		btnAltaSobremesa.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-
-			}
-		});
-
 		btnAltaSobremesa.setBounds(565, 180, 129, 25);
 		btnAltaSobremesa.setFont(new Font("Times New Roman", Font.BOLD, 13));
 
@@ -493,16 +491,15 @@ public class RegEquipos extends JFrame {
 
 		btnAltaSmartTablet = new JButton("Dar de alta equipo");
 		btnAltaSmartTablet.setFont(new Font("Times New Roman", Font.BOLD, 13));
-		btnAltaSmartTablet.setBounds(565, 180, 129, 25);
 		panel_2.add(btnAltaSmartTablet);
 
 		JLabel label_32 = new JLabel("Resoluci\u00F3n c\u00E1mara");
-		label_32.setBounds(90, 65, 110, 14);
+		label_32.setBounds(95, 102, 110, 14);
 		panel_2.add(label_32);
 		label_32.setFont(new Font("Tahoma", Font.PLAIN, 12));
 
 		textField_27 = new JTextField();
-		textField_27.setBounds(201, 63, 86, 20);
+		textField_27.setBounds(206, 100, 86, 20);
 		panel_2.add(textField_27);
 		textField_27.setColumns(10);
 
@@ -563,27 +560,36 @@ public class RegEquipos extends JFrame {
 		if (radioButton_11.isSelected()) {
 			radioButton_10.setEnabled(false);
 		} else if (radioButton_10.isSelected()) {
-			radioButton_11.setEnabled(true);
 		}
 
 		JLabel lblTipo_1 = new JLabel("Tipo");
 		lblTipo_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblTipo_1.setBounds(154, 119, 46, 14);
+		lblTipo_1.setBounds(104, 140, 29, 14);
 		panel_2.add(lblTipo_1);
 
 		JRadioButton rdbtnSmartphone = new JRadioButton("Smartphone");
 		rdbtnSmartphone.setBackground(new Color(135, 206, 235));
-		rdbtnSmartphone.setBounds(201, 101, 86, 20);
+		rdbtnSmartphone.setBounds(206, 138, 86, 20);
 		panel_2.add(rdbtnSmartphone);
 
 		JRadioButton rdbtnTablet = new JRadioButton("Tablet");
 		rdbtnTablet.setBackground(new Color(135, 206, 235));
-		rdbtnTablet.setBounds(201, 129, 55, 20);
+		rdbtnTablet.setBounds(139, 138, 55, 20);
 		panel_2.add(rdbtnTablet);
 
 		ButtonGroup group3 = new ButtonGroup();
 		group3.add(rdbtnTablet);
 		group3.add(rdbtnSmartphone);
+		
+		JLabel lblResolucin = new JLabel("Resoluci\u00F3n");
+		lblResolucin.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblResolucin.setBounds(139, 65, 57, 14);
+		panel_2.add(lblResolucin);
+		
+		textField_15 = new JTextField();
+		textField_15.setColumns(10);
+		textField_15.setBounds(206, 65, 86, 20);
+		panel_2.add(textField_15);
 
 		if (rdbtnTablet.isSelected()) {
 			rdbtnSmartphone.setEnabled(false);
@@ -935,9 +941,107 @@ public class RegEquipos extends JFrame {
 		} else {
 			btnAltaSobremesa.setEnabled(true);
 		}*/
+		btnAltaSobremesa.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				System.out.println("---------------- "+registro);
+				registro.AltaComunes(textField.getText(), "sobremesa", textField_29.getText(), textField_30.getText(),
+						textAreaNotas.getText(), textField_2.getText(), group1.getSelection().getActionCommand(),
+						(String) comboBox_1.getSelectedItem(), textField_3.getText(),
+						group2.getSelection().getActionCommand(), textField_26.getText(),
+						(String) comboBox.getSelectedItem());
+				registro.AltaSobremesa(textField_12.getText(), textField_13.getText(), textField.getText(),
+						textField_16.getText(), textField_1.getText(), textField_17.getText(), textField_22.getText(),
+						textField_21.getText(), textField_20.getText(), textField_19.getText());
+
+			}
+		});
+		btnAltaPortatil.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				registro.AltaComunes(textField.getText(), "portatil", textField_29.getText(), textField_30.getText(),
+						textAreaNotas.getText(), textField_2.getText(), group1.getSelection().getActionCommand(),
+						(String) comboBox_1.getSelectedItem(), textField_3.getText(),
+						group2.getSelection().getActionCommand(), textField_26.getText(),
+						(String) comboBox.getSelectedItem());
+				registro.Altaportatil(textField_32.getText(), textField.getText(), textField_6.getText(),
+						textField_5.getText(), textField_4.getText(), textField_10.getText(), textField_11.getText(),
+						textField_9.getText(), textField_7.getText(), textField_31.getText(), textField_8.getText());
+			}
+		});
+
+		btnAltaSmartTablet.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				registro.AltaComunes(textField.getText(), "Smartphone/tablet", textField_29.getText(),
+						textField_30.getText(), textAreaNotas.getText(), textField_2.getText(),
+						group1.getSelection().getActionCommand(), (String) comboBox_1.getSelectedItem(),
+						textField_3.getText(), group2.getSelection().getActionCommand(), textField_26.getText(),
+						(String) comboBox.getSelectedItem());
+				registro.AltaSmartphoneTablet(group6.getSelection().getActionCommand(), textField_15.getText(),
+						textField.getText(), group7.getSelection().getActionCommand(),
+						group3.getSelection().getActionCommand(), textField_27.getText(), textField_14.getText());
+			}
+		});
+		btnAltaTabletaGrafica.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				registro.AltaComunes(textField.getText(), "Smartphone/tablet", textField_29.getText(),
+						textField_30.getText(), textAreaNotas.getText(), textField_2.getText(),
+						group1.getSelection().getActionCommand(), (String) comboBox_1.getSelectedItem(),
+						textField_3.getText(), group2.getSelection().getActionCommand(), textField_26.getText(),
+						(String) comboBox.getSelectedItem());
+				registro.AltaTabletaGrafica(textField_35.getText(), textField.getText());
+			}
+		});
+		btnAltaCintiq.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				registro.AltaComunes(textField.getText(), "Smartphone/tablet", textField_29.getText(),
+						textField_30.getText(), textAreaNotas.getText(), textField_2.getText(),
+						group1.getSelection().getActionCommand(), (String) comboBox_1.getSelectedItem(),
+						textField_3.getText(), group2.getSelection().getActionCommand(), textField_26.getText(),
+						(String) comboBox.getSelectedItem());
+				registro.AltaCintiq(textField_44.getText(), textField_39.getText(), textField_37.getText(),
+						textField_38.getText(), textField_42.getText(), textField_43.getText(), textField.getText(),
+						textField_45.getText(), textField_40.getText(), textField_41.getText());
+			}
+		});
+		btnAltaMonitorTV.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				registro.AltaComunes(textField.getText(), "Tv/Monitor", textField_29.getText(), textField_30.getText(),
+						textAreaNotas.getText(), textField_2.getText(), group1.getSelection().getActionCommand(),
+						(String) comboBox_1.getSelectedItem(), textField_3.getText(),
+						group2.getSelection().getActionCommand(), textField_26.getText(),
+						(String) comboBox.getSelectedItem());
+				registro.AltaTVoMonitor(group4.getSelection().getActionCommand(), textField_46.getText(),
+						textField_51.getText(), textField.getText(), textField_49.getText(), textField_47.getText());
+			}
+		});
+		btnAltaProyector.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				registro.AltaComunes(textField.getText(), "Tv/Monitor", textField_29.getText(), textField_30.getText(),
+						textAreaNotas.getText(), textField_2.getText(), group1.getSelection().getActionCommand(),
+						(String) comboBox_1.getSelectedItem(), textField_3.getText(),
+						group2.getSelection().getActionCommand(), textField_26.getText(),
+						(String) comboBox.getSelectedItem());
+				registro.AltaProyector(textField_36.getText(), group5.getSelection().getActionCommand(),
+						textField.getText());
+			}
+		});
+		btnAltaConsola.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				registro.AltaComunes(textField.getText(), "Consola", textField_29.getText(), textField_30.getText(),
+						textAreaNotas.getText(), textField_2.getText(), group1.getSelection().getActionCommand(),
+						(String) comboBox_1.getSelectedItem(), textField_3.getText(),
+						group2.getSelection().getActionCommand(), textField_26.getText(),
+						(String) comboBox.getSelectedItem());
+
+			}
+		});
 	}
 
 	public void setPantalla(TbEquipos pantalla) {
 		this.pantalla = pantalla;
+	}
+	
+	public void setRegEquipos(RegEquipos_Controlador regEquiposControlador) {
+		System.out.println("ENTRE EN "+regEquiposControlador);
+		this.registro = regEquiposControlador;
 	}
 }

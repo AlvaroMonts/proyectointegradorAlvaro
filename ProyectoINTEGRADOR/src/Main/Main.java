@@ -1,6 +1,7 @@
 package Main;
 
 import Controlador.Login_Controlador;
+import Controlador.RegEquipos_Controlador;
 import Controlador.RegUsuarios_Controlador;
 import Controlador.TbAlmacen_Controlador;
 import Controlador.TbEquipos_Controlador;
@@ -43,6 +44,7 @@ public class Main {
 	static TbHistorial_Controlador TbHistCont;
 	static TbPrestamos_Controlador TbPresCont;
 	static TbUsers_Controlador TbUsersCont;
+	static RegEquipos_Controlador RegEqCont;
 
 	public static void main(String[] args) {
 		Login = new Login();
@@ -64,6 +66,7 @@ public class Main {
 		TbHistCont = new TbHistorial_Controlador();
 		TbPresCont = new TbPrestamos_Controlador();
 		TbUsersCont	= new TbUsers_Controlador();
+		RegEqCont = new RegEquipos_Controlador();
 		Login.setVisible(true);
 		Login.setPantalla(TEquipo);
 		TEquipo.setPantalla1(THistorial);
@@ -74,34 +77,42 @@ public class Main {
 		TEquipo.setCaracEquipos(CEquipo);
 		CEquipo.setPantalla(TEquipo);
 		CEquipo.setPantalla1(RPrestamos);
+		REquipos.setPantalla(TEquipo);
+		
 		THistorial.setPantalla1(TAlmacen);
 		THistorial.setPantalla2(TEquipo);
 		THistorial.setPantalla3(TPrestamos);
 		THistorial.setPantalla4(TUsers);
+		
 		TPrestamos.setEquipos(TEquipo);
 		TPrestamos.setAlmacen(TAlmacen);
 		TPrestamos.setHistorial(THistorial);
 		TPrestamos.setUsers(TUsers);	
+		
 		TUsers.setEquipos(TEquipo);
 		TUsers.setAlmacen(TAlmacen);
 		TUsers.setHistorial(THistorial);
 		TUsers.setPrestamos(TPrestamos);
 		TUsers.setPantalla5(RUsr);
 		TUsers.setCaracUsuarios(CUsuario);
+		
 		CUsuario.setPantalla(TUsers);
 		RUsr.setPantalla(TUsers);
+		
 		TAlmacen.setEquipo(TEquipo);
 		TAlmacen.setPrestamos(TPrestamos);
 		TAlmacen.setHistorial(THistorial);
 		TAlmacen.setUsers(TUsers);
-		REquipos.setPantalla(TEquipo);
+		
 		Login.setLogin_Cont(logCont);
 		RUsr.setRegUs(regUsuCont);
+		REquipos.setRegEquipos(RegEqCont);
 		TAlmacen.setAlmacenCont(TbAlmacenCont);
 		TEquipo.setEquiposCont(TbEqCont);
 		THistorial.setHistCont(TbHistCont);
 		TPrestamos.setPresCont(TbPresCont);
 		TUsers.setUsControlador(TbUsersCont);
+		
 		logCont.loginAModelo(modelo);
 		regUsuCont.RegUsAModelo(modelo);
 		TbAlmacenCont.AlmContAModelo(modelo);
@@ -109,6 +120,8 @@ public class Main {
 		TbHistCont.HistAModelo(modelo);
 		TbPresCont.PresAModelo(modelo);
 		TbUsersCont.UsAModelo(modelo);
+		RegEqCont.setEquiposModelo(modelo);
+		
 		modelo.setLogin(Login);
 		modelo.setRegUsuarios(RUsr);
 		modelo.setTbAlmacen(TAlmacen);
@@ -116,6 +129,8 @@ public class Main {
 		modelo.setTbHistorial(THistorial);
 		modelo.setTbPrestamos(TPrestamos);
 		modelo.setTbUsers(TUsers);
+		modelo.setRegEquipos(REquipos);
+		
 		modelo.cargarDatosDeTablas();
 		// setters desde controlador a vista
 		/*logCont.loginAVista(Login);

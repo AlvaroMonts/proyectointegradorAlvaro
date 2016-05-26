@@ -149,7 +149,6 @@ public class Caracteristicas_Equipo extends JFrame {
 		ButtonGroup group1 = new ButtonGroup();
 		group1.add(radioButton);
 		group1.add(radioButton_1);
-		radioButton_1.setSelected(true);
 		
 		if (radioButton.isSelected()) {
 			radioButton_1.setEnabled(false);
@@ -157,8 +156,6 @@ public class Caracteristicas_Equipo extends JFrame {
 			radioButton.setEnabled(true);
 		}
 
-		System.out.println(group1.getSelection().getActionCommand());
-		
 		JLabel label_4 = new JLabel("Disponibilidad");
 		label_4.setBounds(85, 134, 79, 14);
 		label_4.setFont(new Font("Tahoma", Font.PLAIN, 12));

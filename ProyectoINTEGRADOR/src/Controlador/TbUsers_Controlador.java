@@ -12,8 +12,4 @@ public class TbUsers_Controlador {
 		this.tbUsMod = bbdd;
 	}
 
-	public void UsAVista(TbUsers users) {
-		//array = tbUsMod.getArrayPrestamos();
-		this.tbUs = users;
-	}
 }

@@ -56,6 +56,7 @@ public class TbEquipos extends JFrame {
 	private JLabel lblCaracteristicas;
 	private TbEquipos_Controlador tbEqCont;
 	private Login login;
+	private JScrollPane scrollPane;
 
 	/**
 	 * Create the frame.
@@ -72,9 +73,8 @@ public class TbEquipos extends JFrame {
 
 		comboBox = new JComboBox();
 		comboBox.setBounds(62, 133, 75, 20);
-		comboBox.setModel(new DefaultComboBoxModel(new String[] { "Equipo",
-				"COD_Equipo", "Marca", "Modelo", "Tipo de uso",
-				"Disponibilidad", "Prestable", "Edificio", "Almacenamiento" }));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] { "Equipo", "COD_Equipo", "Marca", "Modelo",
+				"Tipo de uso", "Disponibilidad", "Prestable", "Edificio", "Almacenamiento" }));
 
 		textField = new JTextField();
 		textField.setBounds(62, 172, 86, 20);
@@ -82,9 +82,8 @@ public class TbEquipos extends JFrame {
 
 		comboBox_1 = new JComboBox();
 		comboBox_1.setBounds(62, 203, 75, 20);
-		comboBox_1.setModel(new DefaultComboBoxModel(new String[] { "Equipo",
-				"COD_Equipo", "Marca", "Modelo", "Tipo de uso",
-				"Disponibilidad", "Prestable", "Edificio", "Almacenamiento" }));
+		comboBox_1.setModel(new DefaultComboBoxModel(new String[] { "Equipo", "COD_Equipo", "Marca", "Modelo",
+				"Tipo de uso", "Disponibilidad", "Prestable", "Edificio", "Almacenamiento" }));
 
 		textField_1 = new JTextField();
 		textField_1.setBounds(62, 234, 86, 20);
@@ -92,9 +91,8 @@ public class TbEquipos extends JFrame {
 
 		comboBox_2 = new JComboBox();
 		comboBox_2.setBounds(62, 265, 75, 20);
-		comboBox_2.setModel(new DefaultComboBoxModel(new String[] { "Equipo",
-				"COD_Equipo", "Marca", "Modelo", "Tipo de uso",
-				"Disponibilidad", "Prestable", "Edificio", "Almacenamiento" }));
+		comboBox_2.setModel(new DefaultComboBoxModel(new String[] { "Equipo", "COD_Equipo", "Marca", "Modelo",
+				"Tipo de uso", "Disponibilidad", "Prestable", "Edificio", "Almacenamiento" }));
 
 		textField_2 = new JTextField();
 		textField_2.setBounds(62, 296, 86, 20);
@@ -111,7 +109,7 @@ public class TbEquipos extends JFrame {
 		button_1 = new JButton("Restaurar Filtros");
 		button_1.setBounds(26, 361, 138, 23);
 
-		JScrollPane scrollPane = new JScrollPane();
+		scrollPane = new JScrollPane();
 		scrollPane.setBounds(187, 90, 684, 326);
 
 		table = new JTable();
@@ -199,9 +197,8 @@ public class TbEquipos extends JFrame {
 
 		comboBox_3 = new JComboBox();
 		comboBox_3.setBounds(62, 82, 102, 20);
-		comboBox_3.setModel(new DefaultComboBoxModel(new String[] { "Todos",
-				"Sobremesa", "Portatil", "Tablet/Movil", "Cintiq", "Proyector",
-				"Tableta gr\u00E1fica", "Monitor", "Consola" }));
+		comboBox_3.setModel(new DefaultComboBoxModel(new String[] { "Todos", "Sobremesa", "Portatil", "Tablet/Movil",
+				"Cintiq", "Proyector", "Tableta gr\u00E1fica", "Monitor", "Consola" }));
 		comboBox_3.setBackground(UIManager.getColor("Button.background"));
 
 		btnDarDeAlta = new JButton("Dar de alta equipo");
@@ -280,17 +277,26 @@ public class TbEquipos extends JFrame {
 		this.tbEqCont = equipos_Controlador;
 	}
 
-	public void setTbEquipos(Object [][] tabla) {
-		table.setModel(new DefaultTableModel(tabla,
-				new String[] { "C\u00F3digo", "Tipo de Equipo",
-						"Almacenamiento 1", "Almacenamiento 2", "Notas",
-						"Marca", "Disponibilidad", "Tipo Uso",
-						"Modelo", "prestable", "Sala", "Edificio", "Tipo Sala" }));
-		table.getColumnModel().getColumn(2).setPreferredWidth(85);
+	public void setTbEquipos(Object[][] tabla) {
+		
+
+		String[] columnas = new String[] { "C\u00F3digo", "Tipo de Equipo", "Almacenamiento 1", "Almacenamiento 2",
+				"Notas", "Marca", "Disponibilidad", "Tipo Uso", "Modelo", "prestable", "Sala", "Edificio" };
+
+		DefaultTableModel modeloTb = new DefaultTableModel(tabla, columnas);
+		this.table.setModel(modeloTb);
+		modeloTb.fireTableDataChanged();
+		this.table.getColumnModel().getColumn(2).setPreferredWidth(85);
 		for (int i = 0; i < table.getColumnModel().getColumnCount(); i++) {
 			TableColumn t = table.getColumnModel().getColumn(i);
 			EditorDeTablas cellEditor = new EditorDeTablas();
 			t.setCellEditor(cellEditor);
 		}
+		
+		// tabla.fireTableDataChanged();
+		// table.revalidate();
+		// table.updateUI();
+		// table.setUpdateSelectionOnSort(true);
+
 	}
 }

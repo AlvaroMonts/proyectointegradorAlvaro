@@ -8,10 +8,6 @@ public class TbHistorial_Controlador {
 	private TbHistorial tbHist;
 	//public String[][] array;
 
-	public void HistAVista(TbHistorial historial){
-		//array = tbHiMod.getArrayHistorial();
-		this.tbHist = historial; 
-	}
 	public void HistAModelo(adminBBDD bbdd)  {
 		this.tbHiMod = bbdd;
 	}

@@ -8,11 +8,6 @@ public class TbEquipos_Controlador {
 	private TbEquipos tbEq;
 	//public String[][] arrayEquipos;
 
-	public void EqAVista(TbEquipos equipos) {
-		//arrayEquipos=tbEqMod.getArrayEquipos();
-		this.tbEq = equipos;
-	}
-
 	public void EqAModelo(adminBBDD bbdd) {
 		this.tbEqMod = bbdd;
 	}

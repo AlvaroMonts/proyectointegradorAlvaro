@@ -14,7 +14,4 @@ public class RegUsuarios_Controlador  {
 	public void RegUsAModelo(adminBBDD bbdd){
 		this.registro = bbdd;
 	}
-	public void RegUsAVista(RegUsuarios usuarios){
-		this.regUs = usuarios;
-	}
 }

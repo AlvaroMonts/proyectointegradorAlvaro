@@ -18,8 +18,4 @@ public class Login_Controlador {
 		this.logMod = modelo;
 	}
 	
-	public void loginAVista(Login log){
-		this.log = log;
-	}
-	
 }

@@ -100,7 +100,7 @@ public class Main {
 		CUsuario.setPantalla(TUsers);
 		REquipos.setPantalla(TEquipo);
 
-		// setters desde vista
+		// setters desde vista a controlador
 		Login.setLogin_Cont(logCont);
 		RUsr.setRegUs(regUsuCont);
 		TAlmacen.setAlmacenCont(TbAlmacenCont);
@@ -119,31 +119,25 @@ public class Main {
 		TbUsersCont.UsAModelo(modelo);
 		
 		
-		// setters controladores
-		modelo.setLogin(logCont);
-		modelo.setRegUsuarios(regUsuCont);
-		modelo.setTbAlmacen(TbAlmacenCont);
-		modelo.setTbEquipos(TbEqCont);
-		modelo.setTbHistorial(TbHistCont);
-		modelo.setTbPrestamos(TbPresCont);
-		modelo.setTbUsers(TbUsersCont);
+		// setters a vista desde modelo
+		modelo.setLogin(Login);
+		modelo.setRegUsuarios(RUsr);
+		modelo.setTbAlmacen(TAlmacen);
+		modelo.setTbEquipos(TEquipo);
+		modelo.setTbHistorial(THistorial);
+		modelo.setTbPrestamos(TPrestamos);
+		modelo.setTbUsers(TUsers);
 		
 		// setters desde controlador a vista
-		logCont.loginAVista(Login);
+		/*logCont.loginAVista(Login);
 		regUsuCont.RegUsAVista(RUsr);
 		TbAlmacenCont.AlmContAVista(TAlmacen);
 		TbEqCont.EqAVista(TEquipo);
 		TbHistCont.HistAVista(THistorial);
 		TbPresCont.PresAVista(TPrestamos);
-		TbUsersCont.UsAVista(TUsers);
-		
+		TbUsersCont.UsAVista(TUsers);*/
 		
 		// cargar tablas
-		modelo.cargarTodoInicio();
-		TAlmacen.setTbAlmacen(modelo.getArrayAlmacen());
-		TEquipo.setTbEquipos(modelo.getArrayEquipos());
-		THistorial.setTbHistorial(modelo.getArrayHistorial());
-		TPrestamos.setTbPrestamos(modelo.getArrayPrestamos());
-		TUsers.setTbUsers(modelo.getArrayUsers());
+		modelo.cargarDatosDeTablas();
 	}
 }

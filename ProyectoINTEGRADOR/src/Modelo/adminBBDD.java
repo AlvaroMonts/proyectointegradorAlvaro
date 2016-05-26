@@ -2,16 +2,14 @@ package Modelo;
 
 import java.sql.*;
 
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
+import Vista.Login;
+import Vista.RegUsuarios;
+import Vista.TbHistorial;
+import Vista.TbPrestamos;
+import Vista.TbUsers;
+import Vista.TbAlmacen;
+import Vista.TbEquipos;
 
-import Controlador.Login_Controlador;
-import Controlador.RegUsuarios_Controlador;
-import Controlador.TbAlmacen_Controlador;
-import Controlador.TbEquipos_Controlador;
-import Controlador.TbHistorial_Controlador;
-import Controlador.TbPrestamos_Controlador;
-import Controlador.TbUsers_Controlador;
 
 public class adminBBDD {
 	private String bd, login, pwd, url;
@@ -23,20 +21,20 @@ public class adminBBDD {
 	private String[][] ArrayHistorial;
 	private String[][] ArrayPrestamos;
 	private String[][] ArrayUsers;
-	private Login_Controlador logCont;
-	private RegUsuarios_Controlador regUsuCont;
-	private TbAlmacen_Controlador TbAlmacenCont;
-	private TbEquipos_Controlador TbEqCont;
-	private TbHistorial_Controlador TbHistCont;
-	private TbPrestamos_Controlador TbPresCont;
-	private TbUsers_Controlador TbUsersCont;
+	private Login log;
+	private RegUsuarios regUsu;
+	private TbAlmacen TbAlmacen;
+	private TbEquipos TbEq;
+	private TbHistorial TbHist;
+	private TbPrestamos TbPres;
+	private TbUsers TbUsers;
 
 	public adminBBDD() {
 		try {
 			bd = "proyectointegrador";
 			login = "root";
 			pwd = "root";
-			url = "jdbc:mysql://10.4.105.32/" + bd;
+			url = "jdbc:mysql://localhost/" + bd;
 			Class.forName("com.mysql.jdbc.Driver");
 			conection = DriverManager.getConnection(url, login, pwd);
 			System.out.println("todo ok");
@@ -55,17 +53,17 @@ public class adminBBDD {
 			String query = "Select Email, contraseña from proyectointegrador.usuario";
 			PreparedStatement stmt = conection.prepareStatement(query);
 			ResultSet rset = stmt.executeQuery(query);
-			
+
 			rset.last();
 			int b = rset.getRow();
 			rset.beforeFirst();
-			
+
 			ArrayContraseñas = new String[b];
 			ArrayEmails = new String[b];
 			// Parte de Email
 			for (int i = 0; i <= b; i++) {
 				if (rset.next()) {
-					ArrayEmails[i] = rset.getString((1));				
+					ArrayEmails[i] = rset.getString((1));
 				}
 			}
 			rset.beforeFirst();
@@ -84,7 +82,7 @@ public class adminBBDD {
 					}
 				}
 			}
-			
+
 			rset.close();
 			stmt.close();
 			if (contador == 2) {
@@ -98,8 +96,7 @@ public class adminBBDD {
 		}
 	}
 
-	public void RealizarAlta(String email, String nombre, String apellidos,
-			String contraseña, String admin) {
+	public void RealizarAlta(String email, String nombre, String apellidos, String contraseña, String admin) {
 		try {
 			String sql = "Insert into proyectointegrador.usuario (`Email`, `nombre`, `apellidos`, `contraseña`, `TipoUsuario`) values (?, ?, ?, ?, ?);";
 			PreparedStatement stmt = conection.prepareStatement(sql);
@@ -271,39 +268,44 @@ public class adminBBDD {
 		return ArrayUsers;
 	}
 
-	public void setLogin(Login_Controlador login_Controlador) {
-		this.logCont = login_Controlador;
+	public void setLogin(Login login) {
+		this.log = login;
 	}
 
-	public void setRegUsuarios(RegUsuarios_Controlador regUsuarios_Controlador) {
-		this.regUsuCont = regUsuarios_Controlador;
+	public void setRegUsuarios(RegUsuarios regUsuarios) {
+		this.regUsu = regUsuarios;
 	}
 
-	public void setTbAlmacen(TbAlmacen_Controlador almacen_Controlador) {
-		this.TbAlmacenCont = almacen_Controlador;
+	public void setTbAlmacen(TbAlmacen almacen) {
+		this.TbAlmacen = almacen;
 	}
 
-	public void setTbEquipos(TbEquipos_Controlador equipos_Controlador) {
-		this.TbEqCont = equipos_Controlador;
+	public void setTbEquipos(TbEquipos equipos) {
+		this.TbEq = equipos;
 	}
 
-	public void setTbHistorial(TbHistorial_Controlador historial_Controlador) {
-		this.TbHistCont = historial_Controlador;
+	public void setTbHistorial(TbHistorial historial) {
+		this.TbHist = historial;
 	}
 
-	public void setTbPrestamos(TbPrestamos_Controlador prestamos_Controlador) {
-		this.TbPresCont = prestamos_Controlador;
+	public void setTbPrestamos(TbPrestamos prestamos) {
+		this.TbPres = prestamos;
 	}
 
-	public void setTbUsers(TbUsers_Controlador users_Controlador) {
-		this.TbUsersCont = users_Controlador;
+	public void setTbUsers(TbUsers users) {
+		this.TbUsers = users;
 	}
 
-	public void cargarTodoInicio() {
+	public void cargarDatosDeTablas() {
 		this.Consulta_ArrayAlmacen();
 		this.Consulta_ArrayEquipos();
 		this.Consulta_ArrayHistorial();
 		this.Consulta_ArrayPrestamos();
 		this.Consulta_ArrayUsers();
+		TbAlmacen.setTbAlmacen(ArrayAlmacen);
+		TbEq.setTbEquipos(ArrayEquipos);
+		TbHist.setTbHistorial(ArrayHistorial);
+		TbPres.setTbPrestamos(ArrayPrestamos);
+		TbUsers.setTbUsers(ArrayUsers);
 	}
 }

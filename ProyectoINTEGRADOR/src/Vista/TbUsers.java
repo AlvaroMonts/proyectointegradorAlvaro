@@ -108,7 +108,6 @@ public class TbUsers extends JFrame {
 		btnDarDeAlta.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				pantalla5 = new RegUsuarios();
 				pantalla5.setVisible(true);
 			}
 		});
@@ -147,7 +146,6 @@ public class TbUsers extends JFrame {
 			public void mouseClicked(MouseEvent e) {
 				if (e.getClickCount() == 2) {
 					setVisible(false);
-					caracUsuario = new Caracteristicas_usuario();
 					caracUsuario.setVisible(true);
 				}
 			}
@@ -160,7 +158,6 @@ public class TbUsers extends JFrame {
 		btnEquipos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				pantalla1 = new TbEquipos();
 				pantalla1.setVisible(true);
 			}
 		});
@@ -171,7 +168,6 @@ public class TbUsers extends JFrame {
 		btnPrestamos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				pantalla4 = new TbPrestamos();
 				pantalla4.setVisible(true);
 			}
 		});
@@ -186,7 +182,6 @@ public class TbUsers extends JFrame {
 		btnHistorial.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				pantalla2 = new TbHistorial();
 				pantalla2.setVisible(true);
 			}
 		});
@@ -197,7 +192,6 @@ public class TbUsers extends JFrame {
 		btnAlmacen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				pantalla3 = new TbAlmacen();
 				pantalla3.setVisible(true);
 			}
 		});
@@ -208,7 +202,6 @@ public class TbUsers extends JFrame {
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);
-				login = new Login();
 				login.setVisible(true);
 			}
 		});
@@ -457,6 +450,9 @@ public class TbUsers extends JFrame {
 
 	public void setPantalla5(RegUsuarios pantalla5) {
 		this.pantalla5 = pantalla5;
+	}
+	public void setCaracUsuarios(Caracteristicas_usuario pantalla5) {
+		this.caracUsuario = pantalla5;
 	}
 
 	public void setUsControlador(TbUsers_Controlador users_Controlador) {

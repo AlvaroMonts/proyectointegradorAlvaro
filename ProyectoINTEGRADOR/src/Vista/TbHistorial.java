@@ -108,7 +108,6 @@ public class TbHistorial extends JFrame {
 		button_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				pantalla1 = new TbAlmacen();
 				pantalla1.setVisible(true);
 			}
 		});
@@ -117,7 +116,6 @@ public class TbHistorial extends JFrame {
 		button_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				pantalla2 = new TbEquipos();
 				pantalla2.setVisible(true);
 			}
 		});
@@ -127,7 +125,6 @@ public class TbHistorial extends JFrame {
 		btnUsuarios.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				pantalla3 = new TbPrestamos();
 				pantalla3.setVisible(true);
 			}
 		});
@@ -136,7 +133,6 @@ public class TbHistorial extends JFrame {
 		button_5.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				pantalla4 = new TbUsers();
 				pantalla4.setVisible(true);
 			}
 		});
@@ -152,7 +148,6 @@ public class TbHistorial extends JFrame {
 		button_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				login = new Login();
 				login.setVisible(true);
 			}
 		});

@@ -139,7 +139,6 @@ public class RegUsuarios extends JFrame {
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);
-				pantalla = new TbUsers();
 				pantalla.setVisible(true);
 			}
 		});

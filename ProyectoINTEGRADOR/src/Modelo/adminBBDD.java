@@ -34,7 +34,7 @@ public class adminBBDD {
 			bd = "proyectointegrador";
 			login = "root";
 			pwd = "root";
-			url = "jdbc:mysql://localhost/" + bd;
+			url = "jdbc:mysql://10.4.105.32/" + bd;
 			Class.forName("com.mysql.jdbc.Driver");
 			conection = DriverManager.getConnection(url, login, pwd);
 			System.out.println("todo ok");

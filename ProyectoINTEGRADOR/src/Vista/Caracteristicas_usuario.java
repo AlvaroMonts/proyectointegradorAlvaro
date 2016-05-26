@@ -142,7 +142,6 @@ public class Caracteristicas_usuario extends JFrame {
 		btnCancelar_Cusuario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				pantalla = new TbUsers();
 				pantalla.setVisible(true);
 			}
 		});

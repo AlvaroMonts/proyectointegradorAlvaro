@@ -103,7 +103,6 @@ public class RegPrestamos extends JFrame {
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				TEquipo = new TbEquipos();
 				TEquipo.setVisible(true);
 			}
 		});

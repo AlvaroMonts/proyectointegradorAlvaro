@@ -94,7 +94,6 @@ public class TbPrestamos extends JFrame {
 		btnEquipos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);
-				pantalla1 = new TbEquipos();
 				pantalla1.setVisible(true);
 
 			}
@@ -106,7 +105,6 @@ public class TbPrestamos extends JFrame {
 		btnUsuarios.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				pantalla4 = new TbUsers();
 				pantalla4.setVisible(true);
 
 			}
@@ -121,7 +119,6 @@ public class TbPrestamos extends JFrame {
 		btnHistorial.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				pantalla2 = new TbHistorial();
 				pantalla2.setVisible(true);
 
 			}
@@ -132,7 +129,6 @@ public class TbPrestamos extends JFrame {
 		btnAlmacen.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				pantalla3 = new TbAlmacen();
 				pantalla3.setVisible(true);
 
 			}
@@ -167,7 +163,6 @@ public class TbPrestamos extends JFrame {
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				login = new Login();
 				login.setVisible(true);
 			}
 		});

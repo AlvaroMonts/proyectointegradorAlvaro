@@ -114,7 +114,6 @@ public class TbAlmacen extends JFrame {
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);
-				login = new Login();
 				login.setVisible(true);
 			}
 		});
@@ -125,7 +124,6 @@ public class TbAlmacen extends JFrame {
 		btnonEquipo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);
-				Equipos = new TbEquipos();
 				Equipos.setVisible(true);
 			}
 		});
@@ -134,7 +132,6 @@ public class TbAlmacen extends JFrame {
 		btnUsuario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);
-				Users = new TbUsers();
 				Users.setVisible(true);
 			}
 		});
@@ -145,7 +142,6 @@ public class TbAlmacen extends JFrame {
 		btnPrestamos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg2) {
 				setVisible(false);
-				Prestamos = new TbPrestamos();
 				Prestamos.setVisible(true);
 
 			}
@@ -156,7 +152,6 @@ public class TbAlmacen extends JFrame {
 		btnHistorial.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg1) {
 				setVisible(false);
-				Historial = new TbHistorial();
 				Historial.setVisible(true);
 			}
 		});

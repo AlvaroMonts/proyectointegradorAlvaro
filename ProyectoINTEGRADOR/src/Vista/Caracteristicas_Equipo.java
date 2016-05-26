@@ -845,7 +845,6 @@ public class Caracteristicas_Equipo extends JFrame {
 		btnRealizarPrestamo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);
-				pantalla1 = new RegPrestamos();
 				pantalla1.setVisible(true);
 			}
 		});
@@ -888,7 +887,6 @@ public class Caracteristicas_Equipo extends JFrame {
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);
-				pantalla = new TbEquipos();
 				pantalla.setVisible(true);
 			}
 		});

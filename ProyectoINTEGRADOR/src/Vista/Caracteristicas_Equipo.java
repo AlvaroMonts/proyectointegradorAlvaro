@@ -89,11 +89,13 @@ public class Caracteristicas_Equipo extends JFrame {
 	private JButton btnBajaEquipo;
 	private JButton btnGuardarCambios;
 	private JButton btnDescartarCambios;
+	private int id;
 
 	/**
 	 * Create the frame.
 	 */
 	public Caracteristicas_Equipo() {
+		pantalla.setSelectedRowID(id);
 		setTitle("Caracteristicas Equipo");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -891,7 +893,9 @@ public class Caracteristicas_Equipo extends JFrame {
 			}
 		});
 	}
-
+	public void setEquipoSeleccionado() {
+		
+	}
 	public void setPantalla(TbEquipos Pantalla) {
 		this.pantalla = Pantalla;
 	}

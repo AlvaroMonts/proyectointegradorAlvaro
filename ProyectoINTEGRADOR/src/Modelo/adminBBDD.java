@@ -302,7 +302,7 @@ public class adminBBDD {
 			String modelografica, String ramgrafica, String modeloprocesador, String velocidadprocesador,
 			String ramvelocidad, String ssoo, String resolucion, String capacidadram) {
 		try {
-			String sql = "INSERTO into proyectointegrador.portatil (PulgadasPantalla, Equipo_COD, MarcaGrafica, ModeloGrafica, RamGrafica, ModeloProcesador, VelocidadProcesador, RamVelocidad, SSOO, Resolucion, RamCapacidad) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+			String sql = "INSERT into proyectointegrador.portatil (PulgadasPantalla, Equipo_COD, MarcaGrafica, ModeloGrafica, RamGrafica, ModeloProcesador, VelocidadProcesador, RamVelocidad, SSOO, Resolucion, RamCapacidad) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 			PreparedStatement stmt = conection.prepareStatement(sql);
 			stmt.setString(1, pulgadaspantalla);
 			stmt.setString(2, equipocod);
@@ -326,7 +326,7 @@ public class adminBBDD {
 			String modeloprocesador, String velocidadprocesador, String equipocod, String equipoasociado,
 			String ramcapacidad, String ramvelocidad) {
 		try {
-			String sql = "INSERTO into proyectointegrador.cintiq (Resolucion, RamGrafica, MarcaGrafica, ModeloGrafica, ModeloProcesador, VelocidadProcesador, Equipo_COD1, EquipoAsociado, RamCapacidad, RamVelocidad) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
+			String sql = "INSERT into proyectointegrador.cintiq (Resolucion, RamGrafica, MarcaGrafica, ModeloGrafica, ModeloProcesador, VelocidadProcesador, Equipo_COD1, EquipoAsociado, RamCapacidad, RamVelocidad) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 			PreparedStatement stmt = conection.prepareStatement(sql);
 			stmt.setString(1, resolucion);
 			stmt.setString(2, ramgrafica);
@@ -349,7 +349,7 @@ public class adminBBDD {
 	public void RealizarAltaSmartphoneTablet(String giroscopio, String resolucion, String equipocod, String nfc,
 			String tipo, String resulucioncamara, String pulgadas) {
 		try {
-			String sql = "INSERTO into proyectointegrador.tabletmovil (Giroscopio, Resolucion, Equipo_COD, NFC, Tipo, ResolucionCamara, Pulgadas) values (?, ?, ?, ?, ?, ?, ?);";
+			String sql = "INSERT into proyectointegrador.tabletmovil (Giroscopio, Resolucion, Equipo_COD, NFC, Tipo, ResolucionCamara, Pulgadas) values (?, ?, ?, ?, ?, ?, ?);";
 			PreparedStatement stmt = conection.prepareStatement(sql);
 			stmt.setString(1, giroscopio);
 			stmt.setString(2, resolucion);
@@ -368,7 +368,7 @@ public class adminBBDD {
 	public void RealizarAltaTVoMonitor(String tipo, String conexiones, String tamaño, String codequipo,
 			String equipoasociado, String resolucion) {
 		try {
-			String sql = "INSERTO into proyectointegrador.televisionmonitor (Tipo, Conexiones, Tamaño, Equipo_COD, EquipoAsociado, Resolucion) values (?, ?, ?, ?, ?, ?);";
+			String sql = "INSERT into proyectointegrador.televisionmonitor (Tipo, Conexiones, Tamaño, Equipo_COD, EquipoAsociado, Resolucion) values (?, ?, ?, ?, ?, ?);";
 			PreparedStatement stmt = conection.prepareStatement(sql);
 			stmt.setString(1, tipo);
 			stmt.setString(2, conexiones);
@@ -385,7 +385,7 @@ public class adminBBDD {
 	
 	public void RealizarAltaProyector(String resolucion, String hdmi, String equipocod) {
 		try {
-			String sql = "INSERTO into proyectointegrador.proyector (Resolucion, Hdmi, Equipo_COD) values (?, ?, ?);";
+			String sql = "INSERT into proyectointegrador.proyector (Resolucion, Hdmi, Equipo_COD) values (?, ?, ?);";
 			PreparedStatement stmt = conection.prepareStatement(sql);
 			stmt.setString(1, resolucion);
 			stmt.setString(2, hdmi);
@@ -399,11 +399,38 @@ public class adminBBDD {
 	
 	public void RealizarTabletaGrafica(String tamaño, String equipocod) {
 		try {
-			String sql = "INSERTO into proyectointegrador.tabletagrafica (Tamaño, Equipo_COD) values (?, ?);";
+			String sql = "INSERT into proyectointegrador.tabletagrafica (Tamaño, Equipo_COD) values (?, ?);";
 			PreparedStatement stmt = conection.prepareStatement(sql);
 			stmt.setString(1, tamaño);
 			stmt.setString(2, equipocod);
 			stmt.executeUpdate();
+			stmt.close();
+		} catch (SQLException s) {
+			s.printStackTrace();
+		}
+	}
+	
+	public void iniciarCaracEqPantalla(int cod) {
+		try {
+			String sql = "SELECT * from proyectointegrador.tabletagrafica where COD = " + cod + ";";
+			Statement stmt = conection.createStatement();
+			ResultSet rset = stmt.executeQuery(sql);
+			rset.getString((1));
+			rset.getString((2));
+			rset.getString((3));
+			rset.getString((4));
+			rset.getString((5));
+			rset.getString((6));
+			rset.getString((7));
+			rset.getString((8));
+			rset.getString((9));
+			rset.getString((10));
+			rset.getString((11));
+			rset.getString((12));
+			
+			
+
+			rset.close();
 			stmt.close();
 		} catch (SQLException s) {
 			s.printStackTrace();

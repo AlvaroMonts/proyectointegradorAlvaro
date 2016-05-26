@@ -55,6 +55,8 @@ public class TbEquipos extends JFrame {
 	private TbEquipos_Controlador tbEqCont;
 	private Login login;
 	private JScrollPane scrollPane;
+	private int lineaSeleccionada;
+	private String[] lineaSeleccionadaDatos;
 
 	/**
 	 * Create the frame.
@@ -140,6 +142,7 @@ public class TbEquipos extends JFrame {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				if (e.getClickCount() == 2) {
+					setSelectedRow();
 					setVisible(false);
 					CEquipo.setVisible(true);
 				}
@@ -176,7 +179,6 @@ public class TbEquipos extends JFrame {
 		button_4.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				Pantalla4 = new TbAlmacen();
 				Pantalla4.setVisible(true);
 			}
 		});
@@ -185,7 +187,6 @@ public class TbEquipos extends JFrame {
 		button_3.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				Pantalla1 = new TbHistorial();
 				Pantalla1.setVisible(true);
 			}
 		});
@@ -205,7 +206,6 @@ public class TbEquipos extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
 				REquipo.setVisible(true);
-
 			}
 		});
 
@@ -257,13 +257,24 @@ public class TbEquipos extends JFrame {
 	public void setEquiposCont(TbEquipos_Controlador equipos_Controlador) {
 		this.tbEqCont = equipos_Controlador;
 	}
+
 	public void setCaracEquipos(Caracteristicas_Equipo equipo) {
 		this.CEquipo = equipo;
 	}
-	public void setRegEq(RegEquipos regEquipos){
+
+	public void setRegEq(RegEquipos regEquipos) {
 		this.REquipo = regEquipos;
 	}
+
+	public void setSelectedRow(){
+		this.lineaSeleccionada = table.getSelectedRow();
+	}
 	
+	public int setSelectedRowID(int a) {
+		a = (int) table.getModel().getValueAt(this.lineaSeleccionada,0);
+		return a;
+	}
+
 	public void setTbEquipos(Object[][] tabla) {
 		String[] columnas = new String[] { "C\u00F3digo", "Tipo de Equipo",
 				"Almacenamiento 1", "Almacenamiento 2", "Notas", "Marca",
@@ -277,5 +288,6 @@ public class TbEquipos extends JFrame {
 			EditorDeTablas cellEditor = new EditorDeTablas();
 			t.setCellEditor(cellEditor);
 		}
+
 	}
 }

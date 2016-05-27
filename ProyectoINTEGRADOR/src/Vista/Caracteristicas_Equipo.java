@@ -1,4 +1,5 @@
 package Vista;
+
 import java.awt.EventQueue;
 
 import javax.swing.ButtonGroup;
@@ -26,6 +27,8 @@ import javax.swing.JTabbedPane;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 
+import Controlador.Caracteristicas_EquipoControlador;
+
 public class Caracteristicas_Equipo extends JFrame {
 	private JPanel contentPane;
 	private JTextField textField;
@@ -41,7 +44,6 @@ public class Caracteristicas_Equipo extends JFrame {
 	private JTextField textField_20;
 	private JTextField textField_21;
 	private JTextField textField_22;
-	private JTextField textField_24;
 	private JTextField textField_26;
 	private JTextField textField_27;
 	private JTextField textField_29;
@@ -89,13 +91,13 @@ public class Caracteristicas_Equipo extends JFrame {
 	private JButton btnBajaEquipo;
 	private JButton btnGuardarCambios;
 	private JButton btnDescartarCambios;
-	private int id;
+	private int idEquipo;
+	private Caracteristicas_EquipoControlador equipoControlador;
 
 	/**
 	 * Create the frame.
 	 */
 	public Caracteristicas_Equipo() {
-		pantalla.setSelectedRowID(id);
 		setTitle("Caracteristicas Equipo");
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -111,7 +113,7 @@ public class Caracteristicas_Equipo extends JFrame {
 		label_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		contentPane.add(label_1);
 
-		textField = new JTextField();
+		textField = new JTextField(idEquipo);
 		textField.setBounds(178, 46, 86, 20);
 		textField.setColumns(10);
 		contentPane.add(textField);
@@ -151,7 +153,7 @@ public class Caracteristicas_Equipo extends JFrame {
 		ButtonGroup group1 = new ButtonGroup();
 		group1.add(radioButton);
 		group1.add(radioButton_1);
-		
+
 		if (radioButton.isSelected()) {
 			radioButton_1.setEnabled(false);
 		} else if (radioButton_1.isSelected()) {
@@ -198,19 +200,9 @@ public class Caracteristicas_Equipo extends JFrame {
 		contentPane.add(label_28);
 
 		JLabel label_27 = new JLabel("Tipo de uso");
-		label_27.setBounds(532, 48, 65, 14);
+		label_27.setBounds(558, 76, 65, 14);
 		label_27.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		contentPane.add(label_27);
-
-		textField_24 = new JTextField();
-		textField_24.setBounds(631, 86, 86, 20);
-		textField_24.setColumns(10);
-		contentPane.add(textField_24);
-
-		JLabel label_29 = new JLabel("Estado");
-		label_29.setBounds(551, 88, 46, 14);
-		label_29.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		contentPane.add(label_29);
 
 		JLabel label_30 = new JLabel("Edificio");
 		label_30.setBounds(345, 60, 46, 14);
@@ -852,40 +844,42 @@ public class Caracteristicas_Equipo extends JFrame {
 		});
 		contentPane.add(btnRealizarPrestamo);
 		btnRealizarPrestamo.setFont(new Font("Times New Roman", Font.BOLD, 11));
-		
-				btnBajaEquipo = new JButton("Dar de baja equipo");
-				btnBajaEquipo.setBounds(341, 455, 130, 32);
-				contentPane.add(btnBajaEquipo);
-				btnBajaEquipo.setFont(new Font("Times New Roman", Font.BOLD, 11));
-				
-						btnDescartarCambios = new JButton("Descartar cambios");
-						btnDescartarCambios.setBounds(481, 455, 130, 32);
-						contentPane.add(btnDescartarCambios);
-						btnDescartarCambios.addActionListener(new ActionListener() {
-							public void actionPerformed(ActionEvent e) {
-							}
-						});
-						btnDescartarCambios.setFont(new Font("Times New Roman", Font.BOLD, 11));
-						
-								btnGuardarCambios = new JButton("Guardar cambios");
-								btnGuardarCambios.setBounds(621, 456, 130, 32);
-								contentPane.add(btnGuardarCambios);
-								btnGuardarCambios.setFont(new Font("Times New Roman", Font.BOLD, 11));
-								
-								JLabel lblAlmacenamiento_1 = new JLabel("Almacenamiento2");
-								lblAlmacenamiento_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
-								lblAlmacenamiento_1.setBounds(304, 157, 100, 30);
-								contentPane.add(lblAlmacenamiento_1);
-								
-								JComboBox comboBox = new JComboBox();
-								comboBox.setModel(new DefaultComboBoxModel(new String[] {"Paris", "Madrid", "Berlin"}));
-								comboBox.setBounds(401, 58, 89, 20);
-								contentPane.add(comboBox);
-								
-								JComboBox comboBox_1 = new JComboBox();
-								comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"Docencia", "Investigacion", "Taller", "Secretaria"}));
-								comboBox_1.setBounds(631, 46, 69, 20);
-								contentPane.add(comboBox_1);
+
+		btnBajaEquipo = new JButton("Dar de baja equipo");
+		btnBajaEquipo.setBounds(341, 455, 130, 32);
+		contentPane.add(btnBajaEquipo);
+		btnBajaEquipo.setFont(new Font("Times New Roman", Font.BOLD, 11));
+
+		btnDescartarCambios = new JButton("Descartar cambios");
+		btnDescartarCambios.setBounds(481, 455, 130, 32);
+		contentPane.add(btnDescartarCambios);
+		btnDescartarCambios.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btnDescartarCambios.setFont(new Font("Times New Roman", Font.BOLD, 11));
+
+		btnGuardarCambios = new JButton("Guardar cambios");
+		btnGuardarCambios.setBounds(621, 456, 130, 32);
+		contentPane.add(btnGuardarCambios);
+		btnGuardarCambios.setFont(new Font("Times New Roman", Font.BOLD, 11));
+
+		JLabel lblAlmacenamiento_1 = new JLabel("Almacenamiento2");
+		lblAlmacenamiento_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblAlmacenamiento_1.setBounds(304, 157, 100, 30);
+		contentPane.add(lblAlmacenamiento_1);
+
+		JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] { "Paris",
+				"Madrid", "Berlin" }));
+		comboBox.setBounds(401, 58, 89, 20);
+		contentPane.add(comboBox);
+
+		JComboBox comboBox_1 = new JComboBox();
+		comboBox_1.setModel(new DefaultComboBoxModel(new String[] { "Docencia",
+				"Investigacion", "Taller", "Secretaria" }));
+		comboBox_1.setBounds(657, 74, 69, 20);
+		contentPane.add(comboBox_1);
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);
@@ -893,9 +887,20 @@ public class Caracteristicas_Equipo extends JFrame {
 			}
 		});
 	}
+
 	public void setEquipoSeleccionado() {
-		
+		pantalla.setSelectedRowID(idEquipo);
 	}
+
+	public void actualizarTextFields() {
+		equipoControlador.actualizarTfs(idEquipo);
+	}
+
+	public void setCaracEqCont(
+			Caracteristicas_EquipoControlador equipoControlador) {
+		this.equipoControlador = equipoControlador;
+	}
+
 	public void setPantalla(TbEquipos Pantalla) {
 		this.pantalla = Pantalla;
 	}

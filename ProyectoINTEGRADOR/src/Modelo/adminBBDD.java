@@ -2,6 +2,7 @@ package Modelo;
 
 import java.sql.*;
 
+import Vista.Caracteristicas_Equipo;
 import Vista.Login;
 import Vista.RegEquipos;
 import Vista.RegUsuarios;
@@ -10,7 +11,6 @@ import Vista.TbPrestamos;
 import Vista.TbUsers;
 import Vista.TbAlmacen;
 import Vista.TbEquipos;
-
 
 public class adminBBDD {
 	private String bd, login, pwd, url;
@@ -30,14 +30,14 @@ public class adminBBDD {
 	private TbHistorial TbHist;
 	private TbPrestamos TbPres;
 	private TbUsers TbUsers;
-	
+	private Caracteristicas_Equipo caracEq;
 
 	public adminBBDD() {
 		try {
 			bd = "proyectointegrador";
 			login = "root";
 			pwd = "root";
-			url = "jdbc:mysql://10.4.105.32/" + bd;
+			url = "jdbc:mysql://localhost/" + bd;
 			Class.forName("com.mysql.jdbc.Driver");
 			conection = DriverManager.getConnection(url, login, pwd);
 			System.out.println("todo ok");
@@ -99,7 +99,8 @@ public class adminBBDD {
 		}
 	}
 
-	public void RealizarAlta(String email, String nombre, String apellidos, String contraseña, String admin) {
+	public void RealizarAlta(String email, String nombre, String apellidos,
+			String contraseña, String admin) {
 		try {
 			String sql = "Insert into proyectointegrador.usuario (`Email`, `nombre`, `apellidos`, `contraseña`, `TipoUsuario`) values (?, ?, ?, ?, ?);";
 			PreparedStatement stmt = conection.prepareStatement(sql);
@@ -250,9 +251,11 @@ public class adminBBDD {
 			s.printStackTrace();
 		}
 	}
-	public void RealizarAltaComunes(String cod, String tipoequipo, String almacenamineto1, String almacenamiento2,
-			String notas, String marca, String disponibilidad, String tipouso, String modelo, String prestable,
-			String sala, String edificio) {
+
+	public void RealizarAltaComunes(String cod, String tipoequipo,
+			String almacenamineto1, String almacenamiento2, String notas,
+			String marca, String disponibilidad, String tipouso, String modelo,
+			String prestable, String sala, String edificio) {
 		try {
 			String sql = "Insert into proyectointegrador.equipo (`COD`, `Tipo_Equipo`, `Almacenamiento1`, `Almacenamiento2`, `notas`, `marca`, `disponibilidad`, `TipoUso`, `modelo`, `prestable`, `Sala`, `Edificio`) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 			PreparedStatement stmt = conection.prepareStatement(sql);
@@ -274,10 +277,11 @@ public class adminBBDD {
 			s.printStackTrace();
 		}
 	}
-	
-	public void RealizarAltaPC(String ssoo, String roseta, String equipocod, String ramgrafica, String marcagrafica,
-			String modelografica, String modeloprocesador, String velocidadprocesador, String ramcapacidad,
-			String ramvelocidad) {
+
+	public void RealizarAltaPC(String ssoo, String roseta, String equipocod,
+			String ramgrafica, String marcagrafica, String modelografica,
+			String modeloprocesador, String velocidadprocesador,
+			String ramcapacidad, String ramvelocidad) {
 		try {
 			String sql = "Insert into proyectointegrador.sobremesa (SSOO, Roseta, Equipo_COD, RamGrafica, MarcaGrafica, ModeloGrafica, ModeloProcesador, VelocidadProcesador, RamCapacidad, RamVelocidad) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 			PreparedStatement stmt = conection.prepareStatement(sql);
@@ -297,10 +301,12 @@ public class adminBBDD {
 			s.printStackTrace();
 		}
 	}
-	
-	public void RealizarAltaPortatil(String pulgadaspantalla, String equipocod, String marcagrafica,
-			String modelografica, String ramgrafica, String modeloprocesador, String velocidadprocesador,
-			String ramvelocidad, String ssoo, String resolucion, String capacidadram) {
+
+	public void RealizarAltaPortatil(String pulgadaspantalla, String equipocod,
+			String marcagrafica, String modelografica, String ramgrafica,
+			String modeloprocesador, String velocidadprocesador,
+			String ramvelocidad, String ssoo, String resolucion,
+			String capacidadram) {
 		try {
 			String sql = "INSERT into proyectointegrador.portatil (PulgadasPantalla, Equipo_COD, MarcaGrafica, ModeloGrafica, RamGrafica, ModeloProcesador, VelocidadProcesador, RamVelocidad, SSOO, Resolucion, RamCapacidad) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 			PreparedStatement stmt = conection.prepareStatement(sql);
@@ -321,10 +327,11 @@ public class adminBBDD {
 			s.printStackTrace();
 		}
 	}
-	
-	public void RealizarAltaCintiq(String resolucion, String ramgrafica, String marcagrafica, String modelografica,
-			String modeloprocesador, String velocidadprocesador, String equipocod, String equipoasociado,
-			String ramcapacidad, String ramvelocidad) {
+
+	public void RealizarAltaCintiq(String resolucion, String ramgrafica,
+			String marcagrafica, String modelografica, String modeloprocesador,
+			String velocidadprocesador, String equipocod,
+			String equipoasociado, String ramcapacidad, String ramvelocidad) {
 		try {
 			String sql = "INSERT into proyectointegrador.cintiq (Resolucion, RamGrafica, MarcaGrafica, ModeloGrafica, ModeloProcesador, VelocidadProcesador, Equipo_COD1, EquipoAsociado, RamCapacidad, RamVelocidad) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
 			PreparedStatement stmt = conection.prepareStatement(sql);
@@ -345,9 +352,10 @@ public class adminBBDD {
 			s.printStackTrace();
 		}
 	}
-	
-	public void RealizarAltaSmartphoneTablet(String giroscopio, String resolucion, String equipocod, String nfc,
-			String tipo, String resulucioncamara, String pulgadas) {
+
+	public void RealizarAltaSmartphoneTablet(String giroscopio,
+			String resolucion, String equipocod, String nfc, String tipo,
+			String resulucioncamara, String pulgadas) {
 		try {
 			String sql = "INSERT into proyectointegrador.tabletmovil (Giroscopio, Resolucion, Equipo_COD, NFC, Tipo, ResolucionCamara, Pulgadas) values (?, ?, ?, ?, ?, ?, ?);";
 			PreparedStatement stmt = conection.prepareStatement(sql);
@@ -364,9 +372,10 @@ public class adminBBDD {
 			s.printStackTrace();
 		}
 	}
-	
-	public void RealizarAltaTVoMonitor(String tipo, String conexiones, String tamaño, String codequipo,
-			String equipoasociado, String resolucion) {
+
+	public void RealizarAltaTVoMonitor(String tipo, String conexiones,
+			String tamaño, String codequipo, String equipoasociado,
+			String resolucion) {
 		try {
 			String sql = "INSERT into proyectointegrador.televisionmonitor (Tipo, Conexiones, Tamaño, Equipo_COD, EquipoAsociado, Resolucion) values (?, ?, ?, ?, ?, ?);";
 			PreparedStatement stmt = conection.prepareStatement(sql);
@@ -382,8 +391,9 @@ public class adminBBDD {
 			s.printStackTrace();
 		}
 	}
-	
-	public void RealizarAltaProyector(String resolucion, String hdmi, String equipocod) {
+
+	public void RealizarAltaProyector(String resolucion, String hdmi,
+			String equipocod) {
 		try {
 			String sql = "INSERT into proyectointegrador.proyector (Resolucion, Hdmi, Equipo_COD) values (?, ?, ?);";
 			PreparedStatement stmt = conection.prepareStatement(sql);
@@ -396,7 +406,7 @@ public class adminBBDD {
 			s.printStackTrace();
 		}
 	}
-	
+
 	public void RealizarTabletaGrafica(String tamaño, String equipocod) {
 		try {
 			String sql = "INSERT into proyectointegrador.tabletagrafica (Tamaño, Equipo_COD) values (?, ?);";
@@ -409,26 +419,26 @@ public class adminBBDD {
 			s.printStackTrace();
 		}
 	}
-	
+
 	public void iniciarCaracEqPantalla(int cod) {
 		try {
-			String sql = "SELECT * from proyectointegrador.tabletagrafica where COD = " + cod + ";";
+			String sql = "SELECT * from proyectointegrador.tabletagrafica where COD = "
+					+ cod + ";";
 			Statement stmt = conection.createStatement();
 			ResultSet rset = stmt.executeQuery(sql);
-			rset.getString((1));
-			rset.getString((2));
-			rset.getString((3));
-			rset.getString((4));
-			rset.getString((5));
-			rset.getString((6));
-			rset.getString((7));
-			rset.getString((8));
-			rset.getString((9));
-			rset.getString((10));
-			rset.getString((11));
-			rset.getString((12));
-			
-			
+			String codigo = rset.getString((1));
+			String marca = rset.getString((2));
+			String modelo = rset.getString((3));
+			String disponibilidad = rset.getString((4));
+			String prestable = rset.getString((5));
+			String edificio = rset.getString((6));
+			String sala = rset.getString((7));
+			String alm1 = rset.getString((8));
+			String alm2 = rset.getString((9));
+			String tipoUso = rset.getString((10));
+			String notas = rset.getString((11));
+			//String codigo = rset.getString((12));
+			//cod, tipoequipo, almacenamineto1, almacenamiento2, notas, marca, disponibilidad, tipouso, modelo, prestable, sala, edificio
 
 			rset.close();
 			stmt.close();
@@ -436,7 +446,6 @@ public class adminBBDD {
 			s.printStackTrace();
 		}
 	}
-
 	public String[][] getArrayAlmacen() {
 		return ArrayAlmacen;
 	}
@@ -484,12 +493,18 @@ public class adminBBDD {
 	public void setTbUsers(TbUsers users) {
 		this.TbUsers = users;
 	}
-	
+
 	public void setRegEquipos(RegEquipos reqEquipo) {
 		this.regEquipo = reqEquipo;
 	}
 
+	public void setCaracEquipos(Caracteristicas_Equipo caracteristicas_Equipo) {
+		this.caracEq = caracteristicas_Equipo;
+	}
 
+	public void cargarDatosTextFields(){
+		
+	}
 	public void cargarDatosDeTablas() {
 		this.Consulta_ArrayAlmacen();
 		this.Consulta_ArrayEquipos();

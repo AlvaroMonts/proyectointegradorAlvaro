@@ -89,6 +89,11 @@ public class Caracteristicas_Equipo extends JFrame {
 	private JComboBox comboBox_1;
 	private ButtonGroup group1;
 	private ButtonGroup group2;
+	private ButtonGroup group3;
+	private ButtonGroup group4;
+	private ButtonGroup group5;
+	private ButtonGroup group6;
+	private ButtonGroup group7;
 	private TbEquipos pantalla;
 	private RegPrestamos pantalla1;
 	private JButton btnCancelar;
@@ -99,6 +104,16 @@ public class Caracteristicas_Equipo extends JFrame {
 	private int idEquipo;
 	private Caracteristicas_EquipoControlador equipoControlador;
 	private JTextField textField_15;
+	private JRadioButton rdbtnSmartphone;
+	private JRadioButton rdbtnTablet;
+	private JRadioButton rdbtnSi;
+	private JRadioButton rdbtnSi_1;
+	private JRadioButton rdbtnNo;
+	private JRadioButton rdbtnNo_1;
+	private JRadioButton rdbtnTv;
+	private JRadioButton rdbtnMonitor;
+	private JRadioButton radioButton_8;
+	private JRadioButton radioButton_9;
 
 	/**
 	 * Create the frame.
@@ -144,13 +159,13 @@ public class Caracteristicas_Equipo extends JFrame {
 		textField_3.setColumns(10);
 		contentPane.add(textField_3);
 
-		radioButton = new JRadioButton("Si");
+		radioButton = new JRadioButton("si");
 		radioButton.setActionCommand(radioButton.getText());
 		radioButton.setBounds(169, 131, 46, 20);
 		radioButton.setBackground(new Color(135, 206, 235));
 		contentPane.add(radioButton);
 
-		radioButton_1 = new JRadioButton("No");
+		radioButton_1 = new JRadioButton("no");
 		radioButton_1.setActionCommand(radioButton_1.getText());
 		radioButton_1.setBounds(226, 131, 55, 20);
 		radioButton_1.setBackground(new Color(135, 206, 235));
@@ -171,12 +186,12 @@ public class Caracteristicas_Equipo extends JFrame {
 		label_4.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		contentPane.add(label_4);
 
-		radioButton_2 = new JRadioButton("No");
+		radioButton_2 = new JRadioButton("no");
 		radioButton_2.setBounds(226, 163, 55, 20);
 		radioButton_2.setBackground(new Color(135, 206, 235));
 		contentPane.add(radioButton_2);
 
-		radioButton_3 = new JRadioButton("Si");
+		radioButton_3 = new JRadioButton("si");
 		radioButton_3.setBounds(169, 163, 46, 20);
 		radioButton_3.setBackground(new Color(135, 206, 235));
 		contentPane.add(radioButton_3);
@@ -400,7 +415,7 @@ public class Caracteristicas_Equipo extends JFrame {
 		label_11.setBounds(512, 36, 39, 14);
 		panel_1.add(label_11);
 
-		JLabel label_12 = new JLabel("MEMORIA RAM ");
+		JLabel label_12 = new JLabel("MEMORIA RAM");
 		label_12.setFont(new Font("Tahoma", Font.BOLD, 13));
 		label_12.setBounds(318, 89, 110, 14);
 		panel_1.add(label_12);
@@ -500,24 +515,24 @@ public class Caracteristicas_Equipo extends JFrame {
 		panel_2.add(textField_14);
 		textField_14.setColumns(10);
 
-		JRadioButton radioButton_8 = new JRadioButton("No");
-		radioButton_8.setBackground(new Color(135, 206, 235));
-		radioButton_8.setBounds(477, 129, 55, 20);
-		panel_2.add(radioButton_8);
+		rdbtnNo_1 = new JRadioButton("no");
+		rdbtnNo_1.setBackground(new Color(135, 206, 235));
+		rdbtnNo_1.setBounds(477, 129, 55, 20);
+		panel_2.add(rdbtnNo_1);
 
-		JRadioButton radioButton_9 = new JRadioButton("Si");
-		radioButton_9.setBackground(new Color(135, 206, 235));
-		radioButton_9.setBounds(425, 129, 46, 20);
-		panel_2.add(radioButton_9);
+		rdbtnSi_1 = new JRadioButton("si");
+		rdbtnSi_1.setBackground(new Color(135, 206, 235));
+		rdbtnSi_1.setBounds(425, 129, 46, 20);
+		panel_2.add(rdbtnSi_1);
 
-		ButtonGroup group7 = new ButtonGroup();
-		group7.add(radioButton_8);
-		group7.add(radioButton_9);
+		group7 = new ButtonGroup();
+		group7.add(rdbtnNo_1);
+		group7.add(rdbtnSi_1);
 
-		if (radioButton_8.isSelected()) {
-			radioButton_9.setEnabled(false);
-		} else if (radioButton_9.isSelected()) {
-			radioButton_8.setEnabled(true);
+		if (rdbtnNo_1.isSelected()) {
+			rdbtnSi_1.setEnabled(false);
+		} else if (rdbtnSi_1.isSelected()) {
+			rdbtnNo_1.setEnabled(true);
 		}
 
 		JLabel label_43 = new JLabel("NFC");
@@ -530,24 +545,24 @@ public class Caracteristicas_Equipo extends JFrame {
 		label_44.setBounds(355, 102, 69, 14);
 		panel_2.add(label_44);
 
-		JRadioButton radioButton_10 = new JRadioButton("Si");
-		radioButton_10.setBackground(new Color(135, 206, 235));
-		radioButton_10.setBounds(425, 100, 46, 20);
-		panel_2.add(radioButton_10);
+		rdbtnSi = new JRadioButton("si");
+		rdbtnSi.setBackground(new Color(135, 206, 235));
+		rdbtnSi.setBounds(425, 100, 46, 20);
+		panel_2.add(rdbtnSi);
 
-		JRadioButton radioButton_11 = new JRadioButton("No");
-		radioButton_11.setBackground(new Color(135, 206, 235));
-		radioButton_11.setBounds(477, 100, 55, 20);
-		panel_2.add(radioButton_11);
+		rdbtnNo = new JRadioButton("no");
+		rdbtnNo.setBackground(new Color(135, 206, 235));
+		rdbtnNo.setBounds(477, 100, 55, 20);
+		panel_2.add(rdbtnNo);
 
-		ButtonGroup group6 = new ButtonGroup();
-		group6.add(radioButton_11);
-		group6.add(radioButton_10);
+		group6 = new ButtonGroup();
+		group6.add(rdbtnNo);
+		group6.add(rdbtnSi);
 
-		if (radioButton_11.isSelected()) {
-			radioButton_10.setEnabled(false);
-		} else if (radioButton_10.isSelected()) {
-			radioButton_11.setEnabled(true);
+		if (rdbtnNo.isSelected()) {
+			rdbtnSi.setEnabled(false);
+		} else if (rdbtnSi.isSelected()) {
+			rdbtnNo.setEnabled(true);
 		}
 
 		JLabel lblTipo_1 = new JLabel("Tipo");
@@ -555,17 +570,17 @@ public class Caracteristicas_Equipo extends JFrame {
 		lblTipo_1.setBounds(163, 136, 46, 14);
 		panel_2.add(lblTipo_1);
 
-		JRadioButton rdbtnSmartphone = new JRadioButton("Smartphone");
+		rdbtnSmartphone = new JRadioButton("Smartphone");
 		rdbtnSmartphone.setBackground(new Color(135, 206, 235));
 		rdbtnSmartphone.setBounds(210, 118, 86, 20);
 		panel_2.add(rdbtnSmartphone);
 
-		JRadioButton rdbtnTablet = new JRadioButton("Tablet");
+		rdbtnTablet = new JRadioButton("Tablet");
 		rdbtnTablet.setBackground(new Color(135, 206, 235));
 		rdbtnTablet.setBounds(210, 146, 55, 20);
 		panel_2.add(rdbtnTablet);
 
-		ButtonGroup group3 = new ButtonGroup();
+		group3 = new ButtonGroup();
 		group3.add(rdbtnTablet);
 		group3.add(rdbtnSmartphone);
 
@@ -770,17 +785,17 @@ public class Caracteristicas_Equipo extends JFrame {
 		textField_51.setBounds(587, 96, 86, 20);
 		panel_5.add(textField_51);
 
-		JRadioButton rdbtnTv = new JRadioButton("TV");
+		rdbtnTv = new JRadioButton("TV");
 		rdbtnTv.setBackground(new Color(135, 206, 235));
 		rdbtnTv.setBounds(332, 67, 46, 20);
 		panel_5.add(rdbtnTv);
 
-		JRadioButton rdbtnMonitor = new JRadioButton("Monitor");
+		rdbtnMonitor = new JRadioButton("Monitor");
 		rdbtnMonitor.setBackground(new Color(135, 206, 235));
 		rdbtnMonitor.setBounds(380, 67, 72, 20);
 		panel_5.add(rdbtnMonitor);
 
-		ButtonGroup group4 = new ButtonGroup();
+		group4 = new ButtonGroup();
 		group4.add(rdbtnTv);
 		group4.add(rdbtnMonitor);
 
@@ -805,24 +820,24 @@ public class Caracteristicas_Equipo extends JFrame {
 		textField_36.setColumns(10);
 		panel_6.add(textField_36);
 
-		JRadioButton radioButton_12 = new JRadioButton("Si");
-		radioButton_12.setBackground(new Color(135, 206, 235));
-		radioButton_12.setBounds(419, 98, 46, 20);
-		panel_6.add(radioButton_12);
+		radioButton_8 = new JRadioButton("Si");
+		radioButton_8.setBackground(new Color(135, 206, 235));
+		radioButton_8.setBounds(419, 98, 46, 20);
+		panel_6.add(radioButton_8);
 
-		JRadioButton radioButton_13 = new JRadioButton("No");
-		radioButton_13.setBackground(new Color(135, 206, 235));
-		radioButton_13.setBounds(467, 98, 55, 20);
-		panel_6.add(radioButton_13);
+		radioButton_9 = new JRadioButton("No");
+		radioButton_9.setBackground(new Color(135, 206, 235));
+		radioButton_9.setBounds(467, 98, 55, 20);
+		panel_6.add(radioButton_9);
 
-		ButtonGroup group5 = new ButtonGroup();
-		group5.add(radioButton_12);
-		group5.add(radioButton_13);
+		group5 = new ButtonGroup();
+		group5.add(radioButton_8);
+		group5.add(radioButton_9);
 
-		if (radioButton_12.isSelected()) {
-			radioButton_13.setEnabled(false);
-		} else if (radioButton_13.isSelected()) {
-			radioButton_12.setEnabled(true);
+		if (radioButton_8.isSelected()) {
+			radioButton_9.setEnabled(false);
+		} else if (radioButton_9.isSelected()) {
+			radioButton_8.setEnabled(true);
 		}
 
 		JLabel lblHdmi = new JLabel("HDMI");
@@ -1084,6 +1099,9 @@ public class Caracteristicas_Equipo extends JFrame {
 	public void setTextField_51(String textField_51) {
 		this.textField_51.setText(textField_51);
 	}
+	public void setTextField_15(String textField_15) {
+		this.textField_15.setText(textField_15);
+	}
 
 	public void setEdificio(String edificio) {
 		comboBox.setSelectedItem(edificio);
@@ -1096,22 +1114,54 @@ public class Caracteristicas_Equipo extends JFrame {
 	public void setGrupo1RB(String rb) {
 		if (rb.equals("si")) {
 			radioButton.setSelected(true);
-			System.out.println("si");
 		} else if (rb.equals("no")) {
 			radioButton_1.setSelected(true);
-			System.out.println("no");
 		}
 	}
 
 	public void setGrupo2RB(String rb) {
 		if (rb.equals("si")) {
 			radioButton_3.setSelected(true);
-			System.out.println("si");
 		} else if (rb.equals("no")) {
 			radioButton_2.setSelected(true);
-			System.out.println("no");
 		}
 	}
+	public void setGrupo3RB(String rb) {
+		if (rb.equals("si")) {
+			rdbtnTablet.setSelected(true);
+		} else if (rb.equals("no")) {
+			rdbtnSmartphone.setSelected(true);
+		}
+	}
+	public void setGrupo4RB(String rb) {
+		if (rb.equals("si")) {
+			rdbtnTv.setSelected(true);
+		} else if (rb.equals("no")) {
+			rdbtnMonitor.setSelected(true);
+		}
+	}
+	public void setGrupo5RB(String rb) {
+		if (rb.equals("si")) {
+			radioButton_8.setSelected(true);
+		} else if (rb.equals("no")) {
+			radioButton_9.setSelected(true);
+		}
+	}
+	public void setGrupo6RB(String rb) {
+		if (rb.equals("si")) {
+			rdbtnSi.setSelected(true);
+		} else if (rb.equals("no")) {
+			rdbtnNo.setSelected(true);
+		}
+	}
+	public void setGrupo7RB(String rb) {
+		if (rb.equals("si")) {
+			rdbtnSi_1.setSelected(true);
+		} else if (rb.equals("no")) {
+			rdbtnNo_1.setSelected(true);
+		}
+	}
+	
 
 	public void setCaracEqCont(Caracteristicas_EquipoControlador equipoControlador) {
 		this.equipoControlador = equipoControlador;

@@ -37,7 +37,7 @@ public class adminBBDD {
 			bd = "proyectointegrador";
 			login = "root";
 			pwd = "root";
-			url = "jdbc:mysql://localhost/" + bd;
+			url = "jdbc:mysql://10.4.105.32/" + bd;
 			Class.forName("com.mysql.jdbc.Driver");
 			conection = DriverManager.getConnection(url, login, pwd);
 			System.out.println("todo ok");
@@ -433,15 +433,15 @@ public class adminBBDD {
 				if (tipoEquipo.equals("Sobremesa")) {
 					iniciarCaracEqPantallaSobremesa(cod);
 				} else if (tipoEquipo.equals("Portatil")) {
-					iniciarCaracEqPantallaPortatil();
+					iniciarCaracEqPantallaPortatil(cod);
 				} else if (tipoEquipo.equals("Smartphone/tablet")) {
-					iniciarCaracEqPantallaSmartphoneOTablet();
+					iniciarCaracEqPantallaSmartphoneOTablet(cod);
 				} else if (tipoEquipo.equals("Tableta Grafica")) {
-					iniciarCaracEqPantallaTabletaGrafica();
+					iniciarCaracEqPantallaTabletaGrafica(cod);
 				} else if (tipoEquipo.equals("Cintiq")) {
-					iniciarCaracEqPantallaCintiq();
+					iniciarCaracEqPantallaCintiq(cod);
 				} else if (tipoEquipo.equals("Tv/Monitor")) {
-					iniciarCaracEqPantallaTvOMonitor();
+					iniciarCaracEqPantallaTvOMonitor(cod);
 				} else {
 					;
 				}
@@ -454,44 +454,114 @@ public class adminBBDD {
 	}
 
 	public void iniciarCaracEqPantallaSobremesa(int cod) throws SQLException {
-		String sql = "SELECT COD, Tipo_Equipo, Almacenamiento1, Almacenamiento2, notas, marca, disponibilidad, TipoUso, modelo, prestable, Sala, Edificio from proyectointegrador.equipo where COD = "
+		String sql = "SELECT SSOO, Roseta, RamGrafica, MarcaGrafica, ModeloGrafica, ModeloProcesador, VelocidadProcesador, RamCapacidad, RamVelocidad from proyectointegrador.sobremesa where Equipo_COD = "
 				+ cod + ";";
 		Statement stmt1 = conection.createStatement();
 		ResultSet rset = stmt1.executeQuery(sql);
 		if (rset.next()) {
-			caracEq.setTextField_18(rset.getString((1)));
-			caracEq.setTextField_29(rset.getString((3)));
-			caracEq.setTextField_30(rset.getString((4)));
-			caracEq.setTextNotas(rset.getString((5)));
-			caracEq.setTextField_2(rset.getString((6)));
-			caracEq.setGrupo1RB(rset.getString((7)));
-			caracEq.setTipoUso(rset.getString((8)));
-			caracEq.setTextField_3(rset.getString((9)));
-			caracEq.setGrupo2RB(rset.getString((10)));
-			caracEq.setTextField_26(rset.getString((11)));
-			caracEq.setEdificio(rset.getString((12)));
-			String tipoEquipo = rset.getString((2));
+			caracEq.setTextField_18(rset.getString((5)));
+			caracEq.setTextField_17(rset.getString((4)));
+			caracEq.setTextField_16(rset.getString((3)));
+			caracEq.setTextField_13(rset.getString((2)));
+			caracEq.setTextField_12(rset.getString((1)));
+			caracEq.setTextField_20(rset.getString((8)));
+			caracEq.setTextField_19(rset.getString((9)));
+			caracEq.setTextField_22(rset.getString((6)));
+			caracEq.setTextField_21(rset.getString((7)));
 		}
 	}
 
-	public void iniciarCaracEqPantallaPortatil() {
-
+	public void iniciarCaracEqPantallaPortatil(int cod) throws SQLException {
+		String sql = "SELECT PulgadasPantalla, MarcaGrafica, ModeloGrafica, RamGrafica, ModeloProcesador, VelocidadProcesador, RamVelocidad, SSOO, Resolucion, RamCapacidad from proyectointegrador.portatil where Equipo_COD = "
+				+ cod + ";";
+		Statement stmt1 = conection.createStatement();
+		ResultSet rset = stmt1.executeQuery(sql);
+		if (rset.next()) {
+			caracEq.setTextField_32(rset.getString((1)));
+			caracEq.setTextField_6(rset.getString((2)));
+			caracEq.setTextField_5(rset.getString((3)));
+			caracEq.setTextField_4(rset.getString((4)));
+			caracEq.setTextField_10(rset.getString((5)));
+			caracEq.setTextField_11(rset.getString((6)));
+			caracEq.setTextField_9(rset.getString((7)));
+			caracEq.setTextField_7(rset.getString((8)));
+			caracEq.setTextField_31(rset.getString((9)));
+			caracEq.setTextField_8(rset.getString((10)));
+		}
 	}
 
-	public void iniciarCaracEqPantallaSmartphoneOTablet() {
-
+	public void iniciarCaracEqPantallaSmartphoneOTablet(int cod) throws SQLException {
+		String sql = "SELECT Giroscopio, Resolucion, NFC, Tipo, ResolucionCamara, Pulgadas from proyectointegrador.tabletmovil where Equipo_COD = "
+				+ cod + ";";
+		Statement stmt1 = conection.createStatement();
+		ResultSet rset = stmt1.executeQuery(sql);
+		if (rset.next()) {
+			caracEq.setTextField_15(rset.getString((2)));
+			caracEq.setTextField_27(rset.getString((5)));
+			caracEq.setTextField_14(rset.getString((6)));
+			caracEq.setGrupo6RB(rset.getString((1)));
+			caracEq.setGrupo5RB(rset.getString((1)));
+			caracEq.setGrupo5RB(rset.getString((1)));
+			 
+			// giros, nfc, tipo
+		}
 	}
 
-	public void iniciarCaracEqPantallaTabletaGrafica() {
-
+	public void iniciarCaracEqPantallaTabletaGrafica(int cod) throws SQLException {
+		String sql = "SELECT  from proyectointegrador.tabletagrafica where Equipo_COD = "
+				+ cod + ";";
+		Statement stmt1 = conection.createStatement();
+		ResultSet rset = stmt1.executeQuery(sql);
+		if (rset.next()) {
+			caracEq.setTextField_32(rset.getString((1)));
+			caracEq.setTextField_6(rset.getString((2)));
+			caracEq.setTextField_5(rset.getString((3)));
+			caracEq.setTextField_4(rset.getString((4)));
+			caracEq.setTextField_10(rset.getString((5)));
+			caracEq.setTextField_11(rset.getString((6)));
+			caracEq.setTextField_9(rset.getString((7)));
+			caracEq.setTextField_7(rset.getString((8)));
+			caracEq.setTextField_31(rset.getString((9)));
+			caracEq.setTextField_8(rset.getString((10)));
+		}
 	}
 
-	public void iniciarCaracEqPantallaCintiq() {
-
+	public void iniciarCaracEqPantallaCintiq(int cod) throws SQLException {
+		String sql = "SELECT Resolucion, RamGrafica, MarcaGrafica, ModeloGrafica, ModeloProcesador, VelocidadProcesador, Equipo_COD1, EquipoAsociado, RamCapacidad, RamVelocidad from proyectointegrador.cintiq where Equipo_COD = "
+				+ cod + ";";
+		Statement stmt1 = conection.createStatement();
+		ResultSet rset = stmt1.executeQuery(sql);
+		if (rset.next()) {
+			caracEq.setTextField_32(rset.getString((1)));
+			caracEq.setTextField_6(rset.getString((2)));
+			caracEq.setTextField_5(rset.getString((3)));
+			caracEq.setTextField_4(rset.getString((4)));
+			caracEq.setTextField_10(rset.getString((5)));
+			caracEq.setTextField_11(rset.getString((6)));
+			caracEq.setTextField_9(rset.getString((7)));
+			caracEq.setTextField_7(rset.getString((8)));
+			caracEq.setTextField_31(rset.getString((9)));
+			caracEq.setTextField_8(rset.getString((10)));
+		}
 	}
 
-	public void iniciarCaracEqPantallaTvOMonitor() {
-
+	public void iniciarCaracEqPantallaTvOMonitor(int cod) throws SQLException {
+		String sql = "SELECT Tipo, Conexiones, Tamaño, Equipo_COD, EquipoAsociado, Resolucion from proyectointegrador.televisionmonitor where Equipo_COD = "
+				+ cod + ";";
+		Statement stmt1 = conection.createStatement();
+		ResultSet rset = stmt1.executeQuery(sql);
+		if (rset.next()) {
+			caracEq.setTextField_32(rset.getString((1)));
+			caracEq.setTextField_6(rset.getString((2)));
+			caracEq.setTextField_5(rset.getString((3)));
+			caracEq.setTextField_4(rset.getString((4)));
+			caracEq.setTextField_10(rset.getString((5)));
+			caracEq.setTextField_11(rset.getString((6)));
+			caracEq.setTextField_9(rset.getString((7)));
+			caracEq.setTextField_7(rset.getString((8)));
+			caracEq.setTextField_31(rset.getString((9)));
+			caracEq.setTextField_8(rset.getString((10)));
+		}
 	}
 
 	public String[][] getArrayAlmacen() {

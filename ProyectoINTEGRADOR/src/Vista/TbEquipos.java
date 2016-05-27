@@ -273,6 +273,10 @@ public class TbEquipos extends JFrame {
 		String id = (String) table.getModel().getValueAt(this.lineaSeleccionada,0);
 		return id;
 	}
+	/*public String getUsuario() {
+		String usuario = login.textField-de-email.getText();
+		return usuario;
+	}*/
 
 	public void setTbEquipos(Object[][] tabla) {
 		String[] columnas = new String[] { "C\u00F3digo", "Tipo de Equipo",

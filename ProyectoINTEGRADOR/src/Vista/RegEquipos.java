@@ -55,10 +55,10 @@ public class RegEquipos extends JFrame {
 	private JTabbedPane tPSobremesa;
 	private JPanel panel;
 	private JPanel panel_1;
-	private JRadioButton radioButton_3;
-	private JRadioButton radioButton;
-	private JRadioButton radioButton_1;
-	private JRadioButton radioButton_2;
+	private JRadioButton rdbtnSi_1;
+	private JRadioButton rdbtnSi;
+	private JRadioButton rdbtnNo;
+	private JRadioButton rdbtnNo_1;
 	private JTextField textField_4;
 	private JTextField textField_5;
 	private JTextField textField_6;
@@ -157,44 +157,44 @@ public class RegEquipos extends JFrame {
 		textField_3.setBounds(178, 104, 86, 20);
 		textField_3.setColumns(10);
 
-		radioButton = new JRadioButton("Si");
-		radioButton.setBounds(169, 131, 46, 20);
-		radioButton.setBackground(new Color(135, 206, 235));
+		rdbtnSi = new JRadioButton("si");
+		rdbtnSi.setBounds(169, 131, 46, 20);
+		rdbtnSi.setBackground(new Color(135, 206, 235));
 
-		radioButton_1 = new JRadioButton("No");
-		radioButton_1.setBounds(226, 131, 55, 20);
-		radioButton_1.setBackground(new Color(135, 206, 235));
+		rdbtnNo = new JRadioButton("no");
+		rdbtnNo.setBounds(226, 131, 55, 20);
+		rdbtnNo.setBackground(new Color(135, 206, 235));
 
 		ButtonGroup group1 = new ButtonGroup();
-		group1.add(radioButton);
-		group1.add(radioButton_1);
+		group1.add(rdbtnSi);
+		group1.add(rdbtnNo);
 
-		if (radioButton.isSelected()) {
-			radioButton_1.setEnabled(false);
-		} else if (radioButton_1.isSelected()) {
-			radioButton.setEnabled(true);
+		if (rdbtnSi.isSelected()) {
+			rdbtnNo.setEnabled(false);
+		} else if (rdbtnNo.isSelected()) {
+			rdbtnSi.setEnabled(true);
 		}
 
 		label_3 = new JLabel("Disponibilidad");
 		label_3.setBounds(85, 134, 79, 14);
 		label_3.setFont(new Font("Tahoma", Font.PLAIN, 12));
 
-		radioButton_2 = new JRadioButton("No");
-		radioButton_2.setBounds(226, 163, 55, 20);
-		radioButton_2.setBackground(new Color(135, 206, 235));
+		rdbtnNo_1 = new JRadioButton("no");
+		rdbtnNo_1.setBounds(226, 163, 55, 20);
+		rdbtnNo_1.setBackground(new Color(135, 206, 235));
 
-		radioButton_3 = new JRadioButton("Si");
-		radioButton_3.setBounds(169, 163, 46, 20);
-		radioButton_3.setBackground(new Color(135, 206, 235));
+		rdbtnSi_1 = new JRadioButton("si");
+		rdbtnSi_1.setBounds(169, 163, 46, 20);
+		rdbtnSi_1.setBackground(new Color(135, 206, 235));
 
 		ButtonGroup group2 = new ButtonGroup();
-		group2.add(radioButton_2);
-		group2.add(radioButton_3);
+		group2.add(rdbtnNo_1);
+		group2.add(rdbtnSi_1);
 
-		if (radioButton_2.isSelected()) {
-			radioButton_3.setEnabled(false);
-		} else if (radioButton_3.isSelected()) {
-			radioButton_2.setEnabled(true);
+		if (rdbtnNo_1.isSelected()) {
+			rdbtnSi_1.setEnabled(false);
+		} else if (rdbtnSi_1.isSelected()) {
+			rdbtnNo_1.setEnabled(true);
 		}
 
 		label_4 = new JLabel("Prestable");
@@ -580,12 +580,12 @@ public class RegEquipos extends JFrame {
 		ButtonGroup group3 = new ButtonGroup();
 		group3.add(rdbtnTablet);
 		group3.add(rdbtnSmartphone);
-		
+
 		JLabel lblResolucin = new JLabel("Resoluci\u00F3n");
 		lblResolucin.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblResolucin.setBounds(139, 65, 57, 14);
 		panel_2.add(lblResolucin);
-		
+
 		textField_15 = new JTextField();
 		textField_15.setColumns(10);
 		textField_15.setBounds(206, 65, 86, 20);
@@ -894,10 +894,10 @@ public class RegEquipos extends JFrame {
 		contentPane.add(textField);
 		contentPane.add(textField_2);
 		contentPane.add(textField_3);
-		contentPane.add(radioButton);
-		contentPane.add(radioButton_1);
-		contentPane.add(radioButton_3);
-		contentPane.add(radioButton_2);
+		contentPane.add(rdbtnSi);
+		contentPane.add(rdbtnNo);
+		contentPane.add(rdbtnSi_1);
+		contentPane.add(rdbtnNo_1);
 		contentPane.add(label_5);
 		contentPane.add(label_6);
 		contentPane.add(textField_26);
@@ -931,16 +931,18 @@ public class RegEquipos extends JFrame {
 				pantalla.setVisible(true);
 			}
 		});
-	/*	if (textField.getText() == null || textField_2.getText() == null || textField_3.getText() == null
-				|| textField_26.getText() == null || textField_29.getText() == null || textField_12.getText() == null
-				|| textField_13.getText() == null || textField_16.getText() == null || textField_17.getText() == null
-				|| textField_18.getText() == null || textField_19.getText() == null || textField_20.getText() == null
-				|| textField_21.getText() == null || textField_22.getText() == null || textField_1.getText() == null
-				|| group1.getSelection() == null || group2.getSelection() == null) {
-			btnAltaSobremesa.setEnabled(false);
-		} else {
-			btnAltaSobremesa.setEnabled(true);
-		}*/
+		/*
+		 * if (textField.getText() == null || textField_2.getText() == null ||
+		 * textField_3.getText() == null || textField_26.getText() == null ||
+		 * textField_29.getText() == null || textField_12.getText() == null ||
+		 * textField_13.getText() == null || textField_16.getText() == null ||
+		 * textField_17.getText() == null || textField_18.getText() == null ||
+		 * textField_19.getText() == null || textField_20.getText() == null ||
+		 * textField_21.getText() == null || textField_22.getText() == null ||
+		 * textField_1.getText() == null || group1.getSelection() == null ||
+		 * group2.getSelection() == null) { btnAltaSobremesa.setEnabled(false);
+		 * } else { btnAltaSobremesa.setEnabled(true); }
+		 */
 		btnAltaSobremesa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				registro.AltaComunes(textField.getText(), "Sobremesa", textField_29.getText(), textField_30.getText(),
@@ -981,7 +983,7 @@ public class RegEquipos extends JFrame {
 		});
 		btnAltaTabletaGrafica.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				registro.AltaComunes(textField.getText(), "Tableta Grafica", textField_29.getText(),
+				registro.AltaComunes(textField.getText(), "TabletaGrafica", textField_29.getText(),
 						textField_30.getText(), textAreaNotas.getText(), textField_2.getText(),
 						group1.getSelection().getActionCommand(), (String) comboBox_1.getSelectedItem(),
 						textField_3.getText(), group2.getSelection().getActionCommand(), textField_26.getText(),
@@ -991,10 +993,10 @@ public class RegEquipos extends JFrame {
 		});
 		btnAltaCintiq.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				registro.AltaComunes(textField.getText(), "Cintiq", textField_29.getText(),
-						textField_30.getText(), textAreaNotas.getText(), textField_2.getText(),
-						group1.getSelection().getActionCommand(), (String) comboBox_1.getSelectedItem(),
-						textField_3.getText(), group2.getSelection().getActionCommand(), textField_26.getText(),
+				registro.AltaComunes(textField.getText(), "Cintiq", textField_29.getText(), textField_30.getText(),
+						textAreaNotas.getText(), textField_2.getText(), group1.getSelection().getActionCommand(),
+						(String) comboBox_1.getSelectedItem(), textField_3.getText(),
+						group2.getSelection().getActionCommand(), textField_26.getText(),
 						(String) comboBox.getSelectedItem());
 				registro.AltaCintiq(textField_44.getText(), textField_39.getText(), textField_37.getText(),
 						textField_38.getText(), textField_42.getText(), textField_43.getText(), textField.getText(),
@@ -1014,7 +1016,7 @@ public class RegEquipos extends JFrame {
 		});
 		btnAltaProyector.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				registro.AltaComunes(textField.getText(), "Tv/Monitor", textField_29.getText(), textField_30.getText(),
+				registro.AltaComunes(textField.getText(), "Proyector", textField_29.getText(), textField_30.getText(),
 						textAreaNotas.getText(), textField_2.getText(), group1.getSelection().getActionCommand(),
 						(String) comboBox_1.getSelectedItem(), textField_3.getText(),
 						group2.getSelection().getActionCommand(), textField_26.getText(),
@@ -1030,7 +1032,6 @@ public class RegEquipos extends JFrame {
 						(String) comboBox_1.getSelectedItem(), textField_3.getText(),
 						group2.getSelection().getActionCommand(), textField_26.getText(),
 						(String) comboBox.getSelectedItem());
-
 			}
 		});
 	}
@@ -1038,9 +1039,8 @@ public class RegEquipos extends JFrame {
 	public void setPantalla(TbEquipos pantalla) {
 		this.pantalla = pantalla;
 	}
-	
+
 	public void setRegEquipos(RegEquipos_Controlador regEquiposControlador) {
-		System.out.println("ENTRE EN "+regEquiposControlador);
 		this.registro = regEquiposControlador;
 	}
 }

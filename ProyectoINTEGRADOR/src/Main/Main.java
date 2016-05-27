@@ -49,6 +49,7 @@ public class Main {
 	static Caracteristicas_EquipoControlador caracEqCont;
 
 	public static void main(String[] args) {
+		// news
 		Login = new Login();
 		TEquipo = new TbEquipos();
 		CEquipo = new Caracteristicas_Equipo();
@@ -67,10 +68,12 @@ public class Main {
 		TbEqCont = new TbEquipos_Controlador();
 		TbHistCont = new TbHistorial_Controlador();
 		TbPresCont = new TbPrestamos_Controlador();
-		TbUsersCont	= new TbUsers_Controlador();
+		TbUsersCont = new TbUsers_Controlador();
 		RegEqCont = new RegEquipos_Controlador();
 		caracEqCont = new Caracteristicas_EquipoControlador();
+
 		Login.setVisible(true);
+		// sets
 		Login.setPantalla(TEquipo);
 		TEquipo.setPantalla1(THistorial);
 		TEquipo.setPantalla2(TPrestamos);
@@ -88,7 +91,7 @@ public class Main {
 		TPrestamos.setEquipos(TEquipo);
 		TPrestamos.setAlmacen(TAlmacen);
 		TPrestamos.setHistorial(THistorial);
-		TPrestamos.setUsers(TUsers);	
+		TPrestamos.setUsers(TUsers);
 		TUsers.setEquipos(TEquipo);
 		TUsers.setAlmacen(TAlmacen);
 		TUsers.setHistorial(THistorial);
@@ -130,12 +133,11 @@ public class Main {
 		modelo.setCaracEquipos(CEquipo);
 		modelo.cargarDatosDeTablas();
 		// setters desde controlador a vista
-		/*logCont.loginAVista(Login);
-		regUsuCont.RegUsAVista(RUsr);
-		TbAlmacenCont.AlmContAVista(TAlmacen);
-		TbEqCont.EqAVista(TEquipo);
-		TbHistCont.HistAVista(THistorial);
-		TbPresCont.PresAVista(TPrestamos);
-		TbUsersCont.UsAVista(TUsers);*/
+		/*
+		 * logCont.loginAVista(Login); regUsuCont.RegUsAVista(RUsr);
+		 * TbAlmacenCont.AlmContAVista(TAlmacen); TbEqCont.EqAVista(TEquipo);
+		 * TbHistCont.HistAVista(THistorial); TbPresCont.PresAVista(TPrestamos);
+		 * TbUsersCont.UsAVista(TUsers);
+		 */
 	}
 }

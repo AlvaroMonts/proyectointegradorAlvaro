@@ -56,7 +56,6 @@ public class TbEquipos extends JFrame {
 	private Login login;
 	private JScrollPane scrollPane;
 	private int lineaSeleccionada;
-	private String[] lineaSeleccionadaDatos;
 
 	/**
 	 * Create the frame.
@@ -270,9 +269,9 @@ public class TbEquipos extends JFrame {
 		this.lineaSeleccionada = table.getSelectedRow();
 	}
 	
-	public int setSelectedRowID(int a) {
-		a = (int) table.getModel().getValueAt(this.lineaSeleccionada,0);
-		return a;
+	public String getSelectedRowID() {
+		String id = (String) table.getModel().getValueAt(this.lineaSeleccionada,0);
+		return id;
 	}
 
 	public void setTbEquipos(Object[][] tabla) {
@@ -288,6 +287,5 @@ public class TbEquipos extends JFrame {
 			EditorDeTablas cellEditor = new EditorDeTablas();
 			t.setCellEditor(cellEditor);
 		}
-
 	}
 }

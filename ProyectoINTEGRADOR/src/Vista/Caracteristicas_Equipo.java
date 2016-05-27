@@ -15,6 +15,7 @@ import javax.swing.JToggleButton.ToggleButtonModel;
 import javax.swing.JLabel;
 
 import java.awt.Font;
+import java.awt.TextArea;
 
 import javax.swing.JButton;
 import javax.swing.JRadioButton;
@@ -84,6 +85,10 @@ public class Caracteristicas_Equipo extends JFrame {
 	private JTextField textField_50;
 	private JTextField textField_51;
 	private JTextField textField_48;
+	private JComboBox comboBox;
+	private JComboBox comboBox_1;
+	private ButtonGroup group1;
+	private ButtonGroup group2;
 	private TbEquipos pantalla;
 	private RegPrestamos pantalla1;
 	private JButton btnCancelar;
@@ -93,6 +98,7 @@ public class Caracteristicas_Equipo extends JFrame {
 	private JButton btnDescartarCambios;
 	private int idEquipo;
 	private Caracteristicas_EquipoControlador equipoControlador;
+	private JTextField textField_15;
 
 	/**
 	 * Create the frame.
@@ -150,7 +156,7 @@ public class Caracteristicas_Equipo extends JFrame {
 		radioButton_1.setBackground(new Color(135, 206, 235));
 		contentPane.add(radioButton_1);
 
-		ButtonGroup group1 = new ButtonGroup();
+		group1 = new ButtonGroup();
 		group1.add(radioButton);
 		group1.add(radioButton_1);
 
@@ -175,7 +181,7 @@ public class Caracteristicas_Equipo extends JFrame {
 		radioButton_3.setBackground(new Color(135, 206, 235));
 		contentPane.add(radioButton_3);
 
-		ButtonGroup group2 = new ButtonGroup();
+		group2 = new ButtonGroup();
 		group2.add(radioButton_2);
 		group2.add(radioButton_3);
 
@@ -475,12 +481,12 @@ public class Caracteristicas_Equipo extends JFrame {
 		panel_2.setLayout(null);
 
 		JLabel label_32 = new JLabel("Resoluci\u00F3n c\u00E1mara");
-		label_32.setBounds(90, 65, 110, 14);
+		label_32.setBounds(99, 82, 110, 14);
 		panel_2.add(label_32);
 		label_32.setFont(new Font("Tahoma", Font.PLAIN, 12));
 
 		textField_27 = new JTextField();
-		textField_27.setBounds(201, 63, 86, 20);
+		textField_27.setBounds(210, 80, 86, 20);
 		panel_2.add(textField_27);
 		textField_27.setColumns(10);
 
@@ -546,22 +552,32 @@ public class Caracteristicas_Equipo extends JFrame {
 
 		JLabel lblTipo_1 = new JLabel("Tipo");
 		lblTipo_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblTipo_1.setBounds(154, 119, 46, 14);
+		lblTipo_1.setBounds(163, 136, 46, 14);
 		panel_2.add(lblTipo_1);
 
 		JRadioButton rdbtnSmartphone = new JRadioButton("Smartphone");
 		rdbtnSmartphone.setBackground(new Color(135, 206, 235));
-		rdbtnSmartphone.setBounds(201, 101, 86, 20);
+		rdbtnSmartphone.setBounds(210, 118, 86, 20);
 		panel_2.add(rdbtnSmartphone);
 
 		JRadioButton rdbtnTablet = new JRadioButton("Tablet");
 		rdbtnTablet.setBackground(new Color(135, 206, 235));
-		rdbtnTablet.setBounds(201, 129, 55, 20);
+		rdbtnTablet.setBounds(210, 146, 55, 20);
 		panel_2.add(rdbtnTablet);
 
 		ButtonGroup group3 = new ButtonGroup();
 		group3.add(rdbtnTablet);
 		group3.add(rdbtnSmartphone);
+
+		textField_15 = new JTextField();
+		textField_15.setColumns(10);
+		textField_15.setBounds(210, 49, 86, 20);
+		panel_2.add(textField_15);
+
+		JLabel label = new JLabel("Resoluci\u00F3n");
+		label.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		label.setBounds(143, 49, 57, 14);
+		panel_2.add(label);
 
 		if (rdbtnTablet.isSelected()) {
 			rdbtnSmartphone.setEnabled(false);
@@ -855,6 +871,8 @@ public class Caracteristicas_Equipo extends JFrame {
 		contentPane.add(btnDescartarCambios);
 		btnDescartarCambios.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				idEquipo = Integer.parseInt(pantalla.getSelectedRowID());
+				equipoControlador.actualizarTfs(idEquipo);
 			}
 		});
 		btnDescartarCambios.setFont(new Font("Times New Roman", Font.BOLD, 11));
@@ -869,15 +887,14 @@ public class Caracteristicas_Equipo extends JFrame {
 		lblAlmacenamiento_1.setBounds(304, 157, 100, 30);
 		contentPane.add(lblAlmacenamiento_1);
 
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] { "Paris",
-				"Madrid", "Berlin" }));
+		comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] { "Paris", "Madrid", "Berlin" }));
 		comboBox.setBounds(401, 58, 89, 20);
 		contentPane.add(comboBox);
 
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setModel(new DefaultComboBoxModel(new String[] { "Docencia",
-				"Investigacion", "Taller", "Secretaria" }));
+		comboBox_1 = new JComboBox();
+		comboBox_1.setModel(
+				new DefaultComboBoxModel(new String[] {"docencia", "investigacion", "taller", "secretaria", "administrativo"}));
 		comboBox_1.setBounds(657, 74, 69, 20);
 		contentPane.add(comboBox_1);
 		btnCancelar.addActionListener(new ActionListener() {
@@ -888,16 +905,215 @@ public class Caracteristicas_Equipo extends JFrame {
 		});
 	}
 
-	public void setEquipoSeleccionado() {
-		pantalla.setSelectedRowID(idEquipo);
+	public void setTextField(String textField) {
+		this.textField.setText(textField);
 	}
 
-	public void actualizarTextFields() {
-		equipoControlador.actualizarTfs(idEquipo);
+	public void setTextField_2(String textField_2) {
+		this.textField_2.setText(textField_2);
 	}
 
-	public void setCaracEqCont(
-			Caracteristicas_EquipoControlador equipoControlador) {
+	public void setTextField_3(String textField_3) {
+		this.textField_3.setText(textField_3);
+	}
+
+	public void setTextField_12(String textField_12) {
+		this.textField_12.setText(textField_12);
+	}
+
+	public void setTextField_13(String textField_13) {
+		this.textField_13.setText(textField_13);
+	}
+
+	public void setTextField_14(String textField_14) {
+		this.textField_14.setText(textField_14);
+	}
+
+	public void setTextField_16(String textField_16) {
+		this.textField_16.setText(textField_16);
+	}
+
+	public void setTextField_17(String textField_17) {
+		this.textField_17.setText(textField_17);
+	}
+
+	public void setTextField_18(String textField_18) {
+		this.textField_18.setText(textField_18);
+	}
+
+	public void setTextField_19(String textField_19) {
+		this.textField_19.setText(textField_19);
+	}
+
+	public void setTextField_20(String textField_20) {
+		this.textField_20.setText(textField_20);
+	}
+
+	public void setTextField_21(String textField_21) {
+		this.textField_21.setText(textField_21);
+	}
+
+	public void setTextField_22(String textField_22) {
+		this.textField_22.setText(textField_22);
+	}
+
+	public void setTextField_26(String textField_26) {
+		this.textField_26.setText(textField_26);
+	}
+
+	public void setTextField_27(String textField_27) {
+		this.textField_27.setText(textField_27);
+	}
+
+	public void setTextField_29(String textField_29) {
+		this.textField_29.setText(textField_29);
+	}
+
+	public void setTextField_30(String textField_30) {
+		this.textField_30.setText(textField_30);
+	}
+
+	public void setTextNotas(String textArea) {
+		this.textAreaNotas.setText(textArea);
+	}
+
+	public void setTextField_4(String textField_4) {
+		this.textField_4.setText(textField_4);
+	}
+
+	public void setTextField_5(String textField_5) {
+		this.textField_5.setText(textField_5);
+	}
+
+	public void setTextField_6(String textField_6) {
+		this.textField_6.setText(textField_6);
+	}
+
+	public void setTextField_7(String textField_7) {
+		this.textField_7.setText(textField_7);
+	}
+
+	public void setTextField_8(String textField_8) {
+		this.textField_8.setText(textField_8);
+	}
+
+	public void setTextField_9(String textField_9) {
+		this.textField_9.setText(textField_9);
+	}
+
+	public void setTextField_10(String textField_10) {
+		this.textField_10.setText(textField_10);
+	}
+
+	public void setTextField_11(String textField_11) {
+		this.textField_11.setText(textField_11);
+	}
+
+	public void setTextField_31(String textField_31) {
+		this.textField_31.setText(textField_31);
+	}
+
+	public void setTextField_32(String textField_32) {
+		this.textField_32.setText(textField_32);
+	}
+
+	public void setTextField_35(String textField_35) {
+		this.textField_35.setText(textField_35);
+	}
+
+	public void setTextField_36(String textField_36) {
+		this.textField_36.setText(textField_36);
+	}
+
+	public void setTextField_37(String textField_37) {
+		this.textField_37.setText(textField_37);
+	}
+
+	public void setTextField_38(String textField_38) {
+		this.textField_38.setText(textField_38);
+	}
+
+	public void setTextField_39(String textField_39) {
+		this.textField_39.setText(textField_39);
+	}
+
+	public void setTextField_40(String textField_40) {
+		this.textField_40.setText(textField_40);
+	}
+
+	public void setTextField_41(String textField_41) {
+		this.textField_41.setText(textField_41);
+	}
+
+	public void setTextField_42(String textField_42) {
+		this.textField_42.setText(textField_42);
+	}
+
+	public void setTextField_43(String textField_43) {
+		this.textField_43.setText(textField_43);
+	}
+
+	public void setTextField_44(String textField_44) {
+		this.textField_44.setText(textField_44);
+	}
+
+	public void setTextField_45(String textField_45) {
+		this.textField_45.setText(textField_45);
+	}
+
+	public void setTextField_46(String textField_46) {
+		this.textField_46.setText(textField_46);
+	}
+
+	public void setTextField_47(String textField_47) {
+		this.textField_47.setText(textField_47);
+	}
+
+	public void setTextField_48(String textField_48) {
+		this.textField_48.setText(textField_48);
+	}
+
+	public void setTextField_49(String textField_49) {
+		this.textField_49.setText(textField_49);
+	}
+
+	public void setTextField_50(String textField_50) {
+		this.textField_50.setText(textField_50);
+	}
+
+	public void setTextField_51(String textField_51) {
+		this.textField_51.setText(textField_51);
+	}
+
+	public void setEdificio(String edificio) {
+		comboBox.setSelectedItem(edificio);
+	}
+
+	public void setTipoUso(String tipoUso) {
+		comboBox_1.setSelectedItem(tipoUso);
+	}
+
+	public void setGrupo1RB(String rb) {
+		if (rb.equals("si")) {
+			radioButton.setSelected(true);
+			System.out.println("si");
+		} else if (rb.equals("no")) {
+			radioButton_1.setSelected(true);
+			System.out.println("no");
+		}
+	}
+
+	public void setGrupo2RB(String rb) {
+		if (rb.equals("si")) {
+			radioButton_3.setSelected(true);
+			System.out.println("si");
+		} else if (rb.equals("no")) {
+			radioButton_2.setSelected(true);
+			System.out.println("no");
+		}
+	}
+
+	public void setCaracEqCont(Caracteristicas_EquipoControlador equipoControlador) {
 		this.equipoControlador = equipoControlador;
 	}
 

@@ -943,8 +943,7 @@ public class RegEquipos extends JFrame {
 		}*/
 		btnAltaSobremesa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println("---------------- "+registro);
-				registro.AltaComunes(textField.getText(), "sobremesa", textField_29.getText(), textField_30.getText(),
+				registro.AltaComunes(textField.getText(), "Sobremesa", textField_29.getText(), textField_30.getText(),
 						textAreaNotas.getText(), textField_2.getText(), group1.getSelection().getActionCommand(),
 						(String) comboBox_1.getSelectedItem(), textField_3.getText(),
 						group2.getSelection().getActionCommand(), textField_26.getText(),
@@ -957,7 +956,7 @@ public class RegEquipos extends JFrame {
 		});
 		btnAltaPortatil.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				registro.AltaComunes(textField.getText(), "portatil", textField_29.getText(), textField_30.getText(),
+				registro.AltaComunes(textField.getText(), "Portatil", textField_29.getText(), textField_30.getText(),
 						textAreaNotas.getText(), textField_2.getText(), group1.getSelection().getActionCommand(),
 						(String) comboBox_1.getSelectedItem(), textField_3.getText(),
 						group2.getSelection().getActionCommand(), textField_26.getText(),
@@ -982,7 +981,7 @@ public class RegEquipos extends JFrame {
 		});
 		btnAltaTabletaGrafica.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				registro.AltaComunes(textField.getText(), "Smartphone/tablet", textField_29.getText(),
+				registro.AltaComunes(textField.getText(), "Tableta Grafica", textField_29.getText(),
 						textField_30.getText(), textAreaNotas.getText(), textField_2.getText(),
 						group1.getSelection().getActionCommand(), (String) comboBox_1.getSelectedItem(),
 						textField_3.getText(), group2.getSelection().getActionCommand(), textField_26.getText(),
@@ -992,7 +991,7 @@ public class RegEquipos extends JFrame {
 		});
 		btnAltaCintiq.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				registro.AltaComunes(textField.getText(), "Smartphone/tablet", textField_29.getText(),
+				registro.AltaComunes(textField.getText(), "Cintiq", textField_29.getText(),
 						textField_30.getText(), textAreaNotas.getText(), textField_2.getText(),
 						group1.getSelection().getActionCommand(), (String) comboBox_1.getSelectedItem(),
 						textField_3.getText(), group2.getSelection().getActionCommand(), textField_26.getText(),

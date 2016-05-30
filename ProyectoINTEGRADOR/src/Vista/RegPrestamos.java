@@ -189,9 +189,7 @@ public class RegPrestamos extends JFrame {
 		
 		btnRegistrarPrestamo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println(Rprestamos);
 				Rprestamos.AltaPrestamos(textField_5.getText(), Integer.parseInt(textField_3.getText()), (String)formattedTextField.getText(), (String)formattedTextField_1.getText(), textField_2.getText(), textField_4.getText());
-				
 			}
 		});
 	}

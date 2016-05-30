@@ -5,6 +5,7 @@ import java.sql.*;
 import Vista.Caracteristicas_Equipo;
 import Vista.Login;
 import Vista.RegEquipos;
+import Vista.RegPrestamos;
 import Vista.RegUsuarios;
 import Vista.TbHistorial;
 import Vista.TbPrestamos;
@@ -31,6 +32,7 @@ public class adminBBDD {
 	private TbPrestamos TbPres;
 	private TbUsers TbUsers;
 	private Caracteristicas_Equipo caracEq;
+	private RegPrestamos Rprestamos;
 
 	public adminBBDD() {
 		try {
@@ -638,7 +640,10 @@ public class adminBBDD {
 	public void setCaracEquipos(Caracteristicas_Equipo caracteristicas_Equipo) {
 		this.caracEq = caracteristicas_Equipo;
 	}
-
+	
+	public void setRPrestamos(RegPrestamos prestamos) {
+		this.Rprestamos = prestamos;
+	}
 	public void cargarDatosDeTablas() {
 		this.Consulta_ArrayAlmacen();
 		this.Consulta_ArrayEquipos();

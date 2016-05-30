@@ -13,7 +13,7 @@ public class RegPrestamo_Controlador {
 				destinoprestamo);
 	}
 
-	public void setEquiposModelo(adminBBDD bbdd) {
+	public void setPrestamosModelo(adminBBDD bbdd) {
 		this.registroprestamo = bbdd;
 	}
 }

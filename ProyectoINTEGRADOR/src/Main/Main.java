@@ -3,6 +3,7 @@ package Main;
 import Controlador.Caracteristicas_EquipoControlador;
 import Controlador.Login_Controlador;
 import Controlador.RegEquipos_Controlador;
+import Controlador.RegPrestamo_Controlador;
 import Controlador.RegUsuarios_Controlador;
 import Controlador.TbAlmacen_Controlador;
 import Controlador.TbEquipos_Controlador;
@@ -35,13 +36,14 @@ public class Main {
 	static TbPrestamos TPrestamos;
 	static TbUsers TUsers;
 	static Login Login;
-
+	
 	static adminBBDD modelo;
 	// controlador
 	static Login_Controlador logCont;
 	static RegUsuarios_Controlador regUsuCont;
 	static TbAlmacen_Controlador TbAlmacenCont;
 	static TbEquipos_Controlador TbEqCont;
+	static RegPrestamo_Controlador RPrestamosCont;
 	static TbHistorial_Controlador TbHistCont;
 	static TbPrestamos_Controlador TbPresCont;
 	static TbUsers_Controlador TbUsersCont;
@@ -71,7 +73,7 @@ public class Main {
 		TbUsersCont = new TbUsers_Controlador();
 		RegEqCont = new RegEquipos_Controlador();
 		caracEqCont = new Caracteristicas_EquipoControlador();
-
+		RPrestamosCont = new RegPrestamo_Controlador();
 		Login.setVisible(true);
 		// sets
 		Login.setPantalla(TEquipo);
@@ -114,6 +116,7 @@ public class Main {
 		CEquipo.setCaracEqCont(caracEqCont);
 		RUsr.setRegUs(regUsuCont);
 		REquipos.setRegEquipos(RegEqCont);
+		RPrestamos.setRPrestamos(RPrestamosCont);
 		TAlmacen.setAlmacenCont(TbAlmacenCont);
 		TEquipo.setEquiposCont(TbEqCont);
 		THistorial.setHistCont(TbHistCont);
@@ -128,6 +131,8 @@ public class Main {
 		TbPresCont.PresAModelo(modelo);
 		TbUsersCont.UsAModelo(modelo);
 		RegEqCont.setEquiposModelo(modelo);
+		RPrestamosCont.setPrestamosModelo(modelo);
+		
 		modelo.setLogin(Login);
 		modelo.setRegUsuarios(RUsr);
 		modelo.setTbAlmacen(TAlmacen);
@@ -135,6 +140,7 @@ public class Main {
 		modelo.setTbHistorial(THistorial);
 		modelo.setTbPrestamos(TPrestamos);
 		modelo.setTbUsers(TUsers);
+		modelo.setRPrestamos(RPrestamos);
 		modelo.setRegEquipos(REquipos);
 		modelo.setCaracEquipos(CEquipo);
 		modelo.cargarDatosDeTablas();

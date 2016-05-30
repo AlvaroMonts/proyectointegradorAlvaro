@@ -410,6 +410,23 @@ public class adminBBDD {
 			s.printStackTrace();
 		}
 	}
+	public void RealizarAltaPrestamos(String Responsable, int cod, String fechainicio, String fechafin,
+			String equipoprestado, String destinoprestamo) {
+		try {
+			String sql = "INSERT into proyectointegrador.prestamos (Responsable, Equipo_COD, FechadeInicio, FechaFin, EquipoPrestado, DestinodelPrestamo) values (?, ?, ?,?,?,?);";
+			PreparedStatement stmt = conection.prepareStatement(sql);
+			stmt.setString(1, Responsable);
+			stmt.setInt(2, cod);
+			stmt.setString(3, fechainicio);
+			stmt.setString(4, fechafin);
+			stmt.setString(5, equipoprestado);
+			stmt.setString(6, destinoprestamo);
+			stmt.executeUpdate();
+			stmt.close();
+		} catch (SQLException s) {
+			s.printStackTrace();
+		}
+	}
 
 	public void iniciarCaracEqPantalla(int cod) {
 		try {

@@ -601,38 +601,6 @@ public class adminBBDD {
 
 	public void actualizar() {
 		try {
-			/*
-			 * int cod = IntegecaracEq.getTextField(); String sql =
-			 * "SELECT COD, Tipo_Equipo, Almacenamiento1, Almacenamiento2, notas, marca, disponibilidad, TipoUso, modelo, prestable, Sala, Edificio from proyectointegrador.equipo where COD = "
-			 * + cod + ";"; Statement stmt = conection.createStatement();
-			 * ResultSet rset = stmt.executeQuery(sql); if (rset.next()) {
-			 * caracEq.setTextField(rset.getString((1)));
-			 * caracEq.setTextField_29(rset.getString((3)));
-			 * caracEq.setTextField_30(rset.getString((4)));
-			 * caracEq.setTextNotas(rset.getString((5)));
-			 * caracEq.setTextField_2(rset.getString((6)));
-			 * caracEq.setGrupo1RB(rset.getString((7)));
-			 * caracEq.setTipoUso(rset.getString((8)));
-			 * caracEq.setTextField_3(rset.getString((9)));
-			 * caracEq.setGrupo2RB(rset.getString((10)));
-			 * caracEq.setTextField_26(rset.getString((11)));
-			 * caracEq.setEdificio(rset.getString((12))); String tipoEquipo =
-			 * rset.getString((2)); if (tipoEquipo.equals("Sobremesa")) {
-			 * iniciarCaracEqPantallaSobremesa(cod); } else if
-			 * (tipoEquipo.equals("Portatil")) {
-			 * iniciarCaracEqPantallaPortatil(cod); } else if
-			 * (tipoEquipo.equals("Movil") || tipoEquipo.equals("Tablet")) {
-			 * iniciarCaracEqPantallaSmartphoneOTablet(cod); } else if
-			 * (tipoEquipo.equals("Tableta Grafica")) {
-			 * iniciarCaracEqPantallaTabletaGrafica(cod); } else if
-			 * (tipoEquipo.equals("Cintiq")) {
-			 * iniciarCaracEqPantallaCintiq(cod); } else if
-			 * (tipoEquipo.equals("Television") || tipoEquipo.equals("Monitor"))
-			 * { iniciarCaracEqPantallaTvOMonitor(cod); } else if
-			 * (tipoEquipo.equals("Proyector")) {
-			 * iniciarCaracEqPantallaProyector(cod); } else { ; } }
-			 */
-
 			int cod = Integer.parseInt(caracEq.getTextField());
 			String sql = "SELECT COD, Tipo_Equipo from proyectointegrador.equipo where COD = " + cod + ";";
 			Statement stmt = conection.createStatement();
@@ -652,25 +620,25 @@ public class adminBBDD {
 				String edificio = caracEq.getEdificio();
 
 				if (tipoEquipo.equals("Sobremesa")) {
-					iniciarCaracEqPantallaSobremesa(codigo);
+					actualizarSobremesa(codigo);
 				} else if (tipoEquipo.equals("Portatil")) {
-					//iniciarCaracEqPantallaPortatil(codigo);
+					// iniciarCaracEqPantallaPortatil(codigo);
 				} else if (tipoEquipo.equals("Movil") || tipoEquipo.equals("Tablet")) {
-					//iniciarCaracEqPantallaSmartphoneOTablet(codigo);
+					// iniciarCaracEqPantallaSmartphoneOTablet(codigo);
 				} else if (tipoEquipo.equals("Tableta Grafica")) {
-					//iniciarCaracEqPantallaTabletaGrafica(codigo);
+					// iniciarCaracEqPantallaTabletaGrafica(codigo);
 				} else if (tipoEquipo.equals("Cintiq")) {
-					//iniciarCaracEqPantallaCintiq(codigo);
+					// iniciarCaracEqPantallaCintiq(codigo);
 				} else if (tipoEquipo.equals("Television") || tipoEquipo.equals("Monitor")) {
-					//iniciarCaracEqPantallaTvOMonitor(codigo);
+					// iniciarCaracEqPantallaTvOMonitor(codigo);
 				} else if (tipoEquipo.equals("Proyector")) {
-					//iniciarCaracEqPantallaProyector(codigo);
+					// iniciarCaracEqPantallaProyector(codigo);
 				} else {
 					;
 				}
 				rset.close();
 				stmt.close();
-				String sql1 = "UPDATE equipos SET Almacenamiento1 = '" + alm1 + "', Almacenamiento2 = '" + alm2
+				String sql1 = "UPDATE equipo SET Almacenamiento1 = '" + alm1 + "', Almacenamiento2 = '" + alm2
 						+ "', notas = '" + notas + "', marca = '" + marca + "', disponibilidad  = '" + dispo
 						+ "', TipoUso = '" + tipoUso + "', modelo  = '" + modelo + "', prestable = '" + prestable
 						+ "', Sala  = '" + sala + "', Edificio = '" + edificio + "' WHERE COD = " + codigo + ";";
@@ -678,6 +646,32 @@ public class adminBBDD {
 				stmt2.executeUpdate();
 				stmt2.close();
 			}
+		} catch (SQLException s) {
+			s.printStackTrace();
+		}
+	}
+
+	public void actualizarSobremesa(int cod) {
+		try {
+			String ssoo = caracEq.getTextField_12();
+			String roseta = caracEq.getTextField_13();
+			String ramGrafica = caracEq.getTextField_16();
+			String marcaGrafica = caracEq.getTextField_17();
+			String modeloGrafica = caracEq.getTextField_18();
+			String modeloProcesador = caracEq.getTextField_22();
+			String velocidadProcesador = caracEq.getTextField_21();
+			String ramCapacidad = caracEq.getTextField_20();
+			String ramVelocidad = caracEq.getTextField_19();
+
+			String sql = "UPDATE sobremesa SET SSOO = '" + ssoo + "', Roseta = '" + roseta + "', RamGrafica = '"
+					+ ramGrafica + "', MarcaGrafica = '" + marcaGrafica + "', ModeloGrafica  = '" + modeloGrafica
+					+ "', ModeloProcesador = '" + modeloProcesador + "', VelocidadProcesador  = '" + velocidadProcesador
+					+ "', RamCapacidad = '" + ramCapacidad + "', RamVelocidad  = '" + ramVelocidad + "' WHERE Equipo_COD = "
+					+ cod + ";";
+			PreparedStatement stmt2 = conection.prepareStatement(sql);
+			System.out.println("update realizado con exito");
+			stmt2.executeUpdate();
+			stmt2.close();
 		} catch (SQLException s) {
 			s.printStackTrace();
 		}

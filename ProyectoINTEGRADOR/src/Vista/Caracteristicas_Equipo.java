@@ -882,6 +882,11 @@ public class Caracteristicas_Equipo extends JFrame {
 		btnDescartarCambios.setFont(new Font("Times New Roman", Font.BOLD, 11));
 
 		btnGuardarCambios = new JButton("Guardar cambios");
+		btnGuardarCambios.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				equipoControlador.updatesEquipos();
+			}
+		});
 		btnGuardarCambios.setBounds(621, 456, 130, 32);
 		contentPane.add(btnGuardarCambios);
 		btnGuardarCambios.setFont(new Font("Times New Roman", Font.BOLD, 11));

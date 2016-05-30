@@ -503,14 +503,9 @@ public class adminBBDD {
 			caracEq.setTextField_15(rset.getString((2)));
 			caracEq.setTextField_27(rset.getString((5)));
 			caracEq.setTextField_14(rset.getString((6)));
-			
 			caracEq.setGrupo6RB(rset.getString((1)));
-			
-			caracEq.setGrupo5RB(rset.getString((1)));
-			
-			caracEq.setGrupo5RB(rset.getString((1)));
-			 
-			// giros, nfc, tipo
+			caracEq.setGrupo7RB(rset.getString((3)));
+			caracEq.setGrupo3RB(rset.getString((4)));
 		}
 	}
 

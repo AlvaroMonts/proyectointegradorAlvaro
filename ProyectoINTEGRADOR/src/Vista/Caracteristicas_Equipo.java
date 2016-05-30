@@ -1092,6 +1092,222 @@ public class Caracteristicas_Equipo extends JFrame {
 		this.textField_49.setText(textField_49);
 	}
 
+	public JTextArea getTextAreaNotas() {
+		return textAreaNotas;
+	}
+
+	public void setTextAreaNotas(JTextArea textAreaNotas) {
+		this.textAreaNotas = textAreaNotas;
+	}
+
+	public String getTextField() {
+		return textField.getText();
+	}
+
+	public String getTextField_2() {
+		return textField_2;
+	}
+
+	public String getTextField_3() {
+		return textField_3;
+	}
+
+	public String getTextField_12() {
+		return textField_12.text;
+	}
+
+	public String getTextField_13() {
+		return textField_13;
+	}
+
+	public String getTextField_14() {
+		return textField_14;
+	}
+
+	public String getTextField_16() {
+		return textField_16;
+	}
+
+	public String getTextField_17() {
+		return textField_17;
+	}
+
+	public String getTextField_18() {
+		return textField_18;
+	}
+
+	public String getTextField_19() {
+		return textField_19;
+	}
+
+	public String getTextField_20() {
+		return textField_20;
+	}
+
+	public String getTextField_21() {
+		return textField_21;
+	}
+
+	public String getTextField_22() {
+		return textField_22;
+	}
+
+	public String getTextField_26() {
+		return textField_26;
+	}
+
+	public String getTextField_27() {
+		return textField_27;
+	}
+
+	public String getTextField_29() {
+		return textField_29;
+	}
+
+	public String getTextField_30() {
+		return textField_30;
+	}
+
+	public String getTextField_4() {
+		return textField_4;
+	}
+
+	public String getTextField_5() {
+		return textField_5;
+	}
+
+	public String getTextField_6() {
+		return textField_6;
+	}
+
+	public String getTextField_7() {
+		return textField_7;
+	}
+
+	public String getTextField_8() {
+		return textField_8;
+	}
+
+	public String getTextField_9() {
+		return textField_9;
+	}
+
+	public String getTextField_10() {
+		return textField_10;
+	}
+
+	public String getTextField_11() {
+		return textField_11;
+	}
+
+	public String getTextField_31() {
+		return textField_31;
+	}
+
+	public String getTextField_32() {
+		return textField_32;
+	}
+
+	public String getTextField_35() {
+		return textField_35;
+	}
+
+	public String getTextField_36() {
+		return textField_36;
+	}
+
+	public String getTextField_37() {
+		return textField_37;
+	}
+
+	public String getTextField_38() {
+		return textField_38;
+	}
+
+	public String getTextField_39() {
+		return textField_39;
+	}
+
+	public String getTextField_40() {
+		return textField_40;
+	}
+
+	public String getTextField_41() {
+		return textField_41;
+	}
+
+	public String getTextField_42() {
+		return textField_42;
+	}
+
+	public String getTextField_43() {
+		return textField_43;
+	}
+
+	public String getTextField_44() {
+		return textField_44;
+	}
+
+	public String getTextField_45() {
+		return textField_45;
+	}
+
+	public String getTextField_46() {
+		return textField_46;
+	}
+
+	public String getTextField_47() {
+		return textField_47;
+	}
+
+	public String getTextField_49() {
+		return textField_49;
+	}
+
+	public String getTextField_50() {
+		return textField_50;
+	}
+
+	public String getTextField_51() {
+		return textField_51;
+	}
+
+	public String getTextField_48() {
+		return textField_48;
+	}
+
+	public ButtonGroup getGroup1() {
+		return group1;
+	}
+
+	public ButtonGroup getGroup2() {
+		return group2;
+	}
+
+	public ButtonGroup getGroup3() {
+		return group3;
+	}
+
+	public ButtonGroup getGroup4() {
+		return group4;
+	}
+
+	public ButtonGroup getGroup5() {
+		return group5;
+	}
+
+	public ButtonGroup getGroup6() {
+		return group6;
+	}
+
+	public ButtonGroup getGroup7() {
+		return group7;
+	}
+
+	public JTextField getTextField_15() {
+		return textField_15;
+	}
+
 	public void setTextField_50(String textField_50) {
 		this.textField_50.setText(textField_50);
 	}

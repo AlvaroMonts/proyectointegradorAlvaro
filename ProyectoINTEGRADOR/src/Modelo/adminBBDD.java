@@ -551,6 +551,7 @@ public class adminBBDD {
 		Statement stmt1 = conection.createStatement();
 		ResultSet rset = stmt1.executeQuery(sql);
 		if (rset.next()) {
+			
 			caracEq.setTextField_32(rset.getString((1)));
 			caracEq.setTextField_6(rset.getString((2)));
 			caracEq.setTextField_5(rset.getString((3)));

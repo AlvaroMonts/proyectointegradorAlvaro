@@ -34,7 +34,7 @@ public class RegPrestamos extends JFrame {
 	private JLabel label_1;
 	private JLabel label_2;
 	private JLabel label_3;
-	private TbEquipos TEquipo;
+	private Caracteristicas_Equipo CEquipo;
 
 	/**
 	 * Create the frame.
@@ -103,7 +103,7 @@ public class RegPrestamos extends JFrame {
 		btnCancelar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
-				TEquipo.setVisible(true);
+				CEquipo.setVisible(true);
 			}
 		});
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
@@ -183,4 +183,9 @@ public class RegPrestamos extends JFrame {
 		);
 		contentPane.setLayout(gl_contentPane);
 	}
+	
+	public void setEquipo(Caracteristicas_Equipo equipos) {
+		this.CEquipo = equipos;
+	}
+	
 }

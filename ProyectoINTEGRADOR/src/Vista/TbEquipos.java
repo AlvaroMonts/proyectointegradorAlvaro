@@ -268,7 +268,9 @@ public class TbEquipos extends JFrame {
 	public void setSelectedRow(){
 		this.lineaSeleccionada = table.getSelectedRow();
 	}
-	
+	public void setLogin(Login login) {
+		this.login = login;
+	}
 	public String getSelectedRowID() {
 		String id = (String) table.getModel().getValueAt(this.lineaSeleccionada,0);
 		return id;

@@ -81,29 +81,35 @@ public class Main {
 		TEquipo.setPantalla4(TAlmacen);
 		TEquipo.setRegEq(REquipos);
 		TEquipo.setCaracEquipos(CEquipo);
+		TEquipo.setLogin(Login);
 		CEquipo.setPantalla(TEquipo);
 		CEquipo.setPantalla1(RPrestamos);
+		RPrestamos.setEquipo(CEquipo);
 		REquipos.setPantalla(TEquipo);
 		THistorial.setPantalla1(TAlmacen);
 		THistorial.setPantalla2(TEquipo);
 		THistorial.setPantalla3(TPrestamos);
 		THistorial.setPantalla4(TUsers);
+		THistorial.setLogin(Login);
 		TPrestamos.setEquipos(TEquipo);
 		TPrestamos.setAlmacen(TAlmacen);
 		TPrestamos.setHistorial(THistorial);
 		TPrestamos.setUsers(TUsers);
+		TPrestamos.setLogin(Login);
 		TUsers.setEquipos(TEquipo);
 		TUsers.setAlmacen(TAlmacen);
 		TUsers.setHistorial(THistorial);
 		TUsers.setPrestamos(TPrestamos);
 		TUsers.setPantalla5(RUsr);
 		TUsers.setCaracUsuarios(CUsuario);
+		TUsers.setLogin(Login);
 		CUsuario.setPantalla(TUsers);
 		RUsr.setPantalla(TUsers);
 		TAlmacen.setEquipo(TEquipo);
 		TAlmacen.setPrestamos(TPrestamos);
 		TAlmacen.setHistorial(THistorial);
 		TAlmacen.setUsers(TUsers);
+		TAlmacen.setLogin(Login);
 		Login.setLogin_Cont(logCont);
 		CEquipo.setCaracEqCont(caracEqCont);
 		RUsr.setRegUs(regUsuCont);
@@ -132,12 +138,5 @@ public class Main {
 		modelo.setRegEquipos(REquipos);
 		modelo.setCaracEquipos(CEquipo);
 		modelo.cargarDatosDeTablas();
-		// setters desde controlador a vista
-		/*
-		 * logCont.loginAVista(Login); regUsuCont.RegUsAVista(RUsr);
-		 * TbAlmacenCont.AlmContAVista(TAlmacen); TbEqCont.EqAVista(TEquipo);
-		 * TbHistCont.HistAVista(THistorial); TbPresCont.PresAVista(TPrestamos);
-		 * TbUsersCont.UsAVista(TUsers);
-		 */
 	}
 }

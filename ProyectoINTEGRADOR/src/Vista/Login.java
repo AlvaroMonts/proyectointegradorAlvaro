@@ -53,7 +53,6 @@ public class Login extends JFrame {
 				if (logCont.realizarRegistro(txtEmail.getText(),
 						passwordField.getText())) {
 					setVisible(false);
-					//pantalla = new TbEquipos();
 					pantalla.setVisible(true);
 				} else {
 					intentos++;

@@ -458,6 +458,9 @@ public class TbUsers extends JFrame {
 	public void setUsControlador(TbUsers_Controlador users_Controlador) {
 		this.tbUsCont = users_Controlador;
 	}
+	public void setLogin(Login login) {
+		this.login = login;
+	}
 
 	public void setTbUsers(Object[][] tabla) {
 		table.setModel(new DefaultTableModel(tabla, new String[] { "Correo",

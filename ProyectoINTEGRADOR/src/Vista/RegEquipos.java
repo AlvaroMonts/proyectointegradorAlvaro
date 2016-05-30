@@ -564,17 +564,17 @@ public class RegEquipos extends JFrame {
 
 		JLabel lblTipo_1 = new JLabel("Tipo");
 		lblTipo_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblTipo_1.setBounds(104, 140, 29, 14);
+		lblTipo_1.setBounds(126, 134, 29, 14);
 		panel_2.add(lblTipo_1);
 
-		JRadioButton rdbtnSmartphone = new JRadioButton("Smartphone");
+		JRadioButton rdbtnSmartphone = new JRadioButton("Movil");
 		rdbtnSmartphone.setBackground(new Color(135, 206, 235));
-		rdbtnSmartphone.setBounds(206, 138, 86, 20);
+		rdbtnSmartphone.setBounds(228, 132, 86, 20);
 		panel_2.add(rdbtnSmartphone);
 
 		JRadioButton rdbtnTablet = new JRadioButton("Tablet");
 		rdbtnTablet.setBackground(new Color(135, 206, 235));
-		rdbtnTablet.setBounds(139, 138, 55, 20);
+		rdbtnTablet.setBounds(161, 132, 55, 20);
 		panel_2.add(rdbtnTablet);
 
 		ButtonGroup group3 = new ButtonGroup();
@@ -764,7 +764,7 @@ public class RegEquipos extends JFrame {
 
 		JLabel lblTipo = new JLabel("Tipo");
 		lblTipo.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblTipo.setBounds(292, 69, 34, 14);
+		lblTipo.setBounds(278, 69, 34, 14);
 		panel_5.add(lblTipo);
 
 		JLabel label_62 = new JLabel("Resoluci\u00F3n");
@@ -797,14 +797,14 @@ public class RegEquipos extends JFrame {
 		textField_51.setBounds(587, 96, 86, 20);
 		panel_5.add(textField_51);
 
-		JRadioButton rdbtnTv = new JRadioButton("TV");
+		JRadioButton rdbtnTv = new JRadioButton("Television");
 		rdbtnTv.setBackground(new Color(135, 206, 235));
-		rdbtnTv.setBounds(332, 67, 46, 20);
+		rdbtnTv.setBounds(318, 67, 74, 20);
 		panel_5.add(rdbtnTv);
 
 		JRadioButton rdbtnMonitor = new JRadioButton("Monitor");
 		rdbtnMonitor.setBackground(new Color(135, 206, 235));
-		rdbtnMonitor.setBounds(380, 67, 72, 20);
+		rdbtnMonitor.setBounds(394, 67, 72, 20);
 		panel_5.add(rdbtnMonitor);
 
 		ButtonGroup group4 = new ButtonGroup();

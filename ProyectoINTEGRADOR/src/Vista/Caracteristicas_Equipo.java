@@ -1099,12 +1099,82 @@ public class Caracteristicas_Equipo extends JFrame {
 	public void setTextAreaNotas(JTextArea textAreaNotas) {
 		this.textAreaNotas = textAreaNotas;
 	}
+	
+	public void setTextField_50(String textField_50) {
+		this.textField_50.setText(textField_50);
+	}
+
+	public void setTextField_51(String textField_51) {
+		this.textField_51.setText(textField_51);
+	}
+	public void setTextField_15(String textField_15) {
+		this.textField_15.setText(textField_15);
+	}
+
+	public void setEdificio(String edificio) {
+		comboBox.setSelectedItem(edificio);
+	}
+
+	public void setTipoUso(String tipoUso) {
+		comboBox_1.setSelectedItem(tipoUso);
+	}
+
+	public void setGrupo1RB(String rb) {
+		if (rb.equals("si")) {
+			radioButton.setSelected(true);
+		} else if (rb.equals("no")) {
+			radioButton_1.setSelected(true);
+		}
+	}
+
+	public void setGrupo2RB(String rb) {
+		if (rb.equals("si")) {
+			radioButton_3.setSelected(true);
+		} else if (rb.equals("no")) {
+			radioButton_2.setSelected(true);
+		}
+	}
+	public void setGrupo3RB(String rb) {
+		if (rb.equals("si")) {
+			rdbtnTablet.setSelected(true);
+		} else if (rb.equals("no")) {
+			rdbtnSmartphone.setSelected(true);
+		}
+	}
+	public void setGrupo4RB(String rb) {
+		if (rb.equals("si")) {
+			rdbtnTv.setSelected(true);
+		} else if (rb.equals("no")) {
+			rdbtnMonitor.setSelected(true);
+		}
+	}
+	public void setGrupo5RB(String rb) {
+		if (rb.equals("si")) {
+			radioButton_8.setSelected(true);
+		} else if (rb.equals("no")) {
+			radioButton_9.setSelected(true);
+		}
+	}
+	public void setGrupo6RB(String rb) {
+		if (rb.equals("si")) {
+			rdbtnSi.setSelected(true);
+		} else if (rb.equals("no")) {
+			rdbtnNo.setSelected(true);
+		}
+	}
+	public void setGrupo7RB(String rb) {
+		if (rb.equals("si")) {
+			rdbtnSi_1.setSelected(true);
+		} else if (rb.equals("no")) {
+			rdbtnNo_1.setSelected(true);
+		}
+	}
 
 	public String getTextField() {
 		return textField.getText();
 	}
 
-	public String getTextField_2() {
+	/*public String getTextField_2() {
 		return textField_2;
 	}
 
@@ -1306,77 +1376,9 @@ public class Caracteristicas_Equipo extends JFrame {
 
 	public JTextField getTextField_15() {
 		return textField_15;
-	}
+	}*/
 
-	public void setTextField_50(String textField_50) {
-		this.textField_50.setText(textField_50);
-	}
-
-	public void setTextField_51(String textField_51) {
-		this.textField_51.setText(textField_51);
-	}
-	public void setTextField_15(String textField_15) {
-		this.textField_15.setText(textField_15);
-	}
-
-	public void setEdificio(String edificio) {
-		comboBox.setSelectedItem(edificio);
-	}
-
-	public void setTipoUso(String tipoUso) {
-		comboBox_1.setSelectedItem(tipoUso);
-	}
-
-	public void setGrupo1RB(String rb) {
-		if (rb.equals("si")) {
-			radioButton.setSelected(true);
-		} else if (rb.equals("no")) {
-			radioButton_1.setSelected(true);
-		}
-	}
-
-	public void setGrupo2RB(String rb) {
-		if (rb.equals("si")) {
-			radioButton_3.setSelected(true);
-		} else if (rb.equals("no")) {
-			radioButton_2.setSelected(true);
-		}
-	}
-	public void setGrupo3RB(String rb) {
-		if (rb.equals("si")) {
-			rdbtnTablet.setSelected(true);
-		} else if (rb.equals("no")) {
-			rdbtnSmartphone.setSelected(true);
-		}
-	}
-	public void setGrupo4RB(String rb) {
-		if (rb.equals("si")) {
-			rdbtnTv.setSelected(true);
-		} else if (rb.equals("no")) {
-			rdbtnMonitor.setSelected(true);
-		}
-	}
-	public void setGrupo5RB(String rb) {
-		if (rb.equals("si")) {
-			radioButton_8.setSelected(true);
-		} else if (rb.equals("no")) {
-			radioButton_9.setSelected(true);
-		}
-	}
-	public void setGrupo6RB(String rb) {
-		if (rb.equals("si")) {
-			rdbtnSi.setSelected(true);
-		} else if (rb.equals("no")) {
-			rdbtnNo.setSelected(true);
-		}
-	}
-	public void setGrupo7RB(String rb) {
-		if (rb.equals("si")) {
-			rdbtnSi_1.setSelected(true);
-		} else if (rb.equals("no")) {
-			rdbtnNo_1.setSelected(true);
-		}
-	}
+	
 	
 
 	public void setCaracEqCont(Caracteristicas_EquipoControlador equipoControlador) {

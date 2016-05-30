@@ -410,6 +410,9 @@ public class TbAlmacen extends JFrame {
 	public void setAlmacenCont(TbAlmacen_Controlador almacen_Controlador) {
 		this.tbAlCont = almacen_Controlador;
 	}
+	public void setLogin(Login login) {
+		this.login = login;
+	}
 
 	public void setTbAlmacen(Object[][] tabla) {
 		table.setModel(new DefaultTableModel(tabla, new String[] {

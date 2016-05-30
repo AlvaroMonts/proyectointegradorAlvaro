@@ -469,6 +469,8 @@ public class adminBBDD {
 			caracEq.setTextField_22(rset.getString((6)));
 			caracEq.setTextField_21(rset.getString((7)));
 		}
+		rset.close();
+		stmt1.close();
 	}
 
 	public void iniciarCaracEqPantallaPortatil(int cod) throws SQLException {
@@ -488,6 +490,8 @@ public class adminBBDD {
 			caracEq.setTextField_31(rset.getString((9)));
 			caracEq.setTextField_8(rset.getString((10)));
 		}
+		rset.close();
+		stmt1.close();
 	}
 
 	public void iniciarCaracEqPantallaSmartphoneOTablet(int cod) throws SQLException {
@@ -499,8 +503,11 @@ public class adminBBDD {
 			caracEq.setTextField_15(rset.getString((2)));
 			caracEq.setTextField_27(rset.getString((5)));
 			caracEq.setTextField_14(rset.getString((6)));
+			
 			caracEq.setGrupo6RB(rset.getString((1)));
+			
 			caracEq.setGrupo5RB(rset.getString((1)));
+			
 			caracEq.setGrupo5RB(rset.getString((1)));
 			 
 			// giros, nfc, tipo
@@ -551,7 +558,6 @@ public class adminBBDD {
 		Statement stmt1 = conection.createStatement();
 		ResultSet rset = stmt1.executeQuery(sql);
 		if (rset.next()) {
-			
 			caracEq.setTextField_32(rset.getString((1)));
 			caracEq.setTextField_6(rset.getString((2)));
 			caracEq.setTextField_5(rset.getString((3)));

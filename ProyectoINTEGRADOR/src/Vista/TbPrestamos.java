@@ -414,6 +414,9 @@ public class TbPrestamos extends JFrame {
 	public void setPresCont(TbPrestamos_Controlador prestamos) {
 		this.tbPreCont = prestamos;
 	}
+	public void setLogin(Login login) {
+		this.login = login;
+	}
 
 	public void setTbPrestamos(Object[][] tabla) {
 		table.setModel(new DefaultTableModel(tabla, new String[] {

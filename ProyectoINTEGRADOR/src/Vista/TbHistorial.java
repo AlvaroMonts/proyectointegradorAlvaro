@@ -260,6 +260,9 @@ public class TbHistorial extends JFrame {
 	public void setHistCont(TbHistorial_Controlador historial_Controlador) {
 		this.tbHiCont = historial_Controlador;
 	}
+	public void setLogin(Login login) {
+		this.login = login;
+	}
 
 	public void setTbHistorial(Object [][] tabla) {
 		table.setModel(new DefaultTableModel(tabla,

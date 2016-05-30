@@ -41,7 +41,6 @@ public class adminBBDD {
 	public adminBBDD() {
 		try {
 			HashMap<String, String> hmret = loadFichero("bbdd.ini");
-			System.out.println(hmret);
 			Class.forName("com.mysql.jdbc.Driver");
 			conection = DriverManager.getConnection(hmret.get("url"), hmret.get("login"), hmret.get("pwd"));
 			System.out.println("todo ok");
@@ -702,11 +701,13 @@ public class adminBBDD {
 		PreparedStatement stmt2 = conection.prepareStatement(sql);
 		stmt2.executeUpdate();
 		stmt2.close();
+		System.out.println("Delete generico exito");
+		
 		String sql1 = "DELETE FROM sobremesa WHERE Equipo_COD = " + cod + ";";
 		PreparedStatement stmt3 = conection.prepareStatement(sql1);
 		stmt3.executeUpdate();
 		stmt3.close();
-		this.Consulta_ArrayEquipos();
+		System.out.println("Delete especifico exito");
 	}
 
 	public String[][] getArrayAlmacen() {

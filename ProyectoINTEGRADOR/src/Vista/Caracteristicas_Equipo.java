@@ -882,14 +882,21 @@ public class Caracteristicas_Equipo extends JFrame {
 			}
 		});
 		
-
+		
+		/*contentPane.action(Event evt = , what);
+		if (isVisible()) {
+			idEquipo = Integer.parseInt(pantalla.getSelectedRowID());
+			equipoControlador.actualizarTfs(idEquipo);
+		}*/
+		
 		btnDescartarCambios = new JButton("Descartar cambios");
 		btnDescartarCambios.setBounds(481, 455, 130, 32);
 		contentPane.add(btnDescartarCambios);
 		btnDescartarCambios.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				idEquipo = Integer.parseInt(pantalla.getSelectedRowID());
-				equipoControlador.actualizarTfs(idEquipo);
+				 idEquipo = Integer.parseInt(pantalla.getSelectedRowID());
+				 equipoControlador.actualizarTfs(idEquipo);
+				 
 			}
 		});
 		btnDescartarCambios.setFont(new Font("Times New Roman", Font.BOLD, 11));
@@ -1170,7 +1177,7 @@ public class Caracteristicas_Equipo extends JFrame {
 			rdbtnNo_1.setSelected(true);
 		}
 	}
-	
+
 	public String getEdificio() {
 		return (String) comboBox.getSelectedItem();
 	}
@@ -1178,7 +1185,7 @@ public class Caracteristicas_Equipo extends JFrame {
 	public String getTipoUso() {
 		return (String) comboBox_1.getSelectedItem();
 	}
-	
+
 	public String getTextAreaNotas() {
 		return textAreaNotas.getText();
 	}
@@ -1206,7 +1213,7 @@ public class Caracteristicas_Equipo extends JFrame {
 	public String getTextField_14() {
 		return textField_14.getText();
 	}
-	
+
 	public String getTextField_15() {
 		return textField_15.getText();
 	}

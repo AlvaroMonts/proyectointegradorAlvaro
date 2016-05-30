@@ -50,10 +50,9 @@ public class Caracteristicas_Equipo extends JFrame {
 	private JTextField textField_29;
 	private JTextField textField_30;
 	private JTextArea textAreaNotas;
-	private JPanel panel_2;
 	private JTabbedPane tPSobremesa;
-	private JPanel panel;
-	private JPanel panel_1;
+	private JPanel panelSobremesa;
+	private JPanel panelPortatil;
 	private JRadioButton radioButton_3;
 	private JRadioButton radioButton;
 	private JRadioButton radioButton_1;
@@ -82,9 +81,7 @@ public class Caracteristicas_Equipo extends JFrame {
 	private JTextField textField_46;
 	private JTextField textField_47;
 	private JTextField textField_49;
-	private JTextField textField_50;
 	private JTextField textField_51;
-	private JTextField textField_48;
 	private JComboBox comboBox;
 	private JComboBox comboBox_1;
 	private ButtonGroup group1;
@@ -114,6 +111,11 @@ public class Caracteristicas_Equipo extends JFrame {
 	private JRadioButton rdbtnMonitor;
 	private JRadioButton radioButton_8;
 	private JRadioButton radioButton_9;
+	private JPanel panelProyector;
+	private JPanel panelTvMonitor;
+	private JPanel panelCintiq;
+	private JPanel panelTabletaGrafica;
+	private JPanel panelSmartTablet;
 
 	/**
 	 * Create the frame.
@@ -187,11 +189,13 @@ public class Caracteristicas_Equipo extends JFrame {
 		contentPane.add(label_4);
 
 		radioButton_2 = new JRadioButton("no");
+		radioButton_2.setActionCommand(radioButton_2.getText());
 		radioButton_2.setBounds(226, 163, 55, 20);
 		radioButton_2.setBackground(new Color(135, 206, 235));
 		contentPane.add(radioButton_2);
 
 		radioButton_3 = new JRadioButton("si");
+		radioButton_3.setActionCommand(radioButton_3.getText());
 		radioButton_3.setBounds(169, 163, 46, 20);
 		radioButton_3.setBackground(new Color(135, 206, 235));
 		contentPane.add(radioButton_3);
@@ -260,9 +264,9 @@ public class Caracteristicas_Equipo extends JFrame {
 		tPSobremesa.setBackground(new Color(135, 206, 235));
 		contentPane.add(tPSobremesa);
 
-		panel = new JPanel();
-		panel.setBackground(new Color(135, 206, 235));
-		tPSobremesa.addTab("Sobremesa", null, panel, null);
+		panelSobremesa = new JPanel();
+		panelSobremesa.setBackground(new Color(135, 206, 235));
+		tPSobremesa.addTab("Sobremesa", null, panelSobremesa, null);
 
 		JLabel label_20 = new JLabel("TARJETA GR\u00C1FICA");
 		label_20.setBounds(59, 36, 122, 14);
@@ -299,231 +303,233 @@ public class Caracteristicas_Equipo extends JFrame {
 		JLabel label_15 = new JLabel("Roseta");
 		label_15.setBounds(275, 47, 46, 14);
 		label_15.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		panel.setLayout(null);
-		panel.add(label_20);
-		panel.add(label_19);
-		panel.add(textField_18);
-		panel.add(label_18);
-		panel.add(textField_17);
-		panel.add(label_17);
-		panel.add(textField_16);
-		panel.add(textField_13);
-		panel.add(label_15);
+		panelSobremesa.setLayout(null);
+		panelSobremesa.add(label_20);
+		panelSobremesa.add(label_19);
+		panelSobremesa.add(textField_18);
+		panelSobremesa.add(label_18);
+		panelSobremesa.add(textField_17);
+		panelSobremesa.add(label_17);
+		panelSobremesa.add(textField_16);
+		panelSobremesa.add(textField_13);
+		panelSobremesa.add(label_15);
 
 		JLabel label_25 = new JLabel("PROCESADOR");
 		label_25.setBounds(552, 72, 94, 14);
-		panel.add(label_25);
+		panelSobremesa.add(label_25);
 		label_25.setFont(new Font("Tahoma", Font.BOLD, 13));
 
 		JLabel label_24 = new JLabel("Modelo");
 		label_24.setBounds(520, 102, 60, 14);
-		panel.add(label_24);
+		panelSobremesa.add(label_24);
 		label_24.setFont(new Font("Tahoma", Font.PLAIN, 12));
 
 		textField_22 = new JTextField();
 		textField_22.setBounds(576, 99, 86, 20);
-		panel.add(textField_22);
+		panelSobremesa.add(textField_22);
 		textField_22.setColumns(10);
 
 		textField_21 = new JTextField();
 		textField_21.setBounds(576, 130, 86, 20);
-		panel.add(textField_21);
+		panelSobremesa.add(textField_21);
 		textField_21.setColumns(10);
 
 		JLabel label_23 = new JLabel("Velocidad");
 		label_23.setBounds(505, 133, 65, 14);
-		panel.add(label_23);
+		panelSobremesa.add(label_23);
 		label_23.setFont(new Font("Tahoma", Font.PLAIN, 12));
 
 		JLabel label_26 = new JLabel("MEMORIA RAM ");
 		label_26.setBounds(307, 81, 110, 14);
-		panel.add(label_26);
+		panelSobremesa.add(label_26);
 		label_26.setFont(new Font("Tahoma", Font.BOLD, 13));
 
 		JLabel label_22 = new JLabel("Capacidad");
 		label_22.setBounds(260, 108, 60, 14);
-		panel.add(label_22);
+		panelSobremesa.add(label_22);
 		label_22.setFont(new Font("Tahoma", Font.PLAIN, 12));
 
 		textField_20 = new JTextField();
 		textField_20.setBounds(331, 106, 86, 20);
-		panel.add(textField_20);
+		panelSobremesa.add(textField_20);
 		textField_20.setColumns(10);
 
 		textField_19 = new JTextField();
 		textField_19.setBounds(331, 139, 86, 20);
-		panel.add(textField_19);
+		panelSobremesa.add(textField_19);
 		textField_19.setColumns(10);
 
 		JLabel label_21 = new JLabel("Velocidad");
 		label_21.setBounds(260, 141, 60, 14);
-		panel.add(label_21);
+		panelSobremesa.add(label_21);
 		label_21.setFont(new Font("Tahoma", Font.PLAIN, 12));
 
 		textField_12 = new JTextField();
 		textField_12.setBounds(576, 36, 86, 20);
-		panel.add(textField_12);
+		panelSobremesa.add(textField_12);
 		textField_12.setColumns(10);
 
 		JLabel label_16 = new JLabel("SSOO");
 		label_16.setBounds(527, 38, 39, 14);
-		panel.add(label_16);
+		panelSobremesa.add(label_16);
 		label_16.setFont(new Font("Tahoma", Font.PLAIN, 12));
 
-		panel_1 = new JPanel();
-		panel_1.setBackground(new Color(135, 206, 235));
-		tPSobremesa.addTab("Portatil", null, panel_1, null);
-		panel_1.setLayout(null);
+		panelPortatil = new JPanel();
+		panelPortatil.setBackground(new Color(135, 206, 235));
+		tPSobremesa.addTab("Portatil", null, panelPortatil, null);
+		panelPortatil.setLayout(null);
 
 		JLabel label_8 = new JLabel("Almacenamiento");
 		label_8.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_8.setBounds(10, 145, 91, 14);
-		panel_1.add(label_8);
+		panelPortatil.add(label_8);
 
 		textField_4 = new JTextField();
 		textField_4.setColumns(10);
 		textField_4.setBounds(111, 142, 86, 20);
-		panel_1.add(textField_4);
+		panelPortatil.add(textField_4);
 
 		textField_5 = new JTextField();
 		textField_5.setColumns(10);
 		textField_5.setBounds(111, 105, 86, 20);
-		panel_1.add(textField_5);
+		panelPortatil.add(textField_5);
 
 		JLabel label_9 = new JLabel("Modelo");
 		label_9.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_9.setBounds(55, 107, 46, 14);
-		panel_1.add(label_9);
+		panelPortatil.add(label_9);
 
 		JLabel label_10 = new JLabel("Marca");
 		label_10.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_10.setBounds(55, 66, 43, 14);
-		panel_1.add(label_10);
+		panelPortatil.add(label_10);
 
 		textField_6 = new JTextField();
 		textField_6.setColumns(10);
 		textField_6.setBounds(111, 64, 86, 20);
-		panel_1.add(textField_6);
+		panelPortatil.add(textField_6);
 
 		textField_7 = new JTextField();
 		textField_7.setColumns(10);
 		textField_7.setBounds(561, 34, 86, 20);
-		panel_1.add(textField_7);
+		panelPortatil.add(textField_7);
 
 		JLabel label_11 = new JLabel("SSOO");
 		label_11.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_11.setBounds(512, 36, 39, 14);
-		panel_1.add(label_11);
+		panelPortatil.add(label_11);
 
 		JLabel label_12 = new JLabel("MEMORIA RAM");
 		label_12.setFont(new Font("Tahoma", Font.BOLD, 13));
 		label_12.setBounds(318, 89, 110, 14);
-		panel_1.add(label_12);
+		panelPortatil.add(label_12);
 
 		JLabel label_35 = new JLabel("Capacidad");
 		label_35.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_35.setBounds(271, 116, 60, 14);
-		panel_1.add(label_35);
+		panelPortatil.add(label_35);
 
 		textField_8 = new JTextField();
 		textField_8.setColumns(10);
 		textField_8.setBounds(342, 114, 86, 20);
-		panel_1.add(textField_8);
+		panelPortatil.add(textField_8);
 
 		textField_9 = new JTextField();
 		textField_9.setColumns(10);
 		textField_9.setBounds(342, 147, 86, 20);
-		panel_1.add(textField_9);
+		panelPortatil.add(textField_9);
 
 		JLabel label_36 = new JLabel("Velocidad");
 		label_36.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_36.setBounds(271, 149, 60, 14);
-		panel_1.add(label_36);
+		panelPortatil.add(label_36);
 
 		textField_10 = new JTextField();
 		textField_10.setColumns(10);
 		textField_10.setBounds(568, 97, 86, 20);
-		panel_1.add(textField_10);
+		panelPortatil.add(textField_10);
 
 		JLabel label_37 = new JLabel("Modelo");
 		label_37.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_37.setBounds(512, 100, 60, 14);
-		panel_1.add(label_37);
+		panelPortatil.add(label_37);
 
 		JLabel label_38 = new JLabel("Velocidad");
 		label_38.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_38.setBounds(497, 131, 65, 14);
-		panel_1.add(label_38);
+		panelPortatil.add(label_38);
 
 		textField_11 = new JTextField();
 		textField_11.setColumns(10);
 		textField_11.setBounds(568, 128, 86, 20);
-		panel_1.add(textField_11);
+		panelPortatil.add(textField_11);
 
 		JLabel label_39 = new JLabel("PROCESADOR");
 		label_39.setFont(new Font("Tahoma", Font.BOLD, 13));
 		label_39.setBounds(544, 70, 94, 14);
-		panel_1.add(label_39);
+		panelPortatil.add(label_39);
 
 		JLabel label_40 = new JLabel("TARJETA GR\u00C1FICA");
 		label_40.setFont(new Font("Tahoma", Font.BOLD, 13));
 		label_40.setBounds(55, 36, 122, 14);
-		panel_1.add(label_40);
+		panelPortatil.add(label_40);
 
 		JLabel label_41 = new JLabel("Resoluci\u00F3n");
 		label_41.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_41.setBounds(261, 64, 60, 14);
-		panel_1.add(label_41);
+		panelPortatil.add(label_41);
 
 		textField_31 = new JTextField();
 		textField_31.setColumns(10);
 		textField_31.setBounds(332, 62, 86, 20);
-		panel_1.add(textField_31);
+		panelPortatil.add(textField_31);
 
 		textField_32 = new JTextField();
 		textField_32.setColumns(10);
 		textField_32.setBounds(332, 34, 86, 20);
-		panel_1.add(textField_32);
+		panelPortatil.add(textField_32);
 
 		JLabel label_42 = new JLabel("Pulgadas");
 		label_42.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_42.setBounds(270, 39, 52, 14);
-		panel_1.add(label_42);
+		panelPortatil.add(label_42);
 
-		panel_2 = new JPanel();
-		panel_2.setBackground(new Color(135, 206, 235));
-		tPSobremesa.addTab("Smartphone / Tablet", null, panel_2, null);
-		panel_2.setLayout(null);
+		panelSmartTablet = new JPanel();
+		panelSmartTablet.setBackground(new Color(135, 206, 235));
+		tPSobremesa.addTab("Smartphone / Tablet", null, panelSmartTablet, null);
+		panelSmartTablet.setLayout(null);
 
 		JLabel label_32 = new JLabel("Resoluci\u00F3n c\u00E1mara");
 		label_32.setBounds(99, 82, 110, 14);
-		panel_2.add(label_32);
+		panelSmartTablet.add(label_32);
 		label_32.setFont(new Font("Tahoma", Font.PLAIN, 12));
 
 		textField_27 = new JTextField();
 		textField_27.setBounds(210, 80, 86, 20);
-		panel_2.add(textField_27);
+		panelSmartTablet.add(textField_27);
 		textField_27.setColumns(10);
 
 		JLabel label_14 = new JLabel("Pulgadas");
 		label_14.setBounds(355, 65, 52, 14);
-		panel_2.add(label_14);
+		panelSmartTablet.add(label_14);
 		label_14.setFont(new Font("Tahoma", Font.PLAIN, 12));
 
 		textField_14 = new JTextField();
 		textField_14.setBounds(422, 63, 86, 20);
-		panel_2.add(textField_14);
+		panelSmartTablet.add(textField_14);
 		textField_14.setColumns(10);
 
-		rdbtnNo_1 = new JRadioButton("no");
+		rdbtnNo_1 = new JRadioButton("No");
+		rdbtnNo_1.setActionCommand(rdbtnNo_1.getText());
 		rdbtnNo_1.setBackground(new Color(135, 206, 235));
 		rdbtnNo_1.setBounds(477, 129, 55, 20);
-		panel_2.add(rdbtnNo_1);
+		panelSmartTablet.add(rdbtnNo_1);
 
-		rdbtnSi_1 = new JRadioButton("si");
+		rdbtnSi_1 = new JRadioButton("Si");
+		rdbtnSi_1.setActionCommand(rdbtnSi_1.getText());
 		rdbtnSi_1.setBackground(new Color(135, 206, 235));
 		rdbtnSi_1.setBounds(425, 129, 46, 20);
-		panel_2.add(rdbtnSi_1);
+		panelSmartTablet.add(rdbtnSi_1);
 
 		group7 = new ButtonGroup();
 		group7.add(rdbtnNo_1);
@@ -538,22 +544,24 @@ public class Caracteristicas_Equipo extends JFrame {
 		JLabel label_43 = new JLabel("NFC");
 		label_43.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_43.setBounds(379, 132, 29, 14);
-		panel_2.add(label_43);
+		panelSmartTablet.add(label_43);
 
 		JLabel label_44 = new JLabel("Giroscopio");
 		label_44.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_44.setBounds(355, 102, 69, 14);
-		panel_2.add(label_44);
+		panelSmartTablet.add(label_44);
 
-		rdbtnSi = new JRadioButton("si");
+		rdbtnSi = new JRadioButton("Si");
+		rdbtnSi.setActionCommand(rdbtnSi.getText());
 		rdbtnSi.setBackground(new Color(135, 206, 235));
 		rdbtnSi.setBounds(425, 100, 46, 20);
-		panel_2.add(rdbtnSi);
+		panelSmartTablet.add(rdbtnSi);
 
-		rdbtnNo = new JRadioButton("no");
+		rdbtnNo = new JRadioButton("No");
+		rdbtnNo.setActionCommand(rdbtnNo.getText());
 		rdbtnNo.setBackground(new Color(135, 206, 235));
 		rdbtnNo.setBounds(477, 100, 55, 20);
-		panel_2.add(rdbtnNo);
+		panelSmartTablet.add(rdbtnNo);
 
 		group6 = new ButtonGroup();
 		group6.add(rdbtnNo);
@@ -568,17 +576,19 @@ public class Caracteristicas_Equipo extends JFrame {
 		JLabel lblTipo_1 = new JLabel("Tipo");
 		lblTipo_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblTipo_1.setBounds(163, 136, 46, 14);
-		panel_2.add(lblTipo_1);
+		panelSmartTablet.add(lblTipo_1);
 
 		rdbtnSmartphone = new JRadioButton("Smartphone");
+		rdbtnSmartphone.setActionCommand(rdbtnSmartphone.getText());
 		rdbtnSmartphone.setBackground(new Color(135, 206, 235));
 		rdbtnSmartphone.setBounds(210, 118, 86, 20);
-		panel_2.add(rdbtnSmartphone);
+		panelSmartTablet.add(rdbtnSmartphone);
 
 		rdbtnTablet = new JRadioButton("Tablet");
+		rdbtnTablet.setActionCommand(rdbtnTablet.getText());
 		rdbtnTablet.setBackground(new Color(135, 206, 235));
 		rdbtnTablet.setBounds(210, 146, 55, 20);
-		panel_2.add(rdbtnTablet);
+		panelSmartTablet.add(rdbtnTablet);
 
 		group3 = new ButtonGroup();
 		group3.add(rdbtnTablet);
@@ -587,12 +597,12 @@ public class Caracteristicas_Equipo extends JFrame {
 		textField_15 = new JTextField();
 		textField_15.setColumns(10);
 		textField_15.setBounds(210, 49, 86, 20);
-		panel_2.add(textField_15);
+		panelSmartTablet.add(textField_15);
 
 		JLabel label = new JLabel("Resoluci\u00F3n");
 		label.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label.setBounds(143, 49, 57, 14);
-		panel_2.add(label);
+		panelSmartTablet.add(label);
 
 		if (rdbtnTablet.isSelected()) {
 			rdbtnSmartphone.setEnabled(false);
@@ -600,200 +610,192 @@ public class Caracteristicas_Equipo extends JFrame {
 			rdbtnTablet.setEnabled(true);
 		}
 
-		JPanel panel_3 = new JPanel();
-		panel_3.setBackground(new Color(135, 206, 235));
-		tPSobremesa.addTab("Tableta Gr\u00E1fica", null, panel_3, null);
-		panel_3.setLayout(null);
+		panelTabletaGrafica = new JPanel();
+		panelTabletaGrafica.setBackground(new Color(135, 206, 235));
+		tPSobremesa.addTab("Tableta Gr\u00E1fica", null, panelTabletaGrafica, null);
+		panelTabletaGrafica.setLayout(null);
 
 		JLabel lblTamao = new JLabel("Tama\u00F1o");
 		lblTamao.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblTamao.setBounds(232, 92, 59, 14);
-		panel_3.add(lblTamao);
+		panelTabletaGrafica.add(lblTamao);
 
 		textField_35 = new JTextField();
 		textField_35.setColumns(10);
 		textField_35.setBounds(306, 90, 86, 20);
-		panel_3.add(textField_35);
+		panelTabletaGrafica.add(textField_35);
 
-		JPanel panel_4 = new JPanel();
-		panel_4.setBackground(new Color(135, 206, 235));
-		tPSobremesa.addTab("Cintiq", null, panel_4, null);
-		panel_4.setLayout(null);
+		panelCintiq = new JPanel();
+		panelCintiq.setBackground(new Color(135, 206, 235));
+		tPSobremesa.addTab("Cintiq", null, panelCintiq, null);
+		panelCintiq.setLayout(null);
 
 		JLabel label_48 = new JLabel("TARJETA GR\u00C1FICA");
 		label_48.setFont(new Font("Tahoma", Font.BOLD, 13));
 		label_48.setBounds(74, 30, 122, 14);
-		panel_4.add(label_48);
+		panelCintiq.add(label_48);
 
 		JLabel label_49 = new JLabel("Marca");
 		label_49.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_49.setBounds(70, 60, 43, 14);
-		panel_4.add(label_49);
+		panelCintiq.add(label_49);
 
 		textField_37 = new JTextField();
 		textField_37.setColumns(10);
 		textField_37.setBounds(126, 58, 86, 20);
-		panel_4.add(textField_37);
+		panelCintiq.add(textField_37);
 
 		JLabel label_50 = new JLabel("Modelo");
 		label_50.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_50.setBounds(70, 101, 46, 14);
-		panel_4.add(label_50);
+		panelCintiq.add(label_50);
 
 		textField_38 = new JTextField();
 		textField_38.setColumns(10);
 		textField_38.setBounds(126, 99, 86, 20);
-		panel_4.add(textField_38);
+		panelCintiq.add(textField_38);
 
 		textField_39 = new JTextField();
 		textField_39.setColumns(10);
 		textField_39.setBounds(126, 136, 86, 20);
-		panel_4.add(textField_39);
+		panelCintiq.add(textField_39);
 
 		JLabel label_51 = new JLabel("Almacenamiento");
 		label_51.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_51.setBounds(25, 139, 91, 14);
-		panel_4.add(label_51);
+		panelCintiq.add(label_51);
 
 		JLabel label_52 = new JLabel("MEMORIA RAM ");
 		label_52.setFont(new Font("Tahoma", Font.BOLD, 13));
 		label_52.setBounds(322, 75, 110, 14);
-		panel_4.add(label_52);
+		panelCintiq.add(label_52);
 
 		JLabel label_53 = new JLabel("Capacidad");
 		label_53.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_53.setBounds(275, 102, 60, 14);
-		panel_4.add(label_53);
+		panelCintiq.add(label_53);
 
 		textField_40 = new JTextField();
 		textField_40.setColumns(10);
 		textField_40.setBounds(346, 100, 86, 20);
-		panel_4.add(textField_40);
+		panelCintiq.add(textField_40);
 
 		textField_41 = new JTextField();
 		textField_41.setColumns(10);
 		textField_41.setBounds(346, 133, 86, 20);
-		panel_4.add(textField_41);
+		panelCintiq.add(textField_41);
 
 		JLabel label_54 = new JLabel("Velocidad");
 		label_54.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_54.setBounds(275, 135, 60, 14);
-		panel_4.add(label_54);
+		panelCintiq.add(label_54);
 
 		JLabel label_55 = new JLabel("Modelo");
 		label_55.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_55.setBounds(535, 96, 60, 14);
-		panel_4.add(label_55);
+		panelCintiq.add(label_55);
 
 		textField_42 = new JTextField();
 		textField_42.setColumns(10);
 		textField_42.setBounds(591, 93, 86, 20);
-		panel_4.add(textField_42);
+		panelCintiq.add(textField_42);
 
 		textField_43 = new JTextField();
 		textField_43.setColumns(10);
 		textField_43.setBounds(591, 124, 86, 20);
-		panel_4.add(textField_43);
+		panelCintiq.add(textField_43);
 
 		JLabel label_56 = new JLabel("Velocidad");
 		label_56.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_56.setBounds(520, 127, 65, 14);
-		panel_4.add(label_56);
+		panelCintiq.add(label_56);
 
 		JLabel label_57 = new JLabel("PROCESADOR");
 		label_57.setFont(new Font("Tahoma", Font.BOLD, 13));
 		label_57.setBounds(567, 66, 94, 14);
-		panel_4.add(label_57);
+		panelCintiq.add(label_57);
 
 		textField_44 = new JTextField();
 		textField_44.setColumns(10);
 		textField_44.setBounds(346, 35, 86, 20);
-		panel_4.add(textField_44);
+		panelCintiq.add(textField_44);
 
 		JLabel label_58 = new JLabel("Resoluci\u00F3n");
 		label_58.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		label_58.setBounds(277, 37, 60, 14);
-		panel_4.add(label_58);
+		panelCintiq.add(label_58);
 
 		textField_45 = new JTextField();
 		textField_45.setColumns(10);
 		textField_45.setBounds(589, 35, 86, 20);
-		panel_4.add(textField_45);
+		panelCintiq.add(textField_45);
 
 		JLabel lblEquipoEnlazado = new JLabel("Equipo Asociado");
 		lblEquipoEnlazado.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblEquipoEnlazado.setBounds(489, 37, 91, 14);
-		panel_4.add(lblEquipoEnlazado);
+		panelCintiq.add(lblEquipoEnlazado);
 
-		JPanel panel_5 = new JPanel();
-		panel_5.setBackground(new Color(135, 206, 235));
-		tPSobremesa.addTab("Monitor / TV", null, panel_5, null);
-		panel_5.setLayout(null);
+		panelTvMonitor = new JPanel();
+		panelTvMonitor.setBackground(new Color(135, 206, 235));
+		tPSobremesa.addTab("Monitor / TV", null, panelTvMonitor, null);
+		panelTvMonitor.setLayout(null);
 
 		textField_46 = new JTextField();
 		textField_46.setColumns(10);
 		textField_46.setBounds(120, 67, 86, 20);
-		panel_5.add(textField_46);
+		panelTvMonitor.add(textField_46);
 
 		JLabel lblConexiones = new JLabel("Conexiones");
 		lblConexiones.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblConexiones.setBounds(47, 69, 72, 14);
-		panel_5.add(lblConexiones);
+		lblConexiones.setBounds(36, 69, 72, 14);
+		panelTvMonitor.add(lblConexiones);
 
-		JLabel label_60 = new JLabel("Resoluci\u00F3n");
-		label_60.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		label_60.setBounds(59, 102, 60, 14);
-		panel_5.add(label_60);
+		JLabel lblEquipoAsociado = new JLabel("Equipo Asociado");
+		lblEquipoAsociado.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblEquipoAsociado.setBounds(21, 98, 89, 14);
+		panelTvMonitor.add(lblEquipoAsociado);
 
 		textField_47 = new JTextField();
 		textField_47.setColumns(10);
 		textField_47.setBounds(120, 96, 86, 20);
-		panel_5.add(textField_47);
+		panelTvMonitor.add(textField_47);
 
 		JLabel lblTipo = new JLabel("Tipo");
 		lblTipo.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblTipo.setBounds(292, 69, 34, 14);
-		panel_5.add(lblTipo);
+		lblTipo.setBounds(271, 69, 34, 14);
+		panelTvMonitor.add(lblTipo);
 
 		JLabel label_62 = new JLabel("Resoluci\u00F3n");
 		label_62.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		label_62.setBounds(285, 102, 60, 14);
-		panel_5.add(label_62);
+		label_62.setBounds(281, 98, 60, 14);
+		panelTvMonitor.add(label_62);
 
 		textField_49 = new JTextField();
 		textField_49.setColumns(10);
 		textField_49.setBounds(346, 96, 86, 20);
-		panel_5.add(textField_49);
+		panelTvMonitor.add(textField_49);
 
-		textField_50 = new JTextField();
-		textField_50.setColumns(10);
-		textField_50.setBounds(587, 67, 86, 20);
-		panel_5.add(textField_50);
-
-		JLabel label_63 = new JLabel("Resoluci\u00F3n c\u00E1mara");
-		label_63.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		label_63.setBounds(476, 69, 110, 14);
-		panel_5.add(label_63);
-
-		JLabel label_64 = new JLabel("Resoluci\u00F3n");
-		label_64.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		label_64.setBounds(526, 102, 60, 14);
-		panel_5.add(label_64);
+		JLabel lblTamao_1 = new JLabel("Tama\u00F1o");
+		lblTamao_1.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		lblTamao_1.setBounds(496, 82, 60, 14);
+		panelTvMonitor.add(lblTamao_1);
 
 		textField_51 = new JTextField();
 		textField_51.setColumns(10);
-		textField_51.setBounds(587, 96, 86, 20);
-		panel_5.add(textField_51);
+		textField_51.setBounds(578, 80, 86, 20);
+		panelTvMonitor.add(textField_51);
 
-		rdbtnTv = new JRadioButton("TV");
+		rdbtnTv = new JRadioButton("Television");
+		rdbtnTv.setActionCommand(rdbtnTv.getText());
 		rdbtnTv.setBackground(new Color(135, 206, 235));
-		rdbtnTv.setBounds(332, 67, 46, 20);
-		panel_5.add(rdbtnTv);
+		rdbtnTv.setBounds(311, 67, 81, 20);
+		panelTvMonitor.add(rdbtnTv);
 
 		rdbtnMonitor = new JRadioButton("Monitor");
+		rdbtnMonitor.setActionCommand(rdbtnMonitor.getText());
 		rdbtnMonitor.setBackground(new Color(135, 206, 235));
-		rdbtnMonitor.setBounds(380, 67, 72, 20);
-		panel_5.add(rdbtnMonitor);
+		rdbtnMonitor.setBounds(394, 67, 72, 20);
+		panelTvMonitor.add(rdbtnMonitor);
 
 		group4 = new ButtonGroup();
 		group4.add(rdbtnTv);
@@ -805,30 +807,32 @@ public class Caracteristicas_Equipo extends JFrame {
 			rdbtnTv.setEnabled(true);
 		}
 
-		JPanel panel_6 = new JPanel();
-		panel_6.setBackground(new Color(135, 206, 235));
-		tPSobremesa.addTab("Proyector", null, panel_6, null);
-		panel_6.setLayout(null);
+		panelProyector = new JPanel();
+		panelProyector.setBackground(new Color(135, 206, 235));
+		tPSobremesa.addTab("Proyector", null, panelProyector, null);
+		panelProyector.setLayout(null);
 
-		JLabel label_47 = new JLabel("Resoluci\u00F3n");
-		label_47.setBounds(144, 100, 57, 15);
-		label_47.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		panel_6.add(label_47);
+		JLabel lblResolucion = new JLabel("Resolucion");
+		lblResolucion.setBounds(144, 100, 57, 15);
+		lblResolucion.setFont(new Font("Tahoma", Font.PLAIN, 12));
+		panelProyector.add(lblResolucion);
 
 		textField_36 = new JTextField();
 		textField_36.setBounds(222, 98, 86, 20);
 		textField_36.setColumns(10);
-		panel_6.add(textField_36);
+		panelProyector.add(textField_36);
 
 		radioButton_8 = new JRadioButton("Si");
+		radioButton_8.setActionCommand(radioButton_8.getText());
 		radioButton_8.setBackground(new Color(135, 206, 235));
 		radioButton_8.setBounds(419, 98, 46, 20);
-		panel_6.add(radioButton_8);
+		panelProyector.add(radioButton_8);
 
 		radioButton_9 = new JRadioButton("No");
+		radioButton_9.setActionCommand(radioButton_9.getText());
 		radioButton_9.setBackground(new Color(135, 206, 235));
 		radioButton_9.setBounds(467, 98, 55, 20);
-		panel_6.add(radioButton_9);
+		panelProyector.add(radioButton_9);
 
 		group5 = new ButtonGroup();
 		group5.add(radioButton_8);
@@ -843,22 +847,7 @@ public class Caracteristicas_Equipo extends JFrame {
 		JLabel lblHdmi = new JLabel("HDMI");
 		lblHdmi.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblHdmi.setBounds(363, 100, 46, 14);
-		panel_6.add(lblHdmi);
-
-		JPanel panel_7 = new JPanel();
-		panel_7.setBackground(new Color(135, 206, 235));
-		tPSobremesa.addTab("Consola", null, panel_7, null);
-		panel_7.setLayout(null);
-
-		JLabel lblHdd = new JLabel("HDD");
-		lblHdd.setFont(new Font("Tahoma", Font.PLAIN, 12));
-		lblHdd.setBounds(236, 84, 60, 14);
-		panel_7.add(lblHdd);
-
-		textField_48 = new JTextField();
-		textField_48.setColumns(10);
-		textField_48.setBounds(297, 82, 86, 20);
-		panel_7.add(textField_48);
+		panelProyector.add(lblHdmi);
 
 		btnCancelar = new JButton("Cancelar");
 		btnCancelar.setFont(new Font("Times New Roman", Font.BOLD, 11));
@@ -908,8 +897,8 @@ public class Caracteristicas_Equipo extends JFrame {
 		contentPane.add(comboBox);
 
 		comboBox_1 = new JComboBox();
-		comboBox_1.setModel(
-				new DefaultComboBoxModel(new String[] {"docencia", "investigacion", "taller", "secretaria", "administrativo"}));
+		comboBox_1.setModel(new DefaultComboBoxModel(
+				new String[] { "docencia", "investigacion", "taller", "secretaria", "administrativo" }));
 		comboBox_1.setBounds(657, 74, 69, 20);
 		contentPane.add(comboBox_1);
 		btnCancelar.addActionListener(new ActionListener() {
@@ -1084,10 +1073,6 @@ public class Caracteristicas_Equipo extends JFrame {
 		this.textField_47.setText(textField_47);
 	}
 
-	public void setTextField_48(String textField_48) {
-		this.textField_48.setText(textField_48);
-	}
-
 	public void setTextField_49(String textField_49) {
 		this.textField_49.setText(textField_49);
 	}
@@ -1099,14 +1084,11 @@ public class Caracteristicas_Equipo extends JFrame {
 	public void setTextAreaNotas(JTextArea textAreaNotas) {
 		this.textAreaNotas = textAreaNotas;
 	}
-	
-	public void setTextField_50(String textField_50) {
-		this.textField_50.setText(textField_50);
-	}
 
 	public void setTextField_51(String textField_51) {
 		this.textField_51.setText(textField_51);
 	}
+
 	public void setTextField_15(String textField_15) {
 		this.textField_15.setText(textField_15);
 	}
@@ -1134,252 +1116,152 @@ public class Caracteristicas_Equipo extends JFrame {
 			radioButton_2.setSelected(true);
 		}
 	}
+
 	public void setGrupo3RB(String rb) {
-		if (rb.equals("si")) {
+		if (rb.equals("Tablet")) {
 			rdbtnTablet.setSelected(true);
-		} else if (rb.equals("no")) {
+		} else if (rb.equals("Movil")) {
 			rdbtnSmartphone.setSelected(true);
 		}
 	}
+
 	public void setGrupo4RB(String rb) {
-		if (rb.equals("si")) {
+		if (rb.equals("Television")) {
 			rdbtnTv.setSelected(true);
-		} else if (rb.equals("no")) {
+		} else if (rb.equals("Monitor")) {
 			rdbtnMonitor.setSelected(true);
 		}
 	}
+
 	public void setGrupo5RB(String rb) {
-		if (rb.equals("si")) {
+		if (rb.equals("Si")) {
 			radioButton_8.setSelected(true);
-		} else if (rb.equals("no")) {
+		} else if (rb.equals("No")) {
 			radioButton_9.setSelected(true);
 		}
 	}
+
 	public void setGrupo6RB(String rb) {
-		if (rb.equals("si")) {
+		if (rb.equals("Si")) {
 			rdbtnSi.setSelected(true);
-		} else if (rb.equals("no")) {
+		} else if (rb.equals("No")) {
 			rdbtnNo.setSelected(true);
 		}
 	}
+
 	public void setGrupo7RB(String rb) {
-		if (rb.equals("si")) {
+		if (rb.equals("Si")) {
 			rdbtnSi_1.setSelected(true);
-		} else if (rb.equals("no")) {
+		} else if (rb.equals("No")) {
 			rdbtnNo_1.setSelected(true);
 		}
 	}
 
-	public String getTextField() {
-		return textField.getText();
-	}
-
-	/*public String getTextField_2() {
-		return textField_2;
-	}
-
-	public String getTextField_3() {
-		return textField_3;
-	}
-
-	public String getTextField_12() {
-		return textField_12.text;
-	}
-
-	public String getTextField_13() {
-		return textField_13;
-	}
-
-	public String getTextField_14() {
-		return textField_14;
-	}
-
-	public String getTextField_16() {
-		return textField_16;
-	}
-
-	public String getTextField_17() {
-		return textField_17;
-	}
-
-	public String getTextField_18() {
-		return textField_18;
-	}
-
-	public String getTextField_19() {
-		return textField_19;
-	}
-
-	public String getTextField_20() {
-		return textField_20;
-	}
-
-	public String getTextField_21() {
-		return textField_21;
-	}
-
-	public String getTextField_22() {
-		return textField_22;
-	}
-
-	public String getTextField_26() {
-		return textField_26;
-	}
-
-	public String getTextField_27() {
-		return textField_27;
-	}
-
-	public String getTextField_29() {
-		return textField_29;
-	}
-
-	public String getTextField_30() {
-		return textField_30;
-	}
-
-	public String getTextField_4() {
-		return textField_4;
-	}
-
-	public String getTextField_5() {
-		return textField_5;
-	}
-
-	public String getTextField_6() {
-		return textField_6;
-	}
-
-	public String getTextField_7() {
-		return textField_7;
-	}
-
-	public String getTextField_8() {
-		return textField_8;
-	}
-
-	public String getTextField_9() {
-		return textField_9;
-	}
-
-	public String getTextField_10() {
-		return textField_10;
-	}
-
-	public String getTextField_11() {
-		return textField_11;
-	}
-
-	public String getTextField_31() {
-		return textField_31;
-	}
-
-	public String getTextField_32() {
-		return textField_32;
-	}
-
-	public String getTextField_35() {
-		return textField_35;
-	}
-
-	public String getTextField_36() {
-		return textField_36;
-	}
-
-	public String getTextField_37() {
-		return textField_37;
-	}
-
-	public String getTextField_38() {
-		return textField_38;
-	}
-
-	public String getTextField_39() {
-		return textField_39;
-	}
-
-	public String getTextField_40() {
-		return textField_40;
-	}
-
-	public String getTextField_41() {
-		return textField_41;
-	}
-
-	public String getTextField_42() {
-		return textField_42;
-	}
-
-	public String getTextField_43() {
-		return textField_43;
-	}
-
-	public String getTextField_44() {
-		return textField_44;
-	}
-
-	public String getTextField_45() {
-		return textField_45;
-	}
-
-	public String getTextField_46() {
-		return textField_46;
-	}
-
-	public String getTextField_47() {
-		return textField_47;
-	}
-
-	public String getTextField_49() {
-		return textField_49;
-	}
-
-	public String getTextField_50() {
-		return textField_50;
-	}
-
-	public String getTextField_51() {
-		return textField_51;
-	}
-
-	public String getTextField_48() {
-		return textField_48;
-	}
-
-	public ButtonGroup getGroup1() {
-		return group1;
-	}
-
-	public ButtonGroup getGroup2() {
-		return group2;
-	}
-
-	public ButtonGroup getGroup3() {
-		return group3;
-	}
-
-	public ButtonGroup getGroup4() {
-		return group4;
-	}
-
-	public ButtonGroup getGroup5() {
-		return group5;
-	}
-
-	public ButtonGroup getGroup6() {
-		return group6;
-	}
-
-	public ButtonGroup getGroup7() {
-		return group7;
-	}
-
-	public JTextField getTextField_15() {
-		return textField_15;
-	}*/
-
-	
-	
+	/*
+	 * public String getTextField() { return textField.getText(); }
+	 *
+	 * public String getTextField_2() { return textField_2; }
+	 * 
+	 * public String getTextField_3() { return textField_3; }
+	 * 
+	 * public String getTextField_12() { return textField_12.text; }
+	 * 
+	 * public String getTextField_13() { return textField_13; }
+	 * 
+	 * public String getTextField_14() { return textField_14; }
+	 * 
+	 * public String getTextField_16() { return textField_16; }
+	 * 
+	 * public String getTextField_17() { return textField_17; }
+	 * 
+	 * public String getTextField_18() { return textField_18; }
+	 * 
+	 * public String getTextField_19() { return textField_19; }
+	 * 
+	 * public String getTextField_20() { return textField_20; }
+	 * 
+	 * public String getTextField_21() { return textField_21; }
+	 * 
+	 * public String getTextField_22() { return textField_22; }
+	 * 
+	 * public String getTextField_26() { return textField_26; }
+	 * 
+	 * public String getTextField_27() { return textField_27; }
+	 * 
+	 * public String getTextField_29() { return textField_29; }
+	 * 
+	 * public String getTextField_30() { return textField_30; }
+	 * 
+	 * public String getTextField_4() { return textField_4; }
+	 * 
+	 * public String getTextField_5() { return textField_5; }
+	 * 
+	 * public String getTextField_6() { return textField_6; }
+	 * 
+	 * public String getTextField_7() { return textField_7; }
+	 * 
+	 * public String getTextField_8() { return textField_8; }
+	 * 
+	 * public String getTextField_9() { return textField_9; }
+	 * 
+	 * public String getTextField_10() { return textField_10; }
+	 * 
+	 * public String getTextField_11() { return textField_11; }
+	 * 
+	 * public String getTextField_31() { return textField_31; }
+	 * 
+	 * public String getTextField_32() { return textField_32; }
+	 * 
+	 * public String getTextField_35() { return textField_35; }
+	 * 
+	 * public String getTextField_36() { return textField_36; }
+	 * 
+	 * public String getTextField_37() { return textField_37; }
+	 * 
+	 * public String getTextField_38() { return textField_38; }
+	 * 
+	 * public String getTextField_39() { return textField_39; }
+	 * 
+	 * public String getTextField_40() { return textField_40; }
+	 * 
+	 * public String getTextField_41() { return textField_41; }
+	 * 
+	 * public String getTextField_42() { return textField_42; }
+	 * 
+	 * public String getTextField_43() { return textField_43; }
+	 * 
+	 * public String getTextField_44() { return textField_44; }
+	 * 
+	 * public String getTextField_45() { return textField_45; }
+	 * 
+	 * public String getTextField_46() { return textField_46; }
+	 * 
+	 * public String getTextField_47() { return textField_47; }
+	 * 
+	 * public String getTextField_49() { return textField_49; }
+	 * 
+	 * public String getTextField_50() { return textField_50; }
+	 * 
+	 * public String getTextField_51() { return textField_51; }
+	 * 
+	 * public String getTextField_48() { return textField_48; }
+	 * 
+	 * public ButtonGroup getGroup1() { return group1; }
+	 * 
+	 * public ButtonGroup getGroup2() { return group2; }
+	 * 
+	 * public ButtonGroup getGroup3() { return group3; }
+	 * 
+	 * public ButtonGroup getGroup4() { return group4; }
+	 * 
+	 * public ButtonGroup getGroup5() { return group5; }
+	 * 
+	 * public ButtonGroup getGroup6() { return group6; }
+	 * 
+	 * public ButtonGroup getGroup7() { return group7; }
+	 * 
+	 * public JTextField getTextField_15() { return textField_15; }
+	 */
 
 	public void setCaracEqCont(Caracteristicas_EquipoControlador equipoControlador) {
 		this.equipoControlador = equipoControlador;

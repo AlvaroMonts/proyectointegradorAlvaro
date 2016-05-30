@@ -568,11 +568,13 @@ public class RegEquipos extends JFrame {
 		panel_2.add(lblTipo_1);
 
 		JRadioButton rdbtnSmartphone = new JRadioButton("Movil");
+		rdbtnSmartphone.setActionCommand(rdbtnSmartphone.getText());
 		rdbtnSmartphone.setBackground(new Color(135, 206, 235));
 		rdbtnSmartphone.setBounds(228, 132, 86, 20);
 		panel_2.add(rdbtnSmartphone);
 
 		JRadioButton rdbtnTablet = new JRadioButton("Tablet");
+		rdbtnTablet.setActionCommand(rdbtnTablet.getText());
 		rdbtnTablet.setBackground(new Color(135, 206, 235));
 		rdbtnTablet.setBounds(161, 132, 55, 20);
 		panel_2.add(rdbtnTablet);
@@ -581,6 +583,12 @@ public class RegEquipos extends JFrame {
 		group3.add(rdbtnTablet);
 		group3.add(rdbtnSmartphone);
 
+		if (rdbtnTablet.isSelected()) {
+			rdbtnSmartphone.setEnabled(false);
+		} else if (rdbtnSmartphone.isSelected()) {
+			rdbtnTablet.setEnabled(true);
+		}
+		
 		JLabel lblResolucin = new JLabel("Resoluci\u00F3n");
 		lblResolucin.setFont(new Font("Tahoma", Font.PLAIN, 12));
 		lblResolucin.setBounds(139, 65, 57, 14);
@@ -591,11 +599,7 @@ public class RegEquipos extends JFrame {
 		textField_15.setBounds(206, 65, 86, 20);
 		panel_2.add(textField_15);
 
-		if (rdbtnTablet.isSelected()) {
-			rdbtnSmartphone.setEnabled(false);
-		} else if (rdbtnSmartphone.isSelected()) {
-			rdbtnTablet.setEnabled(true);
-		}
+		
 
 		JPanel panel_3 = new JPanel();
 		panel_3.setBackground(new Color(135, 206, 235));
@@ -798,11 +802,13 @@ public class RegEquipos extends JFrame {
 		panel_5.add(textField_51);
 
 		JRadioButton rdbtnTv = new JRadioButton("Television");
+		rdbtnTv.setActionCommand(rdbtnTv.getText());
 		rdbtnTv.setBackground(new Color(135, 206, 235));
 		rdbtnTv.setBounds(318, 67, 74, 20);
 		panel_5.add(rdbtnTv);
 
 		JRadioButton rdbtnMonitor = new JRadioButton("Monitor");
+		rdbtnMonitor.setActionCommand(rdbtnMonitor.getText());
 		rdbtnMonitor.setBackground(new Color(135, 206, 235));
 		rdbtnMonitor.setBounds(394, 67, 72, 20);
 		panel_5.add(rdbtnMonitor);
@@ -838,11 +844,13 @@ public class RegEquipos extends JFrame {
 		panel_6.add(btnAltaProyector);
 
 		JRadioButton radioButton_12 = new JRadioButton("Si");
+		radioButton_12.setActionCommand(radioButton_12.getText());
 		radioButton_12.setBackground(new Color(135, 206, 235));
 		radioButton_12.setBounds(419, 98, 46, 20);
 		panel_6.add(radioButton_12);
 
 		JRadioButton radioButton_13 = new JRadioButton("No");
+		radioButton_13.setActionCommand(radioButton_13.getText());
 		radioButton_13.setBackground(new Color(135, 206, 235));
 		radioButton_13.setBounds(467, 98, 55, 20);
 		panel_6.add(radioButton_13);
@@ -971,7 +979,7 @@ public class RegEquipos extends JFrame {
 
 		btnAltaSmartTablet.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				registro.AltaComunes(textField.getText(), "Smartphone/tablet", textField_29.getText(),
+				registro.AltaComunes(textField.getText(), group4.getSelection().getActionCommand(), textField_29.getText(),
 						textField_30.getText(), textAreaNotas.getText(), textField_2.getText(),
 						group1.getSelection().getActionCommand(), (String) comboBox_1.getSelectedItem(),
 						textField_3.getText(), group2.getSelection().getActionCommand(), textField_26.getText(),
@@ -1005,7 +1013,7 @@ public class RegEquipos extends JFrame {
 		});
 		btnAltaMonitorTV.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				registro.AltaComunes(textField.getText(), "Tv/Monitor", textField_29.getText(), textField_30.getText(),
+				registro.AltaComunes(textField.getText(), group4.getSelection().getActionCommand() , textField_29.getText(), textField_30.getText(),
 						textAreaNotas.getText(), textField_2.getText(), group1.getSelection().getActionCommand(),
 						(String) comboBox_1.getSelectedItem(), textField_3.getText(),
 						group2.getSelection().getActionCommand(), textField_26.getText(),

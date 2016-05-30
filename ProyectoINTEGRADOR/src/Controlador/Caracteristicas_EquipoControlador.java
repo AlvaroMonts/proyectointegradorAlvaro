@@ -1,5 +1,7 @@
 package Controlador;
 
+import java.sql.SQLException;
+
 import Modelo.adminBBDD;
 
 public class Caracteristicas_EquipoControlador {
@@ -16,5 +18,7 @@ public class Caracteristicas_EquipoControlador {
 	public void setCaracEqModelo(adminBBDD bbdd) {
 		this.modelo = bbdd;
 	}
-
+	public void eliminar() throws SQLException {
+		modelo.eliminarEquipo();
+	}
 }

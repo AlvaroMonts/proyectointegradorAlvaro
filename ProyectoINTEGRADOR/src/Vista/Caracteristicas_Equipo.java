@@ -21,6 +21,7 @@ import javax.swing.JButton;
 import javax.swing.JRadioButton;
 
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 
 import javax.swing.JTextArea;
@@ -869,6 +870,18 @@ public class Caracteristicas_Equipo extends JFrame {
 		btnBajaEquipo.setBounds(341, 455, 130, 32);
 		contentPane.add(btnBajaEquipo);
 		btnBajaEquipo.setFont(new Font("Times New Roman", Font.BOLD, 11));
+		btnBajaEquipo.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				try {
+					equipoControlador.eliminar();
+					setVisible(false);
+					pantalla.setVisible(true);
+				} catch (SQLException e1) {
+					e1.printStackTrace();
+				}
+			}
+		});
+		
 
 		btnDescartarCambios = new JButton("Descartar cambios");
 		btnDescartarCambios.setBounds(481, 455, 130, 32);

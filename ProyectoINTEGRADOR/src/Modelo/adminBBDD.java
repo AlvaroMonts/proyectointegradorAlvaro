@@ -1,6 +1,10 @@
 package Modelo;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.sql.*;
+import java.util.HashMap;
 
 import Vista.Caracteristicas_Equipo;
 import Vista.Login;
@@ -36,12 +40,10 @@ public class adminBBDD {
 
 	public adminBBDD() {
 		try {
-			bd = "proyectointegrador";
-			login = "root";
-			pwd = "root";
-			url = "jdbc:mysql://10.4.105.32/" + bd;
+			HashMap<String, String> hmret = loadFichero("bbdd.ini");
+			System.out.println(hmret);
 			Class.forName("com.mysql.jdbc.Driver");
-			conection = DriverManager.getConnection(url, login, pwd);
+			conection = DriverManager.getConnection(hmret.get("url"), hmret.get("login"), hmret.get("pwd"));
 			System.out.println("todo ok");
 		} catch (ClassNotFoundException e) {
 			System.out.println("Driver no cargado");
@@ -51,6 +53,21 @@ public class adminBBDD {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+	}
+
+	public HashMap<String, String> loadFichero(String nomFichero) throws IOException {
+		HashMap<String, String> hmDatos = new HashMap<String, String>();
+		FileReader fr = new FileReader(nomFichero);
+		BufferedReader bf = new BufferedReader(fr);
+		String lineaLeida = bf.readLine();
+		while (lineaLeida != null) {
+			String sar[] = lineaLeida.split("=");
+			hmDatos.put(sar[0], sar[1]);
+			lineaLeida = bf.readLine();
+		}
+		bf.close();
+		fr.close();
+		return hmDatos;
 	}
 
 	public boolean ConsultaLogin(String email, String password) {
@@ -273,6 +290,7 @@ public class adminBBDD {
 			stmt.setString(12, edificio);
 			stmt.executeUpdate();
 			stmt.close();
+			this.Consulta_ArrayEquipos();
 		} catch (SQLException s) {
 			s.printStackTrace();
 		}
@@ -645,6 +663,8 @@ public class adminBBDD {
 				PreparedStatement stmt2 = conection.prepareStatement(sql1);
 				stmt2.executeUpdate();
 				stmt2.close();
+				System.out.println("update generico realizado con exito");
+				this.Consulta_ArrayEquipos();
 			}
 		} catch (SQLException s) {
 			s.printStackTrace();
@@ -662,19 +682,31 @@ public class adminBBDD {
 			String velocidadProcesador = caracEq.getTextField_21();
 			String ramCapacidad = caracEq.getTextField_20();
 			String ramVelocidad = caracEq.getTextField_19();
-
 			String sql = "UPDATE sobremesa SET SSOO = '" + ssoo + "', Roseta = '" + roseta + "', RamGrafica = '"
 					+ ramGrafica + "', MarcaGrafica = '" + marcaGrafica + "', ModeloGrafica  = '" + modeloGrafica
 					+ "', ModeloProcesador = '" + modeloProcesador + "', VelocidadProcesador  = '" + velocidadProcesador
-					+ "', RamCapacidad = '" + ramCapacidad + "', RamVelocidad  = '" + ramVelocidad + "' WHERE Equipo_COD = "
-					+ cod + ";";
+					+ "', RamCapacidad = '" + ramCapacidad + "', RamVelocidad  = '" + ramVelocidad
+					+ "' WHERE Equipo_COD = " + cod + ";";
 			PreparedStatement stmt2 = conection.prepareStatement(sql);
-			System.out.println("update realizado con exito");
 			stmt2.executeUpdate();
 			stmt2.close();
+			System.out.println("update especifico realizado con exito");
 		} catch (SQLException s) {
 			s.printStackTrace();
 		}
+	}
+
+	public void eliminarEquipo() throws SQLException {
+		int cod = Integer.parseInt(caracEq.getTextField());
+		String sql = "DELETE FROM equipo WHERE COD = " + cod + ";";
+		PreparedStatement stmt2 = conection.prepareStatement(sql);
+		stmt2.executeUpdate();
+		stmt2.close();
+		String sql1 = "DELETE FROM sobremesa WHERE Equipo_COD = " + cod + ";";
+		PreparedStatement stmt3 = conection.prepareStatement(sql1);
+		stmt3.executeUpdate();
+		stmt3.close();
+		this.Consulta_ArrayEquipos();
 	}
 
 	public String[][] getArrayAlmacen() {

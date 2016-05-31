@@ -703,11 +703,6 @@ public class adminBBDD {
 		stmt2.close();
 		System.out.println("Delete generico exito");
 		
-		String sql1 = "DELETE FROM sobremesa WHERE Equipo_COD = " + cod + ";";
-		PreparedStatement stmt3 = conection.prepareStatement(sql1);
-		stmt3.executeUpdate();
-		stmt3.close();
-		System.out.println("Delete especifico exito");
 	}
 
 	public String[][] getArrayAlmacen() {

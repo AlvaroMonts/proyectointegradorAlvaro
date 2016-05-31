@@ -875,6 +875,7 @@ public class Caracteristicas_Equipo extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				try {
 					equipoControlador.eliminar();
+					equipoControlador.actualizarTfs(idEquipo);
 					setVisible(false);
 					pantalla.setVisible(true);
 				} catch (SQLException e1) {

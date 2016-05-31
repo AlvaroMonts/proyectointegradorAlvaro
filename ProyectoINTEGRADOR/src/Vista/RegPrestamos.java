@@ -39,6 +39,7 @@ public class RegPrestamos extends JFrame {
 	private JLabel label_3;
 	private Caracteristicas_Equipo CEquipo;
 	private JFormattedTextField formattedTextField_1;
+
 	/**
 	 * Create the frame.
 	 */
@@ -81,7 +82,7 @@ public class RegPrestamos extends JFrame {
 
 		textField_3 = new JTextField();
 		textField_3.setColumns(10);
-
+		
 		textField_4 = new JTextField();
 		textField_4.setColumns(10);
 
@@ -90,7 +91,6 @@ public class RegPrestamos extends JFrame {
 
 		btnRegistrarPrestamo = new JButton("Registrar prestamo");
 		btnRegistrarPrestamo.setFont(new Font("SansSerif", Font.BOLD, 12));
-		
 
 		btnCancelar = new JButton("Cancelar");
 		btnCancelar.setFont(new Font("SansSerif", Font.BOLD, 12));
@@ -100,105 +100,131 @@ public class RegPrestamos extends JFrame {
 				CEquipo.setVisible(true);
 			}
 		});
-		
+
 		JFormattedTextField formattedTextField = new JFormattedTextField();
-		
+
 		formattedTextField_1 = new JFormattedTextField();
 		GroupLayout gl_contentPane = new GroupLayout(contentPane);
-		gl_contentPane.setHorizontalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(139)
-							.addComponent(lblFechaDePrestamo, GroupLayout.PREFERRED_SIZE, 71, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(formattedTextField, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE)
-							.addGap(142)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-								.addGroup(gl_contentPane.createSequentialGroup()
-									.addGap(111)
-									.addComponent(textField_3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-								.addComponent(label_1, GroupLayout.PREFERRED_SIZE, 122, GroupLayout.PREFERRED_SIZE)))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(103)
-							.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 107, GroupLayout.PREFERRED_SIZE)
-							.addPreferredGap(ComponentPlacement.RELATED)
-							.addComponent(formattedTextField_1, GroupLayout.PREFERRED_SIZE, 93, GroupLayout.PREFERRED_SIZE)
-							.addGap(124)
-							.addComponent(label_2, GroupLayout.PREFERRED_SIZE, 125, GroupLayout.PREFERRED_SIZE)
-							.addGap(4)
-							.addComponent(textField_4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(118)
-							.addComponent(label, GroupLayout.PREFERRED_SIZE, 92, GroupLayout.PREFERRED_SIZE)
-							.addGap(4)
-							.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addGap(163)
-							.addComponent(label_3, GroupLayout.PREFERRED_SIZE, 79, GroupLayout.PREFERRED_SIZE)
-							.addGap(18)
-							.addComponent(textField_5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addContainerGap()
-							.addComponent(btnCancelar, GroupLayout.PREFERRED_SIZE, 89, GroupLayout.PREFERRED_SIZE)
-							.addGap(502)
-							.addComponent(btnRegistrarPrestamo)))
-					.addContainerGap(26, Short.MAX_VALUE))
-		);
-		gl_contentPane.setVerticalGroup(
-			gl_contentPane.createParallelGroup(Alignment.LEADING)
-				.addGroup(gl_contentPane.createSequentialGroup()
-					.addGap(102)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(2)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-								.addComponent(lblFechaDePrestamo, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-								.addComponent(formattedTextField, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-						.addComponent(textField_3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(3)
-							.addComponent(label_1, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)))
-					.addGap(29)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(3)
-							.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-								.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)
-								.addComponent(formattedTextField_1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(3)
-							.addComponent(label_2, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
-						.addComponent(textField_4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-					.addGap(27)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
-						.addGroup(gl_contentPane.createSequentialGroup()
-							.addGap(3)
-							.addComponent(label, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
-						.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+		gl_contentPane
+				.setHorizontalGroup(
+						gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addGroup(
+										gl_contentPane
+												.createSequentialGroup().addGroup(gl_contentPane
+														.createParallelGroup(Alignment.LEADING).addGroup(gl_contentPane
+																.createSequentialGroup().addGap(139)
+																.addComponent(
+																		lblFechaDePrestamo, GroupLayout.PREFERRED_SIZE,
+																		71, GroupLayout.PREFERRED_SIZE)
+																.addPreferredGap(ComponentPlacement.RELATED)
+																.addComponent(formattedTextField,
+																		GroupLayout.PREFERRED_SIZE, 93,
+																		GroupLayout.PREFERRED_SIZE)
+																.addGap(142)
+																.addGroup(gl_contentPane
+																		.createParallelGroup(Alignment.LEADING)
+																		.addGroup(gl_contentPane.createSequentialGroup()
+																				.addGap(111).addComponent(textField_3,
+																						GroupLayout.PREFERRED_SIZE,
+																						GroupLayout.DEFAULT_SIZE,
+																						GroupLayout.PREFERRED_SIZE))
+																		.addComponent(
+																				label_1, GroupLayout.PREFERRED_SIZE,
+																				122, GroupLayout.PREFERRED_SIZE)))
+														.addGroup(gl_contentPane.createSequentialGroup().addGap(103)
+																.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE,
+																		107, GroupLayout.PREFERRED_SIZE)
+																.addPreferredGap(ComponentPlacement.RELATED)
+																.addComponent(formattedTextField_1,
+																		GroupLayout.PREFERRED_SIZE, 93,
+																		GroupLayout.PREFERRED_SIZE)
+																.addGap(124)
+																.addComponent(label_2, GroupLayout.PREFERRED_SIZE,
+																		125, GroupLayout.PREFERRED_SIZE)
+																.addGap(4).addComponent(textField_4,
+																		GroupLayout.PREFERRED_SIZE,
+																		GroupLayout.DEFAULT_SIZE,
+																		GroupLayout.PREFERRED_SIZE))
+														.addGroup(gl_contentPane.createSequentialGroup().addGap(118)
+																.addComponent(label, GroupLayout.PREFERRED_SIZE, 92,
+																		GroupLayout.PREFERRED_SIZE)
+																.addGap(4)
+																.addComponent(textField_2, GroupLayout.PREFERRED_SIZE,
+																		GroupLayout.DEFAULT_SIZE,
+																		GroupLayout.PREFERRED_SIZE)
+																.addGap(163)
+																.addComponent(label_3, GroupLayout.PREFERRED_SIZE, 79,
+																		GroupLayout.PREFERRED_SIZE)
+																.addGap(18).addComponent(textField_5,
+																		GroupLayout.PREFERRED_SIZE,
+																		GroupLayout.DEFAULT_SIZE,
+																		GroupLayout.PREFERRED_SIZE))
+														.addGroup(gl_contentPane.createSequentialGroup()
+																.addContainerGap()
+																.addComponent(btnCancelar, GroupLayout.PREFERRED_SIZE,
+																		89, GroupLayout.PREFERRED_SIZE)
+																.addGap(502).addComponent(btnRegistrarPrestamo)))
+												.addContainerGap(26, Short.MAX_VALUE)));
+		gl_contentPane.setVerticalGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+				.addGroup(gl_contentPane.createSequentialGroup().addGap(102)
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_contentPane.createSequentialGroup().addGap(2)
+										.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+												.addComponent(lblFechaDePrestamo, GroupLayout.PREFERRED_SIZE, 14,
+														GroupLayout.PREFERRED_SIZE)
+												.addComponent(formattedTextField, GroupLayout.PREFERRED_SIZE,
+														GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+								.addComponent(textField_3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addGroup(gl_contentPane.createSequentialGroup().addGap(3).addComponent(label_1,
+										GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)))
+						.addGap(29)
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_contentPane.createSequentialGroup().addGap(3)
+										.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+												.addComponent(lblNewLabel, GroupLayout.PREFERRED_SIZE, 14,
+														GroupLayout.PREFERRED_SIZE)
+												.addComponent(formattedTextField_1, GroupLayout.PREFERRED_SIZE,
+														GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)))
+								.addGroup(gl_contentPane.createSequentialGroup().addGap(3).addComponent(label_2,
+										GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
+								.addComponent(textField_4, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE))
+						.addGap(27)
+						.addGroup(gl_contentPane.createParallelGroup(Alignment.LEADING)
+								.addGroup(gl_contentPane.createSequentialGroup().addGap(3).addComponent(label,
+										GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE))
+								.addComponent(textField_2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+										GroupLayout.PREFERRED_SIZE)
+								.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
+										.addComponent(textField_5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE,
+												GroupLayout.PREFERRED_SIZE)
+										.addComponent(label_3, GroupLayout.PREFERRED_SIZE, 14,
+												GroupLayout.PREFERRED_SIZE)))
+						.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
 						.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-							.addComponent(textField_5, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-							.addComponent(label_3, GroupLayout.PREFERRED_SIZE, 14, GroupLayout.PREFERRED_SIZE)))
-					.addPreferredGap(ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-					.addGroup(gl_contentPane.createParallelGroup(Alignment.BASELINE)
-						.addComponent(btnRegistrarPrestamo)
-						.addComponent(btnCancelar))
-					.addGap(20))
-		);
+								.addComponent(btnRegistrarPrestamo).addComponent(btnCancelar))
+						.addGap(20)));
 		contentPane.setLayout(gl_contentPane);
-		
+
 		btnRegistrarPrestamo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				Rprestamos.AltaPrestamos(textField_5.getText(), Integer.parseInt(textField_3.getText()), (String)formattedTextField.getText(), (String)formattedTextField_1.getText(), textField_2.getText(), textField_4.getText());
+				Rprestamos.AltaPrestamos(textField_5.getText(), Integer.parseInt(textField_3.getText()),
+						(String) formattedTextField.getText(), (String) formattedTextField_1.getText(),
+						textField_2.getText(), textField_4.getText());
 			}
 		});
 	}
-	public void setRPrestamos(RegPrestamo_Controlador Prestamo){
-		this.Rprestamos=Prestamo;
+
+	public void setRPrestamos(RegPrestamo_Controlador Prestamo) {
+		this.Rprestamos = Prestamo;
 	}
-	
+
 	public void setEquipo(Caracteristicas_Equipo equipos) {
 		this.CEquipo = equipos;
 	}
-	
+	public void setIDprestamos() {
+		textField_3.setText(CEquipo.getID());
+	}
+
 }

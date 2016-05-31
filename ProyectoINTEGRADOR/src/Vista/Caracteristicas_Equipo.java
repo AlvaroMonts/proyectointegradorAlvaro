@@ -861,6 +861,7 @@ public class Caracteristicas_Equipo extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);
 				pantalla1.setVisible(true);
+				pantalla1.setIDprestamos();
 			}
 		});
 		contentPane.add(btnRealizarPrestamo);
@@ -881,22 +882,21 @@ public class Caracteristicas_Equipo extends JFrame {
 				}
 			}
 		});
-		
-		
-		/*contentPane.action(Event evt = , what);
-		if (isVisible()) {
-			idEquipo = Integer.parseInt(pantalla.getSelectedRowID());
-			equipoControlador.actualizarTfs(idEquipo);
-		}*/
-		
+
+		/*
+		 * contentPane.action(Event evt = , what); if (isVisible()) { idEquipo =
+		 * Integer.parseInt(pantalla.getSelectedRowID());
+		 * equipoControlador.actualizarTfs(idEquipo); }
+		 */
+
 		btnDescartarCambios = new JButton("Descartar cambios");
 		btnDescartarCambios.setBounds(481, 455, 130, 32);
 		contentPane.add(btnDescartarCambios);
 		btnDescartarCambios.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				 idEquipo = Integer.parseInt(pantalla.getSelectedRowID());
-				 equipoControlador.actualizarTfs(idEquipo);
-				 
+				idEquipo = Integer.parseInt(pantalla.getSelectedRowID());
+				equipoControlador.actualizarTfs(idEquipo);
+
 			}
 		});
 		btnDescartarCambios.setFont(new Font("Times New Roman", Font.BOLD, 11));
@@ -1400,5 +1400,13 @@ public class Caracteristicas_Equipo extends JFrame {
 
 	public void setPantalla1(RegPrestamos Pantalla1) {
 		this.pantalla1 = Pantalla1;
+	}
+
+	public String getID() {
+		if (pantalla1 != null) {
+			return pantalla.getSelectedRowID();
+		} else {
+			return null;
+		}
 	}
 }

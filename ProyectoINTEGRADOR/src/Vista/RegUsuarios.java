@@ -73,13 +73,18 @@ public class RegUsuarios extends JFrame {
 		tFEmail.setColumns(10);
 
 		JLabel label_2 = new JLabel("Email:");
+		label_2.setSize(61, 18);
+		label_2.setLocation(113, 235);
 		label_2.setFont(new Font("SansSerif", Font.BOLD, 12));
 
 		rBAdmin = new JRadioButton("Administrador");
+		rBAdmin.setLocation(450, 133);
+		rBAdmin.setSize(107, 20);
 		rBAdmin.setFont(new Font("SansSerif", Font.BOLD, 12));
 		rBAdmin.setBackground(new Color(135, 206, 235));
 
 		rBTecnico = new JRadioButton("T\u00E9cnico");
+		rBTecnico.setBounds(570, 133, 86, 20);
 		rBTecnico.setFont(new Font("SansSerif", Font.BOLD, 12));
 		rBTecnico.setBackground(new Color(135, 206, 235));
 

@@ -289,7 +289,7 @@ public class adminBBDD {
 			stmt.setString(12, edificio);
 			stmt.executeUpdate();
 			stmt.close();
-			this.Consulta_ArrayEquipos();
+			cargarDatosDeTablas();
 		} catch (SQLException s) {
 			s.printStackTrace();
 		}
@@ -313,6 +313,7 @@ public class adminBBDD {
 			stmt.setString(10, ramvelocidad);
 			stmt.executeUpdate();
 			stmt.close();
+			cargarDatosDeTablas();
 		} catch (SQLException s) {
 			s.printStackTrace();
 		}
@@ -337,6 +338,7 @@ public class adminBBDD {
 			stmt.setString(11, capacidadram);
 			stmt.executeUpdate();
 			stmt.close();
+			cargarDatosDeTablas();
 		} catch (SQLException s) {
 			s.printStackTrace();
 		}
@@ -359,8 +361,8 @@ public class adminBBDD {
 			stmt.setString(9, ramcapacidad);
 			stmt.setString(10, ramvelocidad);
 			stmt.executeUpdate();
-
 			stmt.close();
+			cargarDatosDeTablas();
 		} catch (SQLException s) {
 			s.printStackTrace();
 		}
@@ -380,6 +382,7 @@ public class adminBBDD {
 			stmt.setString(7, pulgadas);
 			stmt.executeUpdate();
 			stmt.close();
+			cargarDatosDeTablas();
 		} catch (SQLException s) {
 			s.printStackTrace();
 		}
@@ -398,6 +401,7 @@ public class adminBBDD {
 			stmt.setString(6, resolucion);
 			stmt.executeUpdate();
 			stmt.close();
+			cargarDatosDeTablas();
 		} catch (SQLException s) {
 			s.printStackTrace();
 		}
@@ -412,6 +416,7 @@ public class adminBBDD {
 			stmt.setString(3, equipocod);
 			stmt.executeUpdate();
 			stmt.close();
+			cargarDatosDeTablas();
 		} catch (SQLException s) {
 			s.printStackTrace();
 		}
@@ -425,6 +430,7 @@ public class adminBBDD {
 			stmt.setString(2, equipocod);
 			stmt.executeUpdate();
 			stmt.close();
+			cargarDatosDeTablas();
 		} catch (SQLException s) {
 			s.printStackTrace();
 		}
@@ -443,6 +449,7 @@ public class adminBBDD {
 			stmt.setString(6, destinoprestamo);
 			stmt.executeUpdate();
 			stmt.close();
+			cargarDatosDeTablas();
 		} catch (SQLException s) {
 			s.printStackTrace();
 		}
@@ -544,7 +551,6 @@ public class adminBBDD {
 			caracEq.setTextField_15(rset.getString((2)));
 			caracEq.setTextField_27(rset.getString((5)));
 			caracEq.setTextField_14(rset.getString((6)));
-			// arreglar estos 3
 			caracEq.setGrupo6RB(rset.getString((1)));
 			caracEq.setGrupo7RB(rset.getString((3)));
 			caracEq.setGrupo3RB(rset.getString((4)));
@@ -663,7 +669,7 @@ public class adminBBDD {
 				stmt2.executeUpdate();
 				stmt2.close();
 				System.out.println("update generico realizado con exito");
-				this.Consulta_ArrayEquipos();
+				cargarDatosDeTablas();
 			}
 		} catch (SQLException s) {
 			s.printStackTrace();
@@ -690,6 +696,7 @@ public class adminBBDD {
 			stmt2.executeUpdate();
 			stmt2.close();
 			System.out.println("update especifico realizado con exito");
+			cargarDatosDeTablas();
 		} catch (SQLException s) {
 			s.printStackTrace();
 		}
@@ -702,7 +709,7 @@ public class adminBBDD {
 		stmt2.executeUpdate();
 		stmt2.close();
 		System.out.println("Delete generico exito");
-		
+		cargarDatosDeTablas();
 	}
 
 	public String[][] getArrayAlmacen() {

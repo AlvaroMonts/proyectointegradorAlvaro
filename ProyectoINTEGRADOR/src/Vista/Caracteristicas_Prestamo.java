@@ -15,6 +15,7 @@ public class Caracteristicas_Prestamo extends JFrame{
 	private JTextField textFieldDestinodelprestamo;
 	private JTextField textFieldCodigoEQuipo;
 	public Caracteristicas_Prestamo() {
+		setTitle("Caracteristicas Prestamo");
 		getContentPane().setBackground(new Color(135, 206, 235));
 		getContentPane().setForeground(SystemColor.textHighlight);
 		getContentPane().setLayout(null);
@@ -79,23 +80,23 @@ public class Caracteristicas_Prestamo extends JFrame{
 		getContentPane().add(textFieldCodigoEQuipo);
 		
 		JButton btndescartarcambios = new JButton("Descartar Cambios");
-		btndescartarcambios.setFont(new Font("SansSerif", Font.BOLD, 12));
-		btndescartarcambios.setBounds(142, 333, 143, 25);
+		btndescartarcambios.setFont(new Font("SansSerif", Font.BOLD, 13));
+		btndescartarcambios.setBounds(142, 333, 156, 25);
 		getContentPane().add(btndescartarcambios);
 		
 		JButton buttonCancelar = new JButton("Cancelar");
-		buttonCancelar.setFont(new Font("SansSerif", Font.BOLD, 12));
+		buttonCancelar.setFont(new Font("SansSerif", Font.BOLD, 13));
 		buttonCancelar.setBounds(43, 333, 89, 25);
 		getContentPane().add(buttonCancelar);
 		
 		JButton btneliminar = new JButton("Eliminar");
-		btneliminar.setFont(new Font("SansSerif", Font.BOLD, 12));
-		btneliminar.setBounds(456, 333, 143, 25);
+		btneliminar.setFont(new Font("SansSerif", Font.BOLD, 13));
+		btneliminar.setBounds(472, 333, 143, 25);
 		getContentPane().add(btneliminar);
 		
 		JButton btnGuardarCambios = new JButton("GuardarCambios");
-		btnGuardarCambios.setFont(new Font("SansSerif", Font.BOLD, 12));
-		btnGuardarCambios.setBounds(295, 333, 143, 25);
+		btnGuardarCambios.setFont(new Font("SansSerif", Font.BOLD, 13));
+		btnGuardarCambios.setBounds(312, 333, 143, 25);
 		getContentPane().add(btnGuardarCambios);
 	}
 }

@@ -1,5 +1,9 @@
 package Vista;
 
-public class Caracteristicas_Historial {
+import javax.swing.JFrame;
+
+public class Caracteristicas_Historial extends JFrame{
+	public Caracteristicas_Historial() {
+	}
 
 }

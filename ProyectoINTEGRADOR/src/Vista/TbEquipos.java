@@ -72,8 +72,7 @@ public class TbEquipos extends JFrame {
 
 		comboBox = new JComboBox();
 		comboBox.setBounds(62, 133, 75, 20);
-		comboBox.setModel(new DefaultComboBoxModel(new String[] { "Equipo", "COD_Equipo", "Marca", "Modelo",
-				"Tipo de uso", "Disponibilidad", "Prestable", "Edificio", "Almacenamiento" }));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"COD_Equipo", "Marca", "Modelo", "Tipo de uso", "Disponibilidad", "Prestable", "Edificio", "Almacenamiento"}));
 
 		textField = new JTextField();
 		textField.setBounds(62, 172, 86, 20);
@@ -81,8 +80,7 @@ public class TbEquipos extends JFrame {
 
 		comboBox_1 = new JComboBox();
 		comboBox_1.setBounds(62, 203, 75, 20);
-		comboBox_1.setModel(new DefaultComboBoxModel(new String[] { "Equipo", "COD_Equipo", "Marca", "Modelo",
-				"Tipo de uso", "Disponibilidad", "Prestable", "Edificio", "Almacenamiento" }));
+		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"COD_Equipo", "Marca", "Modelo", "Tipo de uso", "Disponibilidad", "Prestable", "Edificio", "Almacenamiento"}));
 
 		textField_1 = new JTextField();
 		textField_1.setBounds(62, 234, 86, 20);
@@ -90,8 +88,7 @@ public class TbEquipos extends JFrame {
 
 		comboBox_2 = new JComboBox();
 		comboBox_2.setBounds(62, 265, 75, 20);
-		comboBox_2.setModel(new DefaultComboBoxModel(new String[] { "Equipo", "COD_Equipo", "Marca", "Modelo",
-				"Tipo de uso", "Disponibilidad", "Prestable", "Edificio", "Almacenamiento" }));
+		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"COD_Equipo", "Marca", "Modelo", "Tipo de uso", "Disponibilidad", "Prestable", "Edificio", "Almacenamiento"}));
 
 		textField_2 = new JTextField();
 		textField_2.setBounds(62, 296, 86, 20);
@@ -317,7 +314,6 @@ public class TbEquipos extends JFrame {
 	public void setTbEquipos(Object[][] tabla) {
 		String[] columnas = new String[] { "C\u00F3digo", "Tipo de Equipo", "Almacenamiento 1", "Almacenamiento 2",
 				"Notas", "Marca", "Disponibilidad", "Tipo Uso", "Modelo", "prestable", "Sala", "Edificio" };
-
 		DefaultTableModel modeloTb = new DefaultTableModel(tabla, columnas);
 		table.setModel(modeloTb);
 		for (int i = 0; i < table.getColumnModel().getColumnCount(); i++) {

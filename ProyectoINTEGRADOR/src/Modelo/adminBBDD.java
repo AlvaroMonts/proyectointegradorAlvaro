@@ -731,12 +731,18 @@ public class adminBBDD {
 			String bus3 = TbEq.getComboBox_2();
 			String text3 = TbEq.getTextField_2();
 			String busEq = TbEq.getcomboBoxTipoEquipos();
-			
-			String query = "Select * from proyectointegrador.equipo where " + bus1 + " = '" + text1 +"', " + bus2 + " = '" + text2 +"', " + bus3 + " = '" + text3 +"', Tipo_Equipo '" + busEq +"' ;" ;
+			String query;
+			if (!busEq.equals("Todos")) {
+				query = "Select * from proyectointegrador.equipo where " + bus1 + " like '%" + text1 + "%' or "
+						+ bus2 + " like '%" + text2 + "%' or " + bus3 + " like '%" + text3 + "%' or Tipo_Equipo like '%"
+						+ busEq + "%' ;";
+			} else {
+				query = "Select * from proyectointegrador.equipo where " + bus1 + " like '%" + text1 + "%' or "
+						+ bus2 + " like '%" + text2 + "%' or " + bus3 + " like '%" + text3 + "%' ;";
+			}
 			Statement stmt = conection.createStatement();
 			ResultSet rset = stmt.executeQuery(query);
 			ResultSetMetaData rmsd = rset.getMetaData();
-
 			rset.last();
 			int a = rmsd.getColumnCount();
 			int b = rset.getRow();

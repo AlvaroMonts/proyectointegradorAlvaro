@@ -732,13 +732,24 @@ public class adminBBDD {
 			String text3 = TbEq.getTextField_2();
 			String busEq = TbEq.getcomboBoxTipoEquipos();
 			String query;
-			if (!busEq.equals("Todos")) {
-				query = "Select * from proyectointegrador.equipo where " + bus1 + " like '%" + text1 + "%' or "
-						+ bus2 + " like '%" + text2 + "%' or " + bus3 + " like '%" + text3 + "%' or Tipo_Equipo like '%"
-						+ busEq + "%' ;";
+			if (bus1.equals("COD") && !text1.equals("") ) {
+				if (!busEq.equals("Todos")) {
+					query = "Select * from proyectointegrador.equipo where " + bus1 + " = " + text1 + " and " + bus2
+							+ " like '%" + text2 + "%' and " + bus3 + " like '%" + text3 + "%' and Tipo_Equipo = '"
+							+ busEq + "' ;";
+				} else {
+					query = "Select * from proyectointegrador.equipo where " + bus1 + " = " + text1 + " and "
+							+ bus2 + " like '%" + text2 + "%' and " + bus3 + " like '%" + text3 + "%' ;";
+				}
 			} else {
-				query = "Select * from proyectointegrador.equipo where " + bus1 + " like '%" + text1 + "%' or "
-						+ bus2 + " like '%" + text2 + "%' or " + bus3 + " like '%" + text3 + "%' ;";
+				if (!busEq.equals("Todos")) {
+					query = "Select * from proyectointegrador.equipo where " + bus1 + " like '%" + text1 + "%' and "
+							+ bus2 + " like '%" + text2 + "%' and " + bus3 + " like '%" + text3
+							+ "%' and Tipo_Equipo = '" + busEq + "' ;";
+				} else {
+					query = "Select * from proyectointegrador.equipo where " + bus1 + " like '%" + text1 + "%' and "
+							+ bus2 + " like '%" + text2 + "%' and " + bus3 + " like '%" + text3 + "%' ;";
+				}
 			}
 			Statement stmt = conection.createStatement();
 			ResultSet rset = stmt.executeQuery(query);
@@ -748,14 +759,15 @@ public class adminBBDD {
 			int b = rset.getRow();
 			rset.beforeFirst();
 
-			ArrayUsers = new String[b][a];
+			ArrayEquipos = new String[b][a];
 			for (int i = 0; i < b; i++) {
 				if (rset.next()) {
 					for (int j = 0; j < a; j++) {
-						ArrayUsers[i][j] = rset.getString((j + 1));
+						ArrayEquipos[i][j] = rset.getString((j + 1));
 					}
 				}
 			}
+			TbEq.setTbEquipos(ArrayEquipos);
 			rset.close();
 			stmt.close();
 		} catch (SQLException s) {

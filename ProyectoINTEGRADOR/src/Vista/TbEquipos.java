@@ -72,7 +72,8 @@ public class TbEquipos extends JFrame {
 
 		comboBox = new JComboBox();
 		comboBox.setBounds(62, 133, 75, 20);
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"COD_Equipo", "Marca", "Modelo", "Tipo de uso", "Disponibilidad", "Prestable", "Edificio", "Almacenamiento"}));
+		comboBox.setModel(new DefaultComboBoxModel(new String[] { "COD", "marca", "modelo", "TipoUso", "Disponibilidad",
+				"prestable", "Edificio", "Almacenamiento1", "Almacenamiento2", "Sala", "Edificio" }));
 
 		textField = new JTextField();
 		textField.setBounds(62, 172, 86, 20);
@@ -80,7 +81,8 @@ public class TbEquipos extends JFrame {
 
 		comboBox_1 = new JComboBox();
 		comboBox_1.setBounds(62, 203, 75, 20);
-		comboBox_1.setModel(new DefaultComboBoxModel(new String[] {"COD_Equipo", "Marca", "Modelo", "Tipo de uso", "Disponibilidad", "Prestable", "Edificio", "Almacenamiento"}));
+		comboBox_1.setModel(new DefaultComboBoxModel(new String[] { "marca", "modelo", "TipoUso",
+				"Disponibilidad", "prestable", "Edificio", "Almacenamiento1", "Almacenamiento2", "Sala", "Edificio" }));
 
 		textField_1 = new JTextField();
 		textField_1.setBounds(62, 234, 86, 20);
@@ -88,7 +90,8 @@ public class TbEquipos extends JFrame {
 
 		comboBox_2 = new JComboBox();
 		comboBox_2.setBounds(62, 265, 75, 20);
-		comboBox_2.setModel(new DefaultComboBoxModel(new String[] {"COD_Equipo", "Marca", "Modelo", "Tipo de uso", "Disponibilidad", "Prestable", "Edificio", "Almacenamiento"}));
+		comboBox_2.setModel(new DefaultComboBoxModel(new String[] { "marca", "modelo", "TipoUso",
+				"Disponibilidad", "prestable", "Edificio", "Almacenamiento1", "Almacenamiento2", "Sala", "Edificio" }));
 
 		textField_2 = new JTextField();
 		textField_2.setBounds(62, 296, 86, 20);
@@ -109,7 +112,6 @@ public class TbEquipos extends JFrame {
 				tbEqCont.restaurar();
 			}
 		});
-
 
 		scrollPane = new JScrollPane();
 		scrollPane.setBounds(187, 90, 684, 326);
@@ -195,7 +197,8 @@ public class TbEquipos extends JFrame {
 
 		comboBoxTipoEquipos = new JComboBox();
 		comboBoxTipoEquipos.setBounds(62, 82, 102, 20);
-		comboBoxTipoEquipos.setModel(new DefaultComboBoxModel(new String[] {"Todos", "Sobremesa", "Portatil", "Tablet", "Movil", "Cintiq", "Proyector", "Tableta gr\u00E1fica", "Monitor", "Television", "Consola"}));
+		comboBoxTipoEquipos.setModel(new DefaultComboBoxModel(new String[] { "Todos", "Sobremesa", "Portatil", "Tablet",
+				"Movil", "Cintiq", "Proyector", "Tableta gr\u00E1fica", "Monitor", "Television", "Consola" }));
 		comboBoxTipoEquipos.setBackground(UIManager.getColor("Button.background"));
 
 		btnDarDeAlta = new JButton("Dar de alta equipo");
@@ -263,7 +266,7 @@ public class TbEquipos extends JFrame {
 	public void setRegEq(RegEquipos regEquipos) {
 		this.REquipo = regEquipos;
 	}
-	
+
 	public void setLogin(Login login) {
 		this.login = login;
 	}
@@ -280,8 +283,6 @@ public class TbEquipos extends JFrame {
 		String id = (String) table.getModel().getValueAt(this.lineaSeleccionada, 0);
 		return id;
 	}
-	
-	
 
 	public String getTextField() {
 		return textField.getText();

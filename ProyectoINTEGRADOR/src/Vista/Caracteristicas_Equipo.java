@@ -140,6 +140,7 @@ public class Caracteristicas_Equipo extends JFrame {
 		textField = new JTextField(idEquipo);
 		textField.setBounds(178, 46, 86, 20);
 		textField.setColumns(10);
+		textField.setEditable(false);
 		contentPane.add(textField);
 
 		textField_2 = new JTextField();
@@ -884,12 +885,6 @@ public class Caracteristicas_Equipo extends JFrame {
 			}
 		});
 
-		/*
-		 * contentPane.action(Event evt = , what); if (isVisible()) { idEquipo =
-		 * Integer.parseInt(pantalla.getSelectedRowID());
-		 * equipoControlador.actualizarTfs(idEquipo); }
-		 */
-
 		btnDescartarCambios = new JButton("Descartar cambios");
 		btnDescartarCambios.setBounds(481, 455, 130, 32);
 		contentPane.add(btnDescartarCambios);
@@ -1403,11 +1398,91 @@ public class Caracteristicas_Equipo extends JFrame {
 		this.pantalla1 = Pantalla1;
 	}
 
-	public String getID() {
-		if (pantalla1 != null) {
-			return pantalla.getSelectedRowID();
-		} else {
-			return null;
+	public void setID() {
+		if (pantalla != null) { // pantalla = tbEquipos
+			idEquipo = Integer.parseInt(pantalla.getSelectedRowID());
+			equipoControlador.actualizarTfs(idEquipo);
 		}
+	}
+
+	public String getID() {
+		return idEquipo + "";
+	}
+
+	public void setPanelSobremesa() {
+		panelSobremesa.setEnabled(true);
+		
+		panelPortatil.setEnabled(false);
+		panelProyector.setEnabled(false);
+		panelSmartTablet.setEnabled(false);
+		panelTabletaGrafica.setEnabled(false);
+		panelTvMonitor.setEnabled(false);
+		panelCintiq.setEnabled(false);
+	}
+
+	public void setPanelPortatil() {
+		panelPortatil.setEnabled(true);
+		
+		panelSobremesa.setEnabled(false);
+		panelProyector.setEnabled(false);
+		panelSmartTablet.setEnabled(false);
+		panelTabletaGrafica.setEnabled(false);
+		panelTvMonitor.setEnabled(false);
+		panelCintiq.setEnabled(false);
+	}
+
+	public void setPanelProyector() {
+		panelProyector.setEnabled(true);
+		
+		panelSobremesa.setEnabled(false);
+		panelPortatil.setEnabled(false);
+		panelSmartTablet.setEnabled(false);
+		panelTabletaGrafica.setEnabled(false);
+		panelTvMonitor.setEnabled(false);
+		panelCintiq.setEnabled(false);
+	}
+
+	public void setPanelSmartTablet() {
+		panelSmartTablet.setEnabled(true);
+		
+		panelSobremesa.setEnabled(false);
+		panelPortatil.setEnabled(false);
+		panelProyector.setEnabled(false);
+		panelTabletaGrafica.setEnabled(false);
+		panelTvMonitor.setEnabled(false);
+		panelCintiq.setEnabled(false);
+	}
+
+	public void setPanelTabletaGrafica() {
+		panelTabletaGrafica.setEnabled(true);
+		
+		panelSobremesa.setEnabled(false);
+		panelPortatil.setEnabled(false);
+		panelProyector.setEnabled(false);
+		panelSmartTablet.setEnabled(false);
+		panelTvMonitor.setEnabled(false);
+		panelCintiq.setEnabled(false);
+	}
+
+	public void setPanelTvMonitor() {
+		panelTvMonitor.setEnabled(true);
+		
+		panelSobremesa.setEnabled(false);
+		panelPortatil.setEnabled(false);
+		panelProyector.setEnabled(false);
+		panelSmartTablet.setEnabled(false);
+		panelTabletaGrafica.setEnabled(false);
+		panelCintiq.setEnabled(false);
+	}
+
+	public void setPanelCintiq() {
+		panelCintiq.setEnabled(true);
+		
+		panelSobremesa.setEnabled(false);
+		panelPortatil.setEnabled(false);
+		panelProyector.setEnabled(false);
+		panelSmartTablet.setEnabled(false);
+		panelTabletaGrafica.setEnabled(false);
+		panelTvMonitor.setEnabled(false);
 	}
 }

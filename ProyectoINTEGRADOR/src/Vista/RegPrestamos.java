@@ -82,6 +82,7 @@ public class RegPrestamos extends JFrame {
 
 		textField_3 = new JTextField();
 		textField_3.setColumns(10);
+		textField_3.setEditable(false);
 		
 		textField_4 = new JTextField();
 		textField_4.setColumns(10);

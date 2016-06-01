@@ -474,6 +474,7 @@ public class adminBBDD {
 				caracEq.setTextField_26(rset.getString((11)));
 				caracEq.setEdificio(rset.getString((12)));
 				String tipoEquipo = rset.getString((2));
+				System.out.println("select generico realizado con exito");
 				if (tipoEquipo.equals("Sobremesa")) {
 					iniciarCaracEqPantallaSobremesa(cod);
 				} else if (tipoEquipo.equals("Portatil")) {
@@ -491,8 +492,9 @@ public class adminBBDD {
 				} else if (tipoEquipo.equals("Consola")) {
 					System.out.println("Consola no tiene datos especificos");
 				} else {
-					;
+					System.out.println("select especifico NO realizado con exito");;
 				}
+				System.out.println("select especifico realizado con exito");
 			}
 			rset.close();
 			stmt.close();
@@ -517,6 +519,7 @@ public class adminBBDD {
 			caracEq.setTextField_22(rset.getString((6)));
 			caracEq.setTextField_21(rset.getString((7)));
 		}
+		caracEq.setPanelSobremesa();
 		rset.close();
 		stmt1.close();
 	}
@@ -538,6 +541,7 @@ public class adminBBDD {
 			caracEq.setTextField_31(rset.getString((9)));
 			caracEq.setTextField_8(rset.getString((10)));
 		}
+		caracEq.setPanelPortatil();
 		rset.close();
 		stmt1.close();
 	}
@@ -555,6 +559,7 @@ public class adminBBDD {
 			caracEq.setGrupo7RB(rset.getString((3)));
 			caracEq.setGrupo3RB(rset.getString((4)));
 		}
+		caracEq.setPanelSmartTablet();
 		rset.close();
 		stmt1.close();
 	}
@@ -566,6 +571,7 @@ public class adminBBDD {
 		if (rset.next()) {
 			caracEq.setTextField_35(rset.getString((1)));
 		}
+		caracEq.setPanelTabletaGrafica();
 		rset.close();
 		stmt1.close();
 	}
@@ -586,6 +592,7 @@ public class adminBBDD {
 			caracEq.setTextField_40(rset.getString((8)));
 			caracEq.setTextField_41(rset.getString((9)));
 		}
+		caracEq.setPanelCintiq();
 		rset.close();
 		stmt1.close();
 	}
@@ -602,6 +609,7 @@ public class adminBBDD {
 			caracEq.setTextField_47(rset.getString((4)));
 			caracEq.setTextField_49(rset.getString((5)));
 		}
+		caracEq.setPanelTvMonitor();
 		rset.close();
 		stmt1.close();
 	}
@@ -615,6 +623,7 @@ public class adminBBDD {
 				caracEq.setTextField_36(rset.getString((2)));
 				caracEq.setGrupo5RB(rset.getString((1)));
 			}
+			caracEq.setPanelProyector();
 			rset.close();
 			stmt1.close();
 		} catch (SQLException s) {
@@ -645,17 +654,17 @@ public class adminBBDD {
 				if (tipoEquipo.equals("Sobremesa")) {
 					actualizarSobremesa(codigo);
 				} else if (tipoEquipo.equals("Portatil")) {
-					// iniciarCaracEqPantallaPortatil(codigo);
+					// actualizarPortatil(codigo);
 				} else if (tipoEquipo.equals("Movil") || tipoEquipo.equals("Tablet")) {
-					// iniciarCaracEqPantallaSmartphoneOTablet(codigo);
+					// actualizarSmartphoneOTablet(codigo);
 				} else if (tipoEquipo.equals("Tableta Grafica")) {
-					// iniciarCaracEqPantallaTabletaGrafica(codigo);
+					// actualizarTabletaGrafica(codigo);
 				} else if (tipoEquipo.equals("Cintiq")) {
-					// iniciarCaracEqPantallaCintiq(codigo);
+					// actualizarCintiq(codigo);
 				} else if (tipoEquipo.equals("Television") || tipoEquipo.equals("Monitor")) {
-					// iniciarCaracEqPantallaTvOMonitor(codigo);
+					// actualizarTvOMonitor(codigo);
 				} else if (tipoEquipo.equals("Proyector")) {
-					// iniciarCaracEqPantallaProyector(codigo);
+					// actualizarProyector(codigo);
 				} else {
 					;
 				}
@@ -708,7 +717,7 @@ public class adminBBDD {
 		PreparedStatement stmt2 = conection.prepareStatement(sql);
 		stmt2.executeUpdate();
 		stmt2.close();
-		System.out.println("Delete generico exito");
+		System.out.println("Delete generico exito  ---- on cascade");
 		cargarDatosDeTablas();
 	}
 

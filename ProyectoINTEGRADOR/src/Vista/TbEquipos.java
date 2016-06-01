@@ -47,7 +47,7 @@ public class TbEquipos extends JFrame {
 	private JButton button_1;
 	private JButton button;
 	private JComboBox comboBox_2;
-	private JComboBox comboBox_3;
+	private JComboBox comboBoxTipoEquipos;
 	private JComboBox comboBox;
 	private JComboBox comboBox_1;
 	private JButton btnCerrarSesin;
@@ -101,12 +101,18 @@ public class TbEquipos extends JFrame {
 		button.setBounds(62, 327, 75, 23);
 		button.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-
+				tbEqCont.busqueda();
 			}
 		});
 
 		button_1 = new JButton("Restaurar Filtros");
 		button_1.setBounds(26, 361, 138, 23);
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				tbEqCont.restaurar();
+			}
+		});
+
 
 		scrollPane = new JScrollPane();
 		scrollPane.setBounds(187, 90, 684, 326);
@@ -190,11 +196,10 @@ public class TbEquipos extends JFrame {
 		toolBar.add(button_3);
 		toolBar.add(button_4);
 
-		comboBox_3 = new JComboBox();
-		comboBox_3.setBounds(62, 82, 102, 20);
-		comboBox_3.setModel(new DefaultComboBoxModel(new String[] { "Todos", "Sobremesa", "Portatil", "Tablet/Movil",
-				"Cintiq", "Proyector", "Tableta gr\u00E1fica", "Monitor", "Consola" }));
-		comboBox_3.setBackground(UIManager.getColor("Button.background"));
+		comboBoxTipoEquipos = new JComboBox();
+		comboBoxTipoEquipos.setBounds(62, 82, 102, 20);
+		comboBoxTipoEquipos.setModel(new DefaultComboBoxModel(new String[] {"Todos", "Sobremesa", "Portatil", "Tablet", "Movil", "Cintiq", "Proyector", "Tableta gr\u00E1fica", "Monitor", "Television", "Consola"}));
+		comboBoxTipoEquipos.setBackground(UIManager.getColor("Button.background"));
 
 		btnDarDeAlta = new JButton("Dar de alta equipo");
 		btnDarDeAlta.setBounds(597, 53, 146, 23);
@@ -221,7 +226,7 @@ public class TbEquipos extends JFrame {
 		contentPane.add(toolBar);
 		contentPane.add(btnCerrarSesin);
 		contentPane.add(btnDarDeAlta);
-		contentPane.add(comboBox_3);
+		contentPane.add(comboBoxTipoEquipos);
 		contentPane.add(comboBox);
 		contentPane.add(textField);
 		contentPane.add(comboBox_1);
@@ -277,6 +282,36 @@ public class TbEquipos extends JFrame {
 		// en la sig pantalla (select)
 		String id = (String) table.getModel().getValueAt(this.lineaSeleccionada, 0);
 		return id;
+	}
+	
+	
+
+	public String getTextField() {
+		return textField.getText();
+	}
+
+	public String getTextField_1() {
+		return textField_1.getText();
+	}
+
+	public String getTextField_2() {
+		return textField_2.getText();
+	}
+
+	public String getComboBox_2() {
+		return (String) comboBox_2.getSelectedItem();
+	}
+
+	public String getcomboBoxTipoEquipos() {
+		return (String) comboBoxTipoEquipos.getSelectedItem();
+	}
+
+	public String getComboBox() {
+		return (String) comboBox.getSelectedItem();
+	}
+
+	public String getComboBox_1() {
+		return (String) comboBox_1.getSelectedItem();
 	}
 
 	public void setTbEquipos(Object[][] tabla) {

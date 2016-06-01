@@ -492,7 +492,8 @@ public class adminBBDD {
 				} else if (tipoEquipo.equals("Consola")) {
 					System.out.println("Consola no tiene datos especificos");
 				} else {
-					System.out.println("select especifico NO realizado con exito");;
+					System.out.println("select especifico NO realizado con exito");
+					;
 				}
 				System.out.println("select especifico realizado con exito");
 			}
@@ -719,6 +720,41 @@ public class adminBBDD {
 		stmt2.close();
 		System.out.println("Delete generico exito  ---- on cascade");
 		cargarDatosDeTablas();
+	}
+
+	public void realizarBusquedaEquipos() {
+		try {
+			String bus1 = TbEq.getComboBox();
+			String text1 = TbEq.getTextField();
+			String bus2 = TbEq.getComboBox_1();
+			String text2 = TbEq.getTextField_1();
+			String bus3 = TbEq.getComboBox_2();
+			String text3 = TbEq.getTextField_2();
+			String busEq = TbEq.getcomboBoxTipoEquipos();
+			
+			String query = "Select * from proyectointegrador.equipo where " + bus1 + " = '" + text1 +"', " + bus2 + " = '" + text2 +"', " + bus3 + " = '" + text3 +"', Tipo_Equipo '" + busEq +"' ;" ;
+			Statement stmt = conection.createStatement();
+			ResultSet rset = stmt.executeQuery(query);
+			ResultSetMetaData rmsd = rset.getMetaData();
+
+			rset.last();
+			int a = rmsd.getColumnCount();
+			int b = rset.getRow();
+			rset.beforeFirst();
+
+			ArrayUsers = new String[b][a];
+			for (int i = 0; i < b; i++) {
+				if (rset.next()) {
+					for (int j = 0; j < a; j++) {
+						ArrayUsers[i][j] = rset.getString((j + 1));
+					}
+				}
+			}
+			rset.close();
+			stmt.close();
+		} catch (SQLException s) {
+			s.printStackTrace();
+		}
 	}
 
 	public String[][] getArrayAlmacen() {

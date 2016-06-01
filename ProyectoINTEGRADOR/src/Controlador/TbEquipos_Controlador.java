@@ -11,4 +11,12 @@ public class TbEquipos_Controlador {
 	public void EqAModelo(adminBBDD bbdd) {
 		this.tbEqMod = bbdd;
 	}
+	
+	public void busqueda(){
+		tbEqMod.realizarBusquedaEquipos();
+	}
+	
+	public void restaurar() {
+		tbEqMod.cargarDatosDeTablas();
+	}
 }

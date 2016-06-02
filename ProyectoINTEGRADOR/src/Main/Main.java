@@ -82,7 +82,7 @@ public class Main {
 		RPrestamosCont = new RegPrestamo_Controlador();
 		CPresCont = new Caracteristicas_PrestamoControlador();
 		Login.setVisible(true);
-		// sets
+		// sets enlazar pantallas
 		Login.setPantalla(TEquipo);
 		TEquipo.setPantalla1(THistorial);
 		TEquipo.setPantalla2(TPrestamos);
@@ -105,6 +105,8 @@ public class Main {
 		TPrestamos.setHistorial(THistorial);
 		TPrestamos.setUsers(TUsers);
 		TPrestamos.setLogin(Login);
+		TPrestamos.setCPrestamos(CPres);
+		CPres.setTbPrestamos(TPrestamos);
 		TUsers.setEquipos(TEquipo);
 		TUsers.setAlmacen(TAlmacen);
 		TUsers.setHistorial(THistorial);
@@ -119,6 +121,7 @@ public class Main {
 		TAlmacen.setHistorial(THistorial);
 		TAlmacen.setUsers(TUsers);
 		TAlmacen.setLogin(Login);
+		// sets vista controlador modelo
 		Login.setLogin_Cont(logCont);
 		CEquipo.setCaracEqCont(caracEqCont);
 		RUsr.setRegUs(regUsuCont);

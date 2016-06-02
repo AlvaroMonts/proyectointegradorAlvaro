@@ -455,6 +455,27 @@ public class adminBBDD {
 			s.printStackTrace();
 		}
 	}
+	
+	public void iniciarCaracPresPantalla(int cod) {
+		try {
+			String sql = "SELECT FechadeInicio, FechaFin, Responsable, Equipo_COD, EquipoPrestado, DestinodelPrestamo from proyectointegrador.prestamos where Equipo_COD = "
+					+ cod + ";";
+			Statement stmt = conection.createStatement();
+			ResultSet rset = stmt.executeQuery(sql);
+			if (rset.next()) {
+				CPres.setTextFieldFechainicio(rset.getString((1)));
+				CPres.setTextFieldFechadevolucion(rset.getString((2)));
+				CPres.setTextFieldResponsable(rset.getString((3)));
+				CPres.setTextFieldCodigoEQuipo(rset.getString((4)));
+				CPres.setTextFieldEquipoPrestado(rset.getString((5)));
+				CPres.setTextFieldDestinodelprestamo(rset.getString((6)));
+			}
+			rset.close();
+			stmt.close();
+		} catch (SQLException s) {
+			s.printStackTrace();
+		}
+	}
 
 	public void iniciarCaracEqPantalla(int cod) {
 		try {
@@ -777,6 +798,10 @@ public class adminBBDD {
 		}
 	}
 
+	public void setCaracPrest(Caracteristicas_Prestamo prestamo) {
+		this.CPres = prestamo;
+	}
+	
 	public String[][] getArrayAlmacen() {
 		return ArrayAlmacen;
 	}

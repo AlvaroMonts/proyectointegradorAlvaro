@@ -1399,7 +1399,7 @@ public class Caracteristicas_Equipo extends JFrame {
 	}
 
 	public void setID() {
-		if (pantalla != null) { // pantalla = tbEquipos
+		if (pantalla != null) {
 			idEquipo = Integer.parseInt(pantalla.getSelectedRowID());
 			equipoControlador.actualizarTfs(idEquipo);
 		}

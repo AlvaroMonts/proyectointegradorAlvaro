@@ -11,6 +11,10 @@ import javax.swing.JFormattedTextField;
 import javax.swing.JButton;
 import java.awt.Color;
 import java.awt.SystemColor;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.Dimension;
+import java.awt.Rectangle;
 
 public class Caracteristicas_Prestamo extends JFrame {
 	private JTextField textFieldEquipoPrestado;
@@ -24,8 +28,11 @@ public class Caracteristicas_Prestamo extends JFrame {
 	private JFormattedTextField TextFieldFechadevolucion;
 	private JFormattedTextField TextFieldFechainicio;
 	private Caracteristicas_PrestamoControlador CPresCont;
+	private TbPrestamos prestamo;
+	private int idEquipo;
 
 	public Caracteristicas_Prestamo() {
+		setBounds(new Rectangle(100, 100, 700, 450));
 		setTitle("Caracteristicas Prestamo");
 		getContentPane().setBackground(new Color(135, 206, 235));
 		getContentPane().setForeground(SystemColor.textHighlight);
@@ -98,6 +105,12 @@ public class Caracteristicas_Prestamo extends JFrame {
 		buttonCancelar = new JButton("Cancelar");
 		buttonCancelar.setFont(new Font("SansSerif", Font.BOLD, 13));
 		buttonCancelar.setBounds(43, 333, 89, 25);
+		buttonCancelar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				setVisible(false);
+				prestamo.setVisible(true);
+			}
+		});
 		getContentPane().add(buttonCancelar);
 
 		btneliminar = new JButton("Eliminar");
@@ -158,8 +171,19 @@ public class Caracteristicas_Prestamo extends JFrame {
 	public void setTextFieldFechadevolucion(String textFieldFechadevolucion) {
 		TextFieldFechadevolucion.setText(textFieldFechadevolucion);
 	}
-	
+
 	public void setCPresCont(Caracteristicas_PrestamoControlador cprescont) {
 		this.CPresCont = cprescont;
+	}
+
+	public void setTbPrestamos(TbPrestamos prestamos) {
+		this.prestamo = prestamos;
+	}
+
+	public void setID() {
+		if (prestamo != null) {
+			idEquipo = Integer.parseInt(prestamo.getSelectedRowID());
+			CPresCont.actualizarTfs(idEquipo);
+		}
 	}
 }

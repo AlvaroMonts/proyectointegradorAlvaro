@@ -81,8 +81,8 @@ public class TbEquipos extends JFrame {
 
 		comboBox_1 = new JComboBox();
 		comboBox_1.setBounds(62, 203, 75, 20);
-		comboBox_1.setModel(new DefaultComboBoxModel(new String[] { "marca", "modelo", "TipoUso",
-				"Disponibilidad", "prestable", "Edificio", "Almacenamiento1", "Almacenamiento2", "Sala", "Edificio" }));
+		comboBox_1.setModel(new DefaultComboBoxModel(new String[] { "marca", "modelo", "TipoUso", "Disponibilidad",
+				"prestable", "Edificio", "Almacenamiento1", "Almacenamiento2", "Sala", "Edificio" }));
 
 		textField_1 = new JTextField();
 		textField_1.setBounds(62, 234, 86, 20);
@@ -90,8 +90,8 @@ public class TbEquipos extends JFrame {
 
 		comboBox_2 = new JComboBox();
 		comboBox_2.setBounds(62, 265, 75, 20);
-		comboBox_2.setModel(new DefaultComboBoxModel(new String[] { "marca", "modelo", "TipoUso",
-				"Disponibilidad", "prestable", "Edificio", "Almacenamiento1", "Almacenamiento2", "Sala", "Edificio" }));
+		comboBox_2.setModel(new DefaultComboBoxModel(new String[] { "marca", "modelo", "TipoUso", "Disponibilidad",
+				"prestable", "Edificio", "Almacenamiento1", "Almacenamiento2", "Sala", "Edificio" }));
 
 		textField_2 = new JTextField();
 		textField_2.setBounds(62, 296, 86, 20);
@@ -272,14 +272,10 @@ public class TbEquipos extends JFrame {
 	}
 
 	public void setSelectedRow() {
-		// 'setea' la linea clickada 2 veces ya que se pone en el evento del
-		// doble click
 		this.lineaSeleccionada = table.getSelectedRow();
 	}
 
 	public String getSelectedRowID() {
-		// pilla la id de la linea seleccionada y devuelve su valor para usarla
-		// en la sig pantalla (select)
 		String id = (String) table.getModel().getValueAt(this.lineaSeleccionada, 0);
 		return id;
 	}

@@ -9,5 +9,7 @@ public class Caracteristicas_PrestamoControlador {
 		this.bbdd = bbdd;
 	}
 	
-	
+	public void actualizarTfs(int id) {
+		bbdd.iniciarCaracPresPantalla(id);
+	}
 }

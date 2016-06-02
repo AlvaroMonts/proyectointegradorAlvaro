@@ -1408,81 +1408,51 @@ public class Caracteristicas_Equipo extends JFrame {
 	public String getID() {
 		return idEquipo + "";
 	}
+	
+	public void resetToDefault(int iselected){
+		tPSobremesa.setEnabled(true);
+		tPSobremesa.setEnabledAt(0, false);
+		tPSobremesa.setEnabledAt(1, false);
+		tPSobremesa.setEnabledAt(2, false);
+		tPSobremesa.setEnabledAt(3, false);
+		tPSobremesa.setEnabledAt(4, false);
+		tPSobremesa.setEnabledAt(5, false);
+		tPSobremesa.setEnabledAt(6, false);
+		
+		if(iselected!=-1){
+			tPSobremesa.setEnabledAt(iselected, true);
+			tPSobremesa.setSelectedIndex(iselected);
+		}
+	}
 
 	public void setPanelSobremesa() {
-		panelSobremesa.setEnabled(true);
-		
-		panelPortatil.setEnabled(false);
-		panelProyector.setEnabled(false);
-		panelSmartTablet.setEnabled(false);
-		panelTabletaGrafica.setEnabled(false);
-		panelTvMonitor.setEnabled(false);
-		panelCintiq.setEnabled(false);
+		resetToDefault(0);
 	}
 
 	public void setPanelPortatil() {
-		panelPortatil.setEnabled(true);
-		
-		panelSobremesa.setEnabled(false);
-		panelProyector.setEnabled(false);
-		panelSmartTablet.setEnabled(false);
-		panelTabletaGrafica.setEnabled(false);
-		panelTvMonitor.setEnabled(false);
-		panelCintiq.setEnabled(false);
+		resetToDefault(1);
 	}
 
 	public void setPanelProyector() {
-		panelProyector.setEnabled(true);
-		
-		panelSobremesa.setEnabled(false);
-		panelPortatil.setEnabled(false);
-		panelSmartTablet.setEnabled(false);
-		panelTabletaGrafica.setEnabled(false);
-		panelTvMonitor.setEnabled(false);
-		panelCintiq.setEnabled(false);
+		resetToDefault(6);
 	}
 
 	public void setPanelSmartTablet() {
-		panelSmartTablet.setEnabled(true);
-		
-		panelSobremesa.setEnabled(false);
-		panelPortatil.setEnabled(false);
-		panelProyector.setEnabled(false);
-		panelTabletaGrafica.setEnabled(false);
-		panelTvMonitor.setEnabled(false);
-		panelCintiq.setEnabled(false);
+		resetToDefault(2);
 	}
 
 	public void setPanelTabletaGrafica() {
-		panelTabletaGrafica.setEnabled(true);
-		
-		panelSobremesa.setEnabled(false);
-		panelPortatil.setEnabled(false);
-		panelProyector.setEnabled(false);
-		panelSmartTablet.setEnabled(false);
-		panelTvMonitor.setEnabled(false);
-		panelCintiq.setEnabled(false);
+		resetToDefault(3);
 	}
 
 	public void setPanelTvMonitor() {
-		panelTvMonitor.setEnabled(true);
-		
-		panelSobremesa.setEnabled(false);
-		panelPortatil.setEnabled(false);
-		panelProyector.setEnabled(false);
-		panelSmartTablet.setEnabled(false);
-		panelTabletaGrafica.setEnabled(false);
-		panelCintiq.setEnabled(false);
+		resetToDefault(5);
 	}
 
 	public void setPanelCintiq() {
-		panelCintiq.setEnabled(true);
-		
-		panelSobremesa.setEnabled(false);
-		panelPortatil.setEnabled(false);
-		panelProyector.setEnabled(false);
-		panelSmartTablet.setEnabled(false);
-		panelTabletaGrafica.setEnabled(false);
-		panelTvMonitor.setEnabled(false);
+		resetToDefault(4);
+	}
+	public void setPanelConsola(){
+		resetToDefault(-1);
 	}
 }

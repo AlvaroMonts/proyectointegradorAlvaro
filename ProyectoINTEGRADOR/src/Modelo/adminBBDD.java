@@ -7,6 +7,7 @@ import java.sql.*;
 import java.util.HashMap;
 
 import Vista.Caracteristicas_Equipo;
+import Vista.Caracteristicas_Prestamo;
 import Vista.Login;
 import Vista.RegEquipos;
 import Vista.RegPrestamos;
@@ -37,7 +38,7 @@ public class adminBBDD {
 	private TbUsers TbUsers;
 	private Caracteristicas_Equipo caracEq;
 	private RegPrestamos Rprestamos;
-
+	private Caracteristicas_Prestamo CPres; 
 	public adminBBDD() {
 		try {
 			HashMap<String, String> hmret = loadFichero("bbdd.ini");
@@ -477,23 +478,30 @@ public class adminBBDD {
 				System.out.println("select generico realizado con exito");
 				if (tipoEquipo.equals("Sobremesa")) {
 					iniciarCaracEqPantallaSobremesa(cod);
+					caracEq.setPanelSobremesa();
 				} else if (tipoEquipo.equals("Portatil")) {
 					iniciarCaracEqPantallaPortatil(cod);
+					caracEq.setPanelPortatil();
 				} else if (tipoEquipo.equals("Movil") || tipoEquipo.equals("Tablet")) {
 					iniciarCaracEqPantallaSmartphoneOTablet(cod);
+					caracEq.setPanelSmartTablet();
 				} else if (tipoEquipo.equals("Tableta Grafica")) {
 					iniciarCaracEqPantallaTabletaGrafica(cod);
+					caracEq.setPanelTabletaGrafica();
 				} else if (tipoEquipo.equals("Cintiq")) {
 					iniciarCaracEqPantallaCintiq(cod);
+					caracEq.setPanelCintiq();
 				} else if (tipoEquipo.equals("Television") || tipoEquipo.equals("Monitor")) {
 					iniciarCaracEqPantallaTvOMonitor(cod);
+					caracEq.setPanelTvMonitor();
 				} else if (tipoEquipo.equals("Proyector")) {
 					iniciarCaracEqPantallaProyector(cod);
+					caracEq.setPanelProyector();
 				} else if (tipoEquipo.equals("Consola")) {
 					System.out.println("Consola no tiene datos especificos");
+					caracEq.setPanelConsola();
 				} else {
 					System.out.println("select especifico NO realizado con exito");
-					;
 				}
 				System.out.println("select especifico realizado con exito");
 			}
@@ -520,7 +528,6 @@ public class adminBBDD {
 			caracEq.setTextField_22(rset.getString((6)));
 			caracEq.setTextField_21(rset.getString((7)));
 		}
-		caracEq.setPanelSobremesa();
 		rset.close();
 		stmt1.close();
 	}
@@ -542,7 +549,6 @@ public class adminBBDD {
 			caracEq.setTextField_31(rset.getString((9)));
 			caracEq.setTextField_8(rset.getString((10)));
 		}
-		caracEq.setPanelPortatil();
 		rset.close();
 		stmt1.close();
 	}
@@ -560,7 +566,6 @@ public class adminBBDD {
 			caracEq.setGrupo7RB(rset.getString((3)));
 			caracEq.setGrupo3RB(rset.getString((4)));
 		}
-		caracEq.setPanelSmartTablet();
 		rset.close();
 		stmt1.close();
 	}
@@ -572,7 +577,6 @@ public class adminBBDD {
 		if (rset.next()) {
 			caracEq.setTextField_35(rset.getString((1)));
 		}
-		caracEq.setPanelTabletaGrafica();
 		rset.close();
 		stmt1.close();
 	}
@@ -593,7 +597,6 @@ public class adminBBDD {
 			caracEq.setTextField_40(rset.getString((8)));
 			caracEq.setTextField_41(rset.getString((9)));
 		}
-		caracEq.setPanelCintiq();
 		rset.close();
 		stmt1.close();
 	}
@@ -610,7 +613,7 @@ public class adminBBDD {
 			caracEq.setTextField_47(rset.getString((4)));
 			caracEq.setTextField_49(rset.getString((5)));
 		}
-		caracEq.setPanelTvMonitor();
+		
 		rset.close();
 		stmt1.close();
 	}
@@ -624,7 +627,6 @@ public class adminBBDD {
 				caracEq.setTextField_36(rset.getString((2)));
 				caracEq.setGrupo5RB(rset.getString((1)));
 			}
-			caracEq.setPanelProyector();
 			rset.close();
 			stmt1.close();
 		} catch (SQLException s) {
@@ -833,6 +835,10 @@ public class adminBBDD {
 
 	public void setRPrestamos(RegPrestamos prestamos) {
 		this.Rprestamos = prestamos;
+	}
+	
+	public void setCPrestamos(Caracteristicas_Prestamo prestamo) {
+		this.CPres = prestamo;
 	}
 
 	public void cargarDatosDeTablas() {

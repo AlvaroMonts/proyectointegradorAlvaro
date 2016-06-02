@@ -79,6 +79,7 @@ public class TbPrestamos extends JFrame {
 		btnQuitarFiltros = new JButton("Quitar filtros\r\n");
 		btnQuitarFiltros.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				
 			}
 		});
 
@@ -95,7 +96,6 @@ public class TbPrestamos extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				setVisible(false);
 				pantalla1.setVisible(true);
-
 			}
 		});
 		toolBar.add(btnEquipos);
@@ -120,7 +120,6 @@ public class TbPrestamos extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
 				pantalla2.setVisible(true);
-
 			}
 		});
 
@@ -130,7 +129,6 @@ public class TbPrestamos extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
 				pantalla3.setVisible(true);
-
 			}
 		});
 

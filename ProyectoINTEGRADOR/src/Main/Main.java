@@ -1,6 +1,7 @@
 package Main;
 
 import Controlador.Caracteristicas_EquipoControlador;
+import Controlador.Caracteristicas_PrestamoControlador;
 import Controlador.Login_Controlador;
 import Controlador.RegEquipos_Controlador;
 import Controlador.RegPrestamo_Controlador;
@@ -11,7 +12,9 @@ import Controlador.TbHistorial_Controlador;
 import Controlador.TbPrestamos_Controlador;
 import Controlador.TbUsers_Controlador;
 import Modelo.adminBBDD;
+import Vista.Caracteristicas_Almacen;
 import Vista.Caracteristicas_Equipo;
+import Vista.Caracteristicas_Prestamo;
 import Vista.Caracteristicas_usuario;
 import Vista.Login;
 import Vista.RegEquipos;
@@ -36,6 +39,8 @@ public class Main {
 	static TbPrestamos TPrestamos;
 	static TbUsers TUsers;
 	static Login Login;
+	static Caracteristicas_Almacen CAlmacen;
+	static Caracteristicas_Prestamo CPres;
 	
 	static adminBBDD modelo;
 	// controlador
@@ -49,6 +54,7 @@ public class Main {
 	static TbUsers_Controlador TbUsersCont;
 	static RegEquipos_Controlador RegEqCont;
 	static Caracteristicas_EquipoControlador caracEqCont;
+	static Caracteristicas_PrestamoControlador CPresCont;
 
 	public static void main(String[] args) {
 		// news
@@ -63,6 +69,7 @@ public class Main {
 		REquipos = new RegEquipos();
 		RPrestamos = new RegPrestamos();
 		RUsr = new RegUsuarios();
+		CPres= new Caracteristicas_Prestamo();
 		modelo = new adminBBDD();
 		logCont = new Login_Controlador();
 		regUsuCont = new RegUsuarios_Controlador();
@@ -74,6 +81,7 @@ public class Main {
 		RegEqCont = new RegEquipos_Controlador();
 		caracEqCont = new Caracteristicas_EquipoControlador();
 		RPrestamosCont = new RegPrestamo_Controlador();
+		CPresCont = new Caracteristicas_PrestamoControlador();
 		Login.setVisible(true);
 		// sets
 		Login.setPantalla(TEquipo);
@@ -122,6 +130,7 @@ public class Main {
 		THistorial.setHistCont(TbHistCont);
 		TPrestamos.setPresCont(TbPresCont);
 		TUsers.setUsControlador(TbUsersCont);
+		CPres.setCPresCont(CPresCont);
 		logCont.loginAModelo(modelo);
 		caracEqCont.setCaracEqModelo(modelo);
 		regUsuCont.RegUsAModelo(modelo);
@@ -132,6 +141,8 @@ public class Main {
 		TbUsersCont.UsAModelo(modelo);
 		RegEqCont.setEquiposModelo(modelo);
 		RPrestamosCont.setPrestamosModelo(modelo);
+		CPresCont.setCPresMod(modelo);
+		
 		
 		modelo.setLogin(Login);
 		modelo.setRegUsuarios(RUsr);
@@ -144,5 +155,6 @@ public class Main {
 		modelo.setRegEquipos(REquipos);
 		modelo.setCaracEquipos(CEquipo);
 		modelo.cargarDatosDeTablas();
+		modelo.setCPrestamos(CPres);
 	}
 }

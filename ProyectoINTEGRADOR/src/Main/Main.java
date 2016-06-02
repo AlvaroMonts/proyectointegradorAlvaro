@@ -39,7 +39,6 @@ public class Main {
 	static TbPrestamos TPrestamos;
 	static TbUsers TUsers;
 	static Login Login;
-	static Caracteristicas_Almacen CAlmacen;
 	static Caracteristicas_Prestamo CPres;
 	
 	static adminBBDD modelo;
